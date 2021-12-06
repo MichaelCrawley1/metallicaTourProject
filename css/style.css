@@ -1,0 +1,749 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+
+    box-sizing: border-box;
+    outline: 0 !important;
+
+}
+
+body {
+    min-height: 100%;
+    margin: auto;
+    overflow-x: hidden;
+    font-family: "lato", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #ffffff;
+    background-color: #121317;
+
+
+}
+
+
+
+
+.container-fluid {
+
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+/* responsive grid */
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+[class*="col-"] {
+    float: left;
+
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 420;
+    background: url(../img/header.png) center bottom repeat-x;
+    font-size: 1em;
+    line-height: 1;
+    height: 7em;
+
+
+}
+
+#page {
+    position: relative;
+    background: #121317;
+    padding-top: 5em;
+}
+
+div.inner-container {
+
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+
+div#logo {
+
+    display: block;
+    position: relative;
+    float: left;
+    margin: -.5rem 0 0;
+    width: 20em;
+}
+
+#logo img {
+    display: block;
+    width: 100%;
+}
+
+nav#navigation {
+    font-family: "Hessian", sans-serif;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    clear: none;
+    margin-left: 22px;
+    margin-right: 22px;
+
+}
+
+nav#navigation>ul {
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+
+}
+
+nav#navigation>ul>li {
+
+    float: left;
+    border: 0;
+    position: relative;
+}
+
+#navigation>ul li {
+    margin: 0;
+}
+
+#navigation>ul>li>a:hover,
+#navigation>ul>li.active>a {
+    color: #b21319;
+    font-size: 2em;
+    padding: 1em 0.4em;
+    display: block;
+    font-weight: 700;
+    text-decoration: none;
+
+
+}
+
+#navigation>ul>li>a {
+    display: block;
+    font-weight: 700;
+    padding: 1em 0.4em;
+    font-size: 2em;
+    color: #ffffff;
+}
+
+main#main {
+
+    display: block;
+
+
+}
+
+section.content.banner.ha {
+
+    padding-top: 0;
+}
+
+.content.banner {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    overflow: hidden;
+
+}
+
+.ha {
+
+    height: auto !important;
+}
+
+
+.billboard {
+
+    margin: 0 !important;
+
+}
+
+.slick-slider {
+    position: relative;
+    display: block;
+
+}
+
+.billboard a {
+    display: block;
+}
+
+.content.banner img,
+.billboard img {
+    width: 1920px;
+    margin-left: -770px;
+}
+
+.content.banner img,
+.billboard img {
+    display: block;
+    position: relative;
+    left: 40%;
+}
+
+.content {
+    position: relative;
+    background: #121318 url(../img/bg_default.jpg) center top no-repeat;
+    display: block;
+}
+
+.promos .container {
+    position: absolute;
+    bottom: 0;
+    left: 70%;
+    transform: translate(-50%, 0);
+    margin-top: 35.2px;
+    margin-bottom: 35.2px;
+    width: 1006px;
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.promo-container {
+    margin-left: -11px;
+    margin-right: -11px;
+}
+
+.promo {
+
+    margin: 0;
+    width: 33.33%;
+    float: left;
+    padding: 0 11px;
+
+}
+
+.promo-container a {
+    display: block;
+}
+
+.promo-container img {
+    display: block;
+    width: 100%;
+
+}
+
+.content.alt {
+    background: #000;
+}
+
+.section-header {
+    margin-bottom: 39.6px;
+    text-align: center;
+}
+
+.page-header {
+    margin: 0 0 1.5rem;
+    padding: 0;
+    border: 0;
+    background: url(../img/header.png) center bottom repeat-x;
+    height: 1em;
+}
+
+.page-header .h1 {
+    font-size: 3.2em;
+    font-family: "Hessian", sans-serif;
+    text-transform: uppercase;
+    line-height: 3;
+    margin: 0 0 0.5rem;
+    color: #b21319;
+    font-weight: 700;
+
+}
+
+.container1 {
+    width: 1244px;
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.container2 {
+    width: 1244px;
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+
+}
+
+p.style_this {
+
+
+    font-size: 2em;
+    margin-top: 200px;
+
+}
+
+.content.banner {
+    height: 40rem;
+    padding-top: 0;
+    margin-top: 23.5px;
+}
+
+.content.banner .page-header {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #b21319;
+    margin: 0;
+    padding: 0 0 1rem;
+}
+
+.page-header .container {
+    position: relative;
+}
+
+.container {
+    width: 1244px;
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 490px;
+}
+
+.content:last-child {
+    padding-bottom: 1.5rem;
+}
+
+.layout {
+    margin-left: -11px;
+    margin-right: -11px;
+}
+
+.layout .layout-column {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 11px;
+    padding-right: 11px;
+
+}
+
+.tourdates-block {
+    position: relative;
+    text-align: left;
+    margin: 0 0 2rem;
+    padding: 0 0 2rem;
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
+    display: block;
+
+}
+
+.tourdates-date {
+    width: 10%;
+    line-height: 1;
+    font-size: 1.3em;
+    margin: 0;
+    float: left;
+    text-transform: uppercase;
+}
+
+
+
+.tourdates-date .tourdates-month {
+    margin: 0 0.25em 0 0;
+
+}
+
+.tourdates-body {
+    padding-right: 40rem;
+    margin-left: 10%;
+}
+
+.tourdates-headline {
+
+    float: left;
+    padding-right: 2rem;
+    line-height: 1;
+    font-size: 1.3em;
+    margin: 0;
+    font-family: inherit;
+    font-weight: 700;
+    color: #b21319;
+    text-transform: capitalize;
+}
+
+.tourdates-location {
+    width: 50%;
+    float: right;
+    line-height: 1;
+    font-size: 1.3em;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+footer#page-footer {
+
+    color: #ffffff;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1;
+    position: relative;
+    display: block;
+    background: url(../img/edge_bottom.png) center bottom repeat-x;
+    height: 1em;
+
+}
+
+footer#page-footer>.container {
+
+    margin-top: 39.6px;
+    margin-bottom: 39.6px;
+
+}
+
+div#copyright {
+
+    text-align: left;
+    float: left;
+    margin: 0;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 700;
+    margin-top: 100px;
+}
+
+#copyright p {
+
+    margin-bottom: .5em;
+    line-height: 1.35;
+    margin: 0 0 1em;
+}
+
+div#credits {
+
+    float: right;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 100px;
+}
+
+#articles-full {
+    /*margin-left: -11px;
+    margin-right: -11px;
+    */
+}
+
+article.articles-block {
+
+    position: relative;
+    left: 0px;
+    float: left;
+
+    padding: 0 11px;
+    height: 600px;
+}
+
+.articles-photo {
+
+    margin: 0 0 1rem;
+    height: 195px;
+    width: 372px;
+
+}
+
+.articles-photo img {
+
+    height: 195px;
+    width: 372px;
+}
+
+.articles-date {
+
+    font-size: .9em;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0 0 0.5rem;
+}
+
+h3.articles-headline {
+
+    margin: 0 0 0.5rem;
+    color: #b21319;
+    width: 96%;
+}
+
+.articles-blurb {
+
+    font-size: .9em;
+    width: 90%;
+}
+
+header.section-header {
+
+    text-align: center;
+    margin-bottom: 39.6px;
+    background: none;
+}
+
+h2.h1 {
+
+    font-size: 3.2em;
+    text-transform: uppercase;
+    line-height: .8;
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+    color: #b21319;
+    margin-top: 20px;
+}
+
+
+.container3 {
+    width: 1244px;
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 150px;
+
+}
+
+.layout-column.alpha ul {
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-left: -11px;
+    margin-right: -11px;
+}
+
+
+.layout-column.alpha ul li {
+
+    width: 25%;
+    float: left;
+    padding: 0 11px;
+    padding-top: 30px;
+
+}
+
+.music-image {
+
+    display: block;
+    height: 0;
+    overflow: hidden;
+    padding: 100% 0 0;
+    margin: 0 0 1rem;
+    position: relative;
+    background: #000;
+}
+
+.music-image img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.music-image1 h3 {
+    text-align: center;
+    line-height: 1.1;
+    font-size: .9em;
+    color: white;
+    font-weight: inherit;
+    margin: 0;
+}
+
+.music-image1 {
+
+    display: block;
+
+
+
+    position: relative;
+    background: #000;
+    height: 195px;
+
+
+}
+
+.music-image1 img {
+    display: block;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+span.spaces {
+
+    margin-left: 20px;
+}
+
+.containerHome {
+
+    margin-top: 140px;
+
+}
+
+
+.layout .layout-columnHome {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 11px;
+    padding-right: 11px;
+    margin-left: 5%;
+
+}
+
+article.articles-blockHome {
+
+    position: relative;
+    left: 0px;
+    top: 0px;
+    float: left;
+    width: 33%;
+    padding: 0 11px;
+}
+
+footer.page-footer {
+
+    margin-top: 39.6px;
+    text-align: center;
+    display: block;
+    margin-bottom: 50px;
+}
+
+footer.page-footer1 {
+
+    margin-top: 200px;
+    text-align: center;
+    display: block;
+    margin-bottom: 50px;
+}
+
+a.btnRed {
+
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 10px 16px;
+    font-size: 20px;
+    border-radius: 0;
+    color: #ffffff;
+    background-color: #b21319;
+    border-color: #9b1116;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+
+.containerHome {
+    width: 1244px;
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 200px;
+
+}
+
+p.theLoop {
+
+    margin-top: 30px;
+}
+
+h1.bottom {
+    margin-bottom: 30px;
+}
+
+h1.controlPanel {
+
+    margin-top: 100px;
+}
+
+a.panel {
+
+    color: #b21319;
+}

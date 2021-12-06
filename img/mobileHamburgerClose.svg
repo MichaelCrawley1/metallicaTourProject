@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37.5" height="22.627" viewBox="0 0 37.5 22.627">
+    <g id="mobileHamburgerClose" transform="translate(0.707 0.707)">
+        <path id="Path_11" data-name="Path 11" d="M0,0H30" transform="translate(0 21.213) rotate(-45)" fill="none" stroke="#ffffff" stroke-width="2.5" />
+        <g id="Group_7" data-name="Group 7" transform="translate(-21.393 -8.393)">
+            <path id="Path_10" data-name="Path 10" d="M0,0H30" transform="translate(21.393 8.393) rotate(45)" stroke="#ffffff" stroke-width="2.5" />
+        </g>
+    </g>
+</svg>

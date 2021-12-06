@@ -1,0 +1,1613 @@
+/*1. config files and helpers*/
+/*2. Vendor stuff*/
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0; }
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none; }
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none; }
+
+/*3. Components*/
+@font-face {
+  font-family: "Hessian", sans-serif;
+  src: url("../hessian/Hessian.otf") format("opentype"); }
+
+.c-button-mobile {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-decoration: none;
+  line-height: 1;
+  color: #ffffff;
+  background-color: #b21319;
+  border-color: #9b1116; }
+  @media (min-width: 65rem) {
+    .c-button-mobile {
+      padding: 1.5rem 1.6rem; } }
+
+.c-button-mobile--large {
+  padding: 1.5rem 1.6rem; }
+
+/*4. Base Styles*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth; }
+
+body {
+  font-family: "lato", Helvetica, Arial, sans-serif;
+  line-height: 1.575;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #fff;
+  font-size: 1.6rem;
+  background-color: #121317; }
+
+.l-basic-grid-home-page {
+  grid-template-rows: minmax(70px, auto) minmax(140px, auto) minmax(500px, auto) minmax(29px, auto) minmax(500px, auto) minmax(42px, auto) minmax(995px, auto) minmax(140px, auto); }
+
+.l-basic-grid-about-us-page {
+  grid-template-rows: minmax(70px, auto) minmax(140px, auto) auto auto minmax(140px, auto); }
+
+.l-basic-grid-tour-page {
+  grid-template-rows: minmax(70px, auto) auto auto minmax(140px, auto); }
+
+.l-basic-grid-news-music-and-photos-page {
+  grid-template-rows: minmax(70px, auto) minmax(140px, auto) auto minmax(140px, auto); }
+
+.l-basic-grid-admin-and-c-panel {
+  grid-template-rows: minmax(70px, auto) minmax(100vh, auto) minmax(140px, auto); }
+
+.l-basic-grid-edit-and-delete-tour {
+  grid-template-rows: minmax(70px, auto) minmax(80vh, auto) minmax(140px, auto); }
+
+.l-basic-grid-admin-manipulation {
+  grid-template-rows: minmax(70px, auto) minmax(100vh, auto) minmax(140px, auto); }
+
+.l-basic-grid-admin-edit-tour {
+  grid-template-rows: minmax(70px, auto) minmax(30vh, auto) minmax(70vh, auto) minmax(140px, auto); }
+
+.l-basic-grid-delete-news-stories {
+  grid-template-rows: minmax(70px, auto) minmax(30px, auto) minmax(80vh, auto) minmax(140px, auto); }
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto; }
+
+.c-back-page-icon-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10; }
+
+.c-back-page-icon {
+  width: 3em; }
+
+.c-back-page-icon-link::before {
+  content: "";
+  display: block;
+  top: -1em;
+  bottom: -1em;
+  right: 10em;
+  left: 0;
+  border: 1px solid pink;
+  position: absolute; }
+
+figure {
+  margin: 0; }
+
+h1,
+h2,
+h3,
+h5,
+p {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+p {
+  max-width: 550px;
+  overflow-wrap: break-word; }
+  @media (min-width: 65rem) {
+    p {
+      font-size: 2rem;
+      max-width: 650px; } }
+
+h1 {
+  line-height: 1;
+  font-size: 3.2rem; }
+
+.h-mobile-title {
+  text-align: center;
+  font-family: "Hessian", sans-serif;
+  color: #b21319;
+  text-transform: uppercase;
+  font-size: 2.7rem;
+  margin-top: .5em; }
+
+label {
+  display: block;
+  margin-top: 2rem;
+  text-transform: capitalize;
+  font-weight: 400; }
+
+input,
+textarea {
+  box-sizing: border-box;
+  display: block;
+  padding: .75em;
+  width: 100%;
+  min-width: 15em;
+  background: #fbfbfc;
+  border: 1px solid #E8E9EB;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: black;
+  font-family: sans-serif; }
+  @media (min-width: 48rem) {
+    input,
+    textarea {
+      font-size: 1.6rem; } }
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: grey; }
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: grey; }
+
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  color: grey; }
+
+input::placeholder,
+textarea::placeholder {
+  color: grey; }
+
+textarea {
+  resize: vertical; }
+
+.h-grid {
+  display: grid; }
+
+.h-flex {
+  display: flex; }
+
+.h-position {
+  position: relative; }
+
+.h-clearfix::after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.h-padding {
+  padding: 1em; }
+
+.h-uppercase {
+  text-transform: uppercase; }
+
+.h-stretch {
+  align-self: stretch; }
+
+.h-flex-align-left {
+  align-self: flex-start; }
+
+.h-text-align {
+  text-align: center; }
+
+.h-height400 {
+  height: 400px; }
+
+.h-margin-bottom {
+  margin-bottom: 4em; }
+
+.h-font-size {
+  font-size: 2.2rem; }
+
+/*5. Layout*/
+.c-mobile-menu {
+  background-color: #121318;
+  display: block; }
+  @media (min-width: 48rem) {
+    .c-mobile-menu {
+      display: none; } }
+
+.c-mobile-menu-background {
+  background-image: url(../img/header.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  grid-template-rows: 2% 1fr 2%; }
+
+.c-mobile-menu-logo-container {
+  width: 14rem;
+  margin-top: 1.5em; }
+  @media (min-width: 61.5rem) {
+    .c-mobile-menu-logo-container {
+      width: 18rem; } }
+  @media (min-width: 80.0625rem) {
+    .c-mobile-menu-logo-container {
+      width: 25rem; } }
+
+.c-mobile-menu-hamburger-for-fat-fingers {
+  grid-row: 2 / 3;
+  justify-self: end;
+  align-self: start;
+  position: relative;
+  top: 1.7em;
+  right: .5em; }
+
+.c-mobile-menu-hamburger-link::after {
+  content: "";
+  display: block;
+  border: 1px solid pink;
+  padding: 4em;
+  position: absolute;
+  left: -4em;
+  margin-top: -4em;
+  z-index: 5; }
+
+.l-basic-grid-js-mobile-nav-menu .c-fixed-mobile-screen {
+  transform: translateX(0); }
+
+.c-fixed-mobile-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: transform ease-in-out .25s;
+  z-index: 50; }
+
+.c-fixed-mobile-screen-nav-menu-list {
+  grid-template-columns: 1fr 250px;
+  grid-template-rows: repeat(7, 1fr);
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Hessian", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.c-fixed-mobile-screen-nav-menu-list-item {
+  grid-column: 2 / 3;
+  list-style: none;
+  border-bottom: 1px solid grey;
+  align-items: center;
+  justify-items: start;
+  position: relative;
+  background-color: #121317; }
+
+.c-fixed-mobile-screen-nav-menu-list-item:hover .c-fixed-mobile-screen-list-item-links {
+  color: #b21319; }
+
+.c-fixed-mobile-screen-nav-menu-list-item:active .c-fixed-mobile-screen-list-item-links {
+  color: #b21319; }
+
+.c-fixed-mobile-screen-hamburger-exit-container {
+  justify-self: end;
+  margin-top: 1.2em;
+  position: relative;
+  left: .5em; }
+
+.c-fixed-mobile-screen-hamburger-exit-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1.3em;
+  padding: 2em;
+  border: 2px solid pink;
+  z-index: 1;
+  margin-left: -2em; }
+
+.c-fixed-mobile-screen-exit-svg {
+  width: 2em; }
+
+.c-fixed-mobile-screen-nav-menu-list-item--no-border {
+  border-bottom: none; }
+
+.c-fixed-mobile-screen-list-item-links {
+  text-decoration: none;
+  color: inherit; }
+
+.c-fixed-mobile-screen-list-item-links--active {
+  color: #b21319; }
+
+.c-fixed-mobile-screen-list-item-links::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.c-fixed-mobile-screen-background-red {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  background: linear-gradient(to bottom, rgba(178, 19, 25, 0.6), #b21319); }
+
+.c-big-screen {
+  display: none; }
+  @media (min-width: 48rem) {
+    .c-big-screen {
+      display: block; } }
+
+.c-big-screen-nav-container {
+  grid-column: 2 / 3;
+  justify-self: end; }
+
+.c-big-screen-nav-list {
+  list-style-type: none;
+  padding: 0 1em;
+  font-size: 2rem;
+  font-family: "Hessian", sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  top: .5em; }
+  @media (min-width: 61.5rem) {
+    .c-big-screen-nav-list {
+      font-size: 2.5rem;
+      top: 0em; } }
+  @media (min-width: 80.0625rem) {
+    .c-big-screen-nav-list {
+      font-size: 3.2rem;
+      top: 0em; } }
+
+.c-big-screen-nav-list-item {
+  padding: 0 .5em; }
+
+.c-big-screen-nav-list-item:hover {
+  color: #b21319; }
+
+.c-big-screen-list-item-links {
+  text-decoration: none;
+  color: inherit; }
+
+.c-big-screen-background {
+  display: none; }
+  @media (min-width: 43.125rem) {
+    .c-big-screen-background {
+      display: block;
+      background-image: url(../img/header.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center; } }
+
+.c-big-screen-background-hero {
+  background-image: url(../img/metallicaHome.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 2%; }
+  @media (min-width: 104.75rem) {
+    .c-big-screen-background-hero {
+      padding-bottom: 15%; } }
+
+.c-big-screen-background-hero--news-hero {
+  background-image: url(../img/footer-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.c-big-screen-image-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 500px; }
+  @media (min-width: 104.75rem) {
+    .c-big-screen-image-container {
+      position: relative;
+      top: 15em; } }
+
+.c-big-screen-tour-dates-img {
+  width: 300px; }
+
+.c-small-screen {
+  background-color: #121318; }
+  @media (min-width: 43.125rem) {
+    .c-small-screen {
+      display: none; } }
+
+.c-small-screen-background {
+  background-image: url(../img/header.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2em; }
+
+.c-small-screen-image-container {
+  justify-content: center;
+  align-content: center; }
+
+.c-small-screen-tour-dates-img-link::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.c-small-screen-tour-dates-img {
+  width: 70%; }
+  @media (min-width: 25.125rem) {
+    .c-small-screen-tour-dates-img {
+      width: 60%; } }
+  @media (min-width: 39.125rem) {
+    .c-small-screen-tour-dates-img {
+      width: 50%; } }
+
+.c-little-blurb-before-news {
+  background-color: #000; }
+  @media (min-width: 43.125rem) {
+    .c-little-blurb-before-news {
+      background-color: transparent; } }
+
+.c-little-blurb-before-news-title {
+  margin-top: 0; }
+  @media (min-width: 43.125rem) {
+    .c-little-blurb-before-news-title {
+      background-color: #000;
+      padding: 1em 0;
+      font-size: 3.2rem; } }
+  @media (min-width: 65rem) {
+    .c-little-blurb-before-news-title {
+      font-size: 4.2rem; } }
+
+.c-little-blurb-before-news-title--margin {
+  position: relative;
+  top: .8em; }
+
+.c-little-blurb-before-news-img-container {
+  background-image: url(../img/metallicaHome.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 100%; }
+  @media (min-width: 43.125rem) {
+    .c-little-blurb-before-news-img-container {
+      display: none; } }
+
+.c-little-blurb-before-news-img-container--tour {
+  background-image: url(../img/videos-banner-blue.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 100%; }
+  @media (min-width: 43.125rem) {
+    .c-little-blurb-before-news-img-container--tour {
+      display: block;
+      padding-bottom: 50%; } }
+
+.c-little-blurb-before-news-img-container--news {
+  background-image: url(../img/photos-header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+  @media (min-width: 43.125rem) {
+    .c-little-blurb-before-news-img-container--news {
+      display: block; } }
+
+.c-little-blurb-before-news-forty-year-anniversary-title {
+  font-family: "lato", Helvetica, Arial, sans-serif;
+  font-size: 1.72rem;
+  color: #b21319;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 1em;
+  text-transform: uppercase; }
+  @media (min-width: 65rem) {
+    .c-little-blurb-before-news-forty-year-anniversary-title {
+      font-size: 2.2rem;
+      max-width: 650px;
+      margin: 1em auto; } }
+
+.c-little-blurb-before-news-forty-year-anniversary-title-little-text {
+  font-size: 1rem;
+  display: block;
+  margin-top: .6em; }
+  @media (min-width: 65rem) {
+    .c-little-blurb-before-news-forty-year-anniversary-title-little-text {
+      font-size: 1.2rem; } }
+
+.c-little-blurb-before-news-forty-year-anniversary-desc {
+  padding: 0.5em;
+  margin: 0 auto; }
+
+.c-little-blurb-before-news-forty-year-anniversary-button-container {
+  padding: 0.5em;
+  padding-bottom: 1em;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 550px;
+  margin: 1em auto; }
+  @media (min-width: 65rem) {
+    .c-little-blurb-before-news-forty-year-anniversary-button-container {
+      max-width: 650px; } }
+
+.c-little-blurb-before-news-forty-year-anniversary-button-container::after {
+  content: "";
+  display: block;
+  position: relative;
+  top: 2em;
+  height: 1.5rem;
+  left: 0;
+  padding-bottom: 1em;
+  background-image: url(../img/edge_top.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.c-little-blurb-before-news-forty-year-anniversary-button-info {
+  text-transform: capitalize;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 900; }
+  @media (min-width: 65rem) {
+    .c-little-blurb-before-news-forty-year-anniversary-button-info {
+      font-size: 2.2rem; } }
+
+.c-latest-news {
+  background-color: #121318; }
+
+.c-latest-news-max-width {
+  max-width: 1300px;
+  padding: 1em;
+  margin: 0 auto 4em; }
+
+.c-latest-news::before {
+  content: "";
+  display: block;
+  position: relative;
+  height: .5rem;
+  left: 0;
+  padding-top: 2em;
+  background-color: black; }
+
+.c-latest-news--background-and-postion-change {
+  position: relative;
+  top: -2.3em;
+  background-color: transparent; }
+
+.c-latest-news--background-and-postion-change::before {
+  background-color: transparent; }
+
+.c-latest-news-title {
+  padding: 1em 0; }
+  @media (min-width: 65rem) {
+    .c-latest-news-title {
+      font-size: 4.5rem; } }
+
+.c-latest-news-container-for-grid {
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  padding: 1em;
+  overflow: hidden; }
+  @media (min-width: 78.3125rem) {
+    .c-latest-news-container-for-grid {
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); } }
+
+.c-latest-news-articles {
+  height: 510px;
+  overflow: hidden; }
+  @media (min-width: 65rem) {
+    .c-latest-news-articles {
+      height: 500px; } }
+
+.c-latest-news-articles--for-confirm-add-news-story {
+  flex-direction: column;
+  align-items: center; }
+
+.c-latest-news-img-container {
+  height: auto !important; }
+
+.c-latest-news-articles-photo-img {
+  width: 600px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden; }
+  @media (min-width: 39.625rem) {
+    .c-latest-news-articles-photo-img {
+      width: 400px; } }
+  @media (min-width: 57.0625rem) {
+    .c-latest-news-articles-photo-img {
+      width: 500px; } }
+
+@media (min-width: 65rem) {
+  .c-latest-news-articles-date {
+    font-size: 2.2rem; } }
+
+@media (min-width: 65rem) {
+  .c-latest-news-sub-title {
+    font-size: 2.5rem; } }
+
+.c-latest-news-blurb {
+  max-width: none; }
+
+.c-latest-news-articles-text-container {
+  padding: .5em;
+  padding-bottom: 1.5em; }
+
+.c-latest-news-articles-text-container--text-align {
+  text-align: center; }
+
+.c-latest-news-sub-title {
+  color: #b21319; }
+
+.c-latest-news-button-container {
+  padding: 1em 1.5em;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1em auto; }
+
+.c-latest-news-info {
+  text-transform: capitalize;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 900; }
+  @media (min-width: 65rem) {
+    .c-latest-news-info {
+      font-size: 2.2rem; } }
+
+.c-upcoming-shows {
+  background-image: url(../img/bg_default.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.c-upcoming-shows::before {
+  content: "";
+  display: block;
+  position: relative;
+  height: .5rem;
+  left: 0;
+  padding-top: 2em;
+  background-image: url(../img/edge_bottom.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.c-upcoming-shows--before-take-background-off::before {
+  background-image: none; }
+
+.c-upcoming-shows-title {
+  margin-top: 1em; }
+  @media (min-width: 65rem) {
+    .c-upcoming-shows-title {
+      font-size: 3.5rem;
+      padding-bottom: 2em; } }
+
+.c-upcoming-shows-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3em;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
+  margin-top: 2em;
+  text-align: center; }
+  @media (min-width: 65rem) {
+    .c-upcoming-shows-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1300px;
+      margin: 2em auto 0;
+      text-align: left;
+      padding: 0 .5em 3em; } }
+
+.c-upcoming-shows-month {
+  font-size: 3.2rem;
+  text-transform: uppercase; }
+
+.c-upcoming-shows-venue-subtitle {
+  margin-bottom: 0;
+  font-family: "lato", Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #b21319;
+  font-weight: 900;
+  margin-top: 0; }
+  @media (min-width: 65rem) {
+    .c-upcoming-shows-venue-subtitle {
+      font-size: 2.2rem; } }
+
+@media (min-width: 65rem) {
+  .c-upcoming-shows-location {
+    justify-self: end;
+    font-size: 2.2rem; } }
+
+.c-upcoming-shows-button-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0; }
+
+.c-upcoming-shows-info {
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 900;
+  font-size: 2rem; }
+
+.c-music {
+  background-color: black; }
+
+.c-music--background-and-postion-change {
+  background-color: transparent;
+  position: relative;
+  top: -2.3em; }
+
+.c-music::before {
+  content: "";
+  display: block;
+  position: relative;
+  height: .5rem;
+  left: 0;
+  padding-top: 2em;
+  background-image: url(../img/edge_bottom.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.c-music-background-image::before {
+  background-image: none; }
+
+@media (min-width: 65rem) {
+  .c-music-title {
+    font-size: 3.5rem;
+    padding: 2em 0; } }
+
+.c-music-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em; }
+
+.c-music-container-list {
+  margin: 0;
+  list-style-type: none;
+  padding: 0; }
+
+.c-music-container-list-item {
+  border: 5px solid #b21319; }
+
+.c-music-button-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0;
+  margin-bottom: 2em; }
+
+.c-music-info {
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 900;
+  font-size: 2rem; }
+
+.c-bands-photos {
+  background-color: #121318; }
+
+.c-bands-photos--background-and-postion-change {
+  background-color: transparent;
+  position: relative;
+  top: -2.3em; }
+
+.c-bands-photos::before {
+  content: "";
+  display: block;
+  position: relative;
+  height: .5rem;
+  left: 0;
+  padding-top: 2em;
+  background-image: url(../img/edge_bottom.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+@media (min-width: 65rem) {
+  .c-bands-photos-title {
+    font-size: 3.5rem;
+    padding: 2em 0; } }
+
+.c-bands-photos-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  margin-top: -2.5em; }
+
+.c-bands-photos-container-list {
+  margin: 0;
+  list-style-type: none;
+  padding: 0; }
+
+.c-bands-photos-container-list-item {
+  margin: 3em 0; }
+
+.c-bands-photos-container-img {
+  margin: 0 auto; }
+
+.c-bands-photos-location {
+  text-align: center;
+  line-height: 1.1;
+  font-size: .9em;
+  color: white;
+  font-weight: inherit; }
+
+.c-bands-photos-location-style {
+  margin-left: 1.5em; }
+
+.c-bands-photos-button-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0;
+  margin-bottom: 2em; }
+
+.c-bands-photos-info {
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 900;
+  font-size: 2rem; }
+
+.c-bands-photos-take-padding-out {
+  padding: 0 !important; }
+
+.c-about-us {
+  margin-top: 1em;
+  padding: 1.5em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.c-login {
+  margin-bottom: 4em;
+  padding: 1em;
+  flex-direction: column; }
+  @media (min-width: 36.1875rem) {
+    .c-login {
+      align-items: center;
+      justify-content: center; } }
+
+.c-login-admin-warning {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  font-weight: 900; }
+
+.c-login-admin-warning::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: red;
+  margin-top: 1em; }
+
+.c-login-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  font-weight: 400;
+  text-decoration: underline; }
+
+.c-login-form-desc {
+  max-width: 100%; }
+
+@media (min-width: 36.1875rem) {
+  .c-login-form-input {
+    width: 500px; } }
+
+.c-login-form-input-button {
+  margin: 6em auto 2em;
+  width: 50%;
+  display: block;
+  font-size: 1.8rem;
+  text-transform: uppercase; }
+
+.c-control-panel {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.c-control-panel-title {
+  text-align: center;
+  color: #F8f9f5;
+  text-transform: uppercase;
+  margin-top: 1em; }
+
+.c-control-panel-title::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #F8f9f5;
+  width: 258.78px;
+  margin: 1em auto; }
+
+.c-control-panel-welcome-message-container {
+  padding: 1em;
+  flex-direction: column;
+  align-items: center; }
+
+.c-control-panel-welcome-message-title {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0; }
+
+.c-control-panel-list-container {
+  padding: 1em;
+  margin-bottom: 2em; }
+
+.c-control-panel-logout-button-container {
+  flex-direction: column;
+  align-items: center;
+  margin: 2em auto;
+  font-size: 2rem;
+  text-decoration: none;
+  height: 120px; }
+
+.c-control-panel-logout-button-container::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100vw;
+  background-color: grey;
+  margin-top: 3em; }
+
+.c-control-panel-desc-links {
+  text-decoration: none;
+  color: #fff;
+  font-family: "lato", Helvetica, Arial, sans-serif; }
+  @media (min-width: 65rem) {
+    .c-control-panel-desc-links {
+      font-size: 2.2rem; } }
+
+.c-control-panel-desc-links--logout-button {
+  font-size: 2rem;
+  text-decoration: underline;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "lato", Helvetica, Arial, sans-serif; }
+
+.c-control-panel-admin-options-title-container {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Hessian", sans-serif;
+  color: #fff; }
+
+.c-control-panel-admin-button-choice-section {
+  position: relative;
+  margin: 5em auto; }
+
+.c-control-panel-admin-button-choice-section-button-container {
+  flex-direction: column;
+  align-items: center; }
+
+.c-admin-manipulate-website-sections {
+  padding: 1em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.c-admin-manipulate-website-sections-title {
+  text-align: center;
+  font-family: "Hessian", sans-serif;
+  color: #b21319;
+  text-transform: uppercase;
+  margin-top: 1em; }
+  @media (min-width: 48rem) {
+    .c-admin-manipulate-website-sections-title {
+      height: 300px; } }
+
+.c-admin-manipulate-website-sections-paragraph-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
+.c-admin-manipulate-website-sections-list-container {
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 50%;
+  align-items: center;
+  margin-top: 3em; }
+
+.c-admin-manipulate-website-sections-desc-links {
+  text-decoration: none;
+  color: #b21319;
+  font-family: "Hessian", sans-serif;
+  font-size: 2rem; }
+
+.c-admin-add-tour-dates {
+  flex-direction: column;
+  align-items: center; }
+
+.c-admin-add-tour-dates-title {
+  text-align: center;
+  font-family: "Hessian", sans-serif;
+  color: #b21319;
+  text-transform: uppercase;
+  margin-top: 2em; }
+
+.c-admin-add-tour-dates-desc {
+  text-transform: capitalize;
+  margin: 1em 0; }
+
+.c-admin-add-tour-dates-input {
+  margin: 1em 0; }
+
+.c-admin-add-tour-dates-parent {
+  margin: 3em 0; }
+
+.c-admin-add-tour-dates-submit-button-container {
+  margin: 4em 0;
+  flex-direction: column;
+  align-items: center; }
+
+.c-admin-add-tour-dates-container {
+  margin: 2em 0; }
+
+.c-admin-add-tour-dates-add-venue-title {
+  margin-bottom: 0; }
+
+.c-admin-add-tour-dates-override-flex {
+  align-self: stretch; }
+
+.c-admin-confirm-add-tour {
+  padding: 1em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.c-admin-confirm-add-tour-title {
+  font-size: 2.6rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-family: "Hessian", sans-serif;
+  color: #b21319;
+  text-align: center; }
+
+.c-admin-confirm-add-tour-desc-container {
+  margin-top: 2em;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0.5em; }
+
+.c-admin-confirm-add-tour-desc {
+  color: #b21319; }
+
+.c-admin-confirm-add-tour-desc-links {
+  text-decoration: none;
+  color: #fff; }
+
+.c-admin-DELETE-tour-dates {
+  padding: 1em;
+  flex-direction: column;
+  align-items: center; }
+
+.c-admin-DELETE-tour-dates-title {
+  margin-top: 2em;
+  color: #b21319;
+  font-family: "Hessian", sans-serif; }
+
+.c-admin-DELETE-tour-dates-links::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 1px solid pink;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.c-admin-DELETE-tour-dates-CONFIRM {
+  padding: 1em;
+  flex-direction: column;
+  align-items: center; }
+  @media (min-width: 48rem) {
+    .c-admin-DELETE-tour-dates-CONFIRM {
+      justify-content: center; } }
+
+.c-admin-DELETE-tour-dates-CONFIRM-title {
+  margin-top: 2em;
+  color: #b21319;
+  font-family: "Hessian", sans-serif; }
+
+.c-admin-edit-selected-tour-form {
+  flex-direction: column;
+  align-items: center; }
+
+.c-news-stories-DELETE-max-width {
+  max-width: 1300px;
+  padding: 1em;
+  margin: 0 auto 4em; }
+
+.c-news-stories-DELETE {
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  padding: 1em; }
+  @media (min-width: 78.3125rem) {
+    .c-news-stories-DELETE {
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); } }
+
+.c-news-stories-DELETE-container {
+  overflow: hidden; }
+
+.c-news-stories-DELETE-container-for-anchor-cover {
+  height: 500px; }
+
+.c-news-stories-DELETE-img-itself {
+  width: 600px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden; }
+  @media (min-width: 39.625rem) {
+    .c-news-stories-DELETE-img-itself {
+      width: 400px; } }
+  @media (min-width: 57.0625rem) {
+    .c-news-stories-DELETE-img-itself {
+      width: 500px; } }
+
+.c-news-stories-DELETE-info-container {
+  padding: 0 1em;
+  margin-top: 1.2em; }
+
+.c-news-stories-DELETE-info-container--no-padding {
+  padding: initial; }
+
+.c-news-stories-DELETE-info-container--no-padding {
+  padding: initial; }
+
+.c-news-stories-DELETE-links-bbc::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 1px solid pink;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.c-news-stories-DELETE-confirmation {
+  background-color: transparent; }
+
+.c-news-stories-DELETE-confirmation::before {
+  content: "";
+  display: block;
+  position: relative;
+  background-color: transparent;
+  background-image: none; }
+
+.c-EDIT-news-story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible; }
+
+.c-EDIT-news-story-change-height {
+  height: auto; }
+
+.c-EDIT-news-story-chnage-WH-on-img {
+  max-width: 100%;
+  height: 400px;
+  margin: 0 auto; }
+  @media (min-width: 39.625rem) {
+    .c-EDIT-news-story-chnage-WH-on-img {
+      max-width: 100%;
+      width: auto; } }
+  @media (min-width: 57.0625rem) {
+    .c-EDIT-news-story-chnage-WH-on-img {
+      max-width: 100%;
+      width: auto; } }
+
+.c-EDIT-news-story-get-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.c-EDIT-news-story-before-change::before {
+  background-image: none; }
+
+.c-music-DELETE-container {
+  height: 300px; }
+
+.c-music-DELETE-img-album-change {
+  width: 600px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden; }
+  @media (min-width: 39.625rem) {
+    .c-music-DELETE-img-album-change {
+      width: 600px; } }
+  @media (min-width: 57.0625rem) {
+    .c-music-DELETE-img-album-change {
+      width: 1200px; } }
+
+.c-admin-confirmation-page {
+  padding: 1em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.c-admin-confirmation-page-title {
+  text-transform: uppercase;
+  font-family: "Hessian", sans-serif;
+  color: #b21319;
+  font-size: 2.2rem;
+  text-align: center; }
+
+.c-admin-confirmation-page-links {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase; }
+
+.c-footer {
+  background-color: black; }
+
+.c-footer::before {
+  content: "";
+  display: block;
+  position: relative;
+  height: 1.5rem;
+  left: 0;
+  width: 100%;
+  background-image: url(../img/edge_bottom.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  top: -1em; }
+
+.c-footer-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.c-footer-copyright-container {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 3em; }
+
+.c-footer-copyright-container::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 110%;
+  margin-top: 1em;
+  margin-left: -1.2em; }
+
+.c-footer-the-designer {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 1em; }
