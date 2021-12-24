@@ -119,12 +119,12 @@ if (isset($_GET['signup'])){
 
 <!----below is the component class section taken from the home page (product.php)this is getting reused to follow the same style display as the NEWS section (latest-news), the only difference is that there are the maximum entries here for the NEWS, not limited to three like in the home page (product.php).  We don't need a  hero image for this page, so I have taken this NEWS section towards the top of the page.  A few modifiers need to be in place then. One, we need to take out the black background on the section class(c-latest-news) and we need to amend the position to bring the section nearer to the hamburger mobile menu to enable a more presenting outlook  The modifiers are below---->
 	
-<section class="c-admin-DELETE-tour-dates h-flex c-news-stories-DELETE-max-width">
+  <!---this section down below uses the utility class to keep the grid in a 1300px max container for the big screens, also there is a class to keep the flex direction at a column THINK ABOUT CHANGING THIS FIRST CLASS TO SOMETHING THAT WOULD RESONATE WITH THE HOME PAGE ----->
+<section class="c-admin-DELETE-tour-dates h-flex l-for-card-grid-columns-max-width-container">
 	<h1 class="c-latest-news-title h-mobile-title">Latest News</h1>
 
-
-<section class="c-news-stories-DELETE h-grid">
-
+ <!--- this class down below is the section grid column layout itself, this is for all the card type blocks like the music albums, the band photos and the news stories--->     
+<div class="l-the-card-grid h-grid">
 <?php 
 
 require_once ("../connect_database.php");
@@ -137,24 +137,27 @@ $delNewsStory_query= mysqli_query($dbc, $delNewsStory_sql);
 
  
  		
-while ($delNewsStory_rs = mysqli_fetch_array($delNewsStory_query)){ ?>
+while ($row = mysqli_fetch_array($delNewsStory_query)){ ?>
 
- 	<article class="c-news-stories-DELETE-container">
+ <!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
+  <article class="h-overflowH">
+
+  <!----end of helper class---->
 
 
  	   <div class="c-news-stories-DELETE-container-for-anchor-cover h-position c-latest-news-img-container">
- 	  	<img src="../img/<?php echo $delNewsStory_rs['img_ref']?>" class="c-news-stories-DELETE-img-itself"/>
+ 	  	<img src="../img/<?php echo $row['img_ref']?>" class="c-news-stories-DELETE-img-itself"/>
  	  </div>
 
  	  	 <div class="c-news-stories-DELETE-info-container c-news-stories-DELETE-info-container--no-padding">
 
- 	  	<div class="c-news-stories-DELETE-date"><?php echo $delNewsStory_rs['date']?>
+ 	  	<div class="c-news-stories-DELETE-date"><?php echo $row['date']?>
  	  	</div>
  	  
 
- 	  	<h3 class=c-latest-news-sub-title><?php echo $delNewsStory_rs['title']?></h3>
+ 	  	<h3 class=c-latest-news-sub-title><?php echo $row['title']?></h3>
 
- 	  	<p class="c-latest-news-blurb"><?php echo $delNewsStory_rs['description']?> </p>
+ 	  	<p class="c-latest-news-blurb"><?php echo $row['description']?> </p>
 
  	  
  	 </div>
@@ -171,8 +174,12 @@ while ($delNewsStory_rs = mysqli_fetch_array($delNewsStory_query)){ ?>
  }
 mysqli_close($dbc);
 ?>
+</div>
+
+<!----end of the grid for the cards (images, album photos, stadium photos etc)----->
 </section>
-</section>
+
+<!----end of utility layout class for max width on the section this time ---->  
 
 <!---- end of the reusable component ---->
 

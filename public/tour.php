@@ -87,8 +87,8 @@ $tour_query = "SELECT * FROM Tour_table";
 
 
  	  <span class="c-upcoming-shows-month"><?php echo  $row['date'] ?></span></div>
- 	  <div class="c-upcoming-shows-venue-container"> <h3 class="c-upcoming-shows-venue-subtitle h-mobile-title"><?php echo $row['venue'] ?></h3>
- 	 		</div>
+ 	   <h3 class="c-upcoming-shows-venue-subtitle h-mobile-title"><?php echo $row['venue'] ?></h3>
+ 	 		
  	 	 <div class="c-upcoming-shows-location"> <?php echo $row['state_country']?> </div> 
 
  	 

@@ -339,8 +339,36 @@ template {
     .c-button-mobile {
       padding: 1.5rem 1.6rem; } }
 
+.c-button-mobile:hover {
+  background-color: #8b0000; }
+
 .c-button-mobile--large {
   padding: 1.5rem 1.6rem; }
+
+.l-tour-albums-band-photos-button-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0;
+  margin-top: 7em;
+  margin-bottom: 5em; }
+
+.l-tour-albums-band-photos-button-link {
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 900;
+  font-size: 2rem; }
+
+.l-tour-albums-band-photos-button-link::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 /*4. Base Styles*/
 *,
@@ -388,10 +416,31 @@ body {
 .l-basic-grid-delete-news-stories {
   grid-template-rows: minmax(70px, auto) minmax(30px, auto) minmax(80vh, auto) minmax(140px, auto); }
 
+.l-for-card-grid-columns-max-width-container {
+  max-width: 1300px;
+  padding: 1em;
+  margin: 0 auto 4em; }
+
+.l-the-card-grid {
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  padding: 1em;
+  overflow: hidden; }
+  @media (min-width: 78.3125rem) {
+    .l-the-card-grid {
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); } }
+
 img {
   max-width: 100%;
   display: block;
   height: auto; }
+
+.l-image-set-for-auto-fit-grid {
+  width: 600px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden; }
 
 .c-back-page-icon-container {
   position: absolute;
@@ -516,15 +565,20 @@ textarea {
 .h-height400 {
   height: 400px; }
 
+.h-height-auto {
+  height: auto; }
+
 .h-margin-bottom {
   margin-bottom: 4em; }
 
 .h-font-size {
   font-size: 2.2rem; }
 
+.h-overflowH {
+  overflow: hidden; }
+
 /*5. Layout*/
 .c-mobile-menu {
-  background-color: #121318;
   display: block; }
   @media (min-width: 48rem) {
     .c-mobile-menu {
@@ -547,10 +601,8 @@ textarea {
     .c-mobile-menu-logo-container {
       width: 25rem; } }
 
-.c-mobile-menu-hamburger-for-fat-fingers {
-  grid-row: 2 / 3;
+.c-js-mobile-menu-hamburger-for-fat-fingers {
   justify-self: end;
-  align-self: start;
   position: relative;
   top: 1.7em;
   right: .5em; }
@@ -595,8 +647,6 @@ textarea {
   list-style: none;
   border-bottom: 1px solid grey;
   align-items: center;
-  justify-items: start;
-  position: relative;
   background-color: #121317; }
 
 .c-fixed-mobile-screen-nav-menu-list-item:hover .c-fixed-mobile-screen-list-item-links {
@@ -605,13 +655,13 @@ textarea {
 .c-fixed-mobile-screen-nav-menu-list-item:active .c-fixed-mobile-screen-list-item-links {
   color: #b21319; }
 
-.c-fixed-mobile-screen-hamburger-exit-container {
+.c-js-fixed-mobile-screen-hamburger-exit-container {
   justify-self: end;
-  margin-top: 1.2em;
   position: relative;
-  left: .5em; }
+  left: .5em;
+  top: .1em; }
 
-.c-fixed-mobile-screen-hamburger-exit-container::after {
+.c-js-fixed-mobile-screen-hamburger-exit-container::after {
   content: "";
   display: block;
   position: absolute;
@@ -689,11 +739,7 @@ textarea {
   display: none; }
   @media (min-width: 43.125rem) {
     .c-big-screen-background {
-      display: block;
-      background-image: url(../img/header.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center; } }
+      display: block; } }
 
 .c-big-screen-background-hero {
   background-image: url(../img/metallicaHome.jpeg);
@@ -724,11 +770,9 @@ textarea {
 .c-big-screen-tour-dates-img {
   width: 300px; }
 
-.c-small-screen {
-  background-color: #121318; }
-  @media (min-width: 43.125rem) {
-    .c-small-screen {
-      display: none; } }
+@media (min-width: 43.125rem) {
+  .c-small-screen {
+    display: none; } }
 
 .c-small-screen-background {
   background-image: url(../img/header.png);
@@ -769,12 +813,15 @@ textarea {
   margin-top: 0; }
   @media (min-width: 43.125rem) {
     .c-little-blurb-before-news-title {
-      background-color: #000;
+      background-image: url(../img/header.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
       padding: 1em 0;
-      font-size: 3.2rem; } }
+      font-size: 3.5rem; } }
   @media (min-width: 65rem) {
     .c-little-blurb-before-news-title {
-      font-size: 4.2rem; } }
+      font-size: 4.5rem; } }
 
 .c-little-blurb-before-news-title--margin {
   position: relative;
@@ -870,8 +917,14 @@ textarea {
     .c-little-blurb-before-news-forty-year-anniversary-button-info {
       font-size: 2.2rem; } }
 
-.c-latest-news {
-  background-color: #121318; }
+.c-little-blurb-before-news-forty-year-anniversary-button-info::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 .c-latest-news-max-width {
   max-width: 1300px;
@@ -885,7 +938,10 @@ textarea {
   height: .5rem;
   left: 0;
   padding-top: 2em;
-  background-color: black; }
+  background-image: url(../img/edge_bottom.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 .c-latest-news--background-and-postion-change {
   position: relative;
@@ -925,17 +981,10 @@ textarea {
   height: auto !important; }
 
 .c-latest-news-articles-photo-img {
-  width: 600px;
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden; }
-  @media (min-width: 39.625rem) {
-    .c-latest-news-articles-photo-img {
-      width: 400px; } }
-  @media (min-width: 57.0625rem) {
-    .c-latest-news-articles-photo-img {
-      width: 500px; } }
 
 @media (min-width: 65rem) {
   .c-latest-news-articles-date {
@@ -974,6 +1023,15 @@ textarea {
     .c-latest-news-info {
       font-size: 2.2rem; } }
 
+.c-latest-news-info::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
 .c-upcoming-shows {
   background-image: url(../img/bg_default.jpg);
   background-repeat: no-repeat;
@@ -999,7 +1057,7 @@ textarea {
   margin-top: 1em; }
   @media (min-width: 65rem) {
     .c-upcoming-shows-title {
-      font-size: 3.5rem;
+      font-size: 4.5rem;
       padding-bottom: 2em; } }
 
 .c-upcoming-shows-container {
@@ -1043,7 +1101,9 @@ textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2em 0; }
+  padding: 2em 0;
+  margin-top: 7em;
+  margin-bottom: 5em; }
 
 .c-upcoming-shows-info {
   text-transform: uppercase;
@@ -1052,6 +1112,15 @@ textarea {
   text-align: center;
   font-weight: 900;
   font-size: 2rem; }
+
+.c-upcoming-shows-info::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 .c-music {
   background-color: black; }
@@ -1078,7 +1147,7 @@ textarea {
 
 @media (min-width: 65rem) {
   .c-music-title {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     padding: 2em 0; } }
 
 .c-music-container {
@@ -1092,7 +1161,7 @@ textarea {
   list-style-type: none;
   padding: 0; }
 
-.c-music-container-list-item {
+.c-music-image-container-border-red {
   border: 5px solid #b21319; }
 
 .c-music-button-container {
@@ -1109,9 +1178,6 @@ textarea {
   text-align: center;
   font-weight: 900;
   font-size: 2rem; }
-
-.c-bands-photos {
-  background-color: #121318; }
 
 .c-bands-photos--background-and-postion-change {
   background-color: transparent;
@@ -1132,7 +1198,7 @@ textarea {
 
 @media (min-width: 65rem) {
   .c-bands-photos-title {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     padding: 2em 0; } }
 
 .c-bands-photos-container {
@@ -1141,6 +1207,10 @@ textarea {
   justify-content: center;
   padding: 1em;
   margin-top: -2.5em; }
+
+@media (min-width: 65rem) {
+  .c-bands-photos-text-container-date {
+    font-size: 2.2rem; } }
 
 .c-bands-photos-container-list {
   margin: 0;
@@ -1153,12 +1223,15 @@ textarea {
 .c-bands-photos-container-img {
   margin: 0 auto; }
 
+.c-bands-photos-text-container {
+  padding: .5em 0; }
+
 .c-bands-photos-location {
-  text-align: center;
-  line-height: 1.1;
-  font-size: .9em;
-  color: white;
-  font-weight: inherit; }
+  color: #b21319;
+  font-family: "Hessian", sans-serif; }
+  @media (min-width: 65rem) {
+    .c-bands-photos-location {
+      font-size: 2.5rem; } }
 
 .c-bands-photos-location-style {
   margin-left: 1.5em; }

@@ -96,7 +96,11 @@ $music_query = "SELECT * FROM music_table";
 
   <article class="c-news-stories-DELETE-container">
 
-          <div class="c-news-stories-DELETE-container-for-anchor-cover h-position c-latest-news-img-container">
+            <!---This class below does nothing, was just used as a parent class in case it was needed for a flex or a  grid child ---->
+
+    <div class="h-height-auto">
+
+      <!--- end of height auto class---->
 
   
       <img src="../img/<?php echo $row['img_ref']?>" class="c-news-stories-DELETE-img-itself c-music-container-list-item c-music-DELETE-img-album-change"/>

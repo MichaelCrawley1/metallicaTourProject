@@ -14,96 +14,200 @@
 </head>
 
 <body>
-	<!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enabled the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
+	<!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enable the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
 
         c- = this equals a component that is likely to get reused
         l- = this equals a class that acts as block layout like a reusable container for example
         h- = the h prefix is to signify helper classes like clearfix to get elements back in the html document flow
         js- = this is to signify when we need to use JavaScript on an block or a block element to bring in dynamic functionality.
         c-js- = will refer to both components and components that rely on JavaScript functionality
-        c-mq- = could be for media queries.
+        c-mq- = will be for media queries.
 
-        In addition, throughout this document there will be a comment that says, 'modifier here, please see css comments for what this does or what it is for'.  This way by using the find search tool provided by the editor we can quickly find the modifier we are looking for.  Might be an advantage to say for media queries too.
+        In addition, throughout this document there will be a comment that says, "MODIFIER HERE, PLEASE SEE CSS COMMENTS FOR WHAT THIS DOES OR WHAT IT IS FOR".  By using the find search tool provided by the editor (control or command F) we can quickly find the modifier we are looking for and then look at the corresponding css file to see what it does.  
         ---->
 
+        <!-----AND EXPLANATION OF THE CSS GRID SYSTEM USED BELOW---->
+
+
+        <!---below is the class of the standard grid and is for rows only (this is used for the vertical layout of the pages), each row is to correspond with a new section of the html.  By using the grid system this way rather than rows and columns from the beginning, helps to keep the html semantic. Alternatively, using the grid for rows and columns at the beginning of the design means the html will have to be flattened for it to work.  When the, 'subgrid' property becomes more widespread with browsers perhaps this will not need to be the case, but for now, a grid for rows only for the vertical layout and then horizontal grids in each section thereafter if the need arises to keep it semantic----> 
+
         <div class="l-basic-grid-home-page h-grid">
+
+        	<!--- the reused header is down below, both for the mobile sized screen and the desktop size, mainly for the navigation system --->
         	<?php
 require_once ("../abstractHeader.php");
 
 ?>
 
+
+
+<!---- this section is for the mobile screens only, the only difference from the mobile size to the larger screen is there is no hero image here and the tour dates image is a different size---->
+
+
+<!----this class is set to display none at bigger screen sizes (ipad) so the big screen section can take over---->
+
         		<section class="c-small-screen">
-
+<!-- this class sets the background image and centres it, (which is the grey coloured background) -->
         			<div class="c-small-screen-background">
+
+     <!-- this class is the image container with flex to centre it -->
         				<div class="c-small-screen-image-container h-flex">
-
+       <!-- this image class has different widths to keep the image
+        					looking acceptable at different screen sizes also set to position relative for the pseudo::before anchor technique to work -->
         				<img src="../img/promo_tour.png" alt="image for tour dates" class="c-small-screen-tour-dates-img h-position">
+       <!-- end of image class for different widths at different screen sizes -->
+
+       <!-- this anchor class uses the pseudo before:: technique i got from the BBC website, which spans the whole image (providing the parent is set to display: relative), this prevents having anchor tags as the parent to block elements like Div's -->
         				<a href="tour.php" class="c-small-screen-tour-dates-img-link" ></a>
-
-
-        			</div>
-        				
+        				<!-- end of anchor tag with pseudo before:: -->
 
         			</div>
+       <!-- end of promo tour image centre container --> 				
 
-        	</section>
+        			</div>
 
+<!-- end of centring background image -->
+
+	</section>
+
+   <!-- end of small screen section and background colour to black -->
+
+
+
+<!--- this is the big screen section where there is a hero image and the tour dates image is put at the bottom of the hero image ----->
+
+<!-- This section class is set to display none at small screen sizes then display block at big screen sizes (ipad) to swap with the mobile display non-hero layout -->
         			<section class="c-big-screen-background">
-
+<!-- this class sets the hero image (Metallica band photo) for the big screen and centres it -->
         				<div class="c-big-screen-background-hero">
+        					<!-- this class is important for the layout of the promo tours image (which acts as a button). It is set to display flex with flex direction column and an explicit height of 500px so we can use the, 'justify-content:flex-end;' property to move the image down to the bottom and, 'align-items: center;' to have the image at the bottom middle -->
 
         					<div class="c-big-screen-image-container h-flex">
 
-        				<a href="tour.php" class="c-big-screen-tour-dates-img-link" ><img src="../img/promo_tour.png" alt="image for tour dates" class="c-big-screen-tour-dates-img"></a>
+        						<!-- just a semantic anchor tag around the image that takes us to the tour page -->
+
+        				<a href="tour.php" class="c-big-screen-tour-dates-img-link" >
+
+        					<!-- width at different screen sizes to keep the tour dates image looking acceptable at different screen sizes -->
+        					<img src="../img/promo_tour.png" alt="image for tour dates" class="c-big-screen-tour-dates-img">
+        					<!-- end of the image looking acceptable at different screen sizes -->
+
+        				</a>
+
+        				<!-- end of the semantic anchor tag that takes us to the tour page. -->
 
 
         			</div>
 
+        			<!-- end of flex layout for the image -->
+
         				</div>
-        				
+        				<!-- end of hero image for big screen -->
 
         			</section>
+   <!-- end of display block at big screen sizes -->
+
+ <!---- end of section for big screen with hero included ----->
+
+
+ <!-----this section is an add on section, we don't see this again throughout the website, this is to highlight Metallica's anniversary  A point about this section is that the text is centred using the margin auto attribute on the left and right, no flex on this section except for the button container down below----->
 
         		
-
+<!-- this section class begins with making the background black  -->
+<!-- THE LITTLE BLURB SECTION -->
 	<section class="c-little-blurb-before-news">
 
+		<!-- this has a the grey background similar to the header and font styles and sizes for different screen sizes -->
+
 		<h1 class="c-little-blurb-before-news-title h-mobile-title"> Check it out</h1>
+
+		<!-- end of the grey background similar to the header and font styles and sizes for different screen sizes (being a display: block element means it the background will span the whole screen width automatically) -->
 		
+		<!-- this class only works on mobile screen sizes it swaps the hero image on big screens for the background of this section -->
 		<div class="c-little-blurb-before-news-img-container h-flex">
 
-			<!----<img src="../img/black-album-hero.jpg" alt="the whole metallica band playing in concert" class="c-little-blurb-before-news-img">
-
-				---->
+		
 			
 
 		</div>
+		<!-- end of background for mobile screen sizes -->
 
-		<h1 class="c-little-blurb-before-news-forty-year-anniversary-title">   METALLICA ANNOUNCES TWO 40TH ANNIVERSARY CONCERTS at: <span class="c-little-blurb-before-news-forty-year-anniversary-title-little-text"> SAN FRANCISCO,
-Jul 15, 2021</span> </h1>
+		<!-- this h1 class just has a max width of 650px on it with some styling and text align center with the margin auto centre technique at bigger screen sizes -->
+
+		<h1 class="c-little-blurb-before-news-forty-year-anniversary-title">   METALLICA ANNOUNCES TWO 40TH ANNIVERSARY CONCERTS at: 
+			<!-- this span class makes the h1 text smaller -->
+			<span class="c-little-blurb-before-news-forty-year-anniversary-title-little-text"> SAN FRANCISCO,
+Jul 15, 2021</span> 
+
+	<!-- end of smaller span h1 text -->
+
+</h1>
+
+<!-- end of max width on title with some styling and text align center with the margin auto centre technique at bigger screen sizes -->
+
+	<!-- just usual paragraph styling with some padding and margins -->
 	<p class="c-little-blurb-before-news-forty-year-anniversary-desc">
 		Metallica will celebrate its 40th anniversary with a pair of hometown shows for its fan club members, scheduled to take place Dec. 17 and 19 at San Francisco’s Chase Center. Each night will feature a different setlist, and tickets will be available for sale only to registered members of Metallica’s Fifth Member fan club through a lottery system. The shows, which mark the first time the band has returned to the home of the Golden State Warriors since performing with the San Francisco Symphony at its grand opening in September 2019, will be part of a four-day weekend honoring Metallica’s 40th year as a band.
 	</p>
+
+	<!-- end of paragraph styling with some padding and margins -->
+
+	<!-- this button container uses display flex with a max width of 650 px and margin left and right of auto to centre the section, this with align items property we can have it a flex start to get the button to line up at the left side of the paragraph text -->
 <div class="c-little-blurb-before-news-forty-year-anniversary-button-container h-flex">
-	<button class="c-button-mobile ">
+
+
+	<!--- these buttons are reused throughout the website and have the same style that was done at the beginning of the project, they also have a hover state as well and the colour goes a slightly darker red with a position relative for the anchors to span the whole area of the button rather than just the link ---->
+	<button class="c-button-mobile h-position ">
+
+		<!-- just some styling on the links and the pseudo before/after techniques used on most links, so the user has access to the whole button -->
 		
 		<a href="tour.php" class="c-little-blurb-before-news-forty-year-anniversary-button-info">
 			More Tour Dates
 		</a>
+
+		<!-- end of the styling of the links within the button and the before/after pseudo technique to access the whole button space -->
 	</button>
+
+	<!--- end of buttons having the same style and a hover state with a position relative for the anchors to span the whole area of the button rather than just the link ---->
 </div>
+
+<!-- end of this display flex button container with a max width and align items flex end property -->
 	</section>
 
+	<!-- end of the back background colour -->
+
+	<!-- END OF THE LITTLE BLURB SECTION -->
 
 
-	<section class="c-latest-news  ">
-		
+<!---- end of Metallica's anniversary section with the text being centred with margin left and right on auto, ------->
+
+
+<!----this is the summary of the news section, kept to a max of three stories, it follows a similar layout to that of the full news page on, 'news.php'---->
+
+
+<!-- just a semantic section class for the news data of the site, however there is a background image on the pseudo before part of this class-->
+
+<!-- THE NEWS SECTION -->
+	<section class="c-latest-news">
+
+
+		<!-- just a heading class with the project styles and fonts and with different font sizes at different screen sizes -->
 		<h1 class="c-latest-news-title h-mobile-title">Latest News</h1>
 
-		<div class="c-news-stories-DELETE-max-width">
+		<!-- end of heading class with the project styles and fonts and with different font sizes at different screen sizes -->
 
-		<div class="c-latest-news-container-for-grid h-grid">
+<!---this class down below is a utility class to keep the grid in a 1300px max container for the big screens ----->
 
+		<div class="l-for-card-grid-columns-max-width-container">
+
+
+
+		<!--- this class down below is the section grid column layout itself, this is for all the card type blocks like the music albums, the band photos and the news stories, this grid uses the auto-fit property with a minmax so it becomes responsive--->	
+
+
+		<div class="l-the-card-grid h-grid">
+
+	
 		<?php
 
 	
@@ -118,35 +222,52 @@ $news_query = "SELECT * FROM News_table LIMIT 3";
 
  while ($row = mysqli_fetch_array($data)){ ?>
 
+<!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
+ 	<article class="h-overflowH">
 
- 	<article class="c-latest-news-articles">
+ 
 
- 	  <div class="c-latest-news-articles-photo-container">
+ 	<!---This class below does nothing except overrides a previous height attribute (if needed), was just used as a parent class in case it was needed for a flex or a  grid child ---->
+
+ 	  <div class="h-height-auto">
+ 	  <!-- this helps the auto fit via a height on the image and a object fit cover so not to lose any aspect ratio -->
  	  	<img src="../img/<?php echo $row['img_ref']?>" class="c-latest-news-articles-photo-img"/>
+ 	  	<!---end of img class with height and object fit cover---->
  	  </div>
+
+ 	  <!--- end of height auto class---->
+
+ 	  <!---this class aligns the latest news text through padding---->
  	  <div class="c-latest-news-articles-text-container">
 
- 	  	<div class="c-latest-news-articles-body">
+ 	  <!--- this class changes the font size of the dates at different screen sizes --->
  	  		<div class="c-latest-news-articles-date"><?php echo $row['date']?>
- 	  	</div>
+ 	  	
  	  </div>
 
+ 	  <!---- end of font size change ---->
+
+
+ 	   <!----this class changes the font size and the colour to our red ---> 
  	  	<h3 class=c-latest-news-sub-title><?php echo $row['title']?></h3>
+
+            <!---- end of font size change and colour to our red ---->
+
+         <!----this paragraph class overrides the max width on our base paragraphs to auto, this needed doing because with the grid auto fit property the max width of the paragraph was preventing it from working----->
 
  	  	<p class="c-latest-news-blurb"><?php echo $row['description']?> </p>
 
- 	  <?php 
+ 	  	<!----end of the overriding paragraph width for grid auto-fit---->
 
-
- 	  
-
- 	 ?>
+ 	 
  	 </div>
+
+ 	 <!---end of the latest news text align through padding---->
 
  	
  </article>
 
-
+	<!----end of helper class for overflow hidden---->
 
 
 
@@ -163,22 +284,47 @@ mysqli_close($dbc);
 
 </div>
 
+<!----end of the auto-fit grid for the cards (images, album photos, stadium photos etc)----->
 
 
+<!-- because we have a max width set on this via the utility class we can use display flex with flex-start to keep the button on left hand side of the section container  -->
 <div class="c-latest-news-button-container h-flex">
-	<button class="c-button-mobile">
-		
+
+	<!-- just the button design used throughout the site changes to a larger button on bigger screen sizes, with position relative to enable the link below to span the whole button width and height -->
+	<button class="c-button-mobile h-position ">
+		<!-- just some style changes on this anchor link and the pseudo technique to enable the whole button square to be clickable for a better UX -->
 		<a href="news.php" class="c-latest-news-info">
 			more news
 		</a>
+
+
+		<!-- end of some style changes on this anchor link and the pseudo technique to enable the whole button square to be clickable for a better UX  -->
+
+
 	</button>
+		<!-- end of the button design used throughout the site changes to a larger button on bigger screen sizes with position relative to enable the link to span the whole button width and height  -->
 </div>
+<!-- end of the display flex with flex-start to keep the button on left hand side of the section container -->
+
 </div>
+
+<!----end of utility layout class for max width ---->	
 
 	</section>
 
+	<!-- end of the semantic section for the news data -->
+	<!-- END OF THE NEWS SECTION -->
+
+	<!-- this class stands as the semantic progress to the upcoming shows section, it does have a grey background effect on it and the before pseudo class has a background strip on it -->
+
+	<!-- THE TOUR SECTION -->
+
 	<section class="c-upcoming-shows">
+
+		<!-- the usual heading style with size changes at different screen sizes and margin and paddings -->
 		<h1 class="c-upcoming-shows-title h-mobile-title">Upcoming Shows</h1>
+
+		<!-- end of the usual heading style with size changes at different screen sizes and margin and paddings  -->
 
 		<?php
 
@@ -194,22 +340,39 @@ $tour_query = "SELECT * FROM Tour_table LIMIT 3";
 
  while ($row = mysqli_fetch_array($data)){ ?>
 
+ 	<!-- this is an interesting class, at mobile sizes it uses display flex as the default to centre the text but at bigger screen sizes it goes to max 1300px grid container with a three column grid with the third child, the, 'c-upcoming-shows-location' class at align-self end to stretch to the end of the page -->
+
  	<article class="c-upcoming-shows-container h-flex">
+
+ 		<!-- a semantic date class container -->
 
  	  <div class="c-upcoming-shows-date">
 
- 	  <?php 
 
+ 	  	<!-- this span class holds all the style of the date, with font size and and uppercase style -->
+ 	  	 <span class="c-upcoming-shows-month"><?php echo  $row['date'] ?></span>
 
- 	  echo'<span class="c-upcoming-shows-month">'  . $row['date']. '</span></div>';
- 	  echo '<div class="c-upcoming-shows-venue-container"> <h3 class="c-upcoming-shows-venue-subtitle h-mobile-title">'. $row['venue']. '</h3>
- 	 		</div>';
- 	 echo	' <div class="c-upcoming-shows-location">'. $row['state_country']. '</div>'; 
+ 	  	 <!-- end of the span class that holds all the style of the date, with font size and and uppercase style -->
 
- 	 ?>
+ 	  	</div>
+
+ 	  	<!-- end a semantic date class container -->
+
+ 	  	<!-- the usual style for our headings throughout this project with an added font size difference at different screen sizes -->
+
+ 	  <h3 class="c-upcoming-shows-venue-subtitle h-mobile-title"><?php echo $row['venue'] ?></h3>
+ 	 		<!-- end of the usual style for our headings throughout this project with an added font size difference at different screen sizes  -->
+
+ 	 		<!-- as said on the article class for this section this class being one of the childs of the grid's 3 columns uses align-self: end; to go to the far end of the column of the right to stretch to the end of the page like the first child does for the other side, it has font size changes for different screen sizes too -->
+ 	 	 <div class="c-upcoming-shows-location"> <?php echo $row['state_country']?> </div>
+
+ 	 	 <!-- end of the align-self: end and font size changes for different screen sizes -->
+
  	 
- 	
- </article>
+</article>
+
+ <!-- end of at mobile sizes it uses display flex as the default to centre the text but at bigger screen sizes it goes to max 1300px grid container with a three column grid, with the third child, the locations, at align-self end to stretch to the end of the page -->
+
  <?php 
 		
 
@@ -218,35 +381,57 @@ $tour_query = "SELECT * FROM Tour_table LIMIT 3";
 
 
 mysqli_close($dbc);
+
 ?>
 
-<div class="c-upcoming-shows-button-container h-flex">
-	<button class="c-button-mobile c-button-mobile--large">
+
+
+
+<!-- button container class here to centre the button using flex and some padding and margins -->
+<div class="l-tour-albums-band-photos-button-container h-flex">
+	<!-- just the button design used throughout the site changes to a larger button on bigger screen sizes, with position relative to enable the link to span the whole button width and height -->
+	<button class="c-button-mobile c-button-mobile--large h-position">
+
+		<!-- just some style changes on this anchor link and the pseudo technique to enable the whole button square to be clickable for a better UX -->
 		
-		<a href="tour.php" class="c-upcoming-shows-info">
+		<a href="tour.php" class="l-tour-albums-band-photos-button-link">
 			view more
 		</a>
+
+		<!-- end of some style changes on this anchor link and the pseudo technique to enable the whole button square to be clickable for a better UX  -->
 	</button>
+	<!-- end of the button design used throughout the site changes to a larger button on bigger screen sizes with position relative to enable the link to span the whole button width and height  -->
 </div>
+
+<!-- end of button container class here to centre the button using flex and some padding and margins  -->
 
 	</section>
 
-<?php
-/*
-require_once ("../header.php");
-*/
+	<!-- end of the semantic progress to the upcoming shows section, it does have a grey background effect on it and the before pseudo class has a background strip on it   -->
 
-?>
-	
+<!-- END OF THE TOUR SECTION -->
+
+<!-- a background colour of black to change the colour tone from what came before and a pseudo before class for the background image strip that precedes it -->
+
+<!-- THE MUSIC SECTION -->
 
 	<section class="c-music">
 
+		<!-- just the usual heading style for the site with different sizes for different screens and paddings -->
+
 		<h1 class="c-music-title h-mobile-title">Music</h1>
 
-		<div class="c-news-stories-DELETE-max-width">
+		<!--  end of the usual heading style for the site with different sizes for different screens and paddings -->
 
-		<div class="c-latest-news-container-for-grid h-grid">
+	<!---this class down below is a utility class to keep the grid in a 1300px max container for the big screens ----->
 
+		<div class="l-for-card-grid-columns-max-width-container">
+
+
+<!--- this class down below is the section grid column layout itself, this is for all the card type blocks like the music albums, the band photos and the news stories--->	
+
+
+		<div class="l-the-card-grid h-grid">
 		
 
 
@@ -266,18 +451,28 @@ $music_query = "SELECT * FROM music_table LIMIT 4";
 
  while ($row = mysqli_fetch_array($data)){ ?>
 
- 	<article class="c-news-stories-DELETE-container">
+ <!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
+ 	<article class="h-overflowH">
 
- 		<div class="c-news-stories-DELETE-container-for-anchor-cover h-position c-music-DELETE-container ">
+ 	
 
- 			 <!---the, 'c-music-DELETE-img-album-change' class is in its own comparted sass file---->
- 	  	<img class="c-news-stories-DELETE-img-itself c-music-DELETE-img-album-change" src="../img/<?php echo $row ['img_ref'];?>" />
+ 			<!---This class keeps the height auto with a border red colour on the albums---->
+
+ 	  <div class="h-height-auto c-music-image-container-border-red">
+
+ 		<!-- this utility class proves important for the auto-fit style grid when there is no content.  We need to explicitly set the height and width on these images for the auto-fit to work properly.  The reason being at default these are small images so there is a lot of empty space between them so to mitigate that we put on explicit heights and width - 300px height and 600px width seems to do it with no media queries 
+    -->
+ 	  	<img class="l-image-set-for-auto-fit-grid" src="../img/<?php echo $row ['img_ref'];?>" />
+
+ 	  	<!-- end of explicitly set the height and width on these images for the auto-fit to work, 300px height and 600px width seems to do it with no media queries   -->
 
 
  		</div>
+
+ 		 <!--- end of height auto class and border red on the images---->
  </article>
  	  	
-
+<!----end of helper class---->
  	  	
  	  
  	  
@@ -293,34 +488,73 @@ mysqli_close($dbc);
 ?>
 
 </div>
-</div>
+<!-- end of the layout auto-fit grid -->
 
 
 
 
 
-<div class="c-music-button-container h-flex">
-	<button class="c-button-mobile c-button-mobile--large">
+
+<!-- button container class here to centre the button using flex and some padding and margins -->
+<div class="l-tour-albums-band-photos-button-container h-flex">
+	<!-- just the button design used throughout the site changes to a larger button on bigger screen sizes, with position relative to enable the link to span the whole button width and height -->
+	<button class="c-button-mobile c-button-mobile--large h-position">
+
+		<!-- just some style changes on this anchor link and the pseudo technique to enable the whole button square to be clickable for a better UX -->
 		
-		<a href="music.php" class="c-music-info">
+		<a href="music.php" class="l-tour-albums-band-photos-button-link">
 			view more
 		</a>
+
+		<!-- end of some style changes on this anchor link and the pseudo technique to enable the whole button square to be clickable for a better UX  -->
 	</button>
+	<!-- end of the button design used throughout the site changes to a larger button on bigger screen sizes with position relative to enable the link to span the whole button width and height  -->
 </div>
+
+<!-- end of button container class here to centre the button using flex and some padding and margins  -->
+
+</div>
+
+<!----end of utility layout class for max width ---->	
+
+
 		
 
 	</section>
 
+	<!-- end of a background colour of black to change the colour tone from what came before and a pseudo before class for the background image strip that precedes it -->
+
+	<!-- END OF THE MUSIC SECTION -->
+
+	<!-- Basically a semantic class with a background strip image on the before pseudo tag -->
+
+	<!-- THE BAND PHOTOS SECTION -->
+
 	<section class="c-bands-photos">
+
+			<!-- just the usual heading style for the site with different sizes for different screens and paddings -->
 		
 		<h1 class="c-bands-photos-title h-mobile-title">Photos
 			
 
 		</h1>
 
-		<div class="c-news-stories-DELETE-max-width">
+			<!--  end of the usual heading style for the site with different sizes for different screens and paddings -->
 
-		<div class="c-latest-news-container-for-grid h-grid">
+
+
+<!---this class down below is a utility class to keep the grid in a 1300px max container for the big screens ----->
+
+		<div class="l-for-card-grid-columns-max-width-container">
+
+	
+
+<!--- this class down below is the section grid column layout itself, this is for all the card type blocks like the music albums, the band photos and the news stories--->	
+
+
+		<div class="l-the-card-grid h-grid">
+
+	
 
 
 <?php
@@ -337,24 +571,41 @@ $photo_query = "SELECT * FROM photo_table limit 4";
 
  while ($row = mysqli_fetch_array($data)){ ?>
 
- 	<article class="c-news-stories-DELETE-container">
+ 	<!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
+ 	<article class="h-overflowH">
 
- 		<div class="h-position  h-height400 h-padding">
+ 	
+ 		<!-- just a div container to keep all the content in  -->
+ 		<div class="h-position">
 
- 			 <!---the, 'c-music-DELETE-img-album-change' class is in its own comparted sass file---->
- 	  	<img class="c-news-stories-DELETE-img-itself c-music-DELETE-img-album-change" src="../img/<?php echo $row['img_ref']?>" />
- 	  	<div class="c-news-stories-DELETE-info-container ">
- 	  		<div class="c-news-stories-DELETE-date"><?php echo $row['date']?>
+ 				<!-- this utility class proves important for the auto-fit style grid when there is no content.  We need to explicitly set the height and width on these images for the auto-fit to work properly.  The reason being at default these are small images so there is a lot of empty space between them so to mitigate that we put on explicit heights and width - 300px height and 600px width seems to do it with no media queries 
+    -->
+ 	  	<img class="l-image-set-for-auto-fit-grid" src="../img/<?php echo $row['img_ref']?>" />
+
+ 		<!-- end of explicitly set the height and width on these images for the auto-fit to work, 300px height and 600px width seems to do it with no media queries   -->
+
+
+
+ 	 <!-- a semantic container to hold the text in with vertical padding -->
+ 	  	<div class="c-bands-photos-text-container ">
+ 	  		 <!--- this class changes the font size of the dates at different screen sizes --->
+ 	  		<div class="c-bands-photos-text-container-date"><?php echo $row['date']?>
  	  	</div>
- 	  	<!---this class is from the tour section, just testing this what it looks like--->
- 	  	<div class="c-upcoming-shows-location"> <?php echo $row['state_country']?>  </div> 
+
+ 	  	<!-- end of the changes the font size of the dates at different screen sizes -->
+ 	  	<!-- this class has our red colour and the fancy font with it, it also changes the font size at different screen sizes -->
+ 	  	<div class="c-bands-photos-location"> <?php echo $row['state_country']?> </div>
+ 	  	<!-- end of this class that has our red colour and the fancy font with it, it also changes the font size at different screen sizes --> 
 
 		</div>
+
+		<!-- end of a semantic container to hold the text in with vertical padding -->
  	 
  	
  </div>
+ <!-- end of div container to keep all the content in  -->
 </article>
-		
+		<!-- end of our helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden -->
 		
  	 
  <?php 
@@ -368,23 +619,40 @@ mysqli_close($dbc);
 ?>
 
 </div>
-</div>
+
+<!-- end of the class that is for all the card type blocks like the music albums, the band photos and the news stories  -->
 
 
 
 
 
-<div class="c-bands-photos-button-container h-flex">
-	<button class="c-button-mobile c-button-mobile--large">
+
+<!-- button container class here to centre the button using flex and some padding and margins -->
+<div class="l-tour-albums-band-photos-button-container h-flex">
+	<!-- just the button design used throughout the site changes to a larger button on bigger screen sizes, with position relative to enable the link to span the whole button width and height -->
+	<button class="c-button-mobile c-button-mobile--large h-position">
+
+		<!-- just some style changes on this anchor link and the pseudo technique to enable the whole button square to be clickable for a better UX -->
 		
-		<a href="photos.php" class="c-bands-photos-info">
+		<a href="photos.php" class="l-tour-albums-band-photos-button-link">
 			view more
 		</a>
+
+		<!-- end of some style changes on this anchor link and the pseudo technique to enable the whole button square to be clickable for a better UX  -->
 	</button>
+	<!-- end of the button design used throughout the site changes to a larger button on bigger screen sizes with position relative to enable the link to span the whole button width and height  -->
 </div>
+
+<!-- end of button container class here to centre the button using flex and some padding and margins  -->
+
+</div>
+
+<!----end of utility layout class for max width ---->	
 	</section>
 
+<!-- end of the semantic section class with the background strip on the before pseudo element  -->
 
+<!-- END OF THE BAND PHOTO SECTION -->
 
 
 

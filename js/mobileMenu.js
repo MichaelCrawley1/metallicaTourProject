@@ -1,9 +1,9 @@
 function start() {
 
-    let hamburger = document.querySelector(".c-mobile-menu-hamburger-for-fat-fingers");
+    let hamburger = document.querySelector(".c-js-mobile-menu-hamburger-for-fat-fingers");
     let body = document.body;
 
-    let exitHamburgerMenu = document.querySelector(".c-fixed-mobile-screen-hamburger-exit-container");
+    let exitHamburgerMenu = document.querySelector(".c-js-fixed-mobile-screen-hamburger-exit-container");
 
 
     // list items to go to the correct part on the page and to close the menu//

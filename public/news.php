@@ -74,10 +74,15 @@ require_once ("../abstractHeader.php");
 
 <!----below is the component class section taken from the home page (product.php)this is getting reused to follow the same style display as the NEWS section (latest-news), the only difference is that there are the maximum entries here for the NEWS, not limited to three like in the home page (product.php).  We don't need a  hero image for this page, so I have taken this NEWS section towards the top of the page.  A few modifiers need to be in place then. One, we need to take out the black background on the section class(c-latest-news) and we need to amend the position to bring the section nearer to the hamburger mobile menu to enable a more presenting outlook  The modifiers are below---->
 	
-<section class="c-admin-DELETE-tour-dates h-flex c-latest-news-max-width">
+<!---this section down below uses the utility class to keep the grid in a 1300px max container for the big screens, also there is a class to keep the flex direction at a column  THINK ABOUT CHANGING THIS FIRST CLASS TO SOMETHING THAT WOULD RESONATE WITH THE HOME PAGE----->
+<section class="c-admin-DELETE-tour-dates h-flex l-for-card-grid-columns-max-width-container">
+
+
 	<h1 class="c-latest-news-title h-mobile-title">Latest News</h1>
 
-     <div class="c-news-stories-DELETE h-grid">
+     <!--- this class down below is the section grid column layout itself, this is for all the card type blocks like the music albums, the band photos and the news stories--->     
+
+  <div class="l-the-card-grid h-grid">
 
 <?php
 
@@ -93,28 +98,51 @@ $news_query = "SELECT * FROM News_table";
 
  while ($row = mysqli_fetch_array($data)){ ?>
 
- 	<article class="c-news-stories-DELETE-container">
+ 	<!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
+     <article class="h-overflowH">
 
-          <div class="c-news-stories-DELETE-container-for-anchor-cover h-position c-latest-news-img-container">
-      <img src="../img/<?php echo $row['img_ref']?>" class="c-news-stories-DELETE-img-itself"/>
+   
+
+               <!---This class below does nothing, was just used as a parent class in case it was needed for a flex or a  grid child ---->
+          <div class="h-height-auto">
+
+     <!---this class is what enables the auto-fit to work, changing the width at different screen sizes and using object-fit cover to maintain aspect ratio on the images---->
+          <img src="../img/<?php echo $row['img_ref']?>" class="c-latest-news-articles-photo-img"/>
+          <!---end of img class width changes and object fit cover---->
     </div>
- 	  <div class="c-news-stories-DELETE-info-container c-news-stories-DELETE-info-container--no-padding">
-               <div class="c-news-stories-DELETE-date"><?php echo $row['date']?>
- 	  	</div>
- 	
 
+     <!--- end of height auto class---->
+ 	  <!---this class aligns the latest news text through padding---->
+       <div class="c-latest-news-articles-text-container">
+              <!--- this class changes the font size of the dates --->
+               <div class="c-latest-news-articles-date"><?php echo $row['date']?>
+          
+       </div>
+
+       <!---- end of font size change ---->
+ 	
+       <!----this class changes the font size and the color to our red ---> 
  	  	<h3 class=c-latest-news-sub-title><?php echo $row['title']?></h3>
 
-          <!----this element down below was causing the auto-fit grid to not work
-               got to overide the max width properites on the base paragraphs----->
+            <!---- end of font size change and colour to our red ---->
 
- 	  	<p class="c-latest-news-blurb"><?php echo $row['description']?> </p>
+       <!----this paragraph class overrides the max width on our base paragraphs, this needed doing because with the grid auto fit property the max width of the paragraph was preventing it from working----->
+
+          <p class="c-latest-news-blurb"><?php echo $row['description']?> </p>
+
+          <!----end of the overriding paragraph width for grid auto-fit---->
+
+ 	  	
 
  	  
  	 </div>
 
+           <!---end of the latest news text align through padding---->
+
  	
  </article>
+
+ <!----end of helper class for overlow hidden---->
  <?php 
 		
 
@@ -127,7 +155,12 @@ mysqli_close($dbc);
 
 
 </div>
+
+<!----end of the grid for the cards (images, album photos, stadium photos etc)----->
+
 </section>
+
+<!----end of utility layout class for max width on the section this time ---->  
 
 
 
