@@ -184,7 +184,7 @@
                 <!-- end of the image container with the logo increasing size at bigger screen sizes -->
 
 
-<!-- this class acts as one of the child's to the little horizontal grid (not the fixed mobile grid).  Therefore we can position it with the grid-column property (grid-column) and align-self property -->
+<!-- this class acts as one of the child's to the little horizontal grid (not the fixed mobile grid).  Therefore we can position it with the grid-column property (grid-column) and align-self: end property -->
             <div class="c-big-screen-nav-container">
                 <!-- just a semantic nav tag -->
                 <nav class="c-big-screen-nav">
