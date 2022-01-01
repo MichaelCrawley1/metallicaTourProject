@@ -457,10 +457,10 @@ img {
   display: block;
   top: -1em;
   bottom: -1em;
-  right: 10em;
   left: 0;
   border: 1px solid pink;
-  position: absolute; }
+  position: absolute;
+  width: 90px; }
 
 figure {
   margin: 0; }
@@ -576,6 +576,15 @@ textarea {
 
 .h-overflowH {
   overflow: hidden; }
+
+.h-take-background-strip-off-pseudo-before-element::before {
+  background-image: none !important; }
+
+.h-background-colour-our-grey {
+  background-color: #121317; }
+
+.h-background-colour-our-black {
+  background-color: black; }
 
 /*5. Layout*/
 .c-mobile-menu {
@@ -915,11 +924,6 @@ textarea {
   left: 0;
   right: 0; }
 
-.c-latest-news-max-width {
-  max-width: 1300px;
-  padding: 1em;
-  margin: 0 auto 4em; }
-
 .c-latest-news::before {
   content: "";
   display: block;
@@ -931,6 +935,11 @@ textarea {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
+
+.c-latest-news-max-width {
+  max-width: 1300px;
+  padding: 1em;
+  margin: 0 auto 4em; }
 
 .c-latest-news--background-and-postion-change {
   position: relative;
@@ -1039,9 +1048,6 @@ textarea {
   background-size: cover;
   background-position: center; }
 
-.c-upcoming-shows--before-take-background-off::before {
-  background-image: none; }
-
 .c-upcoming-shows-title {
   margin-top: 1em; }
   @media (min-width: 65rem) {
@@ -1122,14 +1128,6 @@ textarea {
       display: block;
       padding-bottom: 50%; } }
 
-.c-music {
-  background-color: black; }
-
-.c-music--background-and-postion-change {
-  background-color: transparent;
-  position: relative;
-  top: -2.3em; }
-
 .c-music::before {
   content: "";
   display: block;
@@ -1142,6 +1140,11 @@ textarea {
   background-size: cover;
   background-position: center; }
 
+.c-music--background-and-postion-change {
+  background-color: transparent;
+  position: relative;
+  top: -2.3em; }
+
 .c-music-background-image::before {
   background-image: none; }
 
@@ -1149,6 +1152,10 @@ textarea {
   .c-music-title {
     font-size: 4.5rem;
     padding: 2em 0; } }
+
+@media (min-width: 65rem) {
+  .c-music-title--padding-less {
+    padding: 1em 0; } }
 
 .c-music-container {
   flex-direction: column;
@@ -1200,6 +1207,10 @@ textarea {
   .c-bands-photos-title {
     font-size: 4.5rem;
     padding: 2em 0; } }
+
+@media (min-width: 65rem) {
+  .c-bands-photos-title--padding-less {
+    padding: 1em 0; } }
 
 .c-bands-photos-container {
   flex-direction: column;
@@ -1418,6 +1429,39 @@ textarea {
   font-family: "Hessian", sans-serif;
   font-size: 2rem; }
 
+.c-admin-add-item {
+  flex-direction: column;
+  align-items: center; }
+
+.c-admin-add-item-title {
+  text-align: center;
+  font-family: "Hessian", sans-serif;
+  color: #b21319;
+  text-transform: uppercase;
+  margin-top: 2em; }
+
+.c-admin-add-item-dates-desc {
+  text-transform: capitalize;
+  margin: 1em 0; }
+
+.c-admin-add-item-dates-input {
+  margin: 1em 0; }
+
+.c-admin-add-item-dates-submit-button-container {
+  margin: 4em 0;
+  flex-direction: column;
+  align-items: center; }
+
+.c-admin-confirm-add-item-to-db-container {
+  margin-top: 2em; }
+
+.c-admin-confirm-add-item-to-db-desc {
+  color: #b21319; }
+
+.c-admin-confirm-add-item-to-db-links {
+  text-decoration: none;
+  color: #fff; }
+
 .c-admin-add-tour-dates {
   flex-direction: column;
   align-items: center; }
@@ -1466,19 +1510,6 @@ textarea {
   font-family: "Hessian", sans-serif;
   color: #b21319;
   text-align: center; }
-
-.c-admin-confirm-add-tour-desc-container {
-  margin-top: 2em;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 0.5em; }
-
-.c-admin-confirm-add-tour-desc {
-  color: #b21319; }
-
-.c-admin-confirm-add-tour-desc-links {
-  text-decoration: none;
-  color: #fff; }
 
 .c-admin-DELETE-tour-dates {
   padding: 1em;

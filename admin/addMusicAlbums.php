@@ -60,7 +60,7 @@ require_once ("header.php");
 
 <!---this parent section comes from the, 'add tour' admin page, because stylistically, the layout is the same, for any modifications, that will be highlighted with a class specfic for its category, 'tour', 'news', 'photos' etc. ---->
 		
-<section class="c-admin-add-tour-dates h-flex h-position">
+<section class="c-admin-add-item h-flex h-position">
 
 
 	<!----reusable component icon to go back a page----->
@@ -73,17 +73,17 @@ require_once ("header.php");
 
 
 
-<h1 class="c-admin-add-tour-dates-title">Add A Metallica Album Cover</h1>
+<h1 class="c-admin-add-item-title">Add A Metallica Album Cover</h1>
 
 
 
 
-<form method="post" action="confirmMusicAlbum.php" class="c-admin-add-tour-dates-form h-padding" enctype="multipart/form-data" />
+<form method="post" action="confirmMusicAlbum.php" class="c-admin-add-item-form h-padding" enctype="multipart/form-data" />
 
-<p class="c-admin-add-tour-dates-desc">Add an image: <input type="file" name="fileToUpload"  id="fileToUpload" size="40"
-maxlength="50" class="c-admin-add-tour-dates-input" required ></p>
+<p class="c-admin-add-item-dates-desc">Add an image: <input type="file" name="fileToUpload"  id="fileToUpload" size="40"
+maxlength="50" class="c-admin-add-item-dates-input" required ></p>
 
-<div class="c-admin-add-tour-dates-submit-button-container h-flex">
+<div class="c-admin-add-item-dates-submit-button-container h-flex">
 <button class="c-button-mobile c-button-mobile--large h-uppercase" type="submit" name="submit"  >Submit</button>
 </div>
 </form>

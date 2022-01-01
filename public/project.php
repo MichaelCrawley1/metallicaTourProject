@@ -188,7 +188,7 @@ Jul 15, 2021</span>
 <!-- just a semantic section class for the news data of the site, however there is a background image on the pseudo before part of this class-->
 
 <!-- THE NEWS SECTION -->
-	<section class="c-latest-news">
+	<section class="c-latest-news h-background-colour-our-black">
 
 
 		<!-- just a heading class with the project styles and fonts and with different font sizes at different screen sizes -->
@@ -220,63 +220,13 @@ $news_query = "SELECT * FROM News_table LIMIT 3";
 
  $data = mysqli_query($dbc, $news_query);
 
- while ($row = mysqli_fetch_array($data)){ ?>
-
-<!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
- 	<article class="h-overflowH">
-
- 
-
- 	<!---This class below does nothing except overrides a previous height attribute (if needed), was just used as a parent class in case it was needed for a flex or a  grid child ---->
-
- 	  <div class="h-height-auto">
- 	  <!-- this helps the auto fit via a height on the image and a object fit cover so not to lose any aspect ratio -->
- 	  	<img src="../img/<?php echo $row['img_ref']?>" class="c-latest-news-articles-photo-img"/>
- 	  	<!---end of img class with height and object fit cover---->
- 	  </div>
-
- 	  <!--- end of height auto class---->
-
- 	  <!---this class aligns the latest news text through padding---->
- 	  <div class="c-latest-news-articles-text-container">
-
- 	  <!--- this class changes the font size of the dates at different screen sizes --->
- 	  		<div class="c-latest-news-articles-date"><?php echo $row['date']?>
- 	  	
- 	  </div>
-
- 	  <!---- end of font size change ---->
+ while ($row = mysqli_fetch_array($data)){
 
 
- 	   <!----this class changes the font size and the colour to our red ---> 
- 	  	<h3 class=c-latest-news-sub-title><?php echo $row['title']?></h3>
-
-            <!---- end of font size change and colour to our red ---->
-
-         <!----this paragraph class overrides the max width on our base paragraphs to auto, this needed doing because with the grid auto fit property the max width of the paragraph was preventing it from working----->
-
- 	  	<p class="c-latest-news-blurb"><?php echo $row['description']?> </p>
-
- 	  	<!----end of the overriding paragraph width for grid auto-fit---->
-
- 	 
- 	 </div>
-
- 	 <!---end of the latest news text align through padding---->
-
- 	
- </article>
-
-	<!----end of helper class for overflow hidden---->
+ require('newsStoriesWhileLoop.php'); 
 
 
-
-
- <?php 
-		
-
-
- 	} 
+} 
 
 
 mysqli_close($dbc);
@@ -345,15 +295,7 @@ $tour_query = "SELECT * FROM Tour_table LIMIT 3";
  		
 require("tourDatesWhileLoop.php");
 
-
-
- 	
-
- 
-		
-
-
- 	} 
+} 
 
 
 mysqli_close($dbc);
@@ -387,11 +329,13 @@ mysqli_close($dbc);
 
 <!-- END OF THE TOUR SECTION -->
 
-<!-- a background colour of black to change the colour tone from what came before and a pseudo before class for the background image strip that precedes it -->
+
 
 <!-- THE MUSIC SECTION -->
 
-	<section class="c-music">
+<!-- a helper class of background colour of black to change the colour tone from what came before and a pseudo before class for the background image strip that precedes it -->
+
+	<section class="c-music h-background-colour-our-black">
 
 		<!-- just the usual heading style for the site with different sizes for different screens and paddings -->
 
@@ -425,39 +369,11 @@ $music_query = "SELECT * FROM music_table LIMIT 4";
 
  $data = mysqli_query($dbc, $music_query);
 
- while ($row = mysqli_fetch_array($data)){ ?>
+ while ($row = mysqli_fetch_array($data)){
 
- <!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
- 	<article class="h-overflowH">
-
- 	
-
- 			<!---This class keeps the height auto with a border red colour on the albums---->
-
- 	  <div class="h-height-auto c-music-image-container-border-red">
-
- 		<!-- this utility class proves important for the auto-fit style grid when there is no content.  We need to explicitly set the height and width on these images for the auto-fit to work properly.  The reason being at default these are small images so there is a lot of empty space between them so to mitigate that we put on explicit heights and width - 300px height and 600px width seems to do it with no media queries 
-    -->
- 	  	<img class="l-image-set-for-auto-fit-grid" src="../img/<?php echo $row ['img_ref'];?>" />
-
- 	  	<!-- end of explicitly set the height and width on these images for the auto-fit to work, 300px height and 600px width seems to do it with no media queries   -->
-
-
- 		</div>
-
- 		 <!--- end of height auto class and border red on the images---->
- </article>
+ require("musicAlbumsWhileLoop.php");
  	  	
-<!----end of helper class---->
- 	  	
- 	  
- 	  
- 	 
- <?php 
-		
-
-
- 	} 
+ } 
 
 
 mysqli_close($dbc);
@@ -545,50 +461,13 @@ $photo_query = "SELECT * FROM photo_table limit 4";
 
  $data = mysqli_query($dbc, $photo_query);
 
- while ($row = mysqli_fetch_array($data)){ ?>
+ while ($row = mysqli_fetch_array($data)){ 
 
- 	<!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
- 	<article class="h-overflowH">
+
+ 	require('bandPhotosWhileLoop.php');
 
  	
- 		<!-- just a div container to keep all the content in  -->
- 		<div class="h-position">
-
- 				<!-- this utility class proves important for the auto-fit style grid when there is no content.  We need to explicitly set the height and width on these images for the auto-fit to work properly.  The reason being at default these are small images so there is a lot of empty space between them so to mitigate that we put on explicit heights and width - 300px height and 600px width seems to do it with no media queries 
-    -->
- 	  	<img class="l-image-set-for-auto-fit-grid" src="../img/<?php echo $row['img_ref']?>" />
-
- 		<!-- end of explicitly set the height and width on these images for the auto-fit to work, 300px height and 600px width seems to do it with no media queries   -->
-
-
-
- 	 <!-- a semantic container to hold the text in with vertical padding -->
- 	  	<div class="c-bands-photos-text-container ">
- 	  		 <!--- this class changes the font size of the dates at different screen sizes --->
- 	  		<div class="c-bands-photos-text-container-date"><?php echo $row['date']?>
- 	  	</div>
-
- 	  	<!-- end of the changes the font size of the dates at different screen sizes -->
- 	  	<!-- this class has our red colour and the fancy font with it, it also changes the font size at different screen sizes -->
- 	  	<div class="c-bands-photos-location"> <?php echo $row['state_country']?> </div>
- 	  	<!-- end of this class that has our red colour and the fancy font with it, it also changes the font size at different screen sizes --> 
-
-		</div>
-
-		<!-- end of a semantic container to hold the text in with vertical padding -->
- 	 
- 	
- </div>
- <!-- end of div container to keep all the content in  -->
-</article>
-		<!-- end of our helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden -->
-		
- 	 
- <?php 
-		
-
-
- 	} 
+ 	 } 
 
 
 mysqli_close($dbc);
@@ -645,6 +524,7 @@ require_once ("../abstractFooter.php");
 
 
 </div>
+<!-- end of the row layout grid for the home page -->
 </body>
 </html>
 

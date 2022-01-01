@@ -43,17 +43,26 @@ if($_SESSION['addBandPhotos']['img']!="noimage.png"){
 </head>
 
 <body>
-	<!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enabled the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
+	<!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enable the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
 
         c- = this equals a component that is likely to get reused
         l- = this equals a class that acts as block layout like a reusable container for example
         h- = the h prefix is to signify helper classes like clearfix to get elements back in the html document flow
         js- = this is to signify when we need to use JavaScript on an block or a block element to bring in dynamic functionality.
         c-js- = will refer to both components and components that rely on JavaScript functionality
-        c-mq- = could be for media queries.
+        c-mq- = will be for media queries.
 
-        In addition, throughout this document there will be a comment that says, 'modifier here, please see css comments for what this does or what it is for'.  This way by using the find search tool provided by the editor we can quickly find the modifier we are looking for.  Might be an advantage to say for media queries too.
+        In addition, throughout this document there will be a comment that says, "MODIFIER HERE, PLEASE SEE CSS COMMENTS FOR WHAT THIS DOES OR WHAT IT IS FOR".  By using the find search tool provided by the editor (control or command F) we can quickly find the modifier we are looking for and then look at the corresponding css file to see what it does.  
         ---->
+
+        <!-----AND EXPLANATION OF THE CSS GRID SYSTEM USED BELOW---->
+
+
+        <!---below is the class of the standard grid and is for rows only (this is used for the vertical layout of the pages), each row is to correspond with a new section of the html.  By using the grid system this way rather than rows and columns from the beginning, helps to keep the html semantic. Alternatively, using the grid for rows and columns at the beginning of the design means the html will have to be flattened for it to work.  When the, 'subgrid' property becomes more widespread with browsers perhaps this will not need to be the case, but for now, a grid for rows only for the vertical layout and then horizontal grids in each section thereafter if the need arises to keep it semantic----> 
+
+        <!-- this is the admin grid as it has less rows than the home page -->
+
+
 
         <div class="l-basic-grid-admin-and-c-panel h-grid">
         	<?php
@@ -64,7 +73,7 @@ require_once ("header.php");
 
 <!---this parent section comes from the, 'add tour' admin page, because stylistically, the layout is the same, for any modifications, that will be highlighted with a class specfic for its category, 'tour', 'news', 'photos' etc. ---->
 		
-<section class="c-admin-add-tour-dates h-flex h-position h-margin-bottom">
+<section class="c-admin-add-item h-flex h-position h-margin-bottom">
 
 
 	<!----reusable component icon to go back a page----->
@@ -75,23 +84,23 @@ require_once ("header.php");
     </div>
 <!----end of reusable component----->
 
-<h1 class="c-admin-add-tour-dates-title">Enter details for the new Band Photos</h1>
+<h1 class="c-admin-add-item-title">Enter details for the new Band Photos</h1>
 
 
 
-<form method="post" action="confirmAddBandPhoto.php" class="c-admin-add-tour-dates-form h-padding" enctype="multipart/form-data" />
+<form method="post" action="confirmAddBandPhoto.php" class="c-admin-add-item-form h-padding" enctype="multipart/form-data" />
 
 
-	<p class="c-admin-add-tour-dates-desc">Add a date: <input type="date" name="date" value="<?php echo $_SESSION['addBandPhotos']['date'];?>" size="40"
-maxlength="50" class="c-admin-add-tour-dates-input" required /></p>
+	<p class="c-admin-add-item-dates-desc">Add a date: <input type="date" name="date" value="<?php echo $_SESSION['addBandPhotos']['date'];?>" size="40"
+maxlength="50" class="c-admin-add-item-dates-input" required /></p>
 
-<p class="c-admin-add-tour-dates-desc">Insert state or country of tour: <input type="text" name="state_country" value="<?php echo $_SESSION['addBandPhotos']['state_country'];?>" size="40"
-maxlength="50" class="c-admin-add-tour-dates-input" required /></p>
+<p class="c-admin-add-item-dates-desc">Insert state or country of tour: <input type="text" name="state_country" value="<?php echo $_SESSION['addBandPhotos']['state_country'];?>" size="40"
+maxlength="50" class="c-admin-add-item-dates-input" required /></p>
 
-<p class="c-admin-add-tour-dates-desc">Add an image: <input type="file" name="fileToUpload"  id="fileToUpload" size="40"
-maxlength="50" class="c-admin-add-tour-dates-input" required ></p>
+<p class="c-admin-add-item-dates-desc">Add an image: <input type="file" name="fileToUpload"  id="fileToUpload" size="40"
+maxlength="50" class="c-admin-add-item-dates-input" required ></p>
 
-<div class="c-admin-add-tour-dates-submit-button-container h-flex">
+<div class="c-admin-add-item-dates-submit-button-container h-flex">
 <button class="c-button-mobile c-button-mobile--large h-uppercase" type="submit" name="submit"  >Submit</button>
 </div>
 </form>
@@ -105,7 +114,7 @@ if (isset($_GET['signup'])){
 
   if ($correctForm == "char"){?>
 
-      <p class="c-admin-add-tour-dates-desc h-font-size h-text-align">Entries must begin with letters for venue and location of tour!</p>
+      <p class="c-admin-add-item-dates-desc h-font-size h-text-align">Entries must begin with letters for venue and location of tour!</p>
 
 
 
@@ -189,6 +198,8 @@ require_once ("../abstractFooter.php");
 ?>
 
 </div>
+
+<!-- end of the admin grid, less rows than the home page of the website.  -->
 </body>
 </html>
 

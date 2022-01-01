@@ -31,7 +31,7 @@
 
         <!---below is the class of the standard grid and is for rows only (this is used for the vertical layout of the pages), each row is to correspond with a new section of the html.  By using the grid system this way rather than rows and columns from the beginning, helps to keep the html semantic. Alternatively, using the grid for rows and columns at the beginning of the design means the html will have to be flattened for it to work.  When the, 'subgrid' property becomes more widespread with browsers perhaps this will not need to be the case, but for now, a grid for rows only for the vertical layout and then horizontal grids in each section thereafter if the need arises to keep it semantic----> 
 
-        <!-- a grid layout for less rows than the hone page, this grid is all rows -->
+        <!-- this grid is all rows but less rows than the home page. -->
 
         <div class="l-basic-grid-tour-page h-grid">
         	<?php
@@ -39,12 +39,14 @@ require_once ("../abstractHeader.php");
 
 ?>
 
-  <!-- this class stands as the semantic progress to the upcoming shows section, it does have a grey background effect on it and the before pseudo class has a background strip on it, we have an amendment class on here to take out the pseudo class effect, it is not needed here -->
+  <!-- this class stands as the semantic element to the upcoming shows section, it does have a grey background effect on it and the before pseudo class has a background strip on it, we have an amendment class on here to take out the pseudo class effect, it is not needed here -->
 
 <!-- THE TOUR SECTION -->
 
-<!-- MODIFIER HERE, PLEASE SEE CSS COMMENTS FOR WHAT THIS DOES OR WHAT IT IS FOR -->
-	<section class="c-upcoming-shows c-upcoming-shows--before-take-background-off">
+<!-- a helper class to take off the background image strip divider that is present in the home page -->
+
+
+	<section class="c-upcoming-shows h-take-background-strip-off-pseudo-before-element">
 
 		<!-- the usual heading style with size changes at different screen sizes and margin and paddings -->
 		<h1 class="c-upcoming-shows-title h-mobile-title">Upcoming Shows</h1>
@@ -121,7 +123,7 @@ require_once ("../abstractFooter.php");
 
 
 </div>
-<!-- end of the grid layout and this grid layout is lees than the home page this grid is all rows -->
+<!-- end of the grid layout and this grid layout is less than the home page this grid is all rows -->
 </body>
 </html>
 

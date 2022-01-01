@@ -63,17 +63,24 @@ $_SESSION['addTourDates3']['state_country'] = "";
 </head>
 
 <body>
-	<!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enabled the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
+	<!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enable the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
 
         c- = this equals a component that is likely to get reused
         l- = this equals a class that acts as block layout like a reusable container for example
         h- = the h prefix is to signify helper classes like clearfix to get elements back in the html document flow
         js- = this is to signify when we need to use JavaScript on an block or a block element to bring in dynamic functionality.
         c-js- = will refer to both components and components that rely on JavaScript functionality
-        c-mq- = could be for media queries.
+        c-mq- = will be for media queries.
 
-        In addition, throughout this document there will be a comment that says, 'modifier here, please see css comments for what this does or what it is for'.  This way by using the find search tool provided by the editor we can quickly find the modifier we are looking for.  Might be an advantage to say for media queries too.
+        In addition, throughout this document there will be a comment that says, "MODIFIER HERE, PLEASE SEE CSS COMMENTS FOR WHAT THIS DOES OR WHAT IT IS FOR".  By using the find search tool provided by the editor (control or command F) we can quickly find the modifier we are looking for and then look at the corresponding css file to see what it does.  
         ---->
+
+        <!-----AND EXPLANATION OF THE CSS GRID SYSTEM USED BELOW---->
+
+
+        <!---below is the class of the standard grid and is for rows only (this is used for the vertical layout of the pages), each row is to correspond with a new section of the html.  By using the grid system this way rather than rows and columns from the beginning, helps to keep the html semantic. Alternatively, using the grid for rows and columns at the beginning of the design means the html will have to be flattened for it to work.  When the, 'subgrid' property becomes more widespread with browsers perhaps this will not need to be the case, but for now, a grid for rows only for the vertical layout and then horizontal grids in each section thereafter if the need arises to keep it semantic----> 
+
+        <!-- this is the admin grid as it has less rows than the home page -->
 
         <div class="l-basic-grid-admin-and-c-panel h-grid">
         	<?php
@@ -81,40 +88,82 @@ require_once ("header.php");
 
 ?>
 
-<!---this parent section will serve to be a reusable component for all the other, admin 'add' details pages because stylistically the layout is the same, for any modifications, that will be highlighted with a class specfic for its category, 'tour', 'news', 'photos' etc. ---->
+<!-- this class below is for all the items that are added through the admin panel, be it; a new tour date, a new news story, a band photo or a new album. -->
+
+<!-- this class through the use of flexbox helps to centre the form, it has a position relative on it to aid the back icon below it to position itself on the left hand side -->
 		
-<section class="c-admin-add-tour-dates h-flex h-position">
+<section class="c-admin-add-item h-flex h-position">
 
 
-	<!----reusable component icon to go back a page----->
+	<!----reusable component icon to go back a page this is in the base section of the scss----->
+  <!-- because the parent is position relative we have a position absolute on this of top, left and right of 0 to make the icon align at the top left hand side of the page  -->
     <div class="c-back-page-icon-container">
-        
+        <!-- just an increase size on this svg to make it look better -->
         <img src="../img/noun_back.svg" alt="please go back to the page behind" class="c-back-page-icon">
+        <!-- end of size change on the svg -->
+        <!-- destination to go back a page with pseudo before technique to give mobile users more click space -->
         <a href="manipulateTourSection.php" class="c-back-page-icon-link"></a>
+         <!-- end of the pseudo before technique to give mobile users more click space  -->
     </div>
+
+    <!-- end of position absolute -->
 <!----end of reusable component----->
 
+<!-- heading style for all the admin headings -->
 
+<h1 class="c-admin-add-item-title">Add Tour Dates</h1>
 
-<h1 class="c-admin-add-tour-dates-title">Add Tour Dates</h1>
+<!-- end of heading style for the admin items -->
 
-<form name="tourFormCheck" method="post" action="confirmTour.php" class="c-admin-add-tour-dates-form"/>
+<!-- a semantic form class -->
+<form name="tourFormCheck" method="post" action="confirmTour.php" class="c-admin-add-item-form"/>
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+<p class="c-admin-add-item-dates-desc">Insert Date of tour: 
 
-<p class="c-admin-add-tour-dates-desc">Insert Date of tour: <input type="date" name="tourDates" value="<?php echo $_SESSION['addTourDates']['tourDates'];?>" size="40"
-maxlength="50" class="c-admin-add-tour-dates-input" required /></p>
+  <!-- some margins and font size changes at different screen sizes  -->
+  <input type="text" name="tourDates" value="<?php echo $_SESSION['addTourDates']['tourDates'];?>" size="40"
+maxlength="50" class="c-admin-add-item-dates-input" required />
+  <!-- end of some margins and font size changes at different screen sizes -->
+</p>
 
+<!-- end of capitalize with some margins and font size changes at different screen sizes   -->
 
-<p class="c-admin-add-tour-dates-desc">Insert Venue of tour: <input type="text" name="venue" value="<?php echo $_SESSION['addTourDates2']['venue'];?>" size="40"
-maxlength="50" class="c-admin-add-tour-dates-input" required /></p>
-<p class="c-admin-add-tour-dates-desc">Insert state or country of tour: <input type="text" name="state_country" value="<?php echo $_SESSION['addTourDates3']['state_country'];?>" size="40"
-maxlength="50" class="c-admin-add-tour-dates-input" required /></p>
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+<p class="c-admin-add-item-dates-desc">Insert Venue of tour: 
+<!-- some margins and font size changes at different screen sizes  -->
+  <input type="text" name="venue" value="<?php echo $_SESSION['addTourDates2']['venue'];?>" size="40"
+maxlength="50" class="c-admin-add-item-dates-input" required />
+<!-- end of some margins and font size changes at different screen sizes -->
+</p>
+<!-- end of capitalize with some margins and font size changes at different screen sizes   -->
 
-<div class="c-admin-add-tour-dates-submit-button-container h-flex">
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+
+<p class="c-admin-add-item-dates-desc">Insert state or country of tour: 
+<!-- some margins and font size changes at different screen sizes  -->
+  <input type="text" name="state_country" value="<?php echo $_SESSION['addTourDates3']['state_country'];?>" size="40"
+maxlength="50" class="c-admin-add-item-dates-input" required />
+
+<!-- end of some margins and font size changes at different screen sizes -->
+
+</p>
+
+<!-- end of capitalize with some margins and font size changes at different screen sizes   -->
+
+<!-- this class is to centre the button -->
+<div class="c-admin-add-item-dates-submit-button-container h-flex">
+
+  <!--- these buttons are reused throughout the website and have the same style that was done at the beginning of the project, they also have a hover state as well and the colour goes a slightly darker red with a position relative for the anchors to span the whole area of the button rather than just the link ---->
 <button class="c-button-mobile c-button-mobile--large" type="submit" name="submit"  >Add Tour Date</button>
+<!--- end of buttons having the same style and a hover state with a position relative for the anchors to span the whole area of the button rather than just the link ---->
 </div>
+
+<!-- end of class to centre the button -->
 
 
 </form>
+
+<!-- end of the semantic form class -->
 <?php
 
 if (isset($_GET['signup'])){
@@ -122,8 +171,10 @@ if (isset($_GET['signup'])){
   $correctForm = $_GET['signup'];
 
   if ($correctForm == "char"){?>
+    <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+      <p class="c-admin-add-item-dates-desc h-font-size h-text-align">Entries must begin with letters for venue and location of tour!</p>
 
-      <p class="c-admin-add-tour-dates-desc h-font-size h-text-align">Entries must begin with letters for venue and location of tour!</p>
+      <!-- end of some margins and font size changes at different screen sizes -->
 
 
 
@@ -140,12 +191,18 @@ if (isset($_GET['signup'])){
 
 
 
+<!-- this class stands as the semantic progress to the upcoming shows section, it does have a grey background effect on it and the before pseudo class has a background strip on it -->
+
+  <!-- THE TOUR SECTION -->
+
+  <!-- there is an admin class here to override the flex for the borders to stretch the whole page -->
+
+  <section class="c-upcoming-shows c-admin-add-tour-dates-override-flex">
 
 
-<!----below is the component class section taken from the home page (product.php)this is getting reused to follow the same style display as the TOUR section (upcoming-shows), they only difference is that there are the maximum entries here for the TOUR, not limitied to three like in the home page (product.php), I have also taken out the heading, 'upcoming shows' from the home page,  bit overkill here.---->
 
 
-<section class="c-upcoming-shows c-admin-add-tour-dates-override-flex">
+
 
 <?php 
 
@@ -163,26 +220,11 @@ $editTour_query= mysqli_query($dbc, $editTour_sql);
 
 
 <?php
-while($editTour_rs= mysqli_fetch_array($editTour_query)){ ?>
+while($row= mysqli_fetch_array($editTour_query)){ 
 
-	<article class="c-upcoming-shows-container h-flex">
-
- 	  <div class="c-upcoming-shows-date">
-
-
- 	   
-
-
- 	  <span class="c-upcoming-shows-month"><?php echo  $editTour_rs['date'] ?></span></div>
- 	  <div class="c-upcoming-shows-venue-container"> <h3 class="c-upcoming-shows-venue-subtitle h-mobile-title"><?php echo $editTour_rs['venue'] ?></h3>
- 	 		</div>
- 	 	 <div class="c-upcoming-shows-location"> <?php echo $editTour_rs['state_country']?> </div> 
-
- 	 
- 	 </article>
 	
+	require("../public/tourDatesWhileLoop.php");
 
-<?php
 
 }
 
@@ -191,20 +233,26 @@ while($editTour_rs= mysqli_fetch_array($editTour_query)){ ?>
 
 </section>
 
-<!--- end of reusable component---->
+<!-- end of the admin class here to override the flex for the borders to stretch the whole page -->
+
+<!-- end of the semantic progress to the upcoming shows section, it does have a grey background effect on it and the before pseudo class has a background strip on it   -->
+
+<!-- END OF THE TOUR SECTION -->
 
 
 
  
 </section>
 
-
+<!-- end of centring the form -->
 
 <?php
 require_once ("../abstractFooter.php");
 
 ?>
 </div>
+
+<!-- end of the admin grid that has less rows than the home page -->
 </body>
 </html>
 
