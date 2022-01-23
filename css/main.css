@@ -586,6 +586,9 @@ textarea {
 .h-background-colour-our-black {
   background-color: black; }
 
+.h-no-padding {
+  padding: 0 !important; }
+
 /*5. Layout*/
 .c-mobile-menu {
   display: block; }
@@ -1429,36 +1432,106 @@ textarea {
   font-family: "Hessian", sans-serif;
   font-size: 2rem; }
 
-.c-admin-add-item {
+.c-admin-addAndEdit-item {
   flex-direction: column;
   align-items: center; }
 
-.c-admin-add-item-title {
+.c-admin-addAndEdit-item-title {
+  text-align: center;
+  font-family: "Hessian", sans-serif;
+  color: #b21319;
+  text-transform: uppercase;
+  margin-top: 2em; }
+  @media (min-width: 65rem) {
+    .c-admin-addAndEdit-item-title {
+      font-size: 4.5rem; } }
+
+/* this class is in case I need a separate section element were a form follows */
+.c-admin-addAndEdit-item-form-section {
+  flex-direction: column;
+  align-items: center; }
+
+/* end of class in case I need a separate section element were a form follows */
+/* what follows are all the form classes */
+.c-admin-addAndEdit-item-form-title {
   text-align: center;
   font-family: "Hessian", sans-serif;
   color: #b21319;
   text-transform: uppercase;
   margin-top: 2em; }
 
-.c-admin-add-item-dates-desc {
+.c-admin-addAndEdit-item-dates-desc {
   text-transform: capitalize;
   margin: 1em 0; }
 
-.c-admin-add-item-dates-input {
+.c-admin-addAndEdit-item-dates-input {
   margin: 1em 0; }
 
-.c-admin-add-item-dates-submit-button-container {
+/* end of form classes */
+.c-admin-addAndEdit-item-dates-submit-button-container {
   margin: 4em 0;
   flex-direction: column;
   align-items: center; }
 
-.c-admin-confirm-add-item-to-db-container {
+/* this class down below just applies to the tour section it is to make sure the item stetches the whole page to override restrictive flex constraints */
+.c-admin-addAndEdit-tour-dates-override-flex {
+  align-self: stretch; }
+
+/* end of the class above */
+.c-admin-editAndDelete-item {
+  padding: 1em;
+  flex-direction: column;
+  align-items: center; }
+
+.c-admin-editAndDelete-item-title {
+  margin-top: 2em;
+  color: #b21319;
+  font-family: "Hessian", sans-serif; }
+  @media (min-width: 65rem) {
+    .c-admin-editAndDelete-item-title {
+      font-size: 4.5rem; } }
+
+.c-admin-editAndDelete-item-links::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 1px solid pink; }
+
+/* these classes below are after the user clicks on what item to editAndDelete, this just reconfirms the choice */
+.c-admin-editAndDelete-item-confirm {
+  flex-direction: column;
+  align-items: center; }
+  @media (min-width: 48rem) {
+    .c-admin-editAndDelete-item-confirm {
+      justify-content: center; } }
+
+.c-admin-confirm-addDeleteOrEdit-to-db {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.c-admin-confirm-addDeleteOrEdit-to-db-title {
+  font-size: 2.6rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-family: "Hessian", sans-serif;
+  color: #b21319;
+  text-align: center; }
+  @media (min-width: 65rem) {
+    .c-admin-confirm-addDeleteOrEdit-to-db-title {
+      font-size: 4.5rem; } }
+
+.c-admin-confirm-addDeleteOrEdit-to-db-container {
   margin-top: 2em; }
 
-.c-admin-confirm-add-item-to-db-desc {
+.c-admin-confirm-addDeleteOrEdit-to-db-desc {
   color: #b21319; }
 
-.c-admin-confirm-add-item-to-db-links {
+.c-admin-confirm-addDeleteOrEdit-to-db-links {
   text-decoration: none;
   color: #fff; }
 
@@ -1494,9 +1567,6 @@ textarea {
 .c-admin-add-tour-dates-add-venue-title {
   margin-bottom: 0; }
 
-.c-admin-add-tour-dates-override-flex {
-  align-self: stretch; }
-
 .c-admin-confirm-add-tour {
   padding: 1em;
   flex-direction: column;
@@ -1522,14 +1592,14 @@ textarea {
   font-family: "Hessian", sans-serif; }
 
 .c-admin-DELETE-tour-dates-links::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
-  border: 1px solid pink;
   top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0; }
+  border: 1px solid pink; }
 
 .c-admin-DELETE-tour-dates-CONFIRM {
   padding: 1em;
@@ -1657,7 +1727,6 @@ textarea {
       width: 1200px; } }
 
 .c-admin-confirmation-page {
-  padding: 1em;
   flex-direction: column;
   align-items: center;
   justify-content: center; }
@@ -1668,11 +1737,23 @@ textarea {
   color: #b21319;
   font-size: 2.2rem;
   text-align: center; }
+  @media (min-width: 65rem) {
+    .c-admin-confirmation-page-title {
+      font-size: 4.5rem; } }
 
 .c-admin-confirmation-page-links {
   text-decoration: none;
   color: #fff;
   text-transform: uppercase; }
+
+.c-admin-confirmation-page-links::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 .c-footer {
   background-color: black; }

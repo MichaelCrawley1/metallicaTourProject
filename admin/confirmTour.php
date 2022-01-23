@@ -116,8 +116,8 @@ require_once ("header.php");
 
 ?>
 
-<!-- this class sets the content bang in the middle of the page vertically and horizontally, the grid set at the beginning has a 100vh height on the main content therfore we can use flex's align items and justify content to centre the page -->
-<section class="c-admin-confirm-add-tour h-flex h-position">
+<!-- this class sets the content bang in the middle of the page vertically and horizontally, the grid set at the beginning has a 100vh height on the main content therefore we can use flex's align items and justify content to centre the page -->
+<section class="c-admin-confirm-addDeleteOrEdit-to-db h-flex h-position">
 
  <!----reusable component icon to go back a page this is in the base section of the scss----->
   <!-- because the parent is position relative we have a position absolute on this of top, left and right of 0 to make the icon align at the top left hand side of the page  -->
@@ -134,9 +134,9 @@ require_once ("header.php");
 
 <!-- same style for the headings that appear through most of the site, just a slightly different font size -->
 
-<h1 class="c-admin-confirm-add-tour-title">Confirm Tour Dates New Information</h1>
+<h1 class="c-admin-confirm-addDeleteOrEdit-to-db-title">Confirm Tour Dates New Information</h1>
 
-<!-- end of same style for the headings that appear through most of the site, just a sligtly different font size  -->
+<!-- end of same style for the headings that appear through most of the site, just a slightly different font size  -->
 
 
 
@@ -146,7 +146,7 @@ require_once ("header.php");
   <!-- THE TOUR SECTION -->
 
   <!-- there is an admin class here to override the flex for the borders to stretch the whole page -->
-<section class="c-upcoming-shows c-admin-add-tour-dates-override-flex">
+<section class="c-upcoming-shows c-admin-addAndEdit-tour-dates-override-flex">
 
 <!-- this is an interesting class, at mobile sizes it uses display flex as the default to centre the text but at bigger screen sizes it goes to max 1300px grid container with a three column grid with the third child, the, 'c-upcoming-shows-location' class at align-self end to stretch to the end of the page -->
 
@@ -184,26 +184,26 @@ require_once ("header.php");
 
 <!-- END OF THE TOUR SECTION -->
 
-<!-- CONFIRM ADD ITEM TO DATABASE SECTION -->
+<!-- CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
 
 <!--- this section will serve as a reusable component as this option design is in the penultimate page of all the other sections of the website too---->
 
 <!-- just a semantic container with a margin top to separate the content -->
 
-<div class="c-admin-confirm-add-item-to-db-container ">
+<div class="c-admin-confirm-addDeleteOrEdit-to-db-container ">
   <!-- no text here, that is done by the links, it is just to colour the separator our red -->
-<p class="c-admin-confirm-add-item-to-db-desc">
+<p class="c-admin-confirm-addDeleteOrEdit-to-db-desc">
   <!-- these links take out their decoration but colour the text our white -->
   <a href="enterTourDates.php" class="
-  c-admin-confirm-add-item-to-db-links">Correct, continue</a>
+  c-admin-confirm-addDeleteOrEdit-to-db-links">Correct, continue</a>
   <!-- end of colour the text our white-->
   <!-- these links take out their decoration but colour the text our white -->
 	 | <a class="
-   c-admin-confirm-add-item-to-db-links" href="addTourDates.php">Ooops, go back</a>
+   c-admin-confirm-addDeleteOrEdit-to-db-links" href="addTourDates.php">Ooops, go back</a>
     <!-- end of colour the text our white-->
   <!-- these links take out their decoration but colour the text our white -->
     | <a class="
-   c-admin-confirm-add-item-to-db-links" href="admin.php">Back to admin panel</a>
+   c-admin-confirm-addDeleteOrEdit-to-db-links" href="admin.php">Back to admin panel</a>
     <!-- end of colour the text our white-->
   
 	</p>
@@ -215,7 +215,7 @@ require_once ("header.php");
 
 <!---end of a reusable component as this option design is in the penultimate page of all the other sections of the website too ---->
 
-<!-- END OF THE CONFIRM ADD ITEM TO DATABASE SECTION -->
+<!-- END OF CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
 
 
 </section>

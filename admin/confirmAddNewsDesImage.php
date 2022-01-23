@@ -40,7 +40,7 @@ if(empty($_SESSION['addNewsStory']['date']) || empty($_SESSION['addNewsStory']['
   else {
  // check if input characters are valid//
 
-        if(!preg_match("/^[a-zA-Z]/", $_SESSION['addNewsStory']['title']) || !preg_match("/^[a-zA-Z]/", $_SESSION['addNewsStory']['description'])){
+        if(!preg_match("/^[a-zA-Z]/", $_SESSION['addNewsStory']['date']) ||   !preg_match("/^[a-zA-Z]/", $_SESSION['addNewsStory']['title']) || !preg_match("/^[a-zA-Z]/", $_SESSION['addNewsStory']['description'])){
 
           header("Location:addNewsDesAImage.php?signup=char");
           exit();

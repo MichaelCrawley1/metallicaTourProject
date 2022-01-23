@@ -90,9 +90,9 @@ require_once ("header.php");
 
 <!-- this class below is for all the items that are added through the admin panel, be it; a new tour date, a new news story, a band photo or a new album. -->
 
-<!-- this class through the use of flexbox helps to centre the form, it has a position relative on it to aid the back icon below it to position itself on the left hand side -->
+<!-- this class through the use of flexbox helps to centre the form, it has a position relative on it to aid the back icon below it to position itself on the left hand side of this section's corner otherwise it would go to very top of the browser -->
 		
-<section class="c-admin-add-item h-flex h-position">
+<section class="c-admin-addAndEdit-item h-flex h-position">
 
 
 	<!----reusable component icon to go back a page this is in the base section of the scss----->
@@ -109,40 +109,40 @@ require_once ("header.php");
     <!-- end of position absolute -->
 <!----end of reusable component----->
 
-<!-- heading style for all the admin headings -->
+<!-- heading style for all the admin add and edit item headings with different sizes at different screens -->
 
-<h1 class="c-admin-add-item-title">Add Tour Dates</h1>
+<h1 class="c-admin-addAndEdit-item-title">Add Tour Dates</h1>
 
-<!-- end of heading style for the admin items -->
+<!-- end of heading style for the admin add items headings -->
 
 <!-- a semantic form class -->
-<form name="tourFormCheck" method="post" action="confirmTour.php" class="c-admin-add-item-form"/>
+<form name="tourFormCheck" method="post" action="confirmTour.php" class="c-admin-addAndEdit-item-dates-form"/>
 <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
-<p class="c-admin-add-item-dates-desc">Insert Date of tour: 
+<p class="c-admin-addAndEdit-item-dates-desc">Insert Date of tour: 
 
   <!-- some margins and font size changes at different screen sizes  -->
   <input type="text" name="tourDates" value="<?php echo $_SESSION['addTourDates']['tourDates'];?>" size="40"
-maxlength="50" class="c-admin-add-item-dates-input" required />
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
   <!-- end of some margins and font size changes at different screen sizes -->
 </p>
 
 <!-- end of capitalize with some margins and font size changes at different screen sizes   -->
 
 <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
-<p class="c-admin-add-item-dates-desc">Insert Venue of tour: 
+<p class="c-admin-addAndEdit-item-dates-desc">Insert Venue of tour: 
 <!-- some margins and font size changes at different screen sizes  -->
   <input type="text" name="venue" value="<?php echo $_SESSION['addTourDates2']['venue'];?>" size="40"
-maxlength="50" class="c-admin-add-item-dates-input" required />
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
 <!-- end of some margins and font size changes at different screen sizes -->
 </p>
 <!-- end of capitalize with some margins and font size changes at different screen sizes   -->
 
 <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
 
-<p class="c-admin-add-item-dates-desc">Insert state or country of tour: 
+<p class="c-admin-addAndEdit-item-dates-desc">Insert state or country of tour: 
 <!-- some margins and font size changes at different screen sizes  -->
   <input type="text" name="state_country" value="<?php echo $_SESSION['addTourDates3']['state_country'];?>" size="40"
-maxlength="50" class="c-admin-add-item-dates-input" required />
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
 
 <!-- end of some margins and font size changes at different screen sizes -->
 
@@ -151,7 +151,7 @@ maxlength="50" class="c-admin-add-item-dates-input" required />
 <!-- end of capitalize with some margins and font size changes at different screen sizes   -->
 
 <!-- this class is to centre the button -->
-<div class="c-admin-add-item-dates-submit-button-container h-flex">
+<div class="c-admin-addAndEdit-item-dates-submit-button-container h-flex">
 
   <!--- these buttons are reused throughout the website and have the same style that was done at the beginning of the project, they also have a hover state as well and the colour goes a slightly darker red with a position relative for the anchors to span the whole area of the button rather than just the link ---->
 <button class="c-button-mobile c-button-mobile--large" type="submit" name="submit"  >Add Tour Date</button>
@@ -172,7 +172,7 @@ if (isset($_GET['signup'])){
 
   if ($correctForm == "char"){?>
     <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
-      <p class="c-admin-add-item-dates-desc h-font-size h-text-align">Entries must begin with letters for venue and location of tour!</p>
+      <p class="c-admin-addAndEdit-item-dates-desc h-font-size h-text-align">Entries must begin with letters for date, venue and location of tour!</p>
 
       <!-- end of some margins and font size changes at different screen sizes -->
 
@@ -197,7 +197,7 @@ if (isset($_GET['signup'])){
 
   <!-- there is an admin class here to override the flex for the borders to stretch the whole page -->
 
-  <section class="c-upcoming-shows c-admin-add-tour-dates-override-flex">
+  <section class="c-upcoming-shows c-admin-addAndEdit-tour-dates-override-flex">
 
 
 
@@ -243,6 +243,11 @@ while($row= mysqli_fetch_array($editTour_query)){
 
  
 </section>
+
+
+<!-- end of this class for all the items that are added through the admin panel, be it; a new tour date, a new news story, a band photo or a new album. -->
+
+<!-- end of this class through the use of flexbox helps to centre the form, it has a position relative on it to aid the back icon below it to position itself on the left hand side of this section's corner otherwise it would go to very top of the browser -->
 
 <!-- end of centring the form -->
 

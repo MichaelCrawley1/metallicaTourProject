@@ -59,7 +59,7 @@ if($_SESSION['addNewsStory']['img']!="noimage.png"){
 
         <!---below is the class of the standard grid and is for rows only (this is used for the vertical layout of the pages), each row is to correspond with a new section of the html.  By using the grid system this way rather than rows and columns from the beginning, helps to keep the html semantic. Alternatively, using the grid for rows and columns at the beginning of the design means the html will have to be flattened for it to work.  When the, 'subgrid' property becomes more widespread with browsers perhaps this will not need to be the case, but for now, a grid for rows only for the vertical layout and then horizontal grids in each section thereafter if the need arises to keep it semantic----> 
 
-        <!-- this is the admin grid, less rows than the website home page -->
+        <!-- this is the admin grid as it has less rows than the home page -->
 
         <div class="l-basic-grid-admin-and-c-panel h-grid">
         	<?php
@@ -67,38 +67,100 @@ require_once ("header.php");
 
 ?>
 
-<!---this parent section comes from the, 'add tour' admin page, because stylistically, the layout is the same, for any modifications, that will be highlighted with a class specfic for its category, 'tour', 'news', 'photos' etc. ---->
+<!-- this class below is for all the items that are added through the admin panel, be it; a new tour date, a new news story, a band photo or a new album. -->
+
+<!-- this class through the use of flexbox helps to centre the form, it has a position relative on it to aid the back icon below it to position itself on the left hand side of this section's corner otherwise it would go to very top of the browser -->
 		
-<section class="c-admin-add-item h-flex h-position">
+<section class="c-admin-addAndEdit-item h-flex h-position">
 
 
-	<!----reusable component icon to go back a page----->
+	<!----reusable component icon to go back a page this is in the base section of the scss----->
+  <!-- because the parent is position relative we have a position absolute on this of top, left and right of 0 to make the icon align at the top left hand side of the page  -->
     <div class="c-back-page-icon-container">
-        
+        <!-- just an increase size on this svg to make it look better -->
         <img src="../img/noun_back.svg" alt="please go back to the page behind" class="c-back-page-icon">
+        <!-- end of size change on the svg -->
+
+        <!-- destination to go back a page with pseudo before technique to give mobile users more click space -->
         <a href="manipulateNewsSection.php" class="c-back-page-icon-link"></a>
+         <!-- end of the pseudo before technique to give mobile users more click space  -->
     </div>
+
+   <!-- end of position absolute -->
 <!----end of reusable component----->
 
+<!-- heading style for all the admin add and edit item headings with different sizes at different screens -->
 
 
-<h1 class="c-admin-add-item-title">Add A News story</h1>
+<h1 class="c-admin-addAndEdit-item-title">Add A News story</h1>
 
-<form method="post" action="confirmAddNewsDesImage.php" class="c-admin-add-item-form h-padding" enctype="multipart/form-data" />
+<!-- end of heading style for the admin add items headings -->
 
-<p class="c-admin-add-item-dates-desc">Add a date: <input type="date" name="date" value="<?php echo $_SESSION['addNewsStory']['date'];?>" size="40"
-maxlength="50" class="c-admin-add-item-dates-input" required /></p>
-<p class="c-admin-add-item-dates-desc">Add a title: <input type="text" name="title" value="<?php echo $_SESSION['addNewsStory']['title'];?>" size="40"
-maxlength="50" class="c-admin-add-item-dates-input" required  /></p>
-<p class="c-admin-add-item-dates-desc">Add a description about the news: <textarea name="description" cols=60 rows=5 size="40"
- class="c-admin-add-item-dates-input" required  ><?php echo $_SESSION['addNewsStory']['description'];?></textarea></p>
-<p class="c-admin-add-item-dates-desc">Add an image: <input type="file" name="fileToUpload"  id="fileToUpload" size="40"
-maxlength="50" class="c-admin-add-item-dates-input" required  ></p>
+<!-- a semantic form class -->
 
-<div class="c-admin-add-item-dates-submit-button-container h-flex">
+<form method="post" action="confirmAddNewsDesImage.php" class="c-admin-addAndEdit-item-dates-form h-padding" enctype="multipart/form-data" />
+
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+<p class="c-admin-addAndEdit-item-dates-desc">Add a date: 
+   <!-- some margins and font size changes at different screen sizes  -->
+  <input type="text" name="date" value="<?php echo $_SESSION['addNewsStory']['date'];?>" size="40"
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
+<!-- end of some margins and font size changes at different screen sizes -->
+
+</p>
+<!-- end of capitalize with some margins and font size changes at different screen sizes   -->
+
+
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+<p class="c-admin-addAndEdit-item-dates-desc">Add a title: 
+  <!-- some margins and font size changes at different screen sizes  -->
+  <input type="text" name="title" value="<?php echo $_SESSION['addNewsStory']['title'];?>" size="40"
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required  />
+<!-- end of some margins and font size changes at different screen sizes -->
+
+</p>
+<!-- end of capitalize with some margins and font size changes at different screen sizes   -->
+
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+
+<p class="c-admin-addAndEdit-item-dates-desc">Add a description about the news: 
+
+  <!-- some margins and font size changes at different screen sizes  -->
+  <textarea name="description" cols=60 rows=5 size="40"
+ class="c-admin-addAndEdit-item-dates-input" required  ><?php echo $_SESSION['addNewsStory']['description'];?></textarea>
+
+ <!-- end of some margins and font size changes at different screen sizes -->
+
+</p>
+<!-- end of capitalize with some margins and font size changes at different screen sizes   -->
+
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+
+<p class="c-admin-addAndEdit-item-dates-desc">Add an image: 
+<!-- some margins and font size changes at different screen sizes  -->
+  <input type="file" name="fileToUpload"  id="fileToUpload" size="40"
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required  >
+<!-- end of some margins and font size changes at different screen sizes -->
+
+</p>
+<!-- end of capitalize with some margins and font size changes at different screen sizes   -->
+
+<!-- this class is to centre the button -->
+<div class="c-admin-addAndEdit-item-dates-submit-button-container h-flex">
+
+  <!--- these buttons are reused throughout the website and have the same style that was done at the beginning of the project, they also have a hover state as well and the colour goes a slightly darker red with a position relative for the anchors to span the whole area of the button rather than just the link ---->
+  <!-- also a helper class to make the text uppercase -->
 <button class="c-button-mobile c-button-mobile--large h-uppercase" type="submit" name="submit"  >Submit</button>
+
+<!--- end of buttons having the same style and a hover state with a position relative for the anchors to span the whole area of the button rather than just the link ---->
+
+<!-- end of the helper class making the text uppercase -->
 </div>
+
+<!-- end of class to centre the button -->
 </form>
+
+<!-- end of the semantic form class -->
 
 <?php
 
@@ -107,9 +169,9 @@ if (isset($_GET['signup'])){
   $correctForm = $_GET['signup'];
 
   if ($correctForm == "char"){?>
-
-      <p class="c-admin-add-item-dates-desc h-font-size h-text-align">Entries must begin with letters for Title and description of News!</p>
-
+     <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+      <p class="c-admin-addAndEdit-item-dates-desc h-font-size h-text-align">Entries must begin with letters for Title and description of News!</p>
+      <!-- end of some margins and font size changes at different screen sizes -->
 
 
 <?php
@@ -122,6 +184,8 @@ if (isset($_GET['signup'])){
 
 
 ?>
+
+<!-- RESUME HERE TOMORROW -->
 
 
 <!----below is the component class section taken from the home page (product.php)this is getting reused to follow the same style display as the NEWS section (latest-news), the only difference is that there are the maximum entries here for the NEWS, not limited to three like in the home page (product.php).  We don't need a  hero image for this page, so I have taken this NEWS section towards the top of the page.  A few modifiers need to be in place then. One, we need to take out the black background on the section class(c-latest-news) and we need to amend the position to bring the section nearer to the hamburger mobile menu to enable a more presenting outlook  The modifiers are below---->
@@ -192,7 +256,11 @@ mysqli_close($dbc);
 
 </section>
 
-<!---end of parent component----->
+<!-- end of this class for all the items that are added through the admin panel, be it; a new tour date, a new news story, a band photo or a new album. -->
+
+<!-- end of this class through the use of flexbox helps to centre the form, it has a position relative on it to aid the back icon below it to position itself on the left hand side of this section's corner otherwise it would go to very top of the browser -->
+
+<!-- end of centring the form -->
 
 <?php 
 require_once ("../abstractFooter.php");
