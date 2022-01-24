@@ -185,17 +185,29 @@ if (isset($_GET['signup'])){
 
 ?>
 
-<!-- RESUME HERE TOMORROW -->
+<!-- THE NEWS SECTION -->
+
+<!-- just a semantic section class for the news data of the site-->
+
+<!-- a helper class to take off the background image strip divider that is present in the home page -->
 
 
-<!----below is the component class section taken from the home page (product.php)this is getting reused to follow the same style display as the NEWS section (latest-news), the only difference is that there are the maximum entries here for the NEWS, not limited to three like in the home page (product.php).  We don't need a  hero image for this page, so I have taken this NEWS section towards the top of the page.  A few modifiers need to be in place then. One, we need to take out the black background on the section class(c-latest-news) and we need to amend the position to bring the section nearer to the hamburger mobile menu to enable a more presenting outlook  The modifiers are below---->
-	
-  <!---this section down below uses the utility class to keep the grid in a 1300px max container for the big screens, also there is a class to keep the flex direction at a column THINK ABOUT CHANGING THIS FIRST CLASS TO SOMETHING THAT WOULD RESONATE WITH THE HOME PAGE ----->
-<section class="c-admin-DELETE-tour-dates h-flex l-for-card-grid-columns-max-width-container">
-	<h1 class="c-latest-news-title h-mobile-title">Latest News</h1>
+ <section class="c-latest-news h-take-background-strip-off-pseudo-before-element">
 
- <!--- this class down below is the section grid column layout itself, this is for all the card type blocks like the music albums, the band photos and the news stories--->     
-<div class="l-the-card-grid h-grid">
+<!-- just a heading class with the project styles and fonts and with different font sizes at different screen sizes -->
+    <h1 class="c-latest-news-title h-mobile-title">Latest News</h1>
+
+<!-- end of heading class with the project styles and fonts and with different font sizes at different screen sizes -->
+
+ <!---this class down below is a utility class to keep the grid in a 1300px max container for the big screens ----->
+
+ <div class="l-for-card-grid-columns-max-width-container">
+
+ <!--- this class down below is the section grid column layout itself, this is for all the card type blocks like the music albums, the band photos and the news stories, this grid uses the auto-fit property with a minmax so it becomes responsive--->   
+
+
+  <div class="l-the-card-grid h-grid">
+
 <?php 
 
 require_once ("../connect_database.php");
@@ -208,51 +220,27 @@ $delNewsStory_query= mysqli_query($dbc, $delNewsStory_sql);
 
  
  		
-while ($row = mysqli_fetch_array($delNewsStory_query)){ ?>
+while ($row = mysqli_fetch_array($delNewsStory_query)){ 
 
- <!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
-  <article class="h-overflowH">
-
-  <!----end of helper class---->
-
-
- 	   <div class="c-news-stories-DELETE-container-for-anchor-cover h-position c-latest-news-img-container">
- 	  	<img src="../img/<?php echo $row['img_ref']?>" class="c-news-stories-DELETE-img-itself"/>
- 	  </div>
-
- 	  	 <div class="c-news-stories-DELETE-info-container c-news-stories-DELETE-info-container--no-padding">
-
- 	  	<div class="c-news-stories-DELETE-date"><?php echo $row['date']?>
- 	  	</div>
- 	  
-
- 	  	<h3 class=c-latest-news-sub-title><?php echo $row['title']?></h3>
-
- 	  	<p class="c-latest-news-blurb"><?php echo $row['description']?> </p>
-
- 	  
- 	 </div>
-
- 	
- </article>
-
+ 
+require('../public/newsStoriesWhileLoop.php');
+  
+    
+}
  	 
- 	
- 	
- <?php
-
-
- }
 mysqli_close($dbc);
 ?>
 </div>
-
-<!----end of the grid for the cards (images, album photos, stadium photos etc)----->
+<!----end of the auto-fit grid for the cards (images, album photos, stadium photos etc)----->
+</div>
+<!----end of utility layout class for max width ---->  
 </section>
 
-<!----end of utility layout class for max width on the section this time ---->  
+<!-- end of the semantic section for the news data -->
 
-<!---- end of the reusable component ---->
+<!-- end of the  helper class to take off the background image strip divider that is present in the home page -->
+
+<!-- END OF THE NEWS SECTION -->
 
 </section>
 

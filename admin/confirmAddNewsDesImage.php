@@ -75,17 +75,24 @@ if(empty($_SESSION['addNewsStory']['date']) || empty($_SESSION['addNewsStory']['
 </head>
 
 <body>
-    <!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enabled the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
+   <!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enable the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
 
         c- = this equals a component that is likely to get reused
         l- = this equals a class that acts as block layout like a reusable container for example
         h- = the h prefix is to signify helper classes like clearfix to get elements back in the html document flow
         js- = this is to signify when we need to use JavaScript on an block or a block element to bring in dynamic functionality.
         c-js- = will refer to both components and components that rely on JavaScript functionality
-        c-mq- = could be for media queries.
+        c-mq- = will be for media queries.
 
-        In addition, throughout this document there will be a comment that says, 'modifier here, please see css comments for what this does or what it is for'.  This way by using the find search tool provided by the editor we can quickly find the modifier we are looking for.  Might be an advantage to say for media queries too.
+        In addition, throughout this document there will be a comment that says, "MODIFIER HERE, PLEASE SEE CSS COMMENTS FOR WHAT THIS DOES OR WHAT IT IS FOR".  By using the find search tool provided by the editor (control or command F) we can quickly find the modifier we are looking for and then look at the corresponding css file to see what it does.  
         ---->
+
+        <!-----AND EXPLANATION OF THE CSS GRID SYSTEM USED BELOW---->
+
+
+        <!---below is the class of the standard grid and is for rows only (this is used for the vertical layout of the pages), each row is to correspond with a new section of the html.  By using the grid system this way rather than rows and columns from the beginning, helps to keep the html semantic. Alternatively, using the grid for rows and columns at the beginning of the design means the html will have to be flattened for it to work.  When the, 'subgrid' property becomes more widespread with browsers perhaps this will not need to be the case, but for now, a grid for rows only for the vertical layout and then horizontal grids in each section thereafter if the need arises to keep it semantic----> 
+
+        <!-- this is the admin grid as it has less rows than the home page -->
 
         <div class="l-basic-grid-admin-and-c-panel h-grid">
             <?php
@@ -94,23 +101,24 @@ require_once ("header.php");
 ?>
 
 
-<!---this parent section comes from the, 'add tour' admin page, because stylistically, the layout is the same, for any modifications, that will be highlighted with a class specfic for its category, 'tour', 'news', 'photos' etc. ---->
+<!-- this class sets the content bang in the middle of the page vertically and horizontally, the grid set at the beginning has a 100vh height on the main content therefore we can use flex's align items and justify content to centre the page -->
         
-<section class="c-admin-add-tour-dates h-flex h-position">
+<section class="c-admin-confirm-addDeleteOrEdit-to-db h-flex h-position">
 
+<!----reusable component icon to go back a page this is in the base section of the scss----->
+  <!-- because the parent is position relative we have a position absolute on this of top, left and right of 0 to make the icon align at the top left hand side of the page  -->
 
-    <!----reusable component icon to go back a page----->
-    <div class="c-back-page-icon-container">
-        
+<div class="c-back-page-icon-container">
+         <!-- just an increase size on this svg to make it look better -->
         <img src="../img/noun_back.svg" alt="please go back to the page behind" class="c-back-page-icon">
+
+          <!-- end of size change on the svg -->
+        <!-- destination to go back a page with pseudo before technique to give mobile users more click space -->
         <a href="addNewsDesAImage.php" class="c-back-page-icon-link"></a>
+          <!-- end of the pseudo before technique to give mobile users more click space  -->
     </div>
+<!-- end of position absolute -->
 <!----end of reusable component----->
-
-
-
-
-
 
 
 
@@ -138,10 +146,18 @@ if(isset($_POST["submit"])) {
 // Check if file already exists
 if (file_exists($target_file)) {
 ?>
-    <h1 class="c-admin-add-tour-dates-title">Sorry, cannot do</h1>
+    <!-- same style for the headings that appear through most of the site, just a slightly different font size -->
+<h1 class="c-admin-confirm-addDeleteOrEdit-to-db-title">Sorry, cannot do</h1>
 
 
-    <p class="c-latest-news-blurb ">File already exists.</p>
+<!-- end of same style for the headings that appear through most of the site, just a slightly different font size  -->
+
+
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+
+    <p class="c-admin-addAndEdit-item-dates-desc">File already exists.</p>
+
+    <!-- end of capitalize with some margins and font size changes at different screen sizes   -->
 
 <?php
 
@@ -152,7 +168,13 @@ if (file_exists($target_file)) {
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {?>
 
-     <p class="c-latest-news-blurb">Sorry, your file is too large.  It needs to be smaller!</p>
+
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+
+    <p class="c-admin-addAndEdit-item-dates-desc">Sorry, your file is too large.  It needs to be smaller!</p>
+
+    <!-- end of capitalize with some margins and font size changes at different screen sizes   -->
+
 <?php    
     $uploadOk = 0;
 }
@@ -160,14 +182,22 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {?>
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {?>
 
-     <p class="c-latest-news-blurb">Sorry, only file types; JPG, JPEG, PNG & GIF are allowed.</p>
+    <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+
+    <p class="c-admin-addAndEdit-item-dates-desc">Sorry, only file types; JPG, JPEG, PNG & GIF are allowed.</p>
+
+    <!-- end of capitalize with some margins and font size changes at different screen sizes   -->
 <?php    
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {?>
 
-    <p class="c-latest-news-blurb  ">File was not uploaded.</p>
+
+     <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+     <p class="c-admin-addAndEdit-item-dates-desc">File was not uploaded.</p>
+
+      <!-- end of capitalize with some margins and font size changes at different screen sizes   -->
 
     <div class="c-admin-confirm-add-tour-desc-container h-flex h-padding">
 <p class="c-admin-confirm-add-tour-desc">
@@ -313,5 +343,6 @@ require_once ("../abstractFooter.php");
 
 
 </div>
+<!-- end of grid that is less rows than the home page -->
 </body>
 </html>

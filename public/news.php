@@ -103,8 +103,10 @@ mysqli_close($dbc);
 <!----end of utility layout class for max width ---->  
 </section>
 <!-- end of the semantic section for the news data -->
-<!-- END OF THE NEWS SECTION -->
 
+<!-- end of the  helper class to take off the background image strip divider that is present in the home page -->
+
+<!-- END OF THE NEWS SECTION -->
 
 
 
