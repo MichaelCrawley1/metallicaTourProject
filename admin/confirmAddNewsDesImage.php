@@ -3,9 +3,11 @@
 
 session_start();
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-
-
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 
 
@@ -40,7 +42,7 @@ if(empty($_SESSION['addNewsStory']['date']) || empty($_SESSION['addNewsStory']['
   else {
  // check if input characters are valid//
 
-        if(!preg_match("/^[a-zA-Z]/", $_SESSION['addNewsStory']['date']) ||   !preg_match("/^[a-zA-Z]/", $_SESSION['addNewsStory']['title']) || !preg_match("/^[a-zA-Z]/", $_SESSION['addNewsStory']['description'])){
+        if(!preg_match("/^[a-zA-Z]/", $_SESSION['addNewsStory']['title']) || !preg_match("/^[a-zA-Z]/", $_SESSION['addNewsStory']['description'])){
 
           header("Location:addNewsDesAImage.php?signup=char");
           exit();
@@ -50,6 +52,7 @@ if(empty($_SESSION['addNewsStory']['date']) || empty($_SESSION['addNewsStory']['
       }
         
 }
+
 
 
 
@@ -199,11 +202,37 @@ if ($uploadOk == 0) {?>
 
       <!-- end of capitalize with some margins and font size changes at different screen sizes   -->
 
-    <div class="c-admin-confirm-add-tour-desc-container h-flex h-padding">
-<p class="c-admin-confirm-add-tour-desc">
-      <a class="c-admin-confirm-add-tour-desc-links" href="addNewsDesAImage.php">Ooops, go back</a> | <a class="c-admin-confirm-add-tour-desc-links" href="admin.php">Back to admin panel</a>
+<!-- CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
+
+<!--- this section will serve as a reusable component as this option design is in the penultimate page of all the other sections of the website too---->
+
+<!-- just a semantic container with a margin top to separate the content -->
+
+
+
+    <div class="c-admin-confirm-addDeleteOrEdit-to-db-container h-flex h-padding">
+
+<!-- no text here on our paragraph element, that is done by the links, it is just to colour the separator our red -->
+<p class="c-admin-confirm-addDeleteOrEdit-to-db-desc">
+
+    <!-- these links take out their decoration but colour the text our white -->
+      <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="addNewsDesAImage.php">Ooops, go back</a>
+      <!-- end of colour the text our white-->
+
+       | 
+       <!-- these links take out their decoration but colour the text our white -->
+       <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="admin.php">Back to admin panel</a>
+        <!-- end of colour the text our white-->
     </p>
+    <!-- end of no text here, that is done by the links, it is just to colour the separator our red   -->
 </div>
+
+<!-- end of the semantic container with a margin top to separate the content -->
+
+<!---end of a reusable component as this option design is in the penultimate page of all the other sections of the website too ---->
+
+<!-- END OF CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
+
 <?php
 
 // if everything is ok, try to upload file
@@ -212,43 +241,94 @@ if ($uploadOk == 0) {?>
         
   ?>
 
-  
-  <h1 class="c-admin-add-tour-dates-title">Confirm Items Details</h1>
+   <!-- same style for the headings that appear through most of the site, just a slightly different font size -->
+  <h1 class="c-admin-confirm-addDeleteOrEdit-to-db-title">Confirm Items Details</h1>
+  <!-- end of same style for the headings that appear through most of the site, just a slightly different font size -->
 
-  <article class="c-latest-news-articles h-flex h-padding c-latest-news-articles--for-confirm-add-news-story">
+  <!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
+    <article class="h-overflowH">
 
+ 
 
-    <div class="c-latest-news-articles-text-container c-latest-news-articles-text-container--text-align">
+    <!---This class below does nothing except overrides a previous height attribute (if needed), was just used as a parent class in case it was needed for a flex or a  grid child ---->
 
-        <div class="c-latest-news-articles-body">
-            <div class="articles-date">Date: <?php echo $_SESSION['addNewsStory']['date']; ?>
-        </div>
+      <div class="h-height-auto">
+      <!-- this helps the auto fit via a height on the image and a object fit cover so not to lose any aspect ratio -->
+        <img src="../img/<?php echo $_SESSION['addNewsStory']['img']; ?>" class="c-latest-news-articles-photo-img"/>
+        <!---end of img class with height and object fit cover---->
       </div>
 
-        <h3 class=c-latest-news-sub-title>Title: <?php echo $_SESSION['addNewsStory']['title'];?> </h3>
+      <!--- end of height auto class---->
 
-        <p> Description: <?php echo $_SESSION['addNewsStory']['description']; ?>  </p>
+      <!---this class aligns the latest news text through padding---->
+      <div class="c-latest-news-articles-text-container">
 
-      
+      <!--- this class changes the font size of the dates at different screen sizes --->
+            <div class="c-latest-news-articles-date"><?php echo $_SESSION['addNewsStory']['date']; ?>
+        
+      </div>
+
+      <!---- end of font size change ---->
+
+
+       <!----this class changes the font size and the colour to our red ---> 
+        <h3 class=c-latest-news-sub-title><?php echo $_SESSION['addNewsStory']['title'];?></h3>
+
+            <!---- end of font size change and colour to our red ---->
+
+         <!----this paragraph class overrides the max width on our base paragraphs to auto, this needed doing because with the grid auto fit property the max width of the paragraph was preventing it from working----->
+
+        <p class="c-latest-news-blurb"> <?php echo $_SESSION['addNewsStory']['description']; ?> </p>
+
+        <!----end of the overriding paragraph width for grid auto-fit---->
+
+     
      </div>
 
-     <div class="c-latest-news-articles-photo-container">Image Ref:
-        <img src="../img/<?php echo $_SESSION['addNewsStory']['img']; ?>" class="c-latest-news-articles-photo-img"/>
-      </div>
+     <!---end of the latest news text align through padding---->
+
+    
+ </article>
+
+    <!----end of helper class for overflow hidden---->
 
 
-  </article>
+ 
+<!-- CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
 
-  
-<!--- this will serve as a reusable component as this option design is in the penutimate page of the other sections of the website too---->
+<!--- this section will serve as a reusable component as this option design is in the penultimate page of all the other sections of the website too---->
 
-<div class="c-admin-confirm-add-tour-desc-container h-flex">
-<p class="c-admin-confirm-add-tour-desc"><a href="enterNewsDesImage.php" class="c-admin-confirm-add-tour-desc-links">Correct, continue</a>
-     | <a class="c-admin-confirm-add-tour-desc-links" href="addNewsDesAImage.php">Ooops, go back</a> | <a class="c-admin-confirm-add-tour-desc-links" href="admin.php">Back to admin panel</a>
+<!-- just a semantic container with a margin top to separate the content -->
+
+
+
+    <div class="c-admin-confirm-addDeleteOrEdit-to-db-container h-flex ">
+
+<!-- no text here on our paragraph element, that is done by the links, it is just to colour the separator our red -->
+<p class="c-admin-confirm-addDeleteOrEdit-to-db-desc">
+
+    <!-- these links take out their decoration but colour the text our white -->
+    <a href="enterNewsDesImage.php" class="c-admin-confirm-addDeleteOrEdit-to-db-links">Correct, continue</a>
+    | 
+    <!-- end of colour the text our white-->
+
+      <!-- these links take out their decoration but colour the text our white -->
+      <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="addNewsDesAImage.php">Ooops, go back</a>
+      <!-- end of colour the text our white-->
+
+       | 
+       <!-- these links take out their decoration but colour the text our white -->
+       <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="admin.php">Back to admin panel</a>
+        <!-- end of colour the text our white-->
     </p>
+    <!-- end of no text here, that is done by the links, it is just to colour the separator our red   -->
 </div>
 
-<!---end of a reusabele component, created here---->
+<!-- end of the semantic container with a margin top to separate the content -->
+
+<!---end of a reusable component as this option design is in the penultimate page of all the other sections of the website too ---->
+
+<!-- END OF CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
 
 
   <?php  	
@@ -257,17 +337,45 @@ if ($uploadOk == 0) {?>
 
     } else {?>
 
-         <p class="c-latest-news-blurb h-padding">Sorry, there was an error uploading your file</p>
+     <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
 
-         <!--- this will serve as a reusable component as this option design is in the penutimate page of the other sections of the website too---->
+         <p class="c-admin-addAndEdit-item-dates-desc">Sorry, there was an error uploading your file</p>
 
-<div class="c-admin-confirm-add-tour-desc-container h-flex h-padding">
-<p class="c-admin-confirm-add-tour-desc">
-      <a class="c-admin-confirm-add-tour-desc-links" href="addNewsDesAImage.php">Ooops, go back</a> | <a class="c-admin-confirm-add-tour-desc-links" href="admin.php">Back to admin panel</a>
+         <!-- end of this class set to capitalize with some margins and font size changes at different screen sizes -->
+
+       
+
+<!-- CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
+
+<!--- this section will serve as a reusable component as this option design is in the penultimate page of all the other sections of the website too---->
+
+<!-- just a semantic container with a margin top to separate the content -->
+
+
+
+    <div class="c-admin-confirm-addDeleteOrEdit-to-db-container h-flex h-padding">
+
+<!-- no text here on our paragraph element, that is done by the links, it is just to colour the separator our red -->
+<p class="c-admin-confirm-addDeleteOrEdit-to-db-desc">
+
+    <!-- these links take out their decoration but colour the text our white -->
+      <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="addNewsDesAImage.php">Ooops, go back</a>
+      <!-- end of colour the text our white-->
+
+       | 
+       <!-- these links take out their decoration but colour the text our white -->
+       <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="admin.php">Back to admin panel</a>
+        <!-- end of colour the text our white-->
     </p>
+    <!-- end of no text here, that is done by the links, it is just to colour the separator our red   -->
 </div>
 
-<!---end of a reusabele component, created here---->
+<!-- end of the semantic container with a margin top to separate the content -->
+
+<!---end of a reusable component as this option design is in the penultimate page of all the other sections of the website too ---->
+
+<!-- END OF CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
+
 <?php       
     }
 }
@@ -279,44 +387,93 @@ else {
 $_SESSION['addNewsStory']['img'] = "noimage.png";
 
 ?>
-<article class="c-latest-news-articles h-flex h-padding">
 
+<!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
+    <article class="h-overflowH">
 
-    <div class="c-latest-news-articles-text-container">
+ 
 
-        <div class="c-latest-news-articles-body">
-            <div class="articles-date">Date: <?php echo $_SESSION['addNewsStory']['date']; ?>
-        </div>
+    <!---This class below does nothing except overrides a previous height attribute (if needed), was just used as a parent class in case it was needed for a flex or a  grid child ---->
+
+      <div class="h-height-auto">
+      <!-- this helps the auto fit via a height on the image and a object fit cover so not to lose any aspect ratio -->
+        <img src="../img/<?php echo $_SESSION['addNewsStory']['img']; ?>" class="c-latest-news-articles-photo-img"/>
+        <!---end of img class with height and object fit cover---->
       </div>
 
-        <h3 class=c-latest-news-sub-title>Title: <?php echo $_SESSION['addNewsStory']['title'];?> </h3>
+      <!--- end of height auto class---->
 
-        <p class="c-latest-news-blurb"> Description: <?php echo $_SESSION['addNewsStory']['description']; ?>  </p>
+      <!---this class aligns the latest news text through padding---->
+      <div class="c-latest-news-articles-text-container">
 
-      
+      <!--- this class changes the font size of the dates at different screen sizes --->
+            <div class="c-latest-news-articles-date"><?php echo $_SESSION['addNewsStory']['date']; ?>
+        
+      </div>
+
+      <!---- end of font size change ---->
+
+
+       <!----this class changes the font size and the colour to our red ---> 
+        <h3 class=c-latest-news-sub-title><?php echo $_SESSION['addNewsStory']['title'];?></h3>
+
+            <!---- end of font size change and colour to our red ---->
+
+         <!----this paragraph class overrides the max width on our base paragraphs to auto, this needed doing because with the grid auto fit property the max width of the paragraph was preventing it from working----->
+
+        <p class="c-latest-news-blurb"> <?php echo $_SESSION['addNewsStory']['description']; ?> </p>
+
+        <!----end of the overriding paragraph width for grid auto-fit---->
+
+     
      </div>
 
-     <div class="c-latest-news-articles-photo-container">Image Ref:
-        <img src="../img/<?php echo $_SESSION['addNewsStory']['img']; ?>" class="c-latest-news-articles-photo-img"/>
-      </div>
+     <!---end of the latest news text align through padding---->
+
+    
+ </article>
+
+    <!----end of helper class for overflow hidden---->
 
 
 
-  </article>
+
+
+<!-- CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
+
+<!--- this section will serve as a reusable component as this option design is in the penultimate page of all the other sections of the website too---->
+
+<!-- just a semantic container with a margin top to separate the content -->
 
 
 
-<!--- this will serve as a reusable component as this option design is in the penutimate page of the other sections of the website too---->
+    <div class="c-admin-confirm-addDeleteOrEdit-to-db-container h-flex ">
 
-<div class="c-admin-confirm-add-tour-desc-container h-flex">
-<p class="c-admin-confirm-add-tour-desc"><a href="enterNewsDesImage.php" class="c-admin-confirm-add-tour-desc-links">Correct, continue</a>
-     | <a class="c-admin-confirm-add-tour-desc-links" href="addNewsDesAImage.php">Ooops, go back</a> | <a class="c-admin-confirm-add-tour-desc-links" href="admin.php">Back to admin panel</a>
+<!-- no text here on our paragraph element, that is done by the links, it is just to colour the separator our red -->
+<p class="c-admin-confirm-addDeleteOrEdit-to-db-desc">
+
+    <!-- these links take out their decoration but colour the text our white -->
+    <a href="enterNewsDesImage.php" class="c-admin-confirm-addDeleteOrEdit-to-db-links">Correct, continue</a>
+    | 
+    <!-- end of colour the text our white-->
+
+      <!-- these links take out their decoration but colour the text our white -->
+      <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="addNewsDesAImage.php">Ooops, go back</a>
+      <!-- end of colour the text our white-->
+
+       | 
+       <!-- these links take out their decoration but colour the text our white -->
+       <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="admin.php">Back to admin panel</a>
+        <!-- end of colour the text our white-->
     </p>
+    <!-- end of no text here, that is done by the links, it is just to colour the separator our red   -->
 </div>
 
-<!---end of a reusabele component, created here---->
+<!-- end of the semantic container with a margin top to separate the content -->
 
+<!---end of a reusable component as this option design is in the penultimate page of all the other sections of the website too ---->
 
+<!-- END OF CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
 
 
 
@@ -329,7 +486,7 @@ $_SESSION['addNewsStory']['img'] = "noimage.png";
 
 
 </section>
-
+<!-- end of this class sets the content bang in the middle of the page vertically and horizontally, the grid set at the beginning has a 100vh height on the main content therefore we can use flex's align items and justify content to centre the page -->
 
 
 <?php

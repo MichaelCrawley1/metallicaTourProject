@@ -2,7 +2,11 @@
 
 session_start();
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 
 if(!isset($_SESSION['admin'])){
@@ -29,7 +33,7 @@ $image = mysqli_real_escape_string($dbc, $_SESSION['addNewsStory']['img']);
 
 
 
-$enter_sql="INSERT INTO News_table (id,date,title, description, img_ref) VALUES (NULL,'$date', '$title','$description', '$image')";
+$enter_sql="INSERT INTO news_table (id,date,title, description, img_ref) VALUES (NULL,'$date', '$title','$description', '$image')";
 $enter_query= mysqli_query($dbc, $enter_sql);
  
 

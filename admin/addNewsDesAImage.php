@@ -2,6 +2,12 @@
 
 session_start();
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 if(!isset($_SESSION['admin'])){
 
 	header("Location:admin.php");
@@ -103,7 +109,7 @@ require_once ("header.php");
 <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
 <p class="c-admin-addAndEdit-item-dates-desc">Add a date: 
    <!-- some margins and font size changes at different screen sizes  -->
-  <input type="text" name="date" value="<?php echo $_SESSION['addNewsStory']['date'];?>" size="40"
+  <input type="date" name="date" value="<?php echo $_SESSION['addNewsStory']['date'];?>" size="40"
 maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
 <!-- end of some margins and font size changes at different screen sizes -->
 
@@ -214,7 +220,7 @@ require_once ("../connect_database.php");
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
 
-$delNewsStory_sql = "SELECT * FROM News_table";
+$delNewsStory_sql = "SELECT * FROM news_table";
 
 $delNewsStory_query= mysqli_query($dbc, $delNewsStory_sql);
 
@@ -228,7 +234,7 @@ require('../public/newsStoriesWhileLoop.php');
     
 }
  	 
-mysqli_close($dbc);
+
 ?>
 </div>
 <!----end of the auto-fit grid for the cards (images, album photos, stadium photos etc)----->

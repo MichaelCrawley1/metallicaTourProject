@@ -79,7 +79,7 @@ require_once ("../connect_database.php");
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
 
-$news_query = "SELECT * FROM News_table";
+$news_query = "SELECT * FROM news_table";
 
  $data = mysqli_query($dbc, $news_query);
 
