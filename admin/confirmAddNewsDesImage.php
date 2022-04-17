@@ -3,12 +3,7 @@
 
 session_start();
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-
+require_once ("../errorReporting/developmentErrorReporting.php");
 
 
 if(!isset($_SESSION['admin'])){
@@ -74,6 +69,7 @@ if(empty($_SESSION['addNewsStory']['date']) || empty($_SESSION['addNewsStory']['
 <title>The Band</title>
 <link rel="Stylesheet" type="text/css" href="../css/main.css">
 <script src="../js/mobileMenu.js" defer></script>
+<script src="../js/ajaxUnlinkImage.js" defer></script>
 <meta charset = "utf-8">
 </head>
 
@@ -116,40 +112,21 @@ require_once ("header.php");
         <img src="../img/noun_back.svg" alt="please go back to the page behind" class="c-back-page-icon">
 
           <!-- end of size change on the svg -->
+          
         <!-- destination to go back a page with pseudo before technique to give mobile users more click space -->
-        <a href="addNewsDesAImage.php" class="c-back-page-icon-link"></a>
+         <!-- JAVASCRIPT FUNCTIONALITY:  here we make the pseudo before technique link a js component because we disable this way back out of the page navigation, compelling the user to use the options in the middle of the page be it a successful image upload or not.  This is prevent unused images getting mistakenly uploaded to the image folder  -->
+        <a href="addNewsDesAImage.php" class="c-js-back-page-icon-link"></a>
+          <!-- end of JAVASCRIPT FUNCTIONALITY  -->
           <!-- end of the pseudo before technique to give mobile users more click space  -->
     </div>
 <!-- end of position absolute -->
 <!----end of reusable component----->
 
-
-
 <?php
 
-if($_FILES["fileToUpload"]["name"]!=""){
+function displayErrorMessage($message) {?>
 
-	 $_SESSION['addNewsStory']['img'] = $_FILES["fileToUpload"]["name"];
-
-	$target_dir = "../img/";
-	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-	$uploadOk = 1;
-	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        //echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
-}
-// Check if file already exists
-if (file_exists($target_file)) {
-?>
-    <!-- same style for the headings that appear through most of the site, just a slightly different font size -->
+     <!-- same style for the headings that appear through most of the site, just a slightly different font size -->
 <h1 class="c-admin-confirm-addDeleteOrEdit-to-db-title">Sorry, cannot do</h1>
 
 
@@ -158,49 +135,35 @@ if (file_exists($target_file)) {
 
 <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
 
-    <p class="c-admin-addAndEdit-item-dates-desc">File already exists.</p>
+    <p class="c-admin-addAndEdit-item-dates-desc"><?php echo "$message" ?></p>
 
     <!-- end of capitalize with some margins and font size changes at different screen sizes   -->
 
 <?php
 
 
-    
-    $uploadOk = 0;
+
+
 }
-// Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {?>
 
+function uploadErrorMessageWithNoHeading($message) {?>
 
+    
 <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
 
-    <p class="c-admin-addAndEdit-item-dates-desc">Sorry, your file is too large.  It needs to be smaller!</p>
+    <p class="c-admin-addAndEdit-item-dates-desc"><?php echo "$message" ?></p>
 
     <!-- end of capitalize with some margins and font size changes at different screen sizes   -->
 
-<?php    
-    $uploadOk = 0;
+<?php
+
+
+
+
 }
-// Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {?>
-
-    <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
-
-    <p class="c-admin-addAndEdit-item-dates-desc">Sorry, only file types; JPG, JPEG, PNG & GIF are allowed.</p>
-
-    <!-- end of capitalize with some margins and font size changes at different screen sizes   -->
-<?php    
-    $uploadOk = 0;
-}
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {?>
 
 
-     <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
-     <p class="c-admin-addAndEdit-item-dates-desc">File was not uploaded.</p>
-
-      <!-- end of capitalize with some margins and font size changes at different screen sizes   -->
+function instructionsOnWhereToGo($backAPage){?>
 
 <!-- CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
 
@@ -216,7 +179,7 @@ if ($uploadOk == 0) {?>
 <p class="c-admin-confirm-addDeleteOrEdit-to-db-desc">
 
     <!-- these links take out their decoration but colour the text our white -->
-      <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="addNewsDesAImage.php">Ooops, go back</a>
+      <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="<?php echo $backAPage; ?>">Ooops, go back</a>
       <!-- end of colour the text our white-->
 
        | 
@@ -235,13 +198,12 @@ if ($uploadOk == 0) {?>
 
 <?php
 
-// if everything is ok, try to upload file
-} else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        
-  ?>
+}
 
-   <!-- same style for the headings that appear through most of the site, just a slightly different font size -->
+
+function successMessage($correctCont, $wrongGoBack){?>
+
+     <!-- same style for the headings that appear through most of the site, just a slightly different font size -->
   <h1 class="c-admin-confirm-addDeleteOrEdit-to-db-title">Confirm Items Details</h1>
   <!-- end of same style for the headings that appear through most of the site, just a slightly different font size -->
 
@@ -253,15 +215,15 @@ if ($uploadOk == 0) {?>
     <!---This class below does nothing except overrides a previous height attribute (if needed), was just used as a parent class in case it was needed for a flex or a  grid child ---->
 
       <div class="h-height-auto">
-      <!-- this helps the auto fit via a height on the image and a object fit cover so not to lose any aspect ratio -->
-        <img src="../img/<?php echo $_SESSION['addNewsStory']['img']; ?>" class="c-latest-news-articles-photo-img"/>
-        <!---end of img class with height and object fit cover---->
+      <!-- this helps the auto fit via a height on the image and a object fit cover so not to lose any aspect ratio, also we have a helper class in here to centre the image when it is just one item in the auto-grid -->
+        <img src="../img/<?php echo $_SESSION['addNewsStory']['img']; ?>" class="c-latest-news-articles-photo-img h-margin-centre"/>
+        <!---end of img class with height and object fit cover also the end of a helper class in here to centre the image when it is just one item in the auto-grid---->
       </div>
 
       <!--- end of height auto class---->
 
-      <!---this class aligns the latest news text through padding---->
-      <div class="c-latest-news-articles-text-container">
+      <!---this class aligns the latest news text through padding, we also have a helper class of aligining text to centre here because again it is just one item in the grid and to make it look better we centre it---->
+      <div class="c-latest-news-articles-text-container h-text-align">
 
       <!--- this class changes the font size of the dates at different screen sizes --->
             <div class="c-latest-news-articles-date"><?php echo $_SESSION['addNewsStory']['date']; ?>
@@ -276,16 +238,16 @@ if ($uploadOk == 0) {?>
 
             <!---- end of font size change and colour to our red ---->
 
-         <!----this paragraph class overrides the max width on our base paragraphs to auto, this needed doing because with the grid auto fit property the max width of the paragraph was preventing it from working----->
+         <!-- this paragraph has no class attached as we want to keep the max width set up at the beginning, because when it is just one item we need the text to be centred and not span the whole page -->
 
-        <p class="c-latest-news-blurb"> <?php echo $_SESSION['addNewsStory']['description']; ?> </p>
+        <p> <?php echo $_SESSION['addNewsStory']['description']; ?> </p>
 
-        <!----end of the overriding paragraph width for grid auto-fit---->
+      <!-- end of this paragraph of having no class attached as we want to keep the max width set up at the beginning, because when it is just one item we need the text to be centred and not span the whole page  -->
 
      
      </div>
 
-     <!---end of the latest news text align through padding---->
+     <!---end of the latest news text align through padding and the end of a helper class of aligining text to centre here because again it is just one item in the grid and to make it look better we centre it---->
 
     
  </article>
@@ -308,18 +270,29 @@ if ($uploadOk == 0) {?>
 <p class="c-admin-confirm-addDeleteOrEdit-to-db-desc">
 
     <!-- these links take out their decoration but colour the text our white -->
-    <a href="enterNewsDesImage.php" class="c-admin-confirm-addDeleteOrEdit-to-db-links">Correct, continue</a>
+
+
+    
+    <a href="<?php echo $correctCont?>" class="c-admin-confirm-addDeleteOrEdit-to-db-links">Correct, continue</a>
     | 
     <!-- end of colour the text our white-->
 
       <!-- these links take out their decoration but colour the text our white -->
-      <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="addNewsDesAImage.php">Ooops, go back</a>
+
+      <!-- JAVASCRIPT FUNCTIONALITY: this class below is a javascript component because we use an Ajax call to dynamically unlink the image when the go back button or return to admin is pressed, this is to prevent the image getting uploaded to the image folder accidentally, therefore making it free to be used again  -->
+
+      <a class="c-js-admin-confirm-addDeleteOrEdit-to-db-links" href="<?php echo $wrongGoBack?>">Ooops, go back</a>
+       <!-- END OF JAVASCRIPT FUNCTIONALITY -->
       <!-- end of colour the text our white-->
 
        | 
        <!-- these links take out their decoration but colour the text our white -->
-       <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="admin.php">Back to admin panel</a>
+
+        <!-- JAVASCRIPT FUNCTIONALITY: this class below is a javascript component because we use an Ajax call to dynamically unlink the image when the go back button or return to admin is pressed, this is to prevent the image getting uploaded to the image folder accidentally, therefore making it free to be used again  -->
+
+       <a class="c-js-admin-confirm-addDeleteOrEdit-to-db-links" href="admin.php">Back to admin panel</a>
         <!-- end of colour the text our white-->
+         <!-- END OF JAVASCRIPT FUNCTIONALITY -->
     </p>
     <!-- end of no text here, that is done by the links, it is just to colour the separator our red   -->
 </div>
@@ -330,155 +303,205 @@ if ($uploadOk == 0) {?>
 
 <!-- END OF CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
 
+<?php
 
-  <?php  	
+}
+
+// set the superglobal file name variables.
+
+$imageName = $_FILES["fileToUpload"]["name"];
+$imageFileType = "";
+$imageSize = $_FILES["fileToUpload"]["size"];
+$imageTempFile = $_FILES["fileToUpload"]["tmp_name"];
+// we are not doing the error code.  
+
+// make array to refactor many of the if conditions
+global $uploadOk;
+
+$uploadOk = 0;
 
 
+// image upload button is pressed first before the submit button, so the logic is this comes first in the if statement order.  
+if($imageName!=""){
 
-    } else {?>
+	 $_SESSION['addNewsStory']['img'] = $imageName;
 
-     <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+     // this is the whole file path e.g race-ur-self1.jpg in the session
+     
+   
 
-         <p class="c-admin-addAndEdit-item-dates-desc">Sorry, there was an error uploading your file</p>
+	$target_dir = "../img/";
+    // as it says ../img/
+	$target_file = $target_dir . basename($imageName);
+    // the same as the session up above the base name, not the directory so e.g race-ur-self1.jpg but it is prepended with the directory.   
 
-         <!-- end of this class set to capitalize with some margins and font size changes at different screen sizes -->
+    
+	$uploadOk = 1;
+    
+    // i think this is the flag
+    
+    
+	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
+    // this function means string to lower case with the paramaters of what target file to examine and what details to leave of it, this time it is just the extention, so the jpg, png, gif, basically all the MIME types
+    
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = exif_imagetype($imageTempFile);
+   
+
+    // the notes on the php site say not to use the getimagesize()  function to check if it is a valid image because it says non images may still get counted as images.  However it didn't stop W3schools because that is exactly what they are doing.  exif_imagetype() is much faster. exif_imagetype has an array of 18 image types and if it doesn't fit that number then it returns false and therefore it doesn't work. 
+    
+
+    if($check !== false) {
+        //echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+
+    
+
+        
+        $uploadOk = 0;
        
 
-<!-- CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
-
-<!--- this section will serve as a reusable component as this option design is in the penultimate page of all the other sections of the website too---->
-
-<!-- just a semantic container with a margin top to separate the content -->
-
-
-
-    <div class="c-admin-confirm-addDeleteOrEdit-to-db-container h-flex h-padding">
-
-<!-- no text here on our paragraph element, that is done by the links, it is just to colour the separator our red -->
-<p class="c-admin-confirm-addDeleteOrEdit-to-db-desc">
-
-    <!-- these links take out their decoration but colour the text our white -->
-      <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="addNewsDesAImage.php">Ooops, go back</a>
-      <!-- end of colour the text our white-->
-
-       | 
-       <!-- these links take out their decoration but colour the text our white -->
-       <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="admin.php">Back to admin panel</a>
-        <!-- end of colour the text our white-->
-    </p>
-    <!-- end of no text here, that is done by the links, it is just to colour the separator our red   -->
-</div>
-
-<!-- end of the semantic container with a margin top to separate the content -->
-
-<!---end of a reusable component as this option design is in the penultimate page of all the other sections of the website too ---->
-
-<!-- END OF CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
-
-<?php       
+        // this ends this program here so the other if conditions don't get computed.  
     }
 }
+// this ends the isset POST Submit if and else statement.  The first If statement is still opened.
+
+// this array and subsequent for each loop below is really just a bit of syntax sugar on my part.  I done this because this image uploading code is taken from the source, "w3schools" url here = https://www.w3schools.com/php/php_file_upload.asp.  There is too many nested if statements for my liking and feels like bad code orientation.  Given my lack of expertise at the moment for refactoring, I tried my best.  I checked for solutions from Stack overflow but didn't really find anything.  So I decided that if I can't abstract the conditions away into separate functions, perhaps I can compartmentalise them in another way.  Hence this solution below.  Really it is just the continuation of the many if conditions we have to look for when a user uploads an image to the database, however the difference is I have managed to take at least three if conditions (checking for same file, checking if said file is too big and seeing if it is the correct image file type) out of the parent beginning If statement to make it easier to read and for fellow developers to follow and then subsequently amend if need be.  The break in each of the if conditions in the for each loop enables the behaviour to be same as the original W3school code.  It is just compartmentalised better, in my humble opinion.    
+
+
+$imageUploadSituations = array(
+    'duplicateFile' => $target_file,
+    'tooBig' => $imageSize,
+    'wrongFile' => $imageFileType);
+
+
+
+
+function threeRemainingIfConditionsCheck($associatedArrayImageUpload){
+
+ global $uploadOk;
+foreach($associatedArrayImageUpload as $key => $messageResponse){
+
+  
+
+    if (file_exists($associatedArrayImageUpload["duplicateFile"])) {
+
+   
+    
+     displayErrorMessage("File already exists!");
+
+
+
+
+     $uploadOk = 0;
+     
+     
+   
+     break;
+
+}
+
+
+    
+    if ($associatedArrayImageUpload["tooBig"] > 500000 && $associatedArrayImageUpload["wrongFile"] != "jpg" && $associatedArrayImageUpload["wrongFile"] != "png" && $associatedArrayImageUpload["wrongFile"] != "jpeg"
+&& $associatedArrayImageUpload["wrongFile"] != "gif" ){
+
+    displayErrorMessage("Sorry file size is too big and we only accept file types of; JPG, JPEG, PNG & GIF");
+
+    $uploadOk = 0;
+
+   
+    break;
+
+    
+}
+
+else if($associatedArrayImageUpload["tooBig"] > 500000){
+
+     displayErrorMessage("Sorry, your file is too large.  It needs to be smaller than 500KB!");
+    $uploadOk = 0;
+    
+    break;
+
+}
+
+else if($associatedArrayImageUpload["wrongFile"]!= "jpg" && $associatedArrayImageUpload["wrongFile"]!= "png" && $associatedArrayImageUpload["wrongFile"]!= "jpeg"
+&& $associatedArrayImageUpload["wrongFile"]!= "gif" ) {
+
+     
+    displayErrorMessage("Sorry, only file types; JPG, JPEG, PNG & GIF are allowed.");   
+    $uploadOk = 0;
+     
+    break;
+}
+
+
+
+
+
+}
+ return $uploadOk;
+}
+
+if(threeRemainingIfConditionsCheck($imageUploadSituations) == 0){
+
+    $uploadOk = 0;
+
+}
+
+
+
+// end of the for each compartmentalisation of the three if conditions (checking for same file, checking if said file is too big and seeing if it is the correct image file type).
+
+
+// Check file size
+
+// Allow certain file formats
+
+
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+
+uploadErrorMessageWithNoHeading("File was not uploaded.");
+instructionsOnWhereToGo("addNewsDesAImage.php");
+// if everything is ok, try to upload file
+} 
+
+
+
+else if (move_uploaded_file($imageTempFile, $target_file)) {
+        
+  successMessage("enterNewsDesImage.php", "addNewsDesAImage.php");
+
+    } 
+
+else {
+
+     
+
+ displayErrorMessage("Sorry, there was an error uploading your file."); 
+ instructionsOnWhereToGo("addNewsDesAImage.php");     
+
+
+    }
+}
+
+//end of the opening if statement where it checks the veracity of the imageName
+
+
+
 // the code below only runs if no image is selected
-}  
+  
 
 else {
 
 $_SESSION['addNewsStory']['img'] = "noimage.png";
+successMessage("enterNewsDesImage.php", "addNewsDesAImage.php");
 
-?>
-
-<!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
-    <article class="h-overflowH">
-
- 
-
-    <!---This class below does nothing except overrides a previous height attribute (if needed), was just used as a parent class in case it was needed for a flex or a  grid child ---->
-
-      <div class="h-height-auto">
-      <!-- this helps the auto fit via a height on the image and a object fit cover so not to lose any aspect ratio -->
-        <img src="../img/<?php echo $_SESSION['addNewsStory']['img']; ?>" class="c-latest-news-articles-photo-img"/>
-        <!---end of img class with height and object fit cover---->
-      </div>
-
-      <!--- end of height auto class---->
-
-      <!---this class aligns the latest news text through padding---->
-      <div class="c-latest-news-articles-text-container">
-
-      <!--- this class changes the font size of the dates at different screen sizes --->
-            <div class="c-latest-news-articles-date"><?php echo $_SESSION['addNewsStory']['date']; ?>
-        
-      </div>
-
-      <!---- end of font size change ---->
-
-
-       <!----this class changes the font size and the colour to our red ---> 
-        <h3 class=c-latest-news-sub-title><?php echo $_SESSION['addNewsStory']['title'];?></h3>
-
-            <!---- end of font size change and colour to our red ---->
-
-         <!----this paragraph class overrides the max width on our base paragraphs to auto, this needed doing because with the grid auto fit property the max width of the paragraph was preventing it from working----->
-
-        <p class="c-latest-news-blurb"> <?php echo $_SESSION['addNewsStory']['description']; ?> </p>
-
-        <!----end of the overriding paragraph width for grid auto-fit---->
-
-     
-     </div>
-
-     <!---end of the latest news text align through padding---->
-
-    
- </article>
-
-    <!----end of helper class for overflow hidden---->
-
-
-
-
-
-<!-- CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
-
-<!--- this section will serve as a reusable component as this option design is in the penultimate page of all the other sections of the website too---->
-
-<!-- just a semantic container with a margin top to separate the content -->
-
-
-
-    <div class="c-admin-confirm-addDeleteOrEdit-to-db-container h-flex ">
-
-<!-- no text here on our paragraph element, that is done by the links, it is just to colour the separator our red -->
-<p class="c-admin-confirm-addDeleteOrEdit-to-db-desc">
-
-    <!-- these links take out their decoration but colour the text our white -->
-    <a href="enterNewsDesImage.php" class="c-admin-confirm-addDeleteOrEdit-to-db-links">Correct, continue</a>
-    | 
-    <!-- end of colour the text our white-->
-
-      <!-- these links take out their decoration but colour the text our white -->
-      <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="addNewsDesAImage.php">Ooops, go back</a>
-      <!-- end of colour the text our white-->
-
-       | 
-       <!-- these links take out their decoration but colour the text our white -->
-       <a class="c-admin-confirm-addDeleteOrEdit-to-db-links" href="admin.php">Back to admin panel</a>
-        <!-- end of colour the text our white-->
-    </p>
-    <!-- end of no text here, that is done by the links, it is just to colour the separator our red   -->
-</div>
-
-<!-- end of the semantic container with a margin top to separate the content -->
-
-<!---end of a reusable component as this option design is in the penultimate page of all the other sections of the website too ---->
-
-<!-- END OF CONFIRM ADD ITEM OR DELETE OR EDIT TO DATABASE SECTION -->
-
-
-
-
-<?php
 }
 
 

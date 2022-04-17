@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require_once ("../errorReporting/developmentErrorReporting.php");
 
 if(!isset($_SESSION['admin'])){
 
@@ -76,11 +77,12 @@ require_once ("header.php");
 
 <!-- THE TOUR SECTION -->
 
-  <!-- there is an admin class here to override the flex for the borders to stretch the whole page -->
+ 
 
   <!-- also a helper class to take out the pseudo before element background strip -->
+  <!-- and a helper to stretch the background out to cancel the align centre from the parent section -->
 
-  <section class="c-upcoming-shows c-admin-add-tour-dates-override-flex h-take-background-strip-off-pseudo-before-element">
+  <section class="c-upcoming-shows h-take-background-strip-off-pseudo-before-element h-stretch">
 
 
 
@@ -107,7 +109,8 @@ require("../public/tourDatesWhileLoopDeleteItem.php");
 
 </section>
 
-<!-- end of the admin class here to override the flex for the borders to stretch the whole page -->
+ <!-- end of helper to stretch the background out to cancel the align centre from the parent section -->
+
  <!--  end of the helper class to take out the pseudo before element background strip -->
 
 <!--- end of reusable component---->

@@ -2,12 +2,8 @@
 
 session_start();
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+require_once ("../errorReporting/developmentErrorReporting.php");
 
-
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 if(!isset($_SESSION['admin'])){
 
 	header("Location:admin.php");
@@ -21,13 +17,7 @@ $_SESSION['addNewsStory']['img'] = "noimage.png";
 
 }
 
-else {
 
-if($_SESSION['addNewsStory']['img']!="noimage.png"){
-
-		@unlink("../img/".$_SESSION['addNewsStory']['img']);
-}
-}
 
 
 ?>
@@ -111,6 +101,7 @@ require_once ("header.php");
    <!-- some margins and font size changes at different screen sizes  -->
   <input type="date" name="date" value="<?php echo $_SESSION['addNewsStory']['date'];?>" size="40"
 maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
+
 <!-- end of some margins and font size changes at different screen sizes -->
 
 </p>
@@ -154,11 +145,11 @@ maxlength="50" class="c-admin-addAndEdit-item-dates-input" required  >
 <!-- this class is to centre the button -->
 <div class="c-admin-addAndEdit-item-dates-submit-button-container h-flex">
 
-  <!--- these buttons are reused throughout the website and have the same style that was done at the beginning of the project, they also have a hover state as well and the colour goes a slightly darker red with a position relative for the anchors to span the whole area of the button rather than just the link ---->
+  <!--- these buttons are reused throughout the website and have the same style that was done at the beginning of the project, they also have a hover state as well and the colour goes a slightly darker red with a position relative for the anchors to span the whole area of the button rather than just the link, however no anchors needed for the form ---->
   <!-- also a helper class to make the text uppercase -->
 <button class="c-button-mobile c-button-mobile--large h-uppercase" type="submit" name="submit"  >Submit</button>
 
-<!--- end of buttons having the same style and a hover state with a position relative for the anchors to span the whole area of the button rather than just the link ---->
+<!--- end of buttons having the same style and a hover state with a position relative for the anchors to span the whole area of the button rather than just the link however no anchors needed for the form ---->
 
 <!-- end of the helper class making the text uppercase -->
 </div>

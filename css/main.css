@@ -413,6 +413,9 @@ body {
 .l-basic-grid-admin-edit-tour {
   grid-template-rows: minmax(70px, auto) minmax(30vh, auto) minmax(70vh, auto) minmax(140px, auto); }
 
+.l-basic-grid-admin-edit-tNMP {
+  min-height: 100vh; }
+
 .l-basic-grid-delete-news-stories {
   grid-template-rows: minmax(70px, auto) minmax(30px, auto) minmax(80vh, auto) minmax(140px, auto); }
 
@@ -453,6 +456,16 @@ img {
   width: 3em; }
 
 .c-back-page-icon-link::before {
+  content: "";
+  display: block;
+  top: -1em;
+  bottom: -1em;
+  left: 0;
+  border: 1px solid pink;
+  position: absolute;
+  width: 90px; }
+
+.c-js-back-page-icon-link::before {
   content: "";
   display: block;
   top: -1em;
@@ -571,6 +584,9 @@ textarea {
 .h-margin-bottom {
   margin-bottom: 4em; }
 
+.h-margin-centre {
+  margin: 0 auto; }
+
 .h-font-size {
   font-size: 2.2rem; }
 
@@ -588,6 +604,15 @@ textarea {
 
 .h-no-padding {
   padding: 0 !important; }
+
+.h-no-max-width {
+  max-width: none; }
+
+.h-admin-addAndEdit-override-flex-to-stretch {
+  align-self: stretch; }
+
+.h-width-300px {
+  width: 300px; }
 
 /*5. Layout*/
 .c-mobile-menu {
@@ -694,7 +719,7 @@ textarea {
   color: inherit; }
 
 .c-fixed-mobile-screen-list-item-links--active {
-  color: #b21319; }
+  color: #b21319 !important; }
 
 .c-fixed-mobile-screen-list-item-links::after {
   content: "";
@@ -985,7 +1010,8 @@ textarea {
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
-  overflow: hidden; }
+  overflow: hidden;
+  width: 579px; }
 
 @media (min-width: 65rem) {
   .c-latest-news-articles-date {
@@ -1473,8 +1499,8 @@ textarea {
   flex-direction: column;
   align-items: center; }
 
-/* this class down below just applies to the tour section it is to make sure the item stetches the whole page to override restrictive flex constraints */
-.c-admin-addAndEdit-tour-dates-override-flex {
+/* this class down below applies to the add and edit sections make sure the item stretches the whole page to override restrictive flex constraints */
+.c-admin-addAndEdit-override-flex-to-stretch {
   align-self: stretch; }
 
 /* end of the class above */
@@ -1532,6 +1558,10 @@ textarea {
   color: #b21319; }
 
 .c-admin-confirm-addDeleteOrEdit-to-db-links {
+  text-decoration: none;
+  color: #fff; }
+
+.c-js-admin-confirm-addDeleteOrEdit-to-db-links {
   text-decoration: none;
   color: #fff; }
 

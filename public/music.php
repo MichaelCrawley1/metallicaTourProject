@@ -66,7 +66,7 @@ require_once("newsMusicPhotosHero.php");
     <div class="l-for-card-grid-columns-max-width-container">
 
 
-<!--- this class down below is the section grid column layout itself, this is for all the card type blocks like the music albums, the band photos and the news stories--->  
+<!--- this class down below is the section grid column layout itself, this is for all the card type blocks like the music albums, the band photos and the news stories this grid uses the auto-fit property with a minmax so it becomes responsive--->  
 
 
     <div class="l-the-card-grid h-grid">
@@ -109,6 +109,9 @@ mysqli_close($dbc);
 
 </section>
 <!-- end of the semantic section for the music albums -->
+
+<!--end of a helper class to take off the background image strip divider that is present in the home page -->
+
 <!-- END OF THE MUSIC SECTION -->
 
 

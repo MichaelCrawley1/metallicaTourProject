@@ -4,6 +4,8 @@
 
 session_start();
 
+require_once ("../errorReporting/developmentErrorReporting.php");
+
 if(!isset($_SESSION['admin'])){
 
 	header("Location:admin.php");
@@ -128,9 +130,9 @@ require_once ("header.php");
 
 <!-- THE TOUR SECTION -->
 
-<!-- there is an admin class here to override the flex for the borders to stretch the whole page -->
+<!-- there is an helper admin class here to override the flex for the borders to stretch the whole page -->
 
-<section class="c-upcoming-shows c-admin-addAndEdit-tour-dates-override-flex">
+<section class="c-upcoming-shows h-admin-addAndEdit-override-flex-to-stretch ">
 
 <!-- this is an interesting class, at mobile sizes it uses display flex as the default to centre the text but at bigger screen sizes it goes to max 1300px grid container with a three column grid with the third child, the, 'c-upcoming-shows-location' class at align-self end to stretch to the end of the page -->
 <article class="c-upcoming-shows-container h-flex">
@@ -163,7 +165,7 @@ require_once ("header.php");
 
 </section>
 
-<!-- end of the admin class here to override the flex for the borders to stretch the whole page -->
+<!-- end of the helper admin class here to override the flex for the borders to stretch the whole page -->
  <!-- end of the semantic progress to the upcoming shows section, it does have a grey background effect on it and the before pseudo class has a background strip on it   -->
 
 <!-- END OF THE TOUR SECTION -->

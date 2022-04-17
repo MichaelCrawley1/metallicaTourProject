@@ -2,6 +2,8 @@
 
 session_start();
 
+require_once ("../errorReporting/developmentErrorReporting.php");
+
 if(!isset($_SESSION['admin'])){
 
 	header("Location:admin.php");
@@ -16,13 +18,6 @@ $_SESSION['addBandPhotos']['date']="";
 
 }
 
-else {
-
-if($_SESSION['addBandPhotos']['img']!="noimage.png"){
-
-		@unlink("../img/".$_SESSION['addBandPhotos']['img']);
-}
-}
 
 
 ?>
@@ -63,7 +58,6 @@ if($_SESSION['addBandPhotos']['img']!="noimage.png"){
         <!-- this is the admin grid as it has less rows than the home page -->
 
 
-
         <div class="l-basic-grid-admin-and-c-panel h-grid">
         	<?php
 require_once ("header.php");
@@ -71,40 +65,96 @@ require_once ("header.php");
 ?>
 
 
-<!---this parent section comes from the, 'add tour' admin page, because stylistically, the layout is the same, for any modifications, that will be highlighted with a class specfic for its category, 'tour', 'news', 'photos' etc. ---->
+<!-- this class below is for all the items that are added through the admin panel, be it; a new tour date, a new news story, a band photo or a new album. -->
+
+<!-- this class through the use of flexbox helps to centre the form, it has a position relative on it to aid the back icon below it to position itself on the left hand side of this section's corner otherwise it would go to very top of the browser -->
 		
-<section class="c-admin-add-item h-flex h-position h-margin-bottom">
+<section class="c-admin-addAndEdit-item h-flex h-position">
 
 
-	<!----reusable component icon to go back a page----->
+	<!----reusable component icon to go back a page this is in the base section of the scss----->
+  <!-- because the parent is position relative we have a position absolute on this of top, left and right of 0 to make the icon align at the top left hand side of the page  -->
     <div class="c-back-page-icon-container">
-        
+         <!-- just an increase size on this svg to make it look better -->
         <img src="../img/noun_back.svg" alt="please go back to the page behind" class="c-back-page-icon">
+          <!-- end of size change on the svg -->
+
+           <!-- destination to go back a page with pseudo before technique to give mobile users more click space -->
         <a href="manipulatePhotosSection.php" class="c-back-page-icon-link"></a>
+         <!-- end of the pseudo before technique to give mobile users more click space  -->
     </div>
+   <!-- end of position absolute -->
 <!----end of reusable component----->
 
-<h1 class="c-admin-add-item-title">Enter details for the new Band Photos</h1>
+<!-- heading style for all the admin add and edit item headings with different sizes at different screens -->
 
 
+<h1 class="c-admin-addAndEdit-item-title">Add A Band Photo</h1>
 
-<form method="post" action="confirmAddBandPhoto.php" class="c-admin-add-item-form h-padding" enctype="multipart/form-data" />
+<!-- end of heading style for the admin add items headings -->
+
+<!-- a semantic form class -->
+
+<form method="post" action="confirmAddBandPhoto.php" class="c-admin-addAndEdit-item-dates-form h-padding" enctype="multipart/form-data" />
+
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+
+	<p class="c-admin-addAndEdit-item-dates-desc">Add a date: 
+      <!-- some margins and font size changes at different screen sizes  -->
+    <input type="date" name="date" value="<?php echo $_SESSION['addBandPhotos']['date'];?>" size="40"
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
+
+<!-- end of some margins and font size changes at different screen sizes -->
+</p>
+
+<!-- end of capitalize with some margins and font size changes at different screen sizes   -->
 
 
-	<p class="c-admin-add-item-dates-desc">Add a date: <input type="date" name="date" value="<?php echo $_SESSION['addBandPhotos']['date'];?>" size="40"
-maxlength="50" class="c-admin-add-item-dates-input" required /></p>
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
 
-<p class="c-admin-add-item-dates-desc">Insert state or country of tour: <input type="text" name="state_country" value="<?php echo $_SESSION['addBandPhotos']['state_country'];?>" size="40"
-maxlength="50" class="c-admin-add-item-dates-input" required /></p>
+<p class="c-admin-addAndEdit-item-dates-desc">Insert state or country of tour: 
 
-<p class="c-admin-add-item-dates-desc">Add an image: <input type="file" name="fileToUpload"  id="fileToUpload" size="40"
-maxlength="50" class="c-admin-add-item-dates-input" required ></p>
+  <!-- some margins and font size changes at different screen sizes  -->
+  <input type="text" name="state_country" value="<?php echo $_SESSION['addBandPhotos']['state_country'];?>" size="40"
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
 
-<div class="c-admin-add-item-dates-submit-button-container h-flex">
+<!-- end of some margins and font size changes at different screen sizes -->
+
+</p>
+
+<!-- end of capitalize with some margins and font size changes at different screen sizes   -->
+
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+
+<p class="c-admin-addAndEdit-item-dates-desc">Add an image: 
+
+  <!-- some margins and font size changes at different screen sizes  -->
+
+  <input type="file" name="fileToUpload"  id="fileToUpload" size="40"
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required >
+<!-- end of some margins and font size changes at different screen sizes -->
+</p>
+
+<!-- end of capitalize with some margins and font size changes at different screen sizes   -->
+
+<!-- this class is to centre the button -->
+
+<div class="c-admin-addAndEdit-item-dates-submit-button-container h-flex">
+
+  <!--- these buttons are reused throughout the website and have the same style that was done at the beginning of the project, they also have a hover state as well and the colour goes a slightly darker red with a position relative for the anchors to span the whole area of the button rather than just the link, however no anchors needed for the form ---->
+  <!-- also a helper class to make the text uppercase -->
+
 <button class="c-button-mobile c-button-mobile--large h-uppercase" type="submit" name="submit"  >Submit</button>
+
+<!--- end of buttons having the same style and a hover state with a position relative for the anchors to span the whole area of the button rather than just the link however no anchors needed for the form ---->
+
+<!-- end of the helper class making the text uppercase -->
 </div>
+
+<!-- end of class to centre the button -->
 </form>
 
+<!-- end of the semantic form class -->
 
 <?php
 
@@ -114,8 +164,10 @@ if (isset($_GET['signup'])){
 
   if ($correctForm == "char"){?>
 
-      <p class="c-admin-add-item-dates-desc h-font-size h-text-align">Entries must begin with letters for venue and location of tour!</p>
+     <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
 
+      <p class="c-admin-addAndEdit-item-dates-desc h-font-size h-text-align">Entries must begin with letters for venue and location of tour!</p>
+       <!-- end of some margins and font size changes at different screen sizes -->
 
 
 <?php
@@ -129,19 +181,40 @@ if (isset($_GET['signup'])){
 
 ?>
 
+<!-- THE BAND PHOTOS SECTION -->
+
+ <!-- a helper class to take off the background image strip divider that is present in the home page -->
+<!-- a semantic section class -->
+
+<!-- a helper stretch class to override the align centre from the parent section class -->
+
+<section class="c-bands-photos h-take-background-strip-off-pseudo-before-element h-stretch">
+
+ <!-- just the usual heading style for the site with different sizes for different screens and paddings -->
+
+ <!-- MODIFIER HERE, PLEASE SEE CSS COMMENTS FOR WHAT THIS DOES OR WHAT IT IS FOR -->
+
+  <h1 class="c-bands-photos-title c-bands-photos-title--padding-less  h-mobile-title">Latest Band Photos
+
+    </h1>
+
+  <!--  end of the usual heading style for the site with different sizes for different screens and paddings -->
+
+<!---this class down below is a utility class to keep the grid in a 1300px max container for the big screens ----->
+
+    <div class="l-for-card-grid-columns-max-width-container">
+
+  
+
+<!--- this class down below is the section grid column layout itself, this is for all the card type blocks like the music albums, the band photos and the news stories--->  
+
+
+    <div class="l-the-card-grid h-grid">
+
 	<!---reusable class from the tour delete section, remains to be seen If I will use this---->
 
 
-<h1 class="c-admin-DELETE-tour-dates-title">Add Band Photo</h1>
-
-
-<section class="c-news-stories-DELETE h-grid">
-
-
-
-
-
-		<?php 
+<?php 
 
 require_once ("../connect_database.php");
 
@@ -153,43 +226,37 @@ $delPhotos_query= mysqli_query($dbc, $delPhotos_sql);
 
  
  		
-while ($delPhotos_rs = mysqli_fetch_array($delPhotos_query)){ ?>
+while ($row = mysqli_fetch_array($delPhotos_query)){ 
 
- 	<article class="c-news-stories-DELETE-container">
-
- 		<div class="h-position  h-height400 h-padding">
-
- 			 <!---the, 'c-music-DELETE-img-album-change' class is in its own comparted sass file---->
- 	  	<img class="c-news-stories-DELETE-img-itself c-music-DELETE-img-album-change" src="../img/<?php echo $delPhotos_rs['img_ref']?>" />
-
- 	  	<!---end of the music delete component ---->
-		
-
-		<div class="c-news-stories-DELETE-info-container ">
- 	  		<div class="c-news-stories-DELETE-date"><?php echo $delPhotos_rs['date']?>
- 	  	</div>
- 	  	<!---this class is from the tour section, just testing this what it looks like--->
- 	  	<div class="c-upcoming-shows-location"> <?php echo $delPhotos_rs['state_country']?>  </div> 
-
-		</div>
- 	 
  	
- </div>
-</article>
- <?php
+ require('../public/bandPhotosWhileLoop.php');
 
 
  }
 
 ?>
 
+</div>
+
+<!----end of the auto-fit grid for the cards (images, album photos, stadium photos etc)----->
+
+</div>
+<!----end of utility layout class for max width ---->  
+
 </section>
 
-<!---- end of the reusable component ---->
+<!-- end of a helper stretch class to override the align centre from the parent section class -->
+<!-- end of a helper class to take off the background image strip divider that is present in the home page -->
+<!-- end of the semantic section for the Bands photos -->
+<!-- END OF THE BAND PHOTOS SECTION -->
 
 </section>
 
-<!---end of parent component----->
+<!-- end of this class for all the items that are added through the admin panel, be it; a new tour date, a new news story, a band photo or a new album. -->
+
+<!-- end of this class through the use of flexbox helps to centre the form, it has a position relative on it to aid the back icon below it to position itself on the left hand side of this section's corner otherwise it would go to very top of the browser -->
+
+<!-- end of centring the form -->
 
 
 <?php 

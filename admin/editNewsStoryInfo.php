@@ -3,6 +3,7 @@
 
 
 session_start();
+require_once ("../errorReporting/developmentErrorReporting.php");
 
 if(!isset($_SESSION['admin'])){
 
@@ -31,39 +32,60 @@ if(!isset($_SESSION['admin'])){
 </head>
 
 <body>
-	<!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enabled the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
+	<!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enable the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
 
         c- = this equals a component that is likely to get reused
         l- = this equals a class that acts as block layout like a reusable container for example
         h- = the h prefix is to signify helper classes like clearfix to get elements back in the html document flow
         js- = this is to signify when we need to use JavaScript on an block or a block element to bring in dynamic functionality.
         c-js- = will refer to both components and components that rely on JavaScript functionality
-        c-mq- = could be for media queries.
+        c-mq- = will be for media queries.
 
-        In addition, throughout this document there will be a comment that says, 'modifier here, please see css comments for what this does or what it is for'.  This way by using the find search tool provided by the editor we can quickly find the modifier we are looking for.  Might be an advantage to say for media queries too.
+        In addition, throughout this document there will be a comment that says, "MODIFIER HERE, PLEASE SEE CSS COMMENTS FOR WHAT THIS DOES OR WHAT IT IS FOR".  By using the find search tool provided by the editor (control or command F) we can quickly find the modifier we are looking for and then look at the corresponding css file to see what it does.  
         ---->
 
+        <!-----AND EXPLANATION OF THE CSS GRID SYSTEM USED BELOW---->
 
 
-<!---this is a new grid layout to space put the form and the tour details that need to be changed ------>
+        <!---below is the class of the standard grid and is for rows only (this is used for the vertical layout of the pages), each row is to correspond with a new section of the html.  By using the grid system this way rather than rows and columns from the beginning, helps to keep the html semantic. Alternatively, using the grid for rows and columns at the beginning of the design means the html will have to be flattened for it to work.  When the, 'subgrid' property becomes more widespread with browsers perhaps this will not need to be the case, but for now, a grid for rows only for the vertical layout and then horizontal grids in each section thereafter if the need arises to keep it semantic----> 
 
-        <div class="l-basic-grid-admin-edit-tour h-grid">
+     <!-- this is a further change on the admin grid to accommodate the edit form in the middle of the page, THIS IS IMPORTANT, THIS IS THAT INTERMIEDARY PAGE, THE SECOND PAGE WITH THE CARD GRID AND THE FORM AS ONE, NOTHING IN THE ADMIN SECTION IS LIKE THIS  -->
+
+     <!--  BEST SERVED AS A BLANK GRID with min-height 100vw -->
+
+        <div class="l-basic-grid-admin-edit-tNMP h-grid">
         	<?php
 require_once ("header.php");
 
 ?>
 
-<!----this is a reusable component be very similar to the add a new tour details in,since that also use forms---->
 
-<section class="c-admin-add-tour-dates h-flex h-position h-padding">
+<!-- this class below is for all the items that are deleted and edited through the admin panel, be it; a tour date, a news story, a band photo or a album. -->
+
+<!-- this class through the use of flexbox helps to centre the content, it has a position relative on it to aid the back icon below it to position itself on the left hand side of this section's corner otherwise it would go to very top of the browser -->
+
+<!-- also a helper class to take out the padding so the background spans the whole page -->
 
 
-	<!----reusable component icon to go back a page----->
+
+<section class="c-admin-editAndDelete-item h-flex h-position h-no-padding">
+
+<!----reusable component icon to go back a page this is in the base section of the scss----->
+  <!-- because the parent is position relative we have a position absolute on this of top, left and right of 0 to make the icon align at the top left hand side of the page  -->
+
+
+	
     <div class="c-back-page-icon-container">
+
+       <!-- just an increase size on this svg to make it look better -->
         
         <img src="../img/noun_back.svg" alt="please go back to the page behind" class="c-back-page-icon">
+        <!-- end of size change on the svg -->
+         <!-- destination to go back a page with pseudo before technique to give mobile users more click space -->
         <a href="editNewsStorySelect.php" class="c-back-page-icon-link"></a>
+         <!-- end of the pseudo before technique to give mobile users more click space  -->
     </div>
+  <!-- end of position absolute -->
 <!----end of reusable component----->
 
 
@@ -85,7 +107,7 @@ $_SESSION['editNewsStoryInfo'] ['newsID'] =$_GET['newsID'];
 
 
 
-if(!isset($_SESSION ['editNewsStoryInfo'] ['date']) &&  !isset($_SESSION ['editNewsStoryInfo'] ['title']) &&  !isset($_SESSION ['editNewsStoryInfo'] ['description']) && !isset($_SESSION ['editNewsStoryInfo'] ['img'])){
+if(!isset($_SESSION ['editNewsStoryInfo'] ['date']) &&  !isset($_SESSION ['editNewsStoryInfo'] ['title']) &&  !isset($_SESSION ['editNewsStoryInfo'] ['description'])){
 
 	$editNewsStory_sql="SELECT * FROM News_table WHERE id=".$_GET['newsID'];
 $editNewsStory_query= mysqli_query($dbc, $editNewsStory_sql);
@@ -93,83 +115,195 @@ $editNewsStory_rs= mysqli_fetch_array($editNewsStory_query);
 
 
 
-$_SESSION['editNewsStoryInfo']['date']=$editNewsStory_rs['date'];
-$_SESSION['editNewsStoryInfo']['title']=$editNewsStory_rs['title'];
-$_SESSION['editNewsStoryInfo']['description']=$editNewsStory_rs['description'];
+$_SESSION['editNewsStoryInfo']['date'] = $editNewsStory_rs['date'];
+$_SESSION['editNewsStoryInfo']['title'] = $editNewsStory_rs['title'];
+$_SESSION['editNewsStoryInfo']['description'] = $editNewsStory_rs['description'];
 $_SESSION['editNewsStoryInfo']['img'] = $editNewsStory_rs['img_ref'];
 }
 
 ?>
 
-<!----below is the component class section taken from the home page (product.php)this is getting reused to follow the same style display as the TOUR section (upcoming-shows), they only difference is that there are the maximum entries here for the TOUR, not limitied to three like in the home page (product.php), I have also taken out the heading, 'upcoming shows' from the home page,  bit overkill here.---->
+<!-- THE NEWS SECTION -->
+
+<!-- just a semantic section class for the news data of the site-->
 
 
-<section class="c-upcoming-shows c-admin-add-tour-dates-override-flex">
-
-<h1 class="c-admin-add-tour-dates-title">Edit News Story Below:</h1>
+<!-- a helper class to take off the background image strip divider that is present in the home page -->
 
 
-
+<section class="c-latest-news  h-take-background-strip-off-pseudo-before-element">
 
 
 
 
-<article class="c-news-stories-DELETE-container c-EDIT-news-story ">
+<!-- heading style of all admin delete and edit items titles, different font sizes at different screens  -->
 
- 	  <div class="c-news-stories-DELETE-container-for-anchor-cover c-EDIT-news-story-change-height">
 
- 	  	<img class="c-news-stories-DELETE-img-itself c-EDIT-news-story-chnage-WH-on-img" src="../img/<?php echo $_SESSION['editNewsStoryInfo']['img'];?>" />
- 	  	 
+<h1 class="c-admin-editAndDelete-item-title">Edit News Story Below:</h1>
 
-  <div class="c-news-stories-DELETE-info-container c-EDIT-news-story-get-center ">
-  	 	  		<div class="c-news-stories-DELETE-date  "><?php echo $_SESSION['editNewsStoryInfo']['date'];?></div>
+<!-- end of heading style of all admin delete and edit items titles, different font sizes at different screens  -->
 
- 	   <h3 class="c-latest-news-sub-title "><?php echo $_SESSION['editNewsStoryInfo']['title'];?>
-</h3>
- 	 		</div>
- 	 		<div class="c-EDIT-news-story-get-center">
- 	  <p class="c-news-stories-DELETE-desc  h-padding h-text-align"> <?php echo $_SESSION['editNewsStoryInfo']['description'];?>  </p> 
- 	</div>
- 	 </div>
 
- 	
+<!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
+  <article class="h-overflowH">
 
- 	  </article>
+ 
+
+  <!---This class below does nothing except overrides a previous height attribute (if needed), was just used as a parent class in case it was needed for a flex or a  grid child ---->
+
+    <div class="h-height-auto">
+    <!-- this helps the auto fit via a height on the image and a object fit cover so not to lose any aspect ratio, it also has a margin 0 and auto to centre the image in the space available  -->
+      <img src="../img/<?php echo $_SESSION['editNewsStoryInfo']['img'];?>" class="c-latest-news-articles-photo-img h-margin-centre"/>
+      <!---end of img class with height and object fit cover and with margin auto to centre for the conformation screen.---->
+    </div>
+
+    <!--- end of height auto class---->
+
+    <!---this class aligns the latest news text through padding also with a helper class to centre the text as it is the confirmation screen---->
+    <div class="c-latest-news-articles-text-container h-text-align">
+
+    <!--- this class changes the font size of the dates at different screen sizes --->
+        <div class="c-latest-news-articles-date"><?php echo $_SESSION['editNewsStoryInfo']['date'];?>
+      
+    </div>
+
+    <!---- end of font size change ---->
+
+
+     <!----this class changes the font size and the colour to our red ---> 
+      <h3 class=c-latest-news-sub-title><?php echo $_SESSION['editNewsStoryInfo']['title'];?></h3>
+
+            <!---- end of font size change and colour to our red ---->
+
+         <!----keep the default base paragraph width as it helps with the centring of the text when it is a stand alone item on the confirm page, also we have a margin centre, just to get the paragraph to behave, this is the same technique the images use----->
+
+      <p class=" h-margin-centre"><?php echo $_SESSION['editNewsStoryInfo']['description'];?> </p>
+
+      <!----end of the default base paragraph width as it helps with the centring of the text when it is a stand alone item on the confirm page also we have a margin centre, just to get the paragraph to behave, this is the same technique the images use---->
+
+   
+   </div>
+
+   <!---end of the latest news text align through padding and a helper class of text- align centre to centre the text because it is the confirmation screen---->
+
+  
+ </article>
+
+  <!----end of helper class for overflow hidden---->
+
+
+
+
+
+
+
+
 
  	  </section>
 
-<!--- end of reusable component---->
+
+
+<!-- end of the semantic section for the news data -->
+
+<!-- end of the  helper class to take off the background image strip divider that is present in the home page -->
+
+
+
+<!-- END OF THE NEWS SECTION -->
+
 
 </section>
 
-<!----end of the section design of the add tour details, below we are extending the grid layout for this page, so we need a new section as it will help to give extra space between the the above section and the one below---->
+<!-- end of this class through the use of flexbox helps to centre the content, with position relative on it to aid the back icon below it to position itself on the left hand side of this section's corner otherwise it would go to very top of the browser -->
 
-<!----this is a new section specifically for the edit tour info, this helps to give better spacing between the tour component that needs to be edited, this takes adavantage of the new grid layout class at the top of this page---->
+<!--  end of this class below is for all the items that are deleted and edited through the admin panel, be it; a tour date, a news story, a band photo or a album.  -->
 
-<section class="c-admin-edit-selected-tour-form h-flex h-padding">
+
+<!-- THIS SECTION IS WHERE THE EDIT AND ADD SHOULD BE THE SAME -->
+
+
+
+
+
+<!-- this section uses flex to centre the items -->
+
+<section class="c-admin-addAndEdit-item-form-section h-flex h-position">
 
 
 <!----while this is a new section to take advantage of the new grid layout, the form itself is a reusable component of that of the form design in the add new tour section--->
 
 
+<!-- usual design for headings used throughout, just that the font size is smaller -->
 
-<h1 class="c-admin-add-tour-dates-title">Edit via form</h1>
+<h1 class="c-admin-addAndEdit-item-form-title">Edit via form</h1>
 
-<form action="editNewsStoryInfoConfirm.php" method="post" class="c-admin-add-tour-dates-form">
-<p class="c-admin-add-tour-dates-desc">Change Date of tour:<input type="date" name="date" value="<?php echo $_SESSION ['editNewsStoryInfo']['date'];?>" class="c-admin-add-tour-dates-input" required/></p>
-<p class="c-admin-add-tour-dates-desc">Change Title:<input name="title" value="<?php echo $_SESSION ['editNewsStoryInfo']['title'];?>" class="c-admin-add-tour-dates-input"required/></p>
-<p class="c-admin-add-tour-dates-desc">change the story
-<textarea name="description" cols=60 rows=5 required ><?php echo $_SESSION ['editNewsStoryInfo']['description'];?></textarea></p>
+<!-- end of the usual design for headings used throughout, just that the font size is smaller -->
 
 
+<!-- THE EDIT FORM -->
+
+<!-- a semantic form class -->
 
 
 
-<div class="c-admin-add-tour-dates-submit-button-container h-flex">
-<button class="c-button-mobile c-button-mobile--large" type="submit" name="Update"  >Update News Story</button>
-</div> 
+<form action="editNewsStoryInfoConfirm.php" method="post" class="c-admin-addAndEdit-item-dates-form h-padding">
 
-</form>	
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+<p class="c-admin-addAndEdit-item-dates-desc">Add a date: 
+   <!-- some margins and font size changes at different screen sizes  -->
+  <input type="date" name="date" value="<?php echo $_SESSION['editNewsStoryInfo']['date'];?>" size="40"
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
+<!-- end of some margins and font size changes at different screen sizes -->
+
+</p>
+<!-- end of capitalize with some margins and font size changes at different screen sizes   -->
+
+
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+<p class="c-admin-addAndEdit-item-dates-desc">Add a title: 
+  <!-- some margins and font size changes at different screen sizes  -->
+  <input type="text" name="title" value="<?php echo $_SESSION['editNewsStoryInfo']['title'];?>" size="40"
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required  />
+<!-- end of some margins and font size changes at different screen sizes -->
+
+</p>
+<!-- end of capitalize with some margins and font size changes at different screen sizes   -->
+
+<!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+
+<p class="c-admin-addAndEdit-item-dates-desc">Add a description about the news: 
+
+  <!-- some margins and font size changes at different screen sizes  -->
+  <textarea name="description" cols=60 rows=5 size="40"
+ class="c-admin-addAndEdit-item-dates-input" required  ><?php echo $_SESSION['editNewsStoryInfo']['description'];?></textarea>
+
+ <!-- end of some margins and font size changes at different screen sizes -->
+
+</p>
+<!-- end of capitalize with some margins and font size changes at different screen sizes   -->
+
+
+
+<!-- this class is to centre the button -->
+<div class="c-admin-addAndEdit-item-dates-submit-button-container h-flex">
+
+  <!--- these buttons are reused throughout the website and have the same style that was done at the beginning of the project, they also have a hover state as well and the colour goes a slightly darker red with a position relative for the anchors to span the whole area of the button rather than just the link, however no anchors needed for the form ---->
+  <!-- also a helper class to make the text uppercase -->
+<button class="c-button-mobile c-button-mobile--large h-uppercase" type="submit" name="Update"  >Update News Story</button>
+
+<!--- end of buttons having the same style and a hover state with a position relative for the anchors to span the whole area of the button rather than just the link however no anchors needed for the form ---->
+
+<!-- end of the helper class making the text uppercase -->
+</div>
+
+<!-- end of class to centre the button -->
+</form>
+
+
+<!-- end of the semantic form class -->
+
+<!-- END OF THE EDIT FORM -->
+
 
 <?php
 
@@ -179,8 +313,9 @@ if (isset($_GET['signup'])){
 
   if ($correctForm == "char"){?>
 
-      <p class="c-admin-add-tour-dates-desc h-font-size h-text-align">Entries must begin with letters for Title and description of News!</p>
-
+    <!-- this class is set to capitalize with some margins and font size changes at different screen sizes -->
+      <p class="c-admin-addAndEdit-item-dates-desc h-font-size h-text-align">Entries must begin with letters for Title and description of News!</p>
+      <!-- end of some margins and font size changes at different screen sizes -->
 
 
 <?php
@@ -194,11 +329,10 @@ if (isset($_GET['signup'])){
 
 ?>
 
-<!----end of reusable form component----->
-
 </section>
+<!-- end of this section using flex to centre the items. -->
 
-<!---end of this new grid section----->
+
 
 
 
@@ -210,7 +344,11 @@ require_once ("../abstractFooter.php");
 
 ?>
 
+
+
+
 </div>
+<!--  end of the further change on the admin grid to accommodate the edit form in the middle of the page THIS IS IMPORTANT, THIS IS THAT INTERMIEDARY PAGE, THE SECOND PAGE WITH THE CARD GRID AND THE FORM AS ONE, NOTHING IN THE ADMIN SECTION IS LIKE THIS,  BEST SERVED AS A BLANK GRID with min-height 100vw --> 
 </body>
 </html>
 

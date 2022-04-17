@@ -5,6 +5,8 @@
 
 session_start();
 
+require_once ("../errorReporting/developmentErrorReporting.php");
+
 if(!isset($_SESSION['admin'])){
 
 	header("Location:admin.php");
@@ -46,9 +48,12 @@ if(!isset($_SESSION['admin'])){
 
         <!---below is the class of the standard grid and is for rows only (this is used for the vertical layout of the pages), each row is to correspond with a new section of the html.  By using the grid system this way rather than rows and columns from the beginning, helps to keep the html semantic. Alternatively, using the grid for rows and columns at the beginning of the design means the html will have to be flattened for it to work.  When the, 'subgrid' property becomes more widespread with browsers perhaps this will not need to be the case, but for now, a grid for rows only for the vertical layout and then horizontal grids in each section thereafter if the need arises to keep it semantic----> 
 
-        <!-- this is a further change on the admin grid to accommodate the edit form in the middle of the page -->
+        <!-- this is a further change on the admin grid to accommodate the edit form in the middle of the page, THIS IS IMPORTANT, THIS IS THAT INTERMIEDARY PAGE, THE SECOND PAGE WITH THE CARD GRID AND THE FORM AS ONE, NOTHING IN THE ADMIN SECTION IS LIKE THIS  -->
 
-        <div class="l-basic-grid-admin-edit-tour h-grid">
+         <!-- MIGHT  HAVE TO UPDATE NOTES ON THIS AS I THINK THIS IS GOING TO BEST SERVED AS A BLANK GRID. -->
+
+
+        <div class="l-basic-grid-admin-edit-tNMP h-grid">
         	<?php
 require_once ("header.php");
 
@@ -59,6 +64,8 @@ require_once ("header.php");
 <!-- this class through the use of flexbox helps to centre the content, it has a position relative on it to aid the back icon below it to position itself on the left hand side of this section's corner otherwise it would go to very top of the browser -->
 
 <!-- also a helper class to take out the padding so the background spans the whole page -->
+
+
 <section class="c-admin-editAndDelete-item h-flex h-position h-no-padding">
 
 
@@ -108,12 +115,12 @@ $_SESSION['editTourDateInfo'] ['state_country'] = $editTour_rs['state_country'];
 
 <!-- THE TOUR SECTION -->
 
-  <!-- there is an admin class here to override the flex for the borders to stretch the whole page -->
+  <!-- there is an helper admin class here to override the flex for the borders to stretch the whole page -->
 
   <!-- also a helper class to take out the pseudo before element background strip -->
 
 
-<section class="c-upcoming-shows c-admin-addAndEdit-tour-dates-override-flex h-take-background-strip-off-pseudo-before-element">
+<section class="c-upcoming-shows h-admin-addAndEdit-override-flex-to-stretch h-take-background-strip-off-pseudo-before-element">
 
 
 
@@ -179,12 +186,14 @@ $_SESSION['editTourDateInfo'] ['state_country'] = $editTour_rs['state_country'];
 
 <!--  end of this class for all the items that are deleted or edited through the admin panel, be it; a tour date, a news story, a band photo or a new album.  -->
 
-<!--  end of the helper class to take out the padding so the background spans the whole page -->
+
+
+<!--  end of the helper admin class to take out the padding so the background spans the whole page -->
 
 
 <!-- THIS SECTION IS WHERE THE EDIT AND ADD SHOULD BE THE SAME -->
 
-<!-- RESUME HERE TOMORROW -->
+
 
 <!-- Still at this section but i have changed all the class names, and it looks like it might be consistent now, what I have to do is describe what the classes do now with the comments.  Remember I will be able to copy and paste most of it because the form edit section is the same form used to add tour details to. -->
 
@@ -294,9 +303,10 @@ require_once ("../abstractFooter.php");
 
 ?>
 
+
 </div>
 
-<!--  end of the further change on the admin grid to accommodate the edit form in the middle of the page -->
+<!--  end of the further change on the admin grid to accommodate the edit form in the middle of the page THIS IS IMPORTANT, THIS IS THAT INTERMIEDARY PAGE, THE SECOND PAGE WITH THE CARD GRID AND THE FORM AS ONE, NOTHING IN THE ADMIN SECTION IS LIKE THIS -->
 </body>
 </html>
 

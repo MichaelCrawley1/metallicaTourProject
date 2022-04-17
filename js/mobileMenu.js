@@ -1,34 +1,71 @@
-function start() {
+function start(e) {
 
     let hamburger = document.querySelector(".c-js-mobile-menu-hamburger-for-fat-fingers");
     let body = document.body;
 
     let exitHamburgerMenu = document.querySelector(".c-js-fixed-mobile-screen-hamburger-exit-container");
 
+    console.log(window.location.pathname);
+
+    let bigScreenNavMenuListParent = document.querySelector(".c-big-screen-nav-list");
+
+    let mobileScreenNavMenuListParent = document.querySelector(".c-fixed-mobile-screen-nav-menu-list");
+
+    let parentNavMenuArray = [mobileScreenNavMenuListParent, bigScreenNavMenuListParent];
+
+    let splitTheUrlIntoArray = window.location.href.split("/");
+    console.log(splitTheUrlIntoArray);
+
+    let findTheAdminLinkBig = e.target.links[15];
+    let findTheAdminLinkMobile = e.target.links[8];
+
+
+
+
+    if (splitTheUrlIntoArray[4] === "admin") {
+
+        findTheAdminLinkBig.classList.add("c-fixed-mobile-screen-list-item-links--active");
+        findTheAdminLinkMobile.classList.add("c-fixed-mobile-screen-list-item-links--active");
+    }
+
+    for (var i = 0; i < parentNavMenuArray.length; i++) {
+
+        let mobileLinks = parentNavMenuArray[0].querySelectorAll(".c-fixed-mobile-screen-list-item-links");
+        let desktopLinks = parentNavMenuArray[1].querySelectorAll(".c-big-screen-list-item-links");
+
+        for (var j = 0; j < mobileLinks.length; j++) {
+
+            console.log(mobileLinks[j].href);
+            console.log(window.location);
+
+            if (mobileLinks[j].href === window.location.href) {
+
+                mobileLinks[j].classList.add("c-fixed-mobile-screen-list-item-links--active");
+            }
+
+        }
+
+        for (var k = 0; k < desktopLinks.length; k++) {
+            console.log(desktopLinks[k].href);
+            console.log(window.location.href);
+
+
+            if (desktopLinks[k].href === window.location.href) {
+
+                desktopLinks[k].classList.add("c-fixed-mobile-screen-list-item-links--active");
+            }
+        }
+    }
+
 
     // list items to go to the correct part on the page and to close the menu//
 
 
 
-    //Get the current page path.
-    var patharray = location.pathname.split("/");
-    var foldername = patharray[0];
 
-    console.log(foldername);
-    // If on the root folder of the site, highlight the first link.
-    if (foldername == "" || foldername == "metallicaTourProject/public/project.php") {
-        document.getElementById("c-fixed-home").classList.add("c-fixed-mobile-screen-list-item-links--active");
-    } else {
-        //Otherwise, loop through the links and put classname on
-        // the one whose folder name matches foldername variable.
-        let listLinks = document.querySelectorAll(".c-fixed-mobile-screen-list-item-links");
 
-        for (i = 1; i < listLinks.length; i++) {
-            if (listLinks[i].getAttribute("href").indexOf(foldername) > -1) {
-                redActive(listLinks[i]);
-            }
-        }
-    }
+
+
 
 
 
@@ -77,16 +114,6 @@ function start() {
                 }
 
         */
-
-
-    }
-
-    function redActive(makeListRed) {
-        console.log(makeListRed);
-
-
-        let makeRed = makeListRed.classList.add("c-fixed-mobile-screen-list-item-links--active");
-
 
 
     }

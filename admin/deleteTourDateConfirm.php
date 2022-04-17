@@ -4,6 +4,8 @@
 
 session_start();
 
+require_once ("../errorReporting/developmentErrorReporting.php");
+
 if(!isset($_SESSION['admin'])){
 
 	header("Location:admin.php");
@@ -71,7 +73,7 @@ require_once ("header.php");
    <!-- end of position absolute -->
 <!----end of reusable component----->
 
-<!-- heading style of all admin delete items titles, different font sizes at diffferent screens  -->
+<!-- heading style of all confirm delete items titles, different font sizes at diffferent screens  -->
 
 <h1 class="c-admin-confirm-addDeleteOrEdit-to-db-title">Confirm Tour Date Deletion</h1>
 
@@ -80,9 +82,9 @@ require_once ("header.php");
 
 <!-- THE TOUR SECTION -->
 
-  <!-- there is an admin class here to override the flex for the borders to stretch the whole page -->
+  <!-- there is an helper admin class here to override the flex for the borders to stretch the whole page -->
 
-<section class="c-upcoming-shows c-admin-addAndEdit-tour-dates-override-flex">
+<section class="c-upcoming-shows h-admin-addAndEdit-override-flex-to-stretch ">
 
 
 <?php 
@@ -104,7 +106,7 @@ require("../public/tourDatesWhileLoop.php");
 
  </section>
 
- <!-- end of the admin class here to override the flex for the borders to stretch the whole page -->
+ <!-- end of the helper admin class here to override the flex for the borders to stretch the whole page -->
  
 
 <!--  end of the THE TOUR SECTION -->

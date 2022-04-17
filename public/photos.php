@@ -102,6 +102,8 @@ mysqli_close($dbc);
 
 </section>
 
+
+<!-- end of a helper class to take off the background image strip divider that is present in the home page -->
 <!-- end of the semantic section for the Bands photos -->
 <!-- END OF THE BAND PHOTOS SECTION -->
 

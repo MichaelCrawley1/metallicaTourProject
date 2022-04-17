@@ -195,9 +195,9 @@ if (isset($_GET['signup'])){
 
   <!-- THE TOUR SECTION -->
 
-  <!-- there is an admin class here to override the flex for the borders to stretch the whole page -->
+  <!-- there is an helper admin class here to override the flex for the borders to stretch the whole page -->
 
-  <section class="c-upcoming-shows c-admin-addAndEdit-tour-dates-override-flex">
+  <section class="c-upcoming-shows h-admin-addAndEdit-override-flex-to-stretch">
 
 
 
@@ -233,7 +233,7 @@ while($row= mysqli_fetch_array($editTour_query)){
 
 </section>
 
-<!-- end of the admin class here to override the flex for the borders to stretch the whole page -->
+<!-- end of the helper admin class here to override the flex for the borders to stretch the whole page -->
 
 <!-- end of the semantic progress to the upcoming shows section, it does have a grey background effect on it and the before pseudo class has a background strip on it   -->
 
