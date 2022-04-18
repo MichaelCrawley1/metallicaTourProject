@@ -339,8 +339,36 @@ template {
     .c-button-mobile {
       padding: 1.5rem 1.6rem; } }
 
+.c-button-mobile:hover {
+  background-color: #8b0000; }
+
 .c-button-mobile--large {
   padding: 1.5rem 1.6rem; }
+
+.l-tour-albums-band-photos-button-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0;
+  margin-top: 7em;
+  margin-bottom: 5em; }
+
+.l-tour-albums-band-photos-button-link {
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 900;
+  font-size: 2rem; }
+
+.l-tour-albums-band-photos-button-link::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 /*4. Base Styles*/
 *,
@@ -385,13 +413,37 @@ body {
 .l-basic-grid-admin-edit-tour {
   grid-template-rows: minmax(70px, auto) minmax(30vh, auto) minmax(70vh, auto) minmax(140px, auto); }
 
+.l-basic-grid-admin-edit-tNMP {
+  min-height: 100vh; }
+
 .l-basic-grid-delete-news-stories {
   grid-template-rows: minmax(70px, auto) minmax(30px, auto) minmax(80vh, auto) minmax(140px, auto); }
+
+.l-for-card-grid-columns-max-width-container {
+  max-width: 1300px;
+  padding: 1em;
+  margin: 0 auto 4em; }
+
+.l-the-card-grid {
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  padding: 1em;
+  overflow: hidden; }
+  @media (min-width: 78.3125rem) {
+    .l-the-card-grid {
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); } }
 
 img {
   max-width: 100%;
   display: block;
   height: auto; }
+
+.l-image-set-for-auto-fit-grid {
+  width: 600px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden; }
 
 .c-back-page-icon-container {
   position: absolute;
@@ -408,10 +460,20 @@ img {
   display: block;
   top: -1em;
   bottom: -1em;
-  right: 10em;
   left: 0;
   border: 1px solid pink;
-  position: absolute; }
+  position: absolute;
+  width: 90px; }
+
+.c-js-back-page-icon-link::before {
+  content: "";
+  display: block;
+  top: -1em;
+  bottom: -1em;
+  left: 0;
+  border: 1px solid pink;
+  position: absolute;
+  width: 90px; }
 
 figure {
   margin: 0; }
@@ -501,6 +563,9 @@ textarea {
 .h-padding {
   padding: 1em; }
 
+.h-padding-left-to-right {
+  padding: 0 1em; }
+
 .h-uppercase {
   text-transform: uppercase; }
 
@@ -516,15 +581,47 @@ textarea {
 .h-height400 {
   height: 400px; }
 
+.h-height-auto {
+  height: auto; }
+
 .h-margin-bottom {
   margin-bottom: 4em; }
+
+.h-margin-centre {
+  margin: 0 auto; }
+
+.h-margin-left-to-right {
+  margin: 0 1em; }
 
 .h-font-size {
   font-size: 2.2rem; }
 
+.h-overflowH {
+  overflow: hidden; }
+
+.h-take-background-strip-off-pseudo-before-element::before {
+  background-image: none !important; }
+
+.h-background-colour-our-grey {
+  background-color: #121317; }
+
+.h-background-colour-our-black {
+  background-color: black; }
+
+.h-no-padding {
+  padding: 0 !important; }
+
+.h-no-max-width {
+  max-width: none; }
+
+.h-admin-addAndEdit-override-flex-to-stretch {
+  align-self: stretch; }
+
+.h-width-300px {
+  width: 300px; }
+
 /*5. Layout*/
 .c-mobile-menu {
-  background-color: #121318;
   display: block; }
   @media (min-width: 48rem) {
     .c-mobile-menu {
@@ -547,10 +644,8 @@ textarea {
     .c-mobile-menu-logo-container {
       width: 25rem; } }
 
-.c-mobile-menu-hamburger-for-fat-fingers {
-  grid-row: 2 / 3;
+.c-js-mobile-menu-hamburger-for-fat-fingers {
   justify-self: end;
-  align-self: start;
   position: relative;
   top: 1.7em;
   right: .5em; }
@@ -595,8 +690,6 @@ textarea {
   list-style: none;
   border-bottom: 1px solid grey;
   align-items: center;
-  justify-items: start;
-  position: relative;
   background-color: #121317; }
 
 .c-fixed-mobile-screen-nav-menu-list-item:hover .c-fixed-mobile-screen-list-item-links {
@@ -605,13 +698,13 @@ textarea {
 .c-fixed-mobile-screen-nav-menu-list-item:active .c-fixed-mobile-screen-list-item-links {
   color: #b21319; }
 
-.c-fixed-mobile-screen-hamburger-exit-container {
+.c-js-fixed-mobile-screen-hamburger-exit-container {
   justify-self: end;
-  margin-top: 1.2em;
   position: relative;
-  left: .5em; }
+  left: .5em;
+  top: .1em; }
 
-.c-fixed-mobile-screen-hamburger-exit-container::after {
+.c-js-fixed-mobile-screen-hamburger-exit-container::after {
   content: "";
   display: block;
   position: absolute;
@@ -632,7 +725,7 @@ textarea {
   color: inherit; }
 
 .c-fixed-mobile-screen-list-item-links--active {
-  color: #b21319; }
+  color: #b21319 !important; }
 
 .c-fixed-mobile-screen-list-item-links::after {
   content: "";
@@ -689,11 +782,7 @@ textarea {
   display: none; }
   @media (min-width: 43.125rem) {
     .c-big-screen-background {
-      display: block;
-      background-image: url(../img/header.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center; } }
+      display: block; } }
 
 .c-big-screen-background-hero {
   background-image: url(../img/metallicaHome.jpeg);
@@ -724,11 +813,9 @@ textarea {
 .c-big-screen-tour-dates-img {
   width: 300px; }
 
-.c-small-screen {
-  background-color: #121318; }
-  @media (min-width: 43.125rem) {
-    .c-small-screen {
-      display: none; } }
+@media (min-width: 43.125rem) {
+  .c-small-screen {
+    display: none; } }
 
 .c-small-screen-background {
   background-image: url(../img/header.png);
@@ -769,12 +856,15 @@ textarea {
   margin-top: 0; }
   @media (min-width: 43.125rem) {
     .c-little-blurb-before-news-title {
-      background-color: #000;
+      background-image: url(../img/header.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
       padding: 1em 0;
-      font-size: 3.2rem; } }
+      font-size: 3.5rem; } }
   @media (min-width: 65rem) {
     .c-little-blurb-before-news-title {
-      font-size: 4.2rem; } }
+      font-size: 4.5rem; } }
 
 .c-little-blurb-before-news-title--margin {
   position: relative;
@@ -789,17 +879,6 @@ textarea {
   @media (min-width: 43.125rem) {
     .c-little-blurb-before-news-img-container {
       display: none; } }
-
-.c-little-blurb-before-news-img-container--tour {
-  background-image: url(../img/videos-banner-blue.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding-bottom: 100%; }
-  @media (min-width: 43.125rem) {
-    .c-little-blurb-before-news-img-container--tour {
-      display: block;
-      padding-bottom: 50%; } }
 
 .c-little-blurb-before-news-img-container--news {
   background-image: url(../img/photos-header.jpg);
@@ -870,13 +949,14 @@ textarea {
     .c-little-blurb-before-news-forty-year-anniversary-button-info {
       font-size: 2.2rem; } }
 
-.c-latest-news {
-  background-color: #121318; }
-
-.c-latest-news-max-width {
-  max-width: 1300px;
-  padding: 1em;
-  margin: 0 auto 4em; }
+.c-little-blurb-before-news-forty-year-anniversary-button-info::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 .c-latest-news::before {
   content: "";
@@ -885,7 +965,15 @@ textarea {
   height: .5rem;
   left: 0;
   padding-top: 2em;
-  background-color: black; }
+  background-image: url(../img/edge_bottom.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.c-latest-news-max-width {
+  max-width: 1300px;
+  padding: 1em;
+  margin: 0 auto 4em; }
 
 .c-latest-news--background-and-postion-change {
   position: relative;
@@ -925,17 +1013,11 @@ textarea {
   height: auto !important; }
 
 .c-latest-news-articles-photo-img {
-  width: 600px;
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
-  overflow: hidden; }
-  @media (min-width: 39.625rem) {
-    .c-latest-news-articles-photo-img {
-      width: 400px; } }
-  @media (min-width: 57.0625rem) {
-    .c-latest-news-articles-photo-img {
-      width: 500px; } }
+  overflow: hidden;
+  width: 579px; }
 
 @media (min-width: 65rem) {
   .c-latest-news-articles-date {
@@ -974,6 +1056,15 @@ textarea {
     .c-latest-news-info {
       font-size: 2.2rem; } }
 
+.c-latest-news-info::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
 .c-upcoming-shows {
   background-image: url(../img/bg_default.jpg);
   background-repeat: no-repeat;
@@ -992,14 +1083,11 @@ textarea {
   background-size: cover;
   background-position: center; }
 
-.c-upcoming-shows--before-take-background-off::before {
-  background-image: none; }
-
 .c-upcoming-shows-title {
   margin-top: 1em; }
   @media (min-width: 65rem) {
     .c-upcoming-shows-title {
-      font-size: 3.5rem;
+      font-size: 4.5rem;
       padding-bottom: 2em; } }
 
 .c-upcoming-shows-container {
@@ -1043,7 +1131,9 @@ textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2em 0; }
+  padding: 2em 0;
+  margin-top: 7em;
+  margin-bottom: 5em; }
 
 .c-upcoming-shows-info {
   text-transform: uppercase;
@@ -1053,13 +1143,25 @@ textarea {
   font-weight: 900;
   font-size: 2rem; }
 
-.c-music {
-  background-color: black; }
+.c-upcoming-shows-info::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
-.c-music--background-and-postion-change {
-  background-color: transparent;
-  position: relative;
-  top: -2.3em; }
+.c-upcoming-shows-hero {
+  background-image: url(../img/videos-banner-blue.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 100%; }
+  @media (min-width: 43.125rem) {
+    .c-upcoming-shows-hero {
+      display: block;
+      padding-bottom: 50%; } }
 
 .c-music::before {
   content: "";
@@ -1073,13 +1175,22 @@ textarea {
   background-size: cover;
   background-position: center; }
 
+.c-music--background-and-postion-change {
+  background-color: transparent;
+  position: relative;
+  top: -2.3em; }
+
 .c-music-background-image::before {
   background-image: none; }
 
 @media (min-width: 65rem) {
   .c-music-title {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     padding: 2em 0; } }
+
+@media (min-width: 65rem) {
+  .c-music-title--padding-less {
+    padding: 1em 0; } }
 
 .c-music-container {
   flex-direction: column;
@@ -1092,7 +1203,7 @@ textarea {
   list-style-type: none;
   padding: 0; }
 
-.c-music-container-list-item {
+.c-music-image-container-border-red {
   border: 5px solid #b21319; }
 
 .c-music-button-container {
@@ -1109,9 +1220,6 @@ textarea {
   text-align: center;
   font-weight: 900;
   font-size: 2rem; }
-
-.c-bands-photos {
-  background-color: #121318; }
 
 .c-bands-photos--background-and-postion-change {
   background-color: transparent;
@@ -1132,8 +1240,12 @@ textarea {
 
 @media (min-width: 65rem) {
   .c-bands-photos-title {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     padding: 2em 0; } }
+
+@media (min-width: 65rem) {
+  .c-bands-photos-title--padding-less {
+    padding: 1em 0; } }
 
 .c-bands-photos-container {
   flex-direction: column;
@@ -1141,6 +1253,10 @@ textarea {
   justify-content: center;
   padding: 1em;
   margin-top: -2.5em; }
+
+@media (min-width: 65rem) {
+  .c-bands-photos-text-container-date {
+    font-size: 2.2rem; } }
 
 .c-bands-photos-container-list {
   margin: 0;
@@ -1153,12 +1269,15 @@ textarea {
 .c-bands-photos-container-img {
   margin: 0 auto; }
 
+.c-bands-photos-text-container {
+  padding: .5em 0; }
+
 .c-bands-photos-location {
-  text-align: center;
-  line-height: 1.1;
-  font-size: .9em;
-  color: white;
-  font-weight: inherit; }
+  color: #b21319;
+  font-family: "Hessian", sans-serif; }
+  @media (min-width: 65rem) {
+    .c-bands-photos-location {
+      font-size: 2.5rem; } }
 
 .c-bands-photos-location-style {
   margin-left: 1.5em; }
@@ -1192,7 +1311,7 @@ textarea {
   margin-bottom: 4em;
   padding: 1em;
   flex-direction: column; }
-  @media (min-width: 36.1875rem) {
+  @media (min-width: 25.875rem) {
     .c-login {
       align-items: center;
       justify-content: center; } }
@@ -1345,6 +1464,113 @@ textarea {
   font-family: "Hessian", sans-serif;
   font-size: 2rem; }
 
+.c-admin-addAndEdit-item {
+  flex-direction: column;
+  align-items: center; }
+
+.c-admin-addAndEdit-item-title {
+  text-align: center;
+  font-family: "Hessian", sans-serif;
+  color: #b21319;
+  text-transform: uppercase;
+  margin-top: 2em; }
+  @media (min-width: 65rem) {
+    .c-admin-addAndEdit-item-title {
+      font-size: 4.5rem; } }
+
+/* this class is in case I need a separate section element were a form follows */
+.c-admin-addAndEdit-item-form-section {
+  flex-direction: column;
+  align-items: center; }
+
+/* end of class in case I need a separate section element were a form follows */
+/* what follows are all the form classes */
+.c-admin-addAndEdit-item-form-title {
+  text-align: center;
+  font-family: "Hessian", sans-serif;
+  color: #b21319;
+  text-transform: uppercase;
+  margin-top: 2em; }
+
+.c-admin-addAndEdit-item-dates-desc {
+  text-transform: capitalize;
+  margin: 1em 0; }
+
+.c-admin-addAndEdit-item-dates-input {
+  margin: 1em 0; }
+
+/* end of form classes */
+.c-admin-addAndEdit-item-dates-submit-button-container {
+  margin: 4em 0;
+  flex-direction: column;
+  align-items: center; }
+
+/* this class down below applies to the add and edit sections make sure the item stretches the whole page to override restrictive flex constraints */
+.c-admin-addAndEdit-override-flex-to-stretch {
+  align-self: stretch; }
+
+/* end of the class above */
+.c-admin-editAndDelete-item {
+  padding: 1em;
+  flex-direction: column;
+  align-items: center; }
+
+.c-admin-editAndDelete-item-title {
+  margin-top: 2em;
+  color: #b21319;
+  font-family: "Hessian", sans-serif; }
+  @media (min-width: 65rem) {
+    .c-admin-editAndDelete-item-title {
+      font-size: 4.5rem; } }
+
+.c-admin-editAndDelete-item-links::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 1px solid pink; }
+
+/* these classes below are after the user clicks on what item to editAndDelete, this just reconfirms the choice */
+.c-admin-editAndDelete-item-confirm {
+  flex-direction: column;
+  align-items: center; }
+  @media (min-width: 48rem) {
+    .c-admin-editAndDelete-item-confirm {
+      justify-content: center; } }
+
+.c-admin-confirm-addDeleteOrEdit-to-db {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.c-admin-confirm-addDeleteOrEdit-to-db-title {
+  font-size: 2.6rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-family: "Hessian", sans-serif;
+  color: #b21319;
+  text-align: center; }
+  @media (min-width: 65rem) {
+    .c-admin-confirm-addDeleteOrEdit-to-db-title {
+      font-size: 4.5rem; } }
+
+.c-admin-confirm-addDeleteOrEdit-to-db-container {
+  margin-top: 2em; }
+
+.c-admin-confirm-addDeleteOrEdit-to-db-desc {
+  color: #b21319; }
+
+.c-admin-confirm-addDeleteOrEdit-to-db-links {
+  text-decoration: none;
+  color: #fff; }
+
+.c-js-admin-confirm-addDeleteOrEdit-to-db-links {
+  text-decoration: none;
+  color: #fff; }
+
 .c-admin-add-tour-dates {
   flex-direction: column;
   align-items: center; }
@@ -1377,9 +1603,6 @@ textarea {
 .c-admin-add-tour-dates-add-venue-title {
   margin-bottom: 0; }
 
-.c-admin-add-tour-dates-override-flex {
-  align-self: stretch; }
-
 .c-admin-confirm-add-tour {
   padding: 1em;
   flex-direction: column;
@@ -1394,19 +1617,6 @@ textarea {
   color: #b21319;
   text-align: center; }
 
-.c-admin-confirm-add-tour-desc-container {
-  margin-top: 2em;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 0.5em; }
-
-.c-admin-confirm-add-tour-desc {
-  color: #b21319; }
-
-.c-admin-confirm-add-tour-desc-links {
-  text-decoration: none;
-  color: #fff; }
-
 .c-admin-DELETE-tour-dates {
   padding: 1em;
   flex-direction: column;
@@ -1418,14 +1628,14 @@ textarea {
   font-family: "Hessian", sans-serif; }
 
 .c-admin-DELETE-tour-dates-links::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
-  border: 1px solid pink;
   top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0; }
+  border: 1px solid pink; }
 
 .c-admin-DELETE-tour-dates-CONFIRM {
   padding: 1em;
@@ -1553,7 +1763,6 @@ textarea {
       width: 1200px; } }
 
 .c-admin-confirmation-page {
-  padding: 1em;
   flex-direction: column;
   align-items: center;
   justify-content: center; }
@@ -1564,11 +1773,23 @@ textarea {
   color: #b21319;
   font-size: 2.2rem;
   text-align: center; }
+  @media (min-width: 65rem) {
+    .c-admin-confirmation-page-title {
+      font-size: 4.5rem; } }
 
 .c-admin-confirmation-page-links {
   text-decoration: none;
   color: #fff;
   text-transform: uppercase; }
+
+.c-admin-confirmation-page-links::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 .c-footer {
   background-color: black; }
@@ -1611,3 +1832,6 @@ textarea {
   font-weight: 700;
   font-size: 1rem;
   margin-top: 1em; }
+
+.c-footer-copyright-desc {
+  font-size: 1.2rem; }

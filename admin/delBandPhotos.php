@@ -2,6 +2,8 @@
 
 session_start();
 
+require_once ("../errorReporting/developmentErrorReporting.php");
+
 if(!isset($_SESSION['admin'])){
 
 	header("Location:admin.php");
@@ -26,52 +28,87 @@ if(!isset($_SESSION['admin'])){
 </head>
 
 <body>
-	<!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enabled the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
+	<!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enable the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
 
         c- = this equals a component that is likely to get reused
         l- = this equals a class that acts as block layout like a reusable container for example
         h- = the h prefix is to signify helper classes like clearfix to get elements back in the html document flow
         js- = this is to signify when we need to use JavaScript on an block or a block element to bring in dynamic functionality.
         c-js- = will refer to both components and components that rely on JavaScript functionality
-        c-mq- = could be for media queries.
+        c-mq- = will be for media queries.
 
-        In addition, throughout this document there will be a comment that says, 'modifier here, please see css comments for what this does or what it is for'.  This way by using the find search tool provided by the editor we can quickly find the modifier we are looking for.  Might be an advantage to say for media queries too.
+        In addition, throughout this document there will be a comment that says, "MODIFIER HERE, PLEASE SEE CSS COMMENTS FOR WHAT THIS DOES OR WHAT IT IS FOR".  By using the find search tool provided by the editor (control or command F) we can quickly find the modifier we are looking for and then look at the corresponding css file to see what it does.  
         ---->
 
-        <!--- different grid here as the icon will have its own section with very small height---->
+        <!-----AND EXPLANATION OF THE CSS GRID SYSTEM USED BELOW---->
 
-        <div class="l-basic-grid-delete-news-stories h-grid">
+
+        <!---below is the class of the standard grid and is for rows only (this is used for the vertical layout of the pages), each row is to correspond with a new section of the html.  By using the grid system this way rather than rows and columns from the beginning, helps to keep the html semantic. Alternatively, using the grid for rows and columns at the beginning of the design means the html will have to be flattened for it to work.  When the, 'subgrid' property becomes more widespread with browsers perhaps this will not need to be the case, but for now, a grid for rows only for the vertical layout and then horizontal grids in each section thereafter if the need arises to keep it semantic----> 
+
+        <!-- this is the admin grid as it has less rows than the home page -->
+
+
+        <div class="l-basic-grid-admin-and-c-panel h-grid">
         	<?php
 require_once ("header.php");
 ?>
 
-<!----I think this class below was to allow for grid to have this in a separate row to keep the icon at the edge of the page--->
+<!-- this class below is for all the items that are deleted and edited through the admin panel, be it; a tour date, a news story, a band photo or a album. -->
 
- <div class="c-news-stories-DELETE-icon-container h-position">
+<!-- this class through the use of flexbox helps to centre the content, it has a position relative on it to aid the back icon below it to position itself on the left hand side of this section's corner otherwise it would go to very top of the browser -->
 
+<section class="c-admin-editAndDelete-item h-flex h-position">
 
-<!----reusable component icon to go back a page----->
-    <div class="c-back-page-icon-container c-news-stories-DELETE-icon-back-to-the-left ">
-        
+ <!----reusable component icon to go back a page this is in the base section of the scss----->
+
+  <!-- because the parent is position relative we have a position absolute on this of top, left and right of 0 to make the icon align at the top left hand side of the page  -->
+
+ <div class="c-back-page-icon-container">
+
+        <!-- just an increase size on this svg to make it look better -->
         <img src="../img/noun_back.svg" alt="please go back to the page behind" class="c-back-page-icon">
+         <!-- end of size change on the svg -->
+
+         <!-- destination to go back a page with pseudo before technique to give mobile users more click space -->
         <a href="manipulatePhotosSection.php" class="c-back-page-icon-link"></a>
+
+         <!-- end of the pseudo before technique to give mobile users more click space  -->
     </div>
-
-
+  <!-- end of position absolute -->
 <!----end of reusable component----->
 
-</div>
-
-<!---reusable class from the tour delete section, remains to be seen If I will use this---->
 
 
-<section class="c-admin-DELETE-tour-dates h-flex c-news-stories-DELETE-max-width">
+
+<!-- heading style of all admin delete and edit items titles, different font sizes at diffferent screens  -->
+
+<h1 class="c-admin-editAndDelete-item-title">Delete Band Photos</h1>
+
+<!-- end of heading style of all admin delete and edit items titles, different font sizes at diffferent screens  -->
 
 
-<h1 class="c-admin-DELETE-tour-dates-title">Delete Band Photo</h1>
+<!-- THE BAND PHOTOS SECTION -->
+
+ <!-- a helper class to take off the background image strip divider that is present in the home page -->
+<!-- a semantic section class -->
+
+<!-- a helper stretch class to override the align centre from the parent section class -->
+
+<section class="c-bands-photos h-take-background-strip-off-pseudo-before-element h-stretch">
 
 
-<section class="c-news-stories-DELETE h-grid">
+<!---this class down below is a utility class to keep the grid in a 1300px max container for the big screens ----->
+
+    <div class="l-for-card-grid-columns-max-width-container">
+
+  
+
+<!--- this class down below is the section grid column layout itself, this is for all the card type blocks like the music albums, the band photos and the news stories--->  
+
+
+    <div class="l-the-card-grid h-grid">
+
+    <!---reusable class from the tour delete section, remains to be seen If I will use this---->
 
 <?php 
 
@@ -85,57 +122,45 @@ $delPhotos_query= mysqli_query($dbc, $delPhotos_sql);
 
  
  		
-while ($delPhotos_rs = mysqli_fetch_array($delPhotos_query)){ ?>
+while ($row = mysqli_fetch_array($delPhotos_query)){ 
 
 
-	<article class="c-news-stories-DELETE-container">
-
- 		<div class="h-position  h-height400 h-padding">
-
- 			 <!---the, 'c-music-DELETE-img-album-change' class is in its own comparted sass file---->
- 	  	<img class="c-news-stories-DELETE-img-itself c-music-DELETE-img-album-change" src="../img/<?php echo $delPhotos_rs['img_ref']?>" />
-
- 	  	<!---end of the music delete component ---->
-
- 	  	<div class="c-news-stories-DELETE-info-container ">
- 	  		<div class="c-news-stories-DELETE-date"><?php echo $delPhotos_rs['date']?>
- 	  	</div>
- 	  	<!---this class is from the tour section, just testing this what it looks like--->
- 	  	<div class="c-upcoming-shows-location"> <?php echo $delPhotos_rs['state_country']?>  </div> 
-
-		</div>
-
-		<a class="c-news-stories-DELETE-links-bbc" href="deleteBandPhotosConfirm.php?photoID=<?php echo $delPhotos_rs['id'];?>">
- 	 
- 	</a>
+	require('../public/bandPhotosWhileLoopDelete.php');
 
 
- </div>
-</article>
-
-
-		
- <?php
-
-
- }
+}
 
 ?>
 
+</div>
+
+<!----end of the auto-fit grid for the cards (images, album photos, stadium photos etc)----->
+
+</div>
+<!----end of utility layout class for max width ---->  
+
 </section>
 
-<!---- end of the reusable component ---->
+<!-- end of a helper stretch class to override the align centre from the parent section class -->
+<!-- end of a helper class to take off the background image strip divider that is present in the home page -->
+<!-- end of the semantic section for the Bands photos -->
+<!-- END OF THE BAND PHOTOS SECTION -->
 
 </section>
 
-<!---end of parent component----->
+<!-- end of this class for all the items that are added through the admin panel, be it; a new tour date, a new news story, a band photo or a new album. -->
+
+<!-- end of this class through the use of flexbox helps to centre the form, it has a position relative on it to aid the back icon below it to position itself on the left hand side of this section's corner otherwise it would go to very top of the browser -->
+
+<!-- end of centring the form -->
+
 
 <?php
 require_once ("../abstractFooter.php");
 
 ?>
 </div>
-
+<!-- end of the row grid, less than the home page's grid -->
 </body>
 </html>
 

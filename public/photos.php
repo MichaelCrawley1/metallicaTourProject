@@ -14,73 +14,62 @@
 </head>
 
 <body>
-	<!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enabled the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
+	<!---html classes will be set up using the Block Element Modifier (BEM) styled system.  My method will involve letters with dashes (-) as a prefix to enable the reader to understand if a section of code is a component or a layout element.  Glossary is displayed below:
 
         c- = this equals a component that is likely to get reused
         l- = this equals a class that acts as block layout like a reusable container for example
         h- = the h prefix is to signify helper classes like clearfix to get elements back in the html document flow
         js- = this is to signify when we need to use JavaScript on an block or a block element to bring in dynamic functionality.
         c-js- = will refer to both components and components that rely on JavaScript functionality
-        c-mq- = could be for media queries.
+        c-mq- = will be for media queries.
 
-        In addition, throughout this document there will be a comment that says, 'modifier here, please see css comments for what this does or what it is for'.  This way by using the find search tool provided by the editor we can quickly find the modifier we are looking for.  Might be an advantage to say for media queries too.
+        In addition, throughout this document there will be a comment that says, "MODIFIER HERE, PLEASE SEE CSS COMMENTS FOR WHAT THIS DOES OR WHAT IT IS FOR".  By using the find search tool provided by the editor (control or command F) we can quickly find the modifier we are looking for and then look at the corresponding css file to see what it does.  
         ---->
+
+        <!-----AND EXPLANATION OF THE CSS GRID SYSTEM USED BELOW---->
+
+
+        <!---below is the class of the standard grid and is for rows only (this is used for the vertical layout of the pages), each row is to correspond with a new section of the html.  By using the grid system this way rather than rows and columns from the beginning, helps to keep the html semantic. Alternatively, using the grid for rows and columns at the beginning of the design means the html will have to be flattened for it to work.  When the, 'subgrid' property becomes more widespread with browsers perhaps this will not need to be the case, but for now, a grid for rows only for the vertical layout and then horizontal grids in each section thereafter if the need arises to keep it semantic----> 
+
+        <!-- this grid has less rows than the home page's grid -->
 
         <div class="l-basic-grid-news-music-and-photos-page h-grid">
         	<?php
 require_once ("../abstractHeader.php");
+require_once("newsMusicPhotosHero.php");
 
 ?>
 
-<!----below is the component class section taken from the home page (product.php)this is getting reused here for the promo tour dates image click through---->
-<section class="c-small-screen">
+<!-- THE BAND PHOTOS SECTION -->
 
-              <div class="c-small-screen-background">
-                <div class="c-small-screen-image-container h-flex">
+ <!-- a helper class to take off the background image strip divider that is present in the home page -->
+<!-- a semantic section class -->
 
-                <img src="../img/promo_tour.png" alt="image for tour dates" class="c-small-screen-tour-dates-img">
-                <a href="tour.php" class="c-small-screen-tour-dates-img-link" ></a>
+  <section class="c-bands-photos h-take-background-strip-off-pseudo-before-element">
 
+      <!-- just the usual heading style for the site with different sizes for different screens and paddings -->
 
-              </div>
-                
+       <!-- MODIFIER HERE, PLEASE SEE CSS COMMENTS FOR WHAT THIS DOES OR WHAT IT IS FOR -->
+    
+    <h1 class="c-bands-photos-title c-bands-photos-title--padding-less  h-mobile-title">Photos
+      
 
-              </div>
-              
+    </h1>
 
-            </section>
-
-            <section class="c-big-screen-background">
-
-                         <div class="c-big-screen-background-hero c-big-screen-background-hero--news-hero">
-
-                              <div class="c-big-screen-image-container h-flex">
-
-                         <a href="tour.php" class="c-big-screen-tour-dates-img-link" ><img src="../img/promo_tour.png" alt="image for tour dates" class="c-big-screen-tour-dates-img"></a>
+      <!--  end of the usual heading style for the site with different sizes for different screens and paddings -->
 
 
-                    </div>
 
-                         </div>
-                         
+<!---this class down below is a utility class to keep the grid in a 1300px max container for the big screens ----->
 
-                    </section>
+    <div class="l-for-card-grid-columns-max-width-container">
 
-     <!---end of reusable component--->
-		
+  
+
+<!--- this class down below is the section grid column layout itself, this is for all the card type blocks like the music albums, the band photos and the news stories--->  
 
 
-		
-			<!----below is the component class section taken from the home page (product.php)this is getting reused to follow the same style display as the PHOTOS section (c-bands-photos), the only difference is that there are the maximum entries here for the PHOTOS, not limited to three like in the home page (product.php).  We don't need a  hero image for this page, so I have taken this PHOTOS section towards the top of the page.  A few modifiers need to be in place then. One, we need to take out the black background on the section class(c-bands-photos) and we need to amend the position to bring the section nearer to the hamburger mobile menu to enable a more presenting outlook  The modifiers are below---->
-
-<section class="c-admin-DELETE-tour-dates h-flex c-latest-news-max-width">
-		
-		<h1 class="c-bands-photos-title h-mobile-title">Photos
-			
-
-		</h1>
-
-		 <div class="c-news-stories-DELETE h-grid">
+    <div class="l-the-card-grid h-grid">
 
 <?php
 
@@ -94,42 +83,29 @@ $photo_query = "SELECT * FROM photo_table ";
 
  $data = mysqli_query($dbc, $photo_query);
 
- while ($row = mysqli_fetch_array($data)){ ?>
+ while ($row = mysqli_fetch_array($data)){ 
 
-  <article class="c-news-stories-DELETE-container">
+  require('bandPhotosWhileLoop.php');
 
-          <div class="h-position  h-height400 h-padding">
-
-
- 
-		<img class="c-news-stories-DELETE-img-itself c-music-DELETE-img-album-change" alt="metallica stadium photos" src="../img/<?php echo $row['img_ref']?>"/>
-		<div class="c-news-stories-DELETE-info-container c-bands-photos-take-padding-out">
-        <div class="c-news-stories-DELETE-date"><?php echo $row['date']?>
-      </div>
-      <!---this class is from the tour section, just testing this what it looks like--->
-      <div class="c-upcoming-shows-location"> <?php echo $row['state_country']?>  </div> 
-
-    </div>
-  </div>
-    
-
- 	  
- 	 
-  </article>
- <?php 
-		
-
-
- 	} 
+ } 
 
 
 mysqli_close($dbc);
 ?>
 
+</div>
 
+<!----end of the auto-fit grid for the cards (images, album photos, stadium photos etc)----->
 
 </div>
+<!----end of utility layout class for max width ---->  
+
 </section>
+
+
+<!-- end of a helper class to take off the background image strip divider that is present in the home page -->
+<!-- end of the semantic section for the Bands photos -->
+<!-- END OF THE BAND PHOTOS SECTION -->
 
 
 
@@ -149,7 +125,7 @@ require_once ("../abstractFooter.php");
 
 
 </div>
-
+<!-- end of the row grid, less than the home page's grid -->
 </body>
 </html>
 
