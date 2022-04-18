@@ -215,9 +215,9 @@ function successMessage($correctCont, $wrongGoBack){?>
     <!---This class below does nothing except overrides a previous height attribute (if needed), was just used as a parent class in case it was needed for a flex or a  grid child ---->
 
       <div class="h-height-auto">
-      <!-- this helps the auto fit via a height on the image and a object fit cover so not to lose any aspect ratio, also we have a helper class in here to centre the image when it is just one item in the auto-grid -->
-        <img src="../img/<?php echo $_SESSION['addNewsStory']['img']; ?>" class="c-latest-news-articles-photo-img h-margin-centre"/>
-        <!---end of img class with height and object fit cover also the end of a helper class in here to centre the image when it is just one item in the auto-grid---->
+      <!-- this helps the auto fit via a height on the image and a object fit cover so not to lose any aspect ratio, also we have a helper class in here to centre the image when it is just one item in the auto-grid and a helper of padding left to right of 1em to help with the responsiveness -->
+        <img src="../img/<?php echo $_SESSION['addNewsStory']['img']; ?>" class="c-latest-news-articles-photo-img h-margin-centre h-padding-left-to-right"/>
+        <!---end of img class with height and object fit cover also the end of a helper class in here to centre the image when it is just one item in the auto-grid and a helper of padding left to right of 1em to help with the responsiveness---->
       </div>
 
       <!--- end of height auto class---->

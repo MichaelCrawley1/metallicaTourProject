@@ -136,12 +136,12 @@ $_SESSION['editNewsStoryInfo']['img'] = $editNewsStory_rs['img_ref'];
 
 
 
-<!-- heading style of all admin delete and edit items titles, different font sizes at different screens  -->
+<!-- heading style of all admin delete and edit items titles, different font sizes at different screens and a helper of text align centre to centre the text  -->
 
 
-<h1 class="c-admin-editAndDelete-item-title">Edit News Story Below:</h1>
+<h1 class="c-admin-editAndDelete-item-title h-text-align">Edit News Story Below:</h1>
 
-<!-- end of heading style of all admin delete and edit items titles, different font sizes at different screens  -->
+<!-- end of heading style of all admin delete and edit items titles, different font sizes at different screens and a helper of text align centre to centre the text  -->
 
 
 <!---this helper class below is for the card design elements like the band photos, the news stories and the music albums to keep the overflow hidden---->
@@ -152,9 +152,9 @@ $_SESSION['editNewsStoryInfo']['img'] = $editNewsStory_rs['img_ref'];
   <!---This class below does nothing except overrides a previous height attribute (if needed), was just used as a parent class in case it was needed for a flex or a  grid child ---->
 
     <div class="h-height-auto">
-    <!-- this helps the auto fit via a height on the image and a object fit cover so not to lose any aspect ratio, it also has a margin 0 and auto to centre the image in the space available  -->
-      <img src="../img/<?php echo $_SESSION['editNewsStoryInfo']['img'];?>" class="c-latest-news-articles-photo-img h-margin-centre"/>
-      <!---end of img class with height and object fit cover and with margin auto to centre for the conformation screen.---->
+    <!-- this helps the auto fit via a height on the image and a object fit cover so not to lose any aspect ratio, it also has a margin 0 and auto to centre the image in the space available and a helper of padding left to right of 1em to help with the responsiveness  -->
+      <img src="../img/<?php echo $_SESSION['editNewsStoryInfo']['img'];?>" class="c-latest-news-articles-photo-img h-margin-centre h-padding-left-to-right"/>
+      <!---end of img class with height and object fit cover and with margin auto to centre for the conformation screen and a helper of padding left to right of 1em to help with the responsiveness---->
     </div>
 
     <!--- end of height auto class---->
