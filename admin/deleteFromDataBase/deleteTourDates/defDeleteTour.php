@@ -1,3 +1,21 @@
+<?php
+
+
+
+session_start();
+
+require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/errorReporting/developmentErrorReporting.php");
+
+$locate_file = "/metallicaTourProject/admin/logIn/admin.php";
+
+if(!isset($_SESSION['admin'])){
+
+	header("Location: http://".$_SERVER['HTTP_HOST'].$locate_file);
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,88 +49,68 @@
 
         <!---below is the class of the standard grid and is for rows only (this is used for the vertical layout of the pages), each row is to correspond with a new section of the html.  By using the grid system this way rather than rows and columns from the beginning, helps to keep the html semantic. Alternatively, using the grid for rows and columns at the beginning of the design means the html will have to be flattened for it to work.  When the, 'subgrid' property becomes more widespread with browsers perhaps this will not need to be the case, but for now, a grid for rows only for the vertical layout and then horizontal grids in each section thereafter if the need arises to keep it semantic----> 
 
-        <!-- this grid has less rows than the home page's grid -->
+        <!-- this is the admin grid as it has less rows than the home page -->
 
-        <div class="l-basic-grid-news-music-and-photos-page h-grid">
+        <div class="l-basic-grid-admin-and-c-panel h-grid">
         	<?php
 require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/abstractHeader.php");
-require_once("newsMusicPhotosHero.php");
 
 ?>
 
-<!-- THE BAND PHOTOS SECTION -->
-
- <!-- a helper class to take off the background image strip divider that is present in the home page -->
-<!-- a semantic section class -->
-
-  <section class="c-bands-photos h-take-background-strip-off-pseudo-before-element">
-
-      <!-- just the usual heading style for the site with different sizes for different screens and paddings -->
-
-       <!-- MODIFIER HERE, PLEASE SEE CSS COMMENTS FOR WHAT THIS DOES OR WHAT IT IS FOR -->
-    
-    <h1 class="c-bands-photos-title c-bands-photos-title--padding-less  h-mobile-title">Photos
-      
-
-    </h1>
-
-      <!--  end of the usual heading style for the site with different sizes for different screens and paddings -->
 
 
-
-<!---this class down below is a utility class to keep the grid in a 1300px max container for the big screens ----->
-
-    <div class="l-for-card-grid-columns-max-width-container">
-
-  
-
-<!--- this class down below is the section grid column layout itself, this is for all the card type blocks like the music albums, the band photos and the news stories--->  
-
-
-    <div class="l-the-card-grid h-grid">
 
 <?php
-
-	
 
 require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/connect_database.php");
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
 
-$photo_query = "SELECT * FROM photo_table ";
-
- $data = mysqli_query($dbc, $photo_query);
-
- while ($row = mysqli_fetch_array($data)){ 
-
-  require($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/public/theLoops/theBandPhotoLoops/bandPhotosWhileLoop.php");
-
- } 
+ $delTour_sql = "DELETE FROM Tour_table WHERE ID=".$_GET['tourID'];
+ $delTour_query= mysqli_query($dbc,$delTour_sql);
 
 
-mysqli_close($dbc);
 ?>
 
-</div>
 
-<!----end of the auto-fit grid for the cards (images, album photos, stadium photos etc)----->
 
-</div>
-<!----end of utility layout class for max width ---->  
+<!---this is going to be a reusable component as all the confirmation screens will follow the same style --->
+
+<!-- this class sets the content bang in the middle of the page vertically and horizontally, the three row grid set at the beginning has a 100vh height on the main content therefore we can use flex's align items and justify content to centre the page -->
+
+<section class="c-admin-confirmation-page h-flex">
+
+<!-- Our usual title style used throughout the site, with bigger sizes at ipad screens and above -->
+
+<h1 class="c-admin-confirmation-page-title">Tour Date has successfully been Deleted!!!!!</h1>
+
+<!-- end of our usual title style used throughout the site, with bigger sizes at ipad screens and above  -->
+
+<!----button component ---->
+
+<!-- just the button design used throughout the site , with position relative to enable the link to span the whole button width and height -->
+
+<button class="c-button-mobile c-button-mobile--large h-position">
+
+<!-- just some style changes on this anchor link and the pseudo technique to enable the whole button square to be clickable for a better UX -->
+  <a class="c-admin-confirmation-page-links" href="/metallicaTourProject/admin/logIn/admin.php">Return to admin</a>
+<!-- end of some style changes on this anchor link and the pseudo technique to enable the whole button square to be clickable for a better UX  -->
+
+</button>
+
+<!-- end of the button design used throughout the site  with position relative to enable the link to span the whole button width and height  -->
+
+
+<!----end of button component, but links are a different class --->
 
 </section>
 
-
-<!-- end of a helper class to take off the background image strip divider that is present in the home page -->
-<!-- end of the semantic section for the Bands photos -->
-<!-- END OF THE BAND PHOTOS SECTION -->
+<!-- end of the class setting the content bang in the middle of the page vertically and horizontally, the three row grid set at the beginning has a 100vh height on the main content therefore we can use flex's align items and justify content to centre the page -->
 
 
+<!---- end of reusable component----->
 
-
-
-
-<?php 
+<?php
 require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/abstractFooter.php");
 
 ?>
@@ -120,13 +118,9 @@ require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/abstractFooter.ph
 
 
 
-
-
-
-
 </div>
-<!-- end of the row grid, less than the home page's grid -->
+
+<!-- end of the 3 row grid -->
 </body>
 </html>
-
 

@@ -8,8 +8,8 @@
                       minimum-scale=1.0, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>The Band</title>
-<link rel="Stylesheet" type="text/css" href="../css/main.css">
-<script src="../js/mobileMenu.js" defer></script>
+<link rel="Stylesheet" type="text/css" href="/metallicaTourProject/css/main.css">
+<script src="/metallicaTourProject/js/mobileMenu.js" defer></script>
 <meta charset = "utf-8">
 </head>
 
@@ -28,7 +28,7 @@
 
         <div class="l-basic-grid-about-us-page h-grid">
         	<?php
-require_once ("../abstractHeader.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/abstractHeader.php");
 
 ?>
 
@@ -39,7 +39,7 @@ require_once ("../abstractHeader.php");
         			<div class="c-small-screen-background">
         				<div class="c-small-screen-image-container h-flex">
 
-        				<img src="../img/promo_tour.png" alt="image for tour dates" class="c-small-screen-tour-dates-img">
+        				<img src="/metallicaTourProject/img/promo_tour.png" alt="image for tour dates" class="c-small-screen-tour-dates-img">
                 <a href="tour.php" class="c-small-screen-tour-dates-img-link" ></a>
 
 
@@ -57,7 +57,7 @@ require_once ("../abstractHeader.php");
 
                   <div class="c-big-screen-image-container h-flex">
 
-                <a href="tour.php" class="c-big-screen-tour-dates-img-link" ><img src="../img/promo_tour.png" alt="image for tour dates" class="c-big-screen-tour-dates-img"></a>
+                <a href="tour.php" class="c-big-screen-tour-dates-img-link" ><img src="/metallicaTourProject/img/promo_tour.png" alt="image for tour dates" class="c-big-screen-tour-dates-img"></a>
 
 
               </div>
@@ -205,7 +205,7 @@ There’s no sign of slowing down in 2018 as the boys continue to take the World
 
 <?php
 
-require_once ("../abstractFooter.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/abstractFooter.php");
 
 ?>
 

@@ -1,0 +1,34 @@
+The two roots I want to use here.  
+
+
+$_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/
+
+for the server root abstract header change:
+
+$_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/abstractHeader.php
+
+
+for the add to database:
+
+/metallicaTourProject/admin/addToDataBase/ 
+
+
+for the delete stuff:
+
+/metallicaTourProject/admin/deleteFromDataBase/
+
+for the edit stuff:
+
+/metallicaTourProject/admin/editDataBase/
+
+/metallicaTourProject/img/
+
+
+for the manipulate tour stuff:
+
+/metallicaTourProject/admin/adminMenuOptions/
+
+the loops /theLoops/
+
+require($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/public/theLoops/theNewsLoops/
+

@@ -970,54 +970,11 @@ textarea {
   background-size: cover;
   background-position: center; }
 
-.c-latest-news-max-width {
-  max-width: 1300px;
-  padding: 1em;
-  margin: 0 auto 4em; }
-
-.c-latest-news--background-and-postion-change {
-  position: relative;
-  top: -2.3em;
-  background-color: transparent; }
-
-.c-latest-news--background-and-postion-change::before {
-  background-color: transparent; }
-
 .c-latest-news-title {
   padding: 1em 0; }
   @media (min-width: 65rem) {
     .c-latest-news-title {
       font-size: 4.5rem; } }
-
-.c-latest-news-container-for-grid {
-  grid-gap: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  padding: 1em;
-  overflow: hidden; }
-  @media (min-width: 78.3125rem) {
-    .c-latest-news-container-for-grid {
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); } }
-
-.c-latest-news-articles {
-  height: 510px;
-  overflow: hidden; }
-  @media (min-width: 65rem) {
-    .c-latest-news-articles {
-      height: 500px; } }
-
-.c-latest-news-articles--for-confirm-add-news-story {
-  flex-direction: column;
-  align-items: center; }
-
-.c-latest-news-img-container {
-  height: auto !important; }
-
-.c-latest-news-articles-photo-img {
-  height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  overflow: hidden;
-  width: 579px; }
 
 @media (min-width: 65rem) {
   .c-latest-news-articles-date {
@@ -1030,12 +987,16 @@ textarea {
 .c-latest-news-blurb {
   max-width: none; }
 
+.c-latest-news-articles-photo-img {
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  width: 579px; }
+
 .c-latest-news-articles-text-container {
   padding: .5em;
   padding-bottom: 1.5em; }
-
-.c-latest-news-articles-text-container--text-align {
-  text-align: center; }
 
 .c-latest-news-sub-title {
   color: #b21319; }
@@ -1107,6 +1068,9 @@ textarea {
       text-align: left;
       padding: 0 .5em 3em; } }
 
+.c-upcoming-shows-container--last-child-bottom-border:last-child {
+  border-bottom: none; }
+
 .c-upcoming-shows-month {
   font-size: 3.2rem;
   text-transform: uppercase; }
@@ -1126,31 +1090,6 @@ textarea {
   .c-upcoming-shows-location {
     justify-self: end;
     font-size: 2.2rem; } }
-
-.c-upcoming-shows-button-container {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2em 0;
-  margin-top: 7em;
-  margin-bottom: 5em; }
-
-.c-upcoming-shows-info {
-  text-transform: uppercase;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 900;
-  font-size: 2rem; }
-
-.c-upcoming-shows-info::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; }
 
 .c-upcoming-shows-hero {
   background-image: url(../img/videos-banner-blue.jpg);
@@ -1175,14 +1114,6 @@ textarea {
   background-size: cover;
   background-position: center; }
 
-.c-music--background-and-postion-change {
-  background-color: transparent;
-  position: relative;
-  top: -2.3em; }
-
-.c-music-background-image::before {
-  background-image: none; }
-
 @media (min-width: 65rem) {
   .c-music-title {
     font-size: 4.5rem;
@@ -1192,39 +1123,8 @@ textarea {
   .c-music-title--padding-less {
     padding: 1em 0; } }
 
-.c-music-container {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1em; }
-
-.c-music-container-list {
-  margin: 0;
-  list-style-type: none;
-  padding: 0; }
-
 .c-music-image-container-border-red {
   border: 5px solid #b21319; }
-
-.c-music-button-container {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2em 0;
-  margin-bottom: 2em; }
-
-.c-music-info {
-  text-transform: uppercase;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 900;
-  font-size: 2rem; }
-
-.c-bands-photos--background-and-postion-change {
-  background-color: transparent;
-  position: relative;
-  top: -2.3em; }
 
 .c-bands-photos::before {
   content: "";
@@ -1247,27 +1147,9 @@ textarea {
   .c-bands-photos-title--padding-less {
     padding: 1em 0; } }
 
-.c-bands-photos-container {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1em;
-  margin-top: -2.5em; }
-
 @media (min-width: 65rem) {
   .c-bands-photos-text-container-date {
     font-size: 2.2rem; } }
-
-.c-bands-photos-container-list {
-  margin: 0;
-  list-style-type: none;
-  padding: 0; }
-
-.c-bands-photos-container-list-item {
-  margin: 3em 0; }
-
-.c-bands-photos-container-img {
-  margin: 0 auto; }
 
 .c-bands-photos-text-container {
   padding: .5em 0; }
@@ -1278,27 +1160,6 @@ textarea {
   @media (min-width: 65rem) {
     .c-bands-photos-location {
       font-size: 2.5rem; } }
-
-.c-bands-photos-location-style {
-  margin-left: 1.5em; }
-
-.c-bands-photos-button-container {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2em 0;
-  margin-bottom: 2em; }
-
-.c-bands-photos-info {
-  text-transform: uppercase;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 900;
-  font-size: 2rem; }
-
-.c-bands-photos-take-padding-out {
-  padding: 0 !important; }
 
 .c-about-us {
   margin-top: 1em;

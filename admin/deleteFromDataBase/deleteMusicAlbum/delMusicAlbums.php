@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+
+require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/errorReporting/developmentErrorReporting.php");
+
+$locate_file = "/metallicaTourProject/admin/logIn/admin.php";
+
+
+if(!isset($_SESSION['admin'])){
+
+	header("Location: http://".$_SERVER['HTTP_HOST'].$locate_file);
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,37 +48,59 @@
 
         <!---below is the class of the standard grid and is for rows only (this is used for the vertical layout of the pages), each row is to correspond with a new section of the html.  By using the grid system this way rather than rows and columns from the beginning, helps to keep the html semantic. Alternatively, using the grid for rows and columns at the beginning of the design means the html will have to be flattened for it to work.  When the, 'subgrid' property becomes more widespread with browsers perhaps this will not need to be the case, but for now, a grid for rows only for the vertical layout and then horizontal grids in each section thereafter if the need arises to keep it semantic----> 
 
-        <!-- this grid has less rows than the home page's grid -->
+        <!-- this is the admin grid as it has less rows than the home page -->
 
-        <div class="l-basic-grid-news-music-and-photos-page h-grid">
+        <div class="l-basic-grid-admin-and-c-panel h-grid">
         	<?php
 require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/abstractHeader.php");
-require_once("newsMusicPhotosHero.php");
 
 ?>
 
+<!-- this class below is for all the items that are deleted and edited through the admin panel, be it; a tour date, a news story, a band photo or a album. -->
+
+<!-- this class through the use of flexbox helps to centre the content, it has a position relative on it to aid the back icon below it to position itself on the left hand side of this section's corner otherwise it would go to very top of the browser -->
+
+<section class="c-admin-editAndDelete-item h-flex h-position">
+
+    <!----reusable component icon to go back a page this is in the base section of the scss----->
+
+  <!-- because the parent is position relative we have a position absolute on this of top, left and right of 0 to make the icon align at the top left hand side of the page  -->
 
 
-	
+    <div class="c-back-page-icon-container ">
+         <!-- just an increase size on this svg to make it look better -->
+        <img src="/metallicaTourProject/img/noun_back.svg" alt="please go back to the page behind" class="c-back-page-icon">
+         <!-- end of size change on the svg -->
+
+           <!-- destination to go back a page with pseudo before technique to give mobile users more click space -->
+        <a href="/metallicaTourProject/admin/adminMenuOptions/manipulateAlbum/manipulateMusicSection.php" class="c-back-page-icon-link"></a>
+          <!-- end of the pseudo before technique to give mobile users more click space  -->
+    </div>
+
+
+    <!-- end of position absolute -->
+<!----end of reusable component----->
+
+<!-- heading style of all admin delete and edit items titles, different font sizes at diffferent screens  -->
+
+
+<h1 class="c-admin-editAndDelete-item-title">Delete Music Album</h1>
+
+<!-- end of heading style of all admin delete and edit items titles, different font sizes at diffferent screens  -->
 
 
 <!-- THE MUSIC SECTION -->
 
 <!-- a helper class to take off the background image strip divider that is present in the home page -->
 
+<!-- a helper class to stretch out the flex to the end -->
 
 
-  <section class="c-music h-take-background-strip-off-pseudo-before-element">
+  <section class="c-music h-take-background-strip-off-pseudo-before-element h-stretch">
 
-    <!-- just the usual heading style for the site with different sizes for different screens and paddings -->
+   
 
-    <!-- MODIFIER HERE, PLEASE SEE CSS COMMENTS FOR WHAT THIS DOES OR WHAT IT IS FOR -->
-
-    <h1 class="c-music-title c-music-title--padding-less h-mobile-title">Music</h1>
-
-    <!--  end of the usual heading style for the site with different sizes for different screens and paddings -->
-
-  <!---this class down below is a utility class to keep the grid in a 1300px max container for the big screens ----->
+<!---this class down below is a utility class to keep the grid in a 1300px max container for the big screens ----->
 
     <div class="l-for-card-grid-columns-max-width-container">
 
@@ -70,33 +109,33 @@ require_once("newsMusicPhotosHero.php");
 
 
     <div class="l-the-card-grid h-grid">
-    
 
 
-<?php
 
-  
+
+
+<?php 
 
 require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/connect_database.php");
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
 
-$music_query = "SELECT * FROM music_table";
+$delMusic_sql = "SELECT * FROM music_table";
 
- $data = mysqli_query($dbc, $music_query);
+$delMusic_query= mysqli_query($dbc, $delMusic_sql);
 
- while ($row = mysqli_fetch_array($data)){ 
-
-  require($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/public/theLoops/theAlbumLoops/musicAlbumsWhileLoop.php");
-  
- } 
+ 
+ 		
+while ($row = mysqli_fetch_array($delMusic_query)){ 
 
 
-mysqli_close($dbc);
+	
+ require($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/public/theLoops/theAlbumLoops/musicAlbumsWhileLoopDelete.php");
+
+
+ }
+
 ?>
-
-
-
 
 </div>
 
@@ -105,33 +144,27 @@ mysqli_close($dbc);
 </div>
 <!----end of utility layout class for max width ---->  
 
-
-
 </section>
 <!-- end of the semantic section for the music albums -->
 
 <!--end of a helper class to take off the background image strip divider that is present in the home page -->
 
+<!-- end of the helper class to stretch out the align centre -->
+
 <!-- END OF THE MUSIC SECTION -->
 
+</section>
+<!-- end of this class through the use of flexbox helps to centre the content, with position relative on it to aid the back icon below it to position itself on the left hand side of this section's corner otherwise it would go to very top of the browser -->
+
+<!--  end of this class for all the items that are deleted through the admin panel, be it; a tour date, a news story, a band photo or a new album.  -->
 
 
-
-<?php 
+<?php
 require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/abstractFooter.php");
 
+
 ?>
-
-
-
-
-
-
-
 </div>
-
 <!-- end of the row grid, less than the home page's grid -->
 </body>
 </html>
-
-

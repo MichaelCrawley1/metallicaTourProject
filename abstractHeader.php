@@ -8,7 +8,7 @@
     <!-- this class keeps the Metallica logo at an acceptable size for the small screens and uses a margin to position it properly -->
                 <div class="c-mobile-menu-logo-container">
                     <!-- img class to manipulate the image is not needed here -->
-                    <img src="../img/logo-homepage.svg" alt="Metallica's logo" class="c-mobile-menu-logo-img">
+                    <img src="/metallicaTourProject/img/logo-homepage.svg" alt="Metallica's logo" class="c-mobile-menu-logo-img">
                     <!-- end of the image class -->
                     
                 </div>
@@ -19,7 +19,7 @@
                 <!-- this is the anchor pseudo technique, it has a z:index on it so that the javascript does work, notice it doesn't have a destination, that behaviour is done with javascript -->
                 <a href="#" class="c-mobile-menu-hamburger-link">
                         <!-- the image class here is just its default behaviour at the base section of the css -->
-                        <img src="../img/HamburgerMobileMenu.svg" alt="a hamburger svg icon" class="c-mobile-menu-hamburger-svg">
+                        <img src="/metallicaTourProject/img/HamburgerMobileMenu.svg" alt="a hamburger svg icon" class="c-mobile-menu-hamburger-svg">
                         <!-- end of the image class -->
                     </a>
                     <!-- end of the pseudo technique for mobile users to experience the functionality of the menu system -->
@@ -59,7 +59,7 @@
                             <!-- again no destination with this anchor tag, the reason being it is just a technique to create more border space for the mobile user in case their fingers misses in pressing the X icon.  It use the pseudo before or after technique used throughout this project.  Javascript provides the behaviour on this from the parent above. Interestingly we have a Z;index on this to keep it over the destination links below, so the user functionality works the way it is suppose to-->
                             <a href="#" class="c-fixed-mobile-screen-hamburger-exit-container-link">
                                 <!-- use just a bigger width here to make the icon look better and to correspond with the size of the hamburger icon that it replaced.  Use svg's here so we don't lose any aspect ratio no matter how big or small we make it -->
-                                <img src="../img/mobileHamburgerClose.svg" alt="and x mark to get back to menu screen" class="c-fixed-mobile-screen-exit-svg">
+                                <img src="/metallicaTourProject/img/mobileHamburgerClose.svg" alt="and x mark to get back to menu screen" class="c-fixed-mobile-screen-exit-svg">
                                 <!-- end of bigger width on the svg here -->
                             </a>
                             <!-- end of the pseudo technique to create more border space for the mobile user with a Z:index on it to keep it over the destination links below -->
@@ -68,7 +68,7 @@
 
                         <!-- below are the anchors that take the user to the destination around the site, they have no text decoration and are set to the project's red colour.  These also use the BBC website pseudo technique to make the whole 250px block clickable just in case the user misses the link text, it doesn't have z:index on them so this first link is, 'under' the closing X icon of the mobile menu (that does use a z:index on it) -->
 
-                        <a href="project.php" id="c-fixed-home" class="c-fixed-mobile-screen-list-item-links ">Home</a>
+                        <a href="/metallicaTourProject/public/project.php" id="c-fixed-home" class="c-fixed-mobile-screen-list-item-links ">Home</a>
                         <!-- end of the first destination link of the mobile menu with the pseudo technique -->
                     </li>
                     <!-- end of the li grid to align centre the list items -->
@@ -76,7 +76,7 @@
                     <li class="c-fixed-mobile-screen-nav-menu-list-item h-grid h-position">
                         
                         <!-- see comments for the destination anchor links under the first list item -->
-                        <a href="aboutus.php" class="c-fixed-mobile-screen-list-item-links">about us</a>
+                        <a href="/metallicaTourProject/public/aboutus.php" class="c-fixed-mobile-screen-list-item-links">about us</a>
                         <!-- end of the second destination link of the mobile menu with the pseudo technique -->
 
 
@@ -86,7 +86,7 @@
                       <!-- see comments for what this class does on first list item  -->
                     <li class="c-fixed-mobile-screen-nav-menu-list-item h-grid h-position">
                           <!-- see comments for the destination anchor links under the first list item -->
-                        <a href="tour.php" class="c-fixed-mobile-screen-list-item-links">tour</a>
+                        <a href="/metallicaTourProject/public/tour.php" class="c-fixed-mobile-screen-list-item-links">tour</a>
                            <!-- end of the third destination link of the mobile menu with the pseudo technique -->
 
                     </li>
@@ -96,7 +96,7 @@
                       <!-- see comments for what this class does on first list item  -->
                     <li class="c-fixed-mobile-screen-nav-menu-list-item h-grid h-position ">
                           <!-- see comments for the destination anchor links under the first list item -->
-                        <a href="news.php" class="c-fixed-mobile-screen-list-item-links">news</a>
+                        <a href="/metallicaTourProject/public/news.php" class="c-fixed-mobile-screen-list-item-links">news</a>
 
                          <!-- end of the fourth destination link of the mobile menu with the pseudo technique -->
 
@@ -109,7 +109,7 @@
                     <li class="c-fixed-mobile-screen-nav-menu-list-item h-grid h-position  ">
                          <!-- see comments for the destination anchor links under the first list item -->
 
-                        <a href="music.php" class="c-fixed-mobile-screen-list-item-links">music</a>
+                        <a href="/metallicaTourProject/public/music.php" class="c-fixed-mobile-screen-list-item-links">music</a>
 
                           <!-- end of the fifth destination link of the mobile menu with the pseudo technique -->
 
@@ -123,7 +123,7 @@
 
                          <!-- see comments for the destination anchor links under the first list item -->
 
-                        <a href="photos.php" class="c-fixed-mobile-screen-list-item-links">photos</a>
+                        <a href="/metallicaTourProject/public/photos.php" class="c-fixed-mobile-screen-list-item-links">photos</a>
 
                           <!-- end of the sixth destination link of the mobile menu with the pseudo technique -->
 
@@ -139,7 +139,7 @@
                          <!-- see comments for the destination anchor links under the first list item -->
 
 
-                        <a href="../admin/admin.php" class="c-fixed-mobile-screen-list-item-links">admin</a>
+                        <a href="/metallicaTourProject/admin/logIn/admin.php" class="c-fixed-mobile-screen-list-item-links">admin</a>
 
                           <!-- end of the seventh destination link of the mobile menu with the pseudo technique -->
 
@@ -176,7 +176,7 @@
                 <!-- same as the mobile menu, just that there are more media queries to keep the logo size relevant with the bigger screens -->
                 <div class="c-mobile-menu-logo-container">
                     <!-- just a default image class, the container does all the size changes -->
-                    <img src="../img/logo-homepage.svg" alt="Metallica's logo" class="c-mobile-menu-logo-img">
+                    <img src="/metallicaTourProject/img/logo-homepage.svg" alt="Metallica's logo" class="c-mobile-menu-logo-img">
                     <!-- end of default image class -->
                     
                 </div>
@@ -193,20 +193,20 @@
                         <!-- just a little horizontal padding here -->
                         <li class="c-big-screen-nav-list-item">
                             <!-- big screen page links with some style requirements -->
-                            <a href="project.php" id="c-fixed-home" class="c-big-screen-list-item-links ">Home </a>
+                            <a href="/metallicaTourProject/public/project.php" id="c-fixed-home" class="c-big-screen-list-item-links ">Home </a>
                             <!-- end of big screen page links with some style requirements -->
                         </li>
                         <!-- end of the horizontal padding -->
                         <!-- just a little horizontal padding here -->
                         <li class="c-big-screen-nav-list-item">
-                             <!-- big screen page links with some style requirements --><a href="aboutus.php" class="c-big-screen-list-item-links">About Us</a>
+                             <!-- big screen page links with some style requirements --><a href="/metallicaTourProject/public/aboutus.php" class="c-big-screen-list-item-links">About Us</a>
                               <!-- end of big screen page links with some style requirements -->
                          </li>
                           <!-- end of the horizontal padding -->
                         <!-- just a little horizontal padding here -->
                         <li class="c-big-screen-nav-list-item">
                               <!-- big screen page links with some style requirements -->
-                            <a href="tour.php" class="c-big-screen-list-item-links">Tour</a>
+                            <a href="/metallicaTourProject/public/tour.php" class="c-big-screen-list-item-links">Tour</a>
                             <!-- end of big screen page links with some style requirements -->
 
                         </li>
@@ -214,21 +214,21 @@
                         <!-- just a little horizontal padding here -->
                         <li class="c-big-screen-nav-list-item">
                              <!-- big screen page links with some style requirements -->
-                            <a href="news.php" class="c-big-screen-list-item-links">News</a>
+                            <a href="/metallicaTourProject/public/news.php" class="c-big-screen-list-item-links">News</a>
                              <!-- end of big screen page links with some style requirements -->
                         </li>
                          <!-- end of the horizontal padding -->
                         <!-- just a little horizontal padding here -->
                         <li class="c-big-screen-nav-list-item">
                              <!-- big screen page links with some style requirements -->
-                            <a href="music.php" class="c-big-screen-list-item-links">Music</a>
+                            <a href="/metallicaTourProject/public/music.php" class="c-big-screen-list-item-links">Music</a>
                             <!-- end of big screen page links with some style requirements -->
                         </li>
                          <!-- end of the horizontal padding -->
                         <!-- just a little horizontal padding here -->
                         <li class="c-big-screen-nav-list-item">
                               <!-- big screen page links with some style requirements -->
-                            <a href="photos.php" class="c-big-screen-list-item-links">Photos</a>
+                            <a href="/metallicaTourProject/public/photos.php" class="c-big-screen-list-item-links">Photos</a>
                              <!-- end of big screen page links with some style requirements -->
 
 
@@ -237,7 +237,7 @@
                         <!-- just a little horizontal padding here -->
                         <li class="c-big-screen-nav-list-item">
                             <!-- big screen page links with some style requirements -->
-                            <a href="../admin/admin.php" class="c-big-screen-list-item-links">Admin</a>
+                            <a href="/metallicaTourProject/admin/logIn/admin.php" class="c-big-screen-list-item-links">Admin</a>
                              <!-- end of big screen page links with some style requirements -->
                         </li>
                          <!-- end of the horizontal padding -->

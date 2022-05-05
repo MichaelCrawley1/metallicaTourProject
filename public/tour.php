@@ -8,8 +8,8 @@
                       minimum-scale=1.0, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>The Band</title>
-<link rel="Stylesheet" type="text/css" href="../css/main.css">
-<script src="../js/mobileMenu.js" defer></script>
+<link rel="Stylesheet" type="text/css" href="/metallicaTourProject/css/main.css">
+<script src="/metallicaTourProject/js/mobileMenu.js" defer></script>
 <meta charset = "utf-8">
 </head>
 
@@ -35,7 +35,7 @@
 
         <div class="l-basic-grid-tour-page h-grid">
         	<?php
-require_once ("../abstractHeader.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/abstractHeader.php");
 
 ?>
 
@@ -86,7 +86,7 @@ require_once ("../abstractHeader.php");
 
 	
 
-require_once ("../connect_database.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/connect_database.php");
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
 
@@ -97,7 +97,7 @@ $tour_query = "SELECT * FROM Tour_table";
  while ($row = mysqli_fetch_array($data)){ 
 
  			
-require("tourDatesWhileLoop.php");
+require($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/public/theLoops/theTourLoops/tourDatesWhileLoop.php");
 
 } 
 
@@ -110,7 +110,7 @@ mysqli_close($dbc);
 <!--  end of same section class as what came before to match the design from the home page -->
 
 <?php 
-require_once ("../abstractFooter.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/abstractFooter.php");
 ?>
 
 

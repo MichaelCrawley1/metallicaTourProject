@@ -24,7 +24,7 @@ function start() {
 
             }
         };
-        request.open("GET", "../admin/ajaxUnlink.php", true);
+        request.open("GET", "/metallicaTourProject/admin/ajaxImageUse/ajaxUnlink.php", true);
         request.send();
     }
 

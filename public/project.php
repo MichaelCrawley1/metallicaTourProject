@@ -8,8 +8,8 @@
                       minimum-scale=1.0, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>The Band</title>
-<link rel="Stylesheet" type="text/css" href="../css/main.css">
-<script src="../js/mobileMenu.js" defer></script>
+<link rel="Stylesheet" type="text/css" href="/metallicaTourProject/css/main.css">
+<script src="/metallicaTourProject/js/mobileMenu.js" defer></script>
 <meta charset = "utf-8">
 </head>
 
@@ -35,7 +35,7 @@
 
         	<!--- the reused header is down below, both for the mobile sized screen and the desktop size, mainly for the navigation system --->
         	<?php
-require_once ("../abstractHeader.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/abstractHeader.php");
 
 ?>
 
@@ -54,7 +54,7 @@ require_once ("../abstractHeader.php");
         				<div class="c-small-screen-image-container h-flex">
        <!-- this image class has different widths to keep the image
         					looking acceptable at different screen sizes also set to position relative for the pseudo::before anchor technique to work -->
-        				<img src="../img/promo_tour.png" alt="image for tour dates" class="c-small-screen-tour-dates-img h-position">
+        				<img src="/metallicaTourProject/img/promo_tour.png" alt="image for tour dates" class="c-small-screen-tour-dates-img h-position">
        <!-- end of image class for different widths at different screen sizes -->
 
        <!-- this anchor class uses the pseudo before:: technique i got from the BBC website, which spans the whole image (providing the parent is set to display: relative), this prevents having anchor tags as the parent to block elements like Div's -->
@@ -89,7 +89,7 @@ require_once ("../abstractHeader.php");
         				<a href="tour.php" class="c-big-screen-tour-dates-img-link" >
 
         					<!-- width at different screen sizes to keep the tour dates image looking acceptable at different screen sizes -->
-        					<img src="../img/promo_tour.png" alt="image for tour dates" class="c-big-screen-tour-dates-img">
+        					<img src="/metallicaTourProject/img/promo_tour.png" alt="image for tour dates" class="c-big-screen-tour-dates-img">
         					<!-- end of the image looking acceptable at different screen sizes -->
 
         				</a>
@@ -212,7 +212,7 @@ Jul 15, 2021</span>
 
 	
 
-require_once ("../connect_database.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/connect_database.php");
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
 
@@ -223,7 +223,7 @@ $news_query = "SELECT * FROM news_table LIMIT 3";
  while ($row = mysqli_fetch_array($data)){
 
 
- require('newsStoriesWhileLoop.php'); 
+ require($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/public/theLoops/theNewsLoops/newsStoriesWhileLoop.php"); 
 
 
 } 
@@ -280,7 +280,7 @@ mysqli_close($dbc);
 
 	
 
-require_once ("../connect_database.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/connect_database.php");
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
 
@@ -293,7 +293,7 @@ $tour_query = "SELECT * FROM Tour_table LIMIT 3";
 
 
  		
-require("tourDatesWhileLoop.php");
+require($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/public/theLoops/theTourLoops/tourDatesWhileLoop.php");
 
 } 
 
@@ -361,7 +361,7 @@ mysqli_close($dbc);
 
 	
 
-require_once ("../connect_database.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/connect_database.php");
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
 
@@ -371,7 +371,7 @@ $music_query = "SELECT * FROM music_table LIMIT 4";
 
  while ($row = mysqli_fetch_array($data)){
 
- require("musicAlbumsWhileLoop.php");
+ require($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/public/theLoops/theAlbumLoops/musicAlbumsWhileLoop.php");
  	  	
  } 
 
@@ -453,7 +453,7 @@ mysqli_close($dbc);
 
 	
 
-require_once ("../connect_database.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/connect_database.php");
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
 
@@ -464,7 +464,7 @@ $photo_query = "SELECT * FROM photo_table limit 4";
  while ($row = mysqli_fetch_array($data)){ 
 
 
- 	require('bandPhotosWhileLoop.php');
+ 	require($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/public/theLoops/theBandPhotoLoops/bandPhotosWhileLoop.php");
 
  	
  	 } 
@@ -516,7 +516,7 @@ mysqli_close($dbc);
 
 <?php
 
-require_once ("../abstractFooter.php");
+require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/abstractFooter.php");
 
 
 ?>
