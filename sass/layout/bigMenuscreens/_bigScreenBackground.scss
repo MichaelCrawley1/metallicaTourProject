@@ -1,0 +1,52 @@
+.c-big-screen-background {
+
+    display: none;
+
+    @include mq($width: 43.125rem) {
+
+        display: block;
+
+
+    }
+}
+
+.c-big-screen-background-hero {
+
+    @include background(url(../img/metallicaHome.jpeg));
+    padding-bottom: 2%;
+
+    @include mq($width: 104.75rem) {
+
+        padding-bottom: 15%;
+
+    }
+
+
+
+}
+
+.c-big-screen-background-hero--news-hero {
+
+    @include background(url(../img/footer-background.jpg));
+
+}
+
+.c-big-screen-image-container {
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 500px;
+
+    @include mq($width: 104.75rem) {
+        position: relative;
+        top: 15em;
+
+    }
+
+}
+
+.c-big-screen-tour-dates-img {
+
+    width: 300px;
+}

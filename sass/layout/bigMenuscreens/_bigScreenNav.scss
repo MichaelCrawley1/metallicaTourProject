@@ -1,0 +1,55 @@
+.c-big-screen {
+
+    display: none;
+
+    @include mq($width: 48rem) {
+
+        display: block;
+    }
+}
+
+.c-big-screen-nav-container {
+
+    grid-column: 2 / 3;
+    justify-self: end;
+
+}
+
+.c-big-screen-nav-list {
+
+    list-style-type: none;
+    padding: 0 1em;
+    font-size: 2rem;
+    font-family: $ff-he;
+    text-transform: uppercase;
+    position: relative;
+    top: .5em;
+
+    @include mq($width: 61.5rem) {
+
+        font-size: 2.5rem;
+        top: 0em;
+    }
+
+    @include mq($width: 80.0625rem) {
+
+        font-size: 3.2rem;
+        top: 0em;
+    }
+}
+
+.c-big-screen-nav-list-item {
+
+    padding: 0 .5em;
+}
+
+.c-big-screen-nav-list-item:hover {
+
+    color: $ZZTopRed;
+}
+
+.c-big-screen-list-item-links {
+
+    text-decoration: none;
+    color: inherit;
+}

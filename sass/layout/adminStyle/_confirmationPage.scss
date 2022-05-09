@@ -1,0 +1,34 @@
+.c-admin-confirmation-page {
+
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-admin-confirmation-page-title {
+
+    text-transform: uppercase;
+    font-family: $ff-he;
+    color: $ZZTopRed;
+    font-size: 2.2rem;
+    text-align: center;
+
+    @include mq($width: 65rem) {
+
+        font-size: 4.5rem;
+    }
+}
+
+
+.c-admin-confirmation-page-links {
+
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+
+}
+
+.c-admin-confirmation-page-links::after {
+    @include bbcTechnique;
+}

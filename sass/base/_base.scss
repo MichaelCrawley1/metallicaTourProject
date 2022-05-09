@@ -1,0 +1,339 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+
+}
+
+
+
+body {
+
+    font-family: $ff-la;
+    line-height: 1.575;
+
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #fff;
+    font-size: 1.6rem;
+    background-color: #121317;
+}
+
+
+.l-basic-grid-home-page {
+
+    grid-template-rows: minmax(70px, auto) minmax(140px, auto) minmax(500px, auto) minmax(29px, auto) minmax(500px, auto) minmax(42px, auto) minmax(995px, auto) minmax(140px, auto);
+}
+
+.l-basic-grid-about-us-page {
+
+    grid-template-rows: minmax(70px, auto) minmax(140px, auto) auto auto minmax(140px, auto);
+}
+
+.l-basic-grid-tour-page {
+    grid-template-rows: minmax(70px, auto) auto auto minmax(140px, auto);
+}
+
+.l-basic-grid-news-music-and-photos-page {
+    grid-template-rows: minmax(70px, auto) minmax(140px, auto) auto minmax(140px, auto);
+}
+
+.l-basic-grid-admin-and-c-panel {
+
+    grid-template-rows: minmax(70px, auto) minmax(100vh, auto) minmax(140px, auto);
+}
+
+
+
+.l-basic-grid-admin-edit-tNMP {
+    min-height: 100vh;
+}
+
+
+
+
+.l-for-card-grid-columns-max-width-container {
+
+    max-width: 1300px;
+    padding: 1em;
+    margin: 0 auto 4em;
+}
+
+
+.l-the-card-grid {
+    grid-gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    padding: 1em;
+    overflow: hidden;
+
+
+
+
+    @include mq($width: 78.3125rem) {
+
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+
+    }
+
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.l-image-set-for-auto-fit-grid {
+
+    width: 600px;
+    height: 300px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+// think about changing this class to a layout class, since it is used as a utility, it is for the admin section, back page arrow.//
+
+
+.c-back-page-icon-container {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+
+}
+
+.c-back-page-icon {
+    width: 3em;
+}
+
+.c-back-page-icon-link::before {
+
+    content: "";
+    display: block;
+    top: -1em;
+    bottom: -1em;
+
+    left: 0;
+    border: 1px solid pink;
+    position: absolute;
+    width: 90px;
+
+}
+
+.c-js-back-page-icon-link::before {
+
+    content: "";
+    display: block;
+    top: -1em;
+    bottom: -1em;
+
+    left: 0;
+    border: 1px solid pink;
+    position: absolute;
+    width: 90px;
+
+}
+
+
+
+figure {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h5,
+p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+p {
+
+    max-width: 550px;
+    overflow-wrap: break-word;
+
+    @include mq($width: 65rem) {
+
+        font-size: 2rem;
+        max-width: 650px;
+    }
+}
+
+h1 {
+
+    line-height: 1;
+    font-size: 3.2rem;
+}
+
+.h-mobile-title {
+
+    text-align: center;
+    font-family: $ff-he;
+    color: #b21319;
+    text-transform: uppercase;
+    font-size: 2.7rem;
+    margin-top: .5em;
+}
+
+label {
+    display: block;
+    margin-top: 2rem;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+
+input,
+textarea {
+    box-sizing: border-box;
+    display: block;
+    padding: .75em;
+    width: 100%;
+    min-width: 15em;
+    background: #fbfbfc;
+    border: 1px solid #E8E9EB;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+
+    color: black;
+    font-family: sans-serif;
+
+    @include mq($width: 48rem) {
+
+        font-size: 1.6rem;
+
+
+    }
+
+}
+
+input::placeholder,
+textarea::placeholder {
+
+    color: grey;
+
+}
+
+textarea {
+    resize: vertical;
+}
+
+.h-grid {
+    display: grid;
+}
+
+.h-flex {
+    display: flex;
+}
+
+.h-position {
+    position: relative;
+}
+
+.h-clearfix::after {
+
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.h-padding {
+
+    padding: 1em;
+}
+
+.h-padding-left-to-right {
+
+    padding: 0 1em;
+}
+
+.h-uppercase {
+
+    text-transform: uppercase;
+}
+
+.h-stretch {
+    align-self: stretch;
+}
+
+.h-flex-align-left {
+
+    align-self: flex-start;
+}
+
+.h-text-align {
+    text-align: center;
+}
+
+.h-height400 {
+
+    height: 400px;
+}
+
+.h-height-auto {
+    height: auto;
+}
+
+.h-margin-bottom {
+
+    margin-bottom: 4em;
+}
+
+.h-margin-centre {
+
+    margin: 0 auto;
+}
+
+.h-margin-left-to-right {
+
+    margin: 0 1em;
+}
+
+.h-font-size {
+
+    font-size: 2.2rem;
+}
+
+.h-overflowH {
+
+    overflow: hidden;
+}
+
+.h-take-background-strip-off-pseudo-before-element::before {
+    background-image: none !important;
+}
+
+.h-background-colour-our-grey {
+    background-color: #121317;
+}
+
+.h-background-colour-our-black {
+    background-color: black;
+}
+
+.h-no-padding {
+
+    padding: 0 !important;
+}
+
+.h-no-max-width {
+    max-width: none;
+}
+
+.h-admin-addAndEdit-override-flex-to-stretch {
+    align-self: stretch;
+}
+
+.h-width-300px {
+    width: 300px;
+}

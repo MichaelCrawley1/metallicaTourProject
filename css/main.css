@@ -404,20 +404,8 @@ body {
 .l-basic-grid-admin-and-c-panel {
   grid-template-rows: minmax(70px, auto) minmax(100vh, auto) minmax(140px, auto); }
 
-.l-basic-grid-edit-and-delete-tour {
-  grid-template-rows: minmax(70px, auto) minmax(80vh, auto) minmax(140px, auto); }
-
-.l-basic-grid-admin-manipulation {
-  grid-template-rows: minmax(70px, auto) minmax(100vh, auto) minmax(140px, auto); }
-
-.l-basic-grid-admin-edit-tour {
-  grid-template-rows: minmax(70px, auto) minmax(30vh, auto) minmax(70vh, auto) minmax(140px, auto); }
-
 .l-basic-grid-admin-edit-tNMP {
   min-height: 100vh; }
-
-.l-basic-grid-delete-news-stories {
-  grid-template-rows: minmax(70px, auto) minmax(30px, auto) minmax(80vh, auto) minmax(140px, auto); }
 
 .l-for-card-grid-columns-max-width-container {
   max-width: 1300px;
@@ -813,151 +801,6 @@ textarea {
 .c-big-screen-tour-dates-img {
   width: 300px; }
 
-@media (min-width: 43.125rem) {
-  .c-small-screen {
-    display: none; } }
-
-.c-small-screen-background {
-  background-image: url(../img/header.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding: 2em; }
-
-.c-small-screen-image-container {
-  justify-content: center;
-  align-content: center; }
-
-.c-small-screen-tour-dates-img-link::before {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; }
-
-.c-small-screen-tour-dates-img {
-  width: 70%; }
-  @media (min-width: 25.125rem) {
-    .c-small-screen-tour-dates-img {
-      width: 60%; } }
-  @media (min-width: 39.125rem) {
-    .c-small-screen-tour-dates-img {
-      width: 50%; } }
-
-.c-little-blurb-before-news {
-  background-color: #000; }
-  @media (min-width: 43.125rem) {
-    .c-little-blurb-before-news {
-      background-color: transparent; } }
-
-.c-little-blurb-before-news-title {
-  margin-top: 0; }
-  @media (min-width: 43.125rem) {
-    .c-little-blurb-before-news-title {
-      background-image: url(../img/header.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      padding: 1em 0;
-      font-size: 3.5rem; } }
-  @media (min-width: 65rem) {
-    .c-little-blurb-before-news-title {
-      font-size: 4.5rem; } }
-
-.c-little-blurb-before-news-title--margin {
-  position: relative;
-  top: .8em; }
-
-.c-little-blurb-before-news-img-container {
-  background-image: url(../img/metallicaHome.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding-bottom: 100%; }
-  @media (min-width: 43.125rem) {
-    .c-little-blurb-before-news-img-container {
-      display: none; } }
-
-.c-little-blurb-before-news-img-container--news {
-  background-image: url(../img/photos-header.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
-  @media (min-width: 43.125rem) {
-    .c-little-blurb-before-news-img-container--news {
-      display: block; } }
-
-.c-little-blurb-before-news-forty-year-anniversary-title {
-  font-family: "lato", Helvetica, Arial, sans-serif;
-  font-size: 1.72rem;
-  color: #b21319;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 1em;
-  text-transform: uppercase; }
-  @media (min-width: 65rem) {
-    .c-little-blurb-before-news-forty-year-anniversary-title {
-      font-size: 2.2rem;
-      max-width: 650px;
-      margin: 1em auto; } }
-
-.c-little-blurb-before-news-forty-year-anniversary-title-little-text {
-  font-size: 1rem;
-  display: block;
-  margin-top: .6em; }
-  @media (min-width: 65rem) {
-    .c-little-blurb-before-news-forty-year-anniversary-title-little-text {
-      font-size: 1.2rem; } }
-
-.c-little-blurb-before-news-forty-year-anniversary-desc {
-  padding: 0.5em;
-  margin: 0 auto; }
-
-.c-little-blurb-before-news-forty-year-anniversary-button-container {
-  padding: 0.5em;
-  padding-bottom: 1em;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 550px;
-  margin: 1em auto; }
-  @media (min-width: 65rem) {
-    .c-little-blurb-before-news-forty-year-anniversary-button-container {
-      max-width: 650px; } }
-
-.c-little-blurb-before-news-forty-year-anniversary-button-container::after {
-  content: "";
-  display: block;
-  position: relative;
-  top: 2em;
-  height: 1.5rem;
-  left: 0;
-  padding-bottom: 1em;
-  background-image: url(../img/edge_top.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
-
-.c-little-blurb-before-news-forty-year-anniversary-button-info {
-  text-transform: capitalize;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 900; }
-  @media (min-width: 65rem) {
-    .c-little-blurb-before-news-forty-year-anniversary-button-info {
-      font-size: 2.2rem; } }
-
-.c-little-blurb-before-news-forty-year-anniversary-button-info::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; }
-
 .c-latest-news::before {
   content: "";
   display: block;
@@ -1156,10 +999,156 @@ textarea {
 
 .c-bands-photos-location {
   color: #b21319;
-  font-family: "Hessian", sans-serif; }
+  font-family: "Hessian", sans-serif;
+  text-transform: capitalize; }
   @media (min-width: 65rem) {
     .c-bands-photos-location {
       font-size: 2.5rem; } }
+
+@media (min-width: 43.125rem) {
+  .c-small-screen {
+    display: none; } }
+
+.c-small-screen-background {
+  background-image: url(../img/header.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2em; }
+
+.c-small-screen-image-container {
+  justify-content: center;
+  align-content: center; }
+
+.c-small-screen-tour-dates-img-link::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.c-small-screen-tour-dates-img {
+  width: 70%; }
+  @media (min-width: 25.125rem) {
+    .c-small-screen-tour-dates-img {
+      width: 60%; } }
+  @media (min-width: 39.125rem) {
+    .c-small-screen-tour-dates-img {
+      width: 50%; } }
+
+.c-little-blurb-before-news {
+  background-color: #000; }
+  @media (min-width: 43.125rem) {
+    .c-little-blurb-before-news {
+      background-color: transparent; } }
+
+.c-little-blurb-before-news-title {
+  margin-top: 0; }
+  @media (min-width: 43.125rem) {
+    .c-little-blurb-before-news-title {
+      background-image: url(../img/header.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      padding: 1em 0;
+      font-size: 3.5rem; } }
+  @media (min-width: 65rem) {
+    .c-little-blurb-before-news-title {
+      font-size: 4.5rem; } }
+
+.c-little-blurb-before-news-title--margin {
+  position: relative;
+  top: .8em; }
+
+.c-little-blurb-before-news-img-container {
+  background-image: url(../img/metallicaHome.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 100%; }
+  @media (min-width: 43.125rem) {
+    .c-little-blurb-before-news-img-container {
+      display: none; } }
+
+.c-little-blurb-before-news-img-container--news {
+  background-image: url(../img/photos-header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+  @media (min-width: 43.125rem) {
+    .c-little-blurb-before-news-img-container--news {
+      display: block; } }
+
+.c-little-blurb-before-news-forty-year-anniversary-title {
+  font-family: "lato", Helvetica, Arial, sans-serif;
+  font-size: 1.72rem;
+  color: #b21319;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 1em;
+  text-transform: uppercase; }
+  @media (min-width: 65rem) {
+    .c-little-blurb-before-news-forty-year-anniversary-title {
+      font-size: 2.2rem;
+      max-width: 650px;
+      margin: 1em auto; } }
+
+.c-little-blurb-before-news-forty-year-anniversary-title-little-text {
+  font-size: 1rem;
+  display: block;
+  margin-top: .6em; }
+  @media (min-width: 65rem) {
+    .c-little-blurb-before-news-forty-year-anniversary-title-little-text {
+      font-size: 1.2rem; } }
+
+.c-little-blurb-before-news-forty-year-anniversary-desc {
+  padding: 0.5em;
+  margin: 0 auto; }
+
+.c-little-blurb-before-news-forty-year-anniversary-button-container {
+  padding: 0.5em;
+  padding-bottom: 1em;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 550px;
+  margin: 1em auto; }
+  @media (min-width: 65rem) {
+    .c-little-blurb-before-news-forty-year-anniversary-button-container {
+      max-width: 650px; } }
+
+.c-little-blurb-before-news-forty-year-anniversary-button-container::after {
+  content: "";
+  display: block;
+  position: relative;
+  top: 2em;
+  height: 1.5rem;
+  left: 0;
+  padding-bottom: 1em;
+  background-image: url(../img/edge_top.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.c-little-blurb-before-news-forty-year-anniversary-button-info {
+  text-transform: capitalize;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 900; }
+  @media (min-width: 65rem) {
+    .c-little-blurb-before-news-forty-year-anniversary-button-info {
+      font-size: 2.2rem; } }
+
+.c-little-blurb-before-news-forty-year-anniversary-button-info::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 .c-about-us {
   margin-top: 1em;
@@ -1174,21 +1163,31 @@ textarea {
   flex-direction: column; }
   @media (min-width: 25.875rem) {
     .c-login {
-      align-items: center;
       justify-content: center; } }
+  @media (min-width: 36.1875rem) {
+    .c-login {
+      align-items: center; } }
 
 .c-login-admin-warning {
   text-transform: uppercase;
   font-size: 2.2rem;
   font-weight: 900; }
+  @media (min-width: 25rem) {
+    .c-login-admin-warning {
+      text-align: center; } }
 
 .c-login-admin-warning::after {
   content: '';
   display: block;
   height: 1px;
-  width: 100%;
   background-color: red;
-  margin-top: 1em; }
+  margin: 1em auto 0; }
+  @media (min-width: 25rem) {
+    .c-login-admin-warning::after {
+      width: 90%; } }
+  @media (min-width: 36.1875rem) {
+    .c-login-admin-warning::after {
+      width: 100%; } }
 
 .c-login-title {
   font-size: 2.2rem;
@@ -1197,9 +1196,6 @@ textarea {
   margin-top: 2em;
   font-weight: 400;
   text-decoration: underline; }
-
-.c-login-form-desc {
-  max-width: 100%; }
 
 @media (min-width: 36.1875rem) {
   .c-login-form-input {
@@ -1213,9 +1209,7 @@ textarea {
   text-transform: uppercase; }
 
 .c-control-panel {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
+  flex-direction: column; }
 
 .c-control-panel-title {
   text-align: center;
@@ -1241,10 +1235,6 @@ textarea {
   font-weight: 400;
   margin-bottom: 0; }
 
-.c-control-panel-list-container {
-  padding: 1em;
-  margin-bottom: 2em; }
-
 .c-control-panel-logout-button-container {
   flex-direction: column;
   align-items: center;
@@ -1269,6 +1259,15 @@ textarea {
     .c-control-panel-desc-links {
       font-size: 2.2rem; } }
 
+.c-control-panel-desc-links::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
 .c-control-panel-desc-links--logout-button {
   font-size: 2rem;
   text-decoration: underline;
@@ -1286,14 +1285,9 @@ textarea {
   position: relative;
   margin: 5em auto; }
 
-.c-control-panel-admin-button-choice-section-button-container {
-  flex-direction: column;
-  align-items: center; }
-
 .c-admin-manipulate-website-sections {
   padding: 1em;
   flex-direction: column;
-  justify-content: center;
   align-items: center; }
 
 .c-admin-manipulate-website-sections-title {
@@ -1308,8 +1302,6 @@ textarea {
 
 .c-admin-manipulate-website-sections-paragraph-container {
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center; }
 
 .c-admin-manipulate-website-sections-list-container {
@@ -1339,7 +1331,7 @@ textarea {
     .c-admin-addAndEdit-item-title {
       font-size: 4.5rem; } }
 
-/* this class is in case I need a separate section element were a form follows */
+/* this class is in case I need a separate section element were a form follows this is manily used in the edit section of the forms */
 .c-admin-addAndEdit-item-form-section {
   flex-direction: column;
   align-items: center; }
@@ -1358,7 +1350,8 @@ textarea {
   margin: 1em 0; }
 
 .c-admin-addAndEdit-item-dates-input {
-  margin: 1em 0; }
+  margin: 1em 0;
+  text-transform: capitalize; }
 
 /* end of form classes */
 .c-admin-addAndEdit-item-dates-submit-button-container {
@@ -1366,11 +1359,6 @@ textarea {
   flex-direction: column;
   align-items: center; }
 
-/* this class down below applies to the add and edit sections make sure the item stretches the whole page to override restrictive flex constraints */
-.c-admin-addAndEdit-override-flex-to-stretch {
-  align-self: stretch; }
-
-/* end of the class above */
 .c-admin-editAndDelete-item {
   padding: 1em;
   flex-direction: column;
@@ -1393,14 +1381,6 @@ textarea {
   left: 0;
   right: 0;
   border: 1px solid pink; }
-
-/* these classes below are after the user clicks on what item to editAndDelete, this just reconfirms the choice */
-.c-admin-editAndDelete-item-confirm {
-  flex-direction: column;
-  align-items: center; }
-  @media (min-width: 48rem) {
-    .c-admin-editAndDelete-item-confirm {
-      justify-content: center; } }
 
 .c-admin-confirm-addDeleteOrEdit-to-db {
   flex-direction: column;
@@ -1428,200 +1408,10 @@ textarea {
   text-decoration: none;
   color: #fff; }
 
+/* Below is the class used to remove images on click with ajax */
 .c-js-admin-confirm-addDeleteOrEdit-to-db-links {
   text-decoration: none;
   color: #fff; }
-
-.c-admin-add-tour-dates {
-  flex-direction: column;
-  align-items: center; }
-
-.c-admin-add-tour-dates-title {
-  text-align: center;
-  font-family: "Hessian", sans-serif;
-  color: #b21319;
-  text-transform: uppercase;
-  margin-top: 2em; }
-
-.c-admin-add-tour-dates-desc {
-  text-transform: capitalize;
-  margin: 1em 0; }
-
-.c-admin-add-tour-dates-input {
-  margin: 1em 0; }
-
-.c-admin-add-tour-dates-parent {
-  margin: 3em 0; }
-
-.c-admin-add-tour-dates-submit-button-container {
-  margin: 4em 0;
-  flex-direction: column;
-  align-items: center; }
-
-.c-admin-add-tour-dates-container {
-  margin: 2em 0; }
-
-.c-admin-add-tour-dates-add-venue-title {
-  margin-bottom: 0; }
-
-.c-admin-confirm-add-tour {
-  padding: 1em;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
-
-.c-admin-confirm-add-tour-title {
-  font-size: 2.6rem;
-  line-height: 1.4;
-  text-transform: uppercase;
-  font-family: "Hessian", sans-serif;
-  color: #b21319;
-  text-align: center; }
-
-.c-admin-DELETE-tour-dates {
-  padding: 1em;
-  flex-direction: column;
-  align-items: center; }
-
-.c-admin-DELETE-tour-dates-title {
-  margin-top: 2em;
-  color: #b21319;
-  font-family: "Hessian", sans-serif; }
-
-.c-admin-DELETE-tour-dates-links::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border: 1px solid pink; }
-
-.c-admin-DELETE-tour-dates-CONFIRM {
-  padding: 1em;
-  flex-direction: column;
-  align-items: center; }
-  @media (min-width: 48rem) {
-    .c-admin-DELETE-tour-dates-CONFIRM {
-      justify-content: center; } }
-
-.c-admin-DELETE-tour-dates-CONFIRM-title {
-  margin-top: 2em;
-  color: #b21319;
-  font-family: "Hessian", sans-serif; }
-
-.c-admin-edit-selected-tour-form {
-  flex-direction: column;
-  align-items: center; }
-
-.c-news-stories-DELETE-max-width {
-  max-width: 1300px;
-  padding: 1em;
-  margin: 0 auto 4em; }
-
-.c-news-stories-DELETE {
-  grid-gap: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  padding: 1em; }
-  @media (min-width: 78.3125rem) {
-    .c-news-stories-DELETE {
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); } }
-
-.c-news-stories-DELETE-container {
-  overflow: hidden; }
-
-.c-news-stories-DELETE-container-for-anchor-cover {
-  height: 500px; }
-
-.c-news-stories-DELETE-img-itself {
-  width: 600px;
-  height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  overflow: hidden; }
-  @media (min-width: 39.625rem) {
-    .c-news-stories-DELETE-img-itself {
-      width: 400px; } }
-  @media (min-width: 57.0625rem) {
-    .c-news-stories-DELETE-img-itself {
-      width: 500px; } }
-
-.c-news-stories-DELETE-info-container {
-  padding: 0 1em;
-  margin-top: 1.2em; }
-
-.c-news-stories-DELETE-info-container--no-padding {
-  padding: initial; }
-
-.c-news-stories-DELETE-info-container--no-padding {
-  padding: initial; }
-
-.c-news-stories-DELETE-links-bbc::before {
-  content: "";
-  display: block;
-  position: absolute;
-  border: 1px solid pink;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; }
-
-.c-news-stories-DELETE-confirmation {
-  background-color: transparent; }
-
-.c-news-stories-DELETE-confirmation::before {
-  content: "";
-  display: block;
-  position: relative;
-  background-color: transparent;
-  background-image: none; }
-
-.c-EDIT-news-story {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: visible; }
-
-.c-EDIT-news-story-change-height {
-  height: auto; }
-
-.c-EDIT-news-story-chnage-WH-on-img {
-  max-width: 100%;
-  height: 400px;
-  margin: 0 auto; }
-  @media (min-width: 39.625rem) {
-    .c-EDIT-news-story-chnage-WH-on-img {
-      max-width: 100%;
-      width: auto; } }
-  @media (min-width: 57.0625rem) {
-    .c-EDIT-news-story-chnage-WH-on-img {
-      max-width: 100%;
-      width: auto; } }
-
-.c-EDIT-news-story-get-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-
-.c-EDIT-news-story-before-change::before {
-  background-image: none; }
-
-.c-music-DELETE-container {
-  height: 300px; }
-
-.c-music-DELETE-img-album-change {
-  width: 600px;
-  height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  overflow: hidden; }
-  @media (min-width: 39.625rem) {
-    .c-music-DELETE-img-album-change {
-      width: 600px; } }
-  @media (min-width: 57.0625rem) {
-    .c-music-DELETE-img-album-change {
-      width: 1200px; } }
 
 .c-admin-confirmation-page {
   flex-direction: column;

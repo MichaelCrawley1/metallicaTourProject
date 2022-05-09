@@ -1,0 +1,72 @@
+.c-admin-addAndEdit-item {
+
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.c-admin-addAndEdit-item-title {
+
+    text-align: center;
+    font-family: $ff-he;
+    color: $ZZTopRed;
+    text-transform: uppercase;
+    margin-top: 2em;
+
+    @include mq($width: 65rem) {
+        font-size: 4.5rem;
+    }
+}
+
+
+/* this class is in case I need a separate section element were a form follows this is manily used in the edit section of the forms */
+
+.c-admin-addAndEdit-item-form-section {
+
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* end of class in case I need a separate section element were a form follows */
+
+
+/* what follows are all the form classes */
+
+
+
+
+
+.c-admin-addAndEdit-item-form-title {
+
+    text-align: center;
+    font-family: $ff-he;
+    color: $ZZTopRed;
+    text-transform: uppercase;
+    margin-top: 2em;
+}
+
+.c-admin-addAndEdit-item-dates-desc {
+
+    text-transform: capitalize;
+    margin: 1em 0;
+}
+
+.c-admin-addAndEdit-item-dates-input {
+
+    margin: 1em 0;
+    text-transform: capitalize;
+}
+
+
+/* end of form classes */
+
+.c-admin-addAndEdit-item-dates-submit-button-container {
+
+    margin: 4em 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+

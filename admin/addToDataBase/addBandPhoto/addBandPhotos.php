@@ -118,7 +118,7 @@ maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
 
   <!-- some margins and font size changes at different screen sizes  -->
   <input type="text" name="state_country" value="<?php echo $_SESSION['addBandPhotos']['state_country'];?>" size="40"
-maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required placeholder="Norwich, UK" />
 
 <!-- end of some margins and font size changes at different screen sizes -->
 

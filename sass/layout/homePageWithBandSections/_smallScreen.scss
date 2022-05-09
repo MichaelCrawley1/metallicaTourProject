@@ -1,0 +1,53 @@
+.c-small-screen {
+
+
+
+    @include mq($width: 43.125rem) {
+
+        display: none;
+    }
+}
+
+.c-small-screen-background {
+
+    @include background(url(../img/header.png));
+    padding: 2em;
+
+
+}
+
+.c-small-screen-image-container {
+
+    justify-content: center;
+    align-content: center;
+}
+
+.c-small-screen-tour-dates-img-link::before {
+
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+
+
+.c-small-screen-tour-dates-img {
+
+    width: 70%;
+
+    @include mq($width: 25.125rem) {
+
+        width: 60%;
+
+    }
+
+    @include mq($width: 39.125rem) {
+
+        width: 50%;
+
+    }
+}

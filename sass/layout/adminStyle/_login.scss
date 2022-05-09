@@ -1,0 +1,94 @@
+.c-login {
+
+    margin-bottom: 4em;
+    padding: 1em;
+    flex-direction: column;
+
+
+    @include mq($width: 25.875rem) {
+        
+        justify-content: center;
+
+    }
+
+    @include mq($width: 36.1875rem) {
+        
+        
+        align-items: center;
+
+    }
+}
+
+.c-login-admin-warning {
+
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    font-weight: 900;
+  
+
+    @include mq($width: 25rem) {
+        
+        text-align: center;
+
+    }
+
+
+}
+
+.c-login-admin-warning::after {
+
+    content: '';
+    display: block;
+    height: 1px;
+    
+    background-color: red;
+
+    margin: 1em auto 0;
+
+     @include mq($width: 25rem) {
+        
+        width: 90%;
+
+    }
+
+    @include mq($width: 36.1875rem) {
+        
+        width: 100%;
+        
+
+    }
+}
+
+.c-login-title {
+
+
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+.c-login-form-input {
+
+    @include mq($width: 36.1875rem) {
+        width: 500px;
+    }
+
+}
+
+.c-login-form-input-button {
+
+    margin: 6em auto 2em;
+    width: 50%;
+    display: block;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+
+}

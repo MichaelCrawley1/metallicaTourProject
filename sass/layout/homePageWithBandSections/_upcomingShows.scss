@@ -1,0 +1,127 @@
+.c-upcoming-shows {
+
+    @include background(url(../img/bg_default.jpg));
+    ;
+}
+
+.c-upcoming-shows::before {
+
+    content: "";
+    display: block;
+    position: relative;
+    height: .5rem;
+    left: 0;
+    padding-top: 2em;
+
+
+    @include background(url(../img/edge_bottom.png));
+
+}
+
+
+
+.c-upcoming-shows-title {
+
+    margin-top: 1em;
+
+    @include mq($width: 65rem) {
+
+        font-size: 4.5rem;
+        padding-bottom: 2em;
+
+    }
+
+}
+
+.c-upcoming-shows-container {
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3em;
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
+    margin-top: 2em;
+    text-align: center;
+
+    @include mq($width: 65rem) {
+
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        max-width: 1300px;
+        margin: 2em auto 0;
+        text-align: left;
+        padding: 0 .5em 3em;
+
+
+
+    }
+
+}
+
+.c-upcoming-shows-container--last-child-bottom-border:last-child{
+
+    border-bottom: none;
+}
+
+.c-upcoming-shows-date {
+    @include mq($width: 65rem) {}
+
+}
+
+.c-upcoming-shows-month {
+
+    font-size: 3.2rem;
+    text-transform: uppercase;
+
+
+
+}
+
+.c-upcoming-shows-venue-container {}
+
+.c-upcoming-shows-venue-subtitle {
+
+    margin-bottom: 0;
+    font-family: $ff-la;
+    font-size: 1.2rem;
+    color: #b21319;
+    font-weight: 900;
+    margin-top: 0;
+
+    @include mq($width: 65rem) {
+
+        font-size: 2.2rem;
+    }
+}
+
+
+.c-upcoming-shows-location {
+
+    @include mq($width: 65rem) {
+        justify-self: end;
+        font-size: 2.2rem;
+    }
+
+
+}
+
+
+
+
+
+// below is the hero image for tour.php page alone
+
+.c-upcoming-shows-hero {
+    @include background(url(../img/videos-banner-blue.jpg));
+    padding-bottom: 100%;
+
+    @include mq($width: 43.125rem) {
+
+        display: block;
+        padding-bottom: 50%;
+
+    }
+
+}

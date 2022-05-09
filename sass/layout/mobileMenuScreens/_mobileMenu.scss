@@ -1,0 +1,73 @@
+.c-mobile-menu {
+
+
+    display: block;
+
+    @include mq($width: 48rem) {
+
+        display: none;
+    }
+
+}
+
+.c-mobile-menu-background {
+    @include background(url(../img/header.png));
+
+    grid-template-rows: 2% 1fr 2%;
+}
+
+.c-mobile-menu-logo-container {
+    width: 14rem;
+    margin-top: 1.5em;
+
+    @include mq($width: 61.5rem) {
+
+        width: 18rem;
+
+    }
+
+    @include mq($width: 80.0625rem) {
+
+        width: 25rem
+    }
+
+}
+
+.c-mobile-menu-logo-img {}
+
+
+.c-js-mobile-menu-hamburger-for-fat-fingers {
+
+
+    justify-self: end;
+
+    position: relative;
+    top: 1.7em;
+    right: .5em;
+
+}
+
+.c-mobile-menu-hamburger-link::after {
+
+    content: "";
+    display: block;
+    border: 1px solid pink;
+    padding: 4em;
+    position: absolute;
+    left: -4em;
+    margin-top: -4em;
+    //there is a z-index here because some of the pages design on the mobile come up to meet the hamburger menu, therefore need to keep the click availabe to the user//
+    z-index: 5;
+
+
+
+}
+
+.l-basic-grid-js-mobile-nav-menu {
+
+
+
+    .c-fixed-mobile-screen {
+        transform: translateX(0);
+    }
+}

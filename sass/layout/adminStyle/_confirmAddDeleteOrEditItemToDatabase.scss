@@ -1,0 +1,46 @@
+.c-admin-confirm-addDeleteOrEdit-to-db {
+
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-admin-confirm-addDeleteOrEdit-to-db-title {
+
+    font-size: 2.6rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    font-family: $ff-he;
+    color: $ZZTopRed;
+    text-align: center;
+
+    @include mq($width: 65rem) {
+        font-size: 4.5rem;
+    }
+}
+
+
+
+.c-admin-confirm-addDeleteOrEdit-to-db-container {
+
+    margin-top: 2em;
+
+}
+
+.c-admin-confirm-addDeleteOrEdit-to-db-desc {
+
+    color: $ZZTopRed;
+}
+
+.c-admin-confirm-addDeleteOrEdit-to-db-links {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Below is the class used to remove images on click with ajax */
+
+.c-js-admin-confirm-addDeleteOrEdit-to-db-links {
+    text-decoration: none;
+    color: #fff;
+}

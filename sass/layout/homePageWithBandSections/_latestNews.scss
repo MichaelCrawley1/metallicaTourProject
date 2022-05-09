@@ -1,0 +1,125 @@
+.c-latest-news {}
+
+// this class hasn't been used yet //
+
+.c-latest-news::before {
+
+    content: "";
+    display: block;
+    position: relative;
+    height: .5rem;
+    left: 0;
+    padding-top: 2em;
+    @include background(url(../img/edge_bottom.png));
+
+
+
+
+}
+
+
+
+
+
+
+.c-latest-news-title {
+    padding: 1em 0;
+
+    @include mq($width: 65rem) {
+
+        font-size: 4.5rem;
+
+    }
+}
+
+
+
+
+
+.c-latest-news-articles-date {
+
+    @include mq($width: 65rem) {
+
+        font-size: 2.2rem;
+
+    }
+
+
+
+}
+
+.c-latest-news-sub-title {
+
+    @include mq($width: 65rem) {
+
+        font-size: 2.5rem;
+
+    }
+}
+
+.c-latest-news-blurb {
+
+    max-width: none;
+}
+
+
+.c-latest-news-articles-photo-img {
+
+    height: 300px;
+    object-fit: cover;
+    overflow: hidden;
+    width: 579px;
+
+
+
+}
+
+.c-latest-news-articles-text-container {
+
+    padding: .5em;
+    padding-bottom: 1.5em;
+}
+
+
+
+.c-latest-news-sub-title {
+
+    color: #b21319;
+
+}
+
+.c-latest-news-button-container {
+
+    padding: 1em 1.5em;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin: 1em auto;
+
+}
+
+.c-latest-news-info {
+
+    text-transform: capitalize;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 900;
+
+    @include mq($width: 65rem) {
+
+
+        font-size: 2.2rem;
+    }
+}
+
+.c-latest-news-info::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}

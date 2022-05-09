@@ -1,0 +1,46 @@
+.c-music {}
+
+.c-music::before {
+
+    content: "";
+    display: block;
+    position: relative;
+    height: .5rem;
+    left: 0;
+    padding-top: 2em;
+
+
+    @include background(url(../img/edge_bottom.png));
+
+}
+
+
+
+.c-music-title {
+
+    @include mq($width: 65rem) {
+
+        font-size: 4.5rem;
+        padding: 2em 0;
+    }
+}
+
+.c-music-title--padding-less {
+    @include mq($width: 65rem) {
+
+
+        padding: 1em 0;
+    }
+
+}
+
+
+
+.c-music-image-container-border-red {
+
+    border: 5px solid #b21319;
+
+
+
+}
+

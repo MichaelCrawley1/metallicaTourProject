@@ -1,0 +1,26 @@
+.c-admin-editAndDelete-item {
+
+    padding: 1em;
+    flex-direction: column;
+    align-items: center;
+}
+
+.c-admin-editAndDelete-item-title {
+
+    margin-top: 2em;
+    color: $ZZTopRed;
+    font-family: $ff-he;
+
+    @include mq($width: 65rem) {
+        font-size: 4.5rem;
+    }
+}
+
+.c-admin-editAndDelete-item-links::before {
+
+    @include bbcTechnique;
+    border: 1px solid pink;
+
+}
+
+

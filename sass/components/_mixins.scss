@@ -1,0 +1,49 @@
+@mixin background($url, $br: no-repeat, $bz: cover, $bp: center) {
+    background-image: $url;
+    background-repeat: $br;
+    background-size: $bz;
+    background-position: $bp;
+}
+
+@mixin mq($width: 50em) {
+    @media (min-width: $width) {
+        @content
+    }
+}
+
+@mixin maxmq($width: 50em) {
+    @media (max-width: $width) {
+        @content
+    }
+}
+
+
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin fontCondensced {
+    font-family: $ff-ss;
+    letter-spacing: .05em;
+
+}
+
+@mixin bbcTechnique {
+
+
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+
+
+
+}

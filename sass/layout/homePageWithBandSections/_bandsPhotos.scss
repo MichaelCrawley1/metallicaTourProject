@@ -1,0 +1,74 @@
+.c-bands-photos {}
+
+
+
+.c-bands-photos::before {
+
+    content: "";
+    display: block;
+    position: relative;
+    height: .5rem;
+    left: 0;
+    padding-top: 2em;
+
+
+    @include background(url(../img/edge_bottom.png));
+
+}
+
+.c-bands-photos-title {
+
+    @include mq($width: 65rem) {
+
+        font-size: 4.5rem;
+        padding: 2em 0;
+    }
+}
+
+.c-bands-photos-title--padding-less {
+    @include mq($width: 65rem) {
+
+
+        padding: 1em 0;
+    }
+
+}
+
+
+
+.c-bands-photos-text-container-date {
+    @include mq($width: 65rem) {
+        font-size: 2.2rem;
+    }
+}
+
+
+
+
+
+
+.c-bands-photos-text-container {
+
+    padding: .5em 0;
+
+}
+
+.c-bands-photos-location {
+
+    color: #b21319;
+    font-family: $ff-he;
+    text-transform: capitalize;
+
+    @include mq($width: 65rem) {
+
+        font-size: 2.5rem;
+
+    }
+
+}
+
+
+
+
+
+

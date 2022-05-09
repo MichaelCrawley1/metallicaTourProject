@@ -68,7 +68,7 @@
 
                         <!-- below are the anchors that take the user to the destination around the site, they have no text decoration and are set to the project's red colour.  These also use the BBC website pseudo technique to make the whole 250px block clickable just in case the user misses the link text, it doesn't have z:index on them so this first link is, 'under' the closing X icon of the mobile menu (that does use a z:index on it) -->
 
-                        <a href="/metallicaTourProject/public/project.php" id="c-fixed-home" class="c-fixed-mobile-screen-list-item-links ">Home</a>
+                        <a href="/metallicaTourProject/public/index.php" id="c-fixed-home" class="c-fixed-mobile-screen-list-item-links ">Home</a>
                         <!-- end of the first destination link of the mobile menu with the pseudo technique -->
                     </li>
                     <!-- end of the li grid to align centre the list items -->
@@ -193,7 +193,7 @@
                         <!-- just a little horizontal padding here -->
                         <li class="c-big-screen-nav-list-item">
                             <!-- big screen page links with some style requirements -->
-                            <a href="/metallicaTourProject/public/project.php" id="c-fixed-home" class="c-big-screen-list-item-links ">Home </a>
+                            <a href="/metallicaTourProject/public/index.php" id="c-fixed-home" class="c-big-screen-list-item-links ">Home </a>
                             <!-- end of big screen page links with some style requirements -->
                         </li>
                         <!-- end of the horizontal padding -->

@@ -121,7 +121,7 @@ require_once ($_SERVER['DOCUMENT_ROOT']."/metallicaTourProject/abstractHeader.ph
 
   <!-- some margins and font size changes at different screen sizes  -->
   <input type="text" name="tourDates" value="<?php echo $_SESSION['addTourDates']['tourDates'];?>" size="40"
-maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required placeholder= "JAN 13" />
   <!-- end of some margins and font size changes at different screen sizes -->
 </p>
 
@@ -131,7 +131,7 @@ maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
 <p class="c-admin-addAndEdit-item-dates-desc">Insert Venue of tour: 
 <!-- some margins and font size changes at different screen sizes  -->
   <input type="text" name="venue" value="<?php echo $_SESSION['addTourDates2']['venue'];?>" size="40"
-maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required placeholder="Halifax Scotiabank Centre" />
 <!-- end of some margins and font size changes at different screen sizes -->
 </p>
 <!-- end of capitalize with some margins and font size changes at different screen sizes   -->
@@ -141,7 +141,7 @@ maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
 <p class="c-admin-addAndEdit-item-dates-desc">Insert state or country of tour: 
 <!-- some margins and font size changes at different screen sizes  -->
   <input type="text" name="state_country" value="<?php echo $_SESSION['addTourDates3']['state_country'];?>" size="40"
-maxlength="50" class="c-admin-addAndEdit-item-dates-input" required />
+maxlength="50" class="c-admin-addAndEdit-item-dates-input" required placeholder="Halifax, NS"/>
 
 <!-- end of some margins and font size changes at different screen sizes -->
 
