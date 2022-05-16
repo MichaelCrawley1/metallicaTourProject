@@ -1,5 +1,7 @@
 function start(e) {
 
+    console.log(e.target);
+
     let hamburger = document.querySelector(".c-js-mobile-menu-hamburger-for-fat-fingers");
     let body = document.body;
 

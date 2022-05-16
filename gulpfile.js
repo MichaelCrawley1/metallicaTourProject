@@ -54,6 +54,7 @@ function watch() {
     gulp.watch('./sass/**/*.scss', style);
     gulp.watch('./*.php').on('change', browserSync.reload);
     gulp.watch('./js/**/*.js').on('change', browserSync.reload);
+   
 
 }
 
