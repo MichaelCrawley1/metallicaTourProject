@@ -6,7 +6,7 @@
 
 ![Project Image](https://www.billboard.com/wp-content/uploads/2020/05/03-metallica-press-2018-cr-Ross-Halfin-b-billboard-1548-1589834861.jpg "The screen shot of the home page")
 
-The motivation for this project was quite simple for me.  I am a recent software development graduate and I don't have a CRUD type app in my portfolio to show.  Through this development life cycle I now do.  It is all core, no frameworks used.  HTML5, CSS, Javascript with AJAX techniques and good old PHP and MySql.  
+The motivation for this project was quite simple.  I am a recent software development graduate and I don't have a CRUD (Create, Read, Update, Delete) type app in my portfolio to show.  Through this development life cycle I now do.  It is all core, no frameworks used.  HTML5, CSS, Javascript with AJAX techniques and PHP and MySql.  
 
 
 Certain technologies and techniques were utilised to easy the development process.  Namely; SASS for the the CSS organisation. Block Object Modifier techniques (BEM) to make CSS easy to follow and subsequently fix if need be.  Grid and Flexbox CSS techniques were heavily used in this project to keep the project responsive and for the UI to look intuitive.    
@@ -18,8 +18,8 @@ Certain technologies and techniques were utilised to easy the development proces
 ### Table Of Contents
 
 *	[Description](#description)
-*	[How To Use](#how-to-use)
-*	[References](#references)
+*	[Technologies](#technologies)
+*	[Lessons Learned](#lessons-learned)
 *	[Licence](#licence)
 *	[Author Info](#author-info)
 
@@ -28,7 +28,7 @@ Certain technologies and techniques were utilised to easy the development proces
 
 ## Description
 
-This was a project I was challenged to do from my time at university in 2020.  The challenge was to take a subject you love (music here) and make a Create Read Update Delete (CRUD) web application out of it using the core internet languages of HTML5 CSS3 Javascript, PHP and MySql.
+This was a project I was challenged to do from my time at university in 2020.  The challenge was to take a subject you love (music here) and make a CRUD web application out of it using the core internet languages of HTML5 CSS3 Javascript, PHP and MySql.
 
 Now the project was not a challenge on the aesthetic side of the UI.  So to ameliorate that time consuming task the student was allowed to take two designs and looks of an already successful music sites and do a hybrid of the two.  In this example I took the design of the music band ZZtop website (https://www.zztop.com/) and instead of using ZZtop for the content I fused the design of ZZtop'z site with the content of the Metallica site (https://www.metallica.com/)
 
@@ -59,20 +59,21 @@ For example, W3schools coding solution is excellent for the uploading of images 
 - Browser sync for immediate reloads in local environment
 - NPM for local environment techniques
 - Gulp task runner for local environment
+- Git on the CLI uploading to GitHub version control system
 
 
 # Lessons Learned
 
 This section is very important to highlight.  Important because as an aspiring web developer, it would serve as great utility for potential employers that view this repository to be aware of where I think I am at with my development journey and where I think I need guidance in moving forward.
 
-I try to live as close as possible to the Japanese philosophy of kaizen, translated to mean continuous and never ending improvement in things that matter.  Web development improvement really matters to me.
+I try to live as close as possible to the Japanese philosophy of kaizen, translated to mean continuous and never ending improvement to things that matter.  Web development improvement really matters to me.
 
-Having communicated my psychology behind my journey I will try and illustrate what I think  I learned from this project and what do I think needs developed moving forward.
+Having communicated my psychology behind my journey I will try and illustrate what I think  I learned from this project and what I think needs developed moving forward.
 
 
 ### Bit Of Background - Why no Framweworks yet?
 
-I understand the industry is framework happy and component hungry presently in the world of web development.  As of yet, I have not dove into the murky world of framework dependency.  At university, the students, rightly or wrongly depending on one's view, where encouraged to remain on the core languages until a deep understanding has been achieved before progressing to the abstraction of said core languages that the frameworks provide.  Thinking about the layers of computing language for a minute, low level languages that are closet to the computer processors like machine code followed by (find what David Connelly said), followed by PHP etc.  It is  frameworks that sit on the highest level furthers away from said processor.  Therefore, If one does not have a relatively deep understanding of the core language underneath the framework, when errors happen which they will inevitably will, solving said errors become very difficult indeed. At least that is the way my educative cohort and I were taught.  
+I understand the industry is framework happy and component hungry presently in the world of web development.  As of yet, I have not dove into the murky world of framework dependency.  At university, the students, rightly or wrongly depending on one's view, where encouraged to remain on the core languages until a deep understanding has been achieved before progressing to the abstraction of said core languages that the frameworks provide.  Thinking about the layers of computing language for a minute, low level languages that are closet to the computer processors like machine code followed by (find what David Connelly said), followed by PHP etc.  It is  frameworks that sit on the highest level furthers away from said processor.  Therefore, the thinking from the university professors were that if one does not have a relatively deep understanding of the core language underneath the framework, when errors happen which they will inevitably will, solving said errors become very difficult indeed.   
 
 Having said that, I fully understand the concept a efficient web developer framework provides. A lot of web development task are repetitive so the, 'components' that these frameworks provide can abstract away these repetitive tasks. Furthermore, frameworks  provides a more explicit way to compartmentalise the code base.  MVC principles are heavy utilised with these frameworks.  To show I understand the MVC concept, I know the M stands for model and that is where the data resides through some sort of database language.  The V is the view is where the user interface technologies reside (think html CSS, javascript) and C is the control  this is where the language that drives it all by communicating with the model and the view ( this will be a language such as PHP or Node depending on what stack one is using).
 
@@ -101,9 +102,9 @@ I now code with confidence with CSS and feel I can do most essential needed UI m
 
 This project, while, not for profit and deadline vague was nevertheless the biggest I have so far undertaken.  File navigation and file compartmentalisation became a challenge here and I needed to learn an efficient way to anchor relevant code and access the architecture via the code effectively.
 
-In other words I found that when I did give a better file structure at the creating stage the bottle neck seemed to be accessing the relevant file path.  
+In other words I found that when I did amend the file structure the bottle neck seemed to be accessing the relevant file path.  
 
-When one is learning web development be it from books or others, the code (quite rightly) is taught from a very segmented task perspective.  Learn one task, complete and move on to next, repeat process.  There is no real learning of the impact of scale here.  That you find out for yourself, once you are face with building a project to a scale you have never encountered.
+When one is learning web development be it from books or others, the code (quite rightly) is taught from a very segmented task perspective.  Learn one task, complete and move on to next, repeat process.  There is no real learning of the impact of scale here.  That you find out for yourself, once you are faced with building a project to a scale you have never encountered.
 
 Until now I have always used relative path ways to traverse the web sites architecture. However, being that this project is so far the largest I have developed, I had to come up with more methodical solution.  Enter absolute file paths or rather relative root paths.
 
@@ -169,7 +170,7 @@ To ameliorate that headache if you access the file paths from the root of the pr
 #### CSS Grid & Flexbox
 <br/>
 
-CSS Grid and Flex-box are quite simply, 'the best thing since slice bread' when it comes to coding up CSS.  However, and annoyingly, at first glance the techniques are not intuitive to the developer, therefore one must put in the time understand their idiosyncrasies.  However once learned, the power that these CSS techniques offer basically means no need for CSS frameworks.  That maybe a bold statement, however, I think I true one.  
+CSS Grid and Flex-box are quite simply, as far as I am concerned, 'the best thing since slice bread' when it comes to coding up CSS.  However, and annoyingly, at first glance the techniques are not intuitive to the developer, therefore one must put in the time understand their idiosyncrasies.  However once learned, the power that these CSS techniques offer basically means no need for CSS frameworks.  That maybe a bold statement, however, I think I true one.  
 
 There are two real methods the web developer must utilise when using grid or flex box. One, know the property techniques at element level but also understand that at HTML level you may have to be a little bit cuter to get these techniques to work their magic.  Pay attention to the hierarchical structure of the HTML elements and make sure your flex and grid items are on the correct element and you may also have to put grids and flex's on children HTML items too.  
 
@@ -267,7 +268,7 @@ git reset
 
 ## Author Info
 
-* Website - [Michael J Crawley](https://michaelcrawley1.github.io/myPortfolio/ "My Portfolio Site")
+* Website - [Michael J Crawley](https://michael-crawley-portfolio.netlify.app/ "My Portfolio Site")
 
 [Back To The Top](#the-metallica-project)
 
