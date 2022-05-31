@@ -1,4 +1,4 @@
-<h1 align="center">The Metallica Project</h1>
+<h1 align="center">The Metallica Project (CRUD APP)</h1>
 
 
 
@@ -8,8 +8,26 @@
 
 **Version 1.0.0**
 
+<br/>
 
-![Project Image](https://www.billboard.com/wp-content/uploads/2020/05/03-metallica-press-2018-cr-Ross-Halfin-b-billboard-1548-1589834861.jpg "The screen shot of the home page")
+
+
+## Client Home Page
+
+<br/>
+
+![Project Image](https://i.imgur.com/NErDrch.png "The screen shot of the home page")
+
+<br/>
+
+## Admin Home Page
+<br/>
+
+![Admin Image](https://i.imgur.com/z845CjB.png "This is the admin screen")
+
+<br/>
+
+
 
 The motivation for this project was quite simple.  I am a recent software development graduate and I didn't have a CRUD (Create, Read, Update, Delete) type app in my portfolio to show.  Through this development life cycle I now do.  It is all core, no frameworks used.  HTML5, CSS, Javascript with AJAX techniques and PHP and MySql.  
 
@@ -23,7 +41,7 @@ Certain technologies and techniques were utilised to easy the development proces
 ### Table Of Contents
 
 *	[Description](#description)
-*	[Technologies](#technologies)
+*	[Technologies](#technologies-tools-and-techniques)
 *	[Lessons Learned](#lessons-learned)
 *	[Licence](#licence)
 *	[Author Info](#author-info)
@@ -44,21 +62,59 @@ This was a project I was challenged to do from my time at university in 2018-20.
 
 Now the project was not a challenge on the aesthetic side of the UI.  So to ameliorate that time consuming task the student was allowed to take two designs and looks of an already successful music sites and do a hybrid of the two.  In this example I took the design of the music band ZZtop website (https://www.zztop.com/) and fused the site with content of the Metallica site (https://www.metallica.com/)
 
+<br/>
+
+***The design of the site was taken from ZZtop's site here:***
+
+![ZZtop's site](https://i.imgur.com/wgwFlsu.png "this is the design I used")
+
+<br/>
+
+***While Metallica's site provided the content:***
+
+<br/>
+
+![Metallica's site](https://i.imgur.com/0sD4drw.png "Metallica provided the content" )
+
+
+<br/>
+
+#### No Need To Be Responsive
+
+<br/>
+
 Subsequently, the project didn't need to be responsive, it could have a fixed width of the desktop sized screen we used in university (1980px).  Rather it was a test of the dynamism of a web site.  Could you, as an aspiring web developer build an admin system to enable someone who is not web developer literate to update the site, change the site images or delete the site's content when they want?
 
-Turns out I could.  I passed the module although it could have been better.  The main challenge I found at the time was use of sessions to keep the data from the database following the architecture of the site and the header redirections for form validation errors.
+Turns out I could.  I passed the module although it could have been better.  The main challenge I found at the time was use of sessions to keep the data from the database following the architecture of the site and the header redirections for form validation errors. Which see;
+
+<br/>
+
+![Validation errors](https://i.imgur.com/EByakXY.png "using header and sessions for site navigation")
+
+<br/>
 
 Having said all that, after submitting the university project I was well aware that I couldn't use this project to showcase to potential employers as a portfolio piece.   As a web site not being responsive is not a website at all these days.  In the intermediate time, along with doing other projects, I have cleaned that up and refactored some of the long winded code, especially the image handling on the admin side of the site.  
 
-For example, [W3schools](https://www.w3schools.com/php/php_file_upload.asp) coding solution is excellent for the uploading of images but there are so many nested, 'IF' statements.  I tried my best to refactor that with associated arrays and with more function abstraction.  It didn't shorten the code, but i think it made it easier to follow.
+For example, [W3schools](https://www.w3schools.com/php/php_file_upload.asp) coding solution is excellent for the uploading of images but there are so many nested, 'IF' statements.  I tried my best to refactor that with associated arrays and with more function abstraction.  It didn't shorten the code, but i think it made it easier to follow.  
 
-</br>      
+</br>
+
+
+**An refactoring example down below:**
+
+</br>
+
+
+
+![Code Refactor](https://i.imgur.com/GYyJptc.png "Code refactor to associated arrays and more functions")      
+
+</br>
 
 ---
 
 </br>
 
-<h1 >Technologies Tools and Techniques
+<h1 >Technologies Tools And Techniques
 
 </h1>
 
@@ -103,7 +159,7 @@ I understand the industry is framework happy and component hungry presently in t
 
 Thinking about the layers of computing language for a minute, from machine code closet to the processor all the way to high-level languages that are platform independent - it is  frameworks that sit on the highest level furthest away from said processor.  Therefore, the thinking from the university professors were that if one does not have a relatively deep understanding of the core language underneath the framework, when errors happen which they will inevitably will, solving said errors become very difficult indeed.   
 
-Having said that, I fully understand the concept a efficient web developer framework provides. A lot of web development task are repetitive so the, 'components' that these frameworks provide can abstract away these repetitive tasks. Furthermore, frameworks  provides a more explicit way to compartmentalise the code base.  MVC principles are heavy utilised with these frameworks.  To show I understand the MVC concept, I know the, 'M' stands for model and that is where the data resides through some sort of database language.  The, 'V' is the view is where the user interface technologies reside (think html CSS, javascript) and 'C' is the control  this is where the language that drives it all by communicating with the model and the view ( this will be a language such as PHP or Node depending on what stack one is using).
+Having said that, I fully understand the concept a efficient web developer framework provides. A lot of web development tasks are repetitive so the, 'components' that these frameworks provide can abstract away these repetitive tasks. Furthermore, frameworks  provides a more explicit way to compartmentalise the code base.  MVC principles are heavy utilised with these frameworks.  To show I understand the MVC concept, I know the, 'M' stands for model and that is where the data resides through some sort of database language.  The, 'V' is the view is where the user interface technologies reside (think html CSS, javascript) and 'C' is the control  this is where the language that drives it all by communicating with the model and the view ( this will be a language such as PHP or Node.js depending on what stack one is using).
 
 [Angular](https://angular.io/ "Link To Angular")  from what I understand uses the full MVC architecture with its framework.  As a consequence, it is a more time-consuming framework to learn, understand and progress with.
 
@@ -133,7 +189,17 @@ CSS to most of us that are more logical based, rage at this language.  I am well
 
 I now code with confidence with CSS and feel I can do most essential needed UI manipulation.  Any careless errors become very quick and easy to rectify. One only needs to open up the browser's developer tools, examine the low level class that BEM practices give you, amend said class, resulting in fixing careless mistake in very quick time.
 
-</br>  
+</br>
+
+***An example of using BEM in this project:*** 
+
+
+
+</br> 
+
+![BEM Techniques](https://i.imgur.com/G3oU6xF.png "BEM Techniques")
+
+<br/>
 
 
 ##### File Structure
@@ -214,7 +280,37 @@ CSS Grid and Flex-box are quite simply, as far as I am concerned, 'the best thin
 
 There are two real methods the web developer must utilise when using grid or flex box. One, know the property techniques at element level but also understand that at HTML level you may have to be a little bit cuter to get these techniques to work their magic.  Pay attention to the hierarchical structure of the HTML elements and make sure your flex and grid items are on the correct element and be aware you may also have to put grids and flex's on children HTML items too.  
 
-My technique for the UI structure is I use grid for initial layout of the design of the page (top to bottom, rows only) and then section grids (rows and columns) with flex box items mostly inside these grid sections. 
+My technique for the UI structure is I use grid for initial layout of the design of the page (top to bottom, rows only) and then section grids (rows and columns) with flex box items mostly inside these grid sections.
+
+<br/>
+
+***Which see;*** 
+
+<br/>
+
+![The Grid method](https://i.imgur.com/FOpPFXT.png "The Grid Method")
+
+<br/>
+
+**Vertical Layout - Only Grid Rows First:**
+
+<br/>
+
+![The Grid method](https://i.imgur.com/MPvC9Iv.png "The vertical row grid")
+
+<br/>
+
+**Each Section Layout - Grid Rows And Columns**
+
+<br/>
+
+![The Grid method - section rows and columns](https://i.imgur.com/7yPM2Qw.png "The Grid method - section rows and columns")
+
+<br/>
+
+![The Grid method - section rows and columns](https://i.imgur.com/NeBWJIK.png "The Grid method - section rows and columns")
+
+<br/>
 
 Other developers will come up with their own individual ways in using these powerful techniques.  However, I work like this to keep the HTML semantic. Alternatively, if you do grid at overall site layout stage with rows and columns then you will have to flatten the HTML to get the grid to do what you were aiming for.  'Sub-grid' is currently being developed to solve this issue, but it will take time for all the browsers to implement this.
 
@@ -225,7 +321,7 @@ Until then in my humble opinion it should be one grid in row form for the whole 
 #### Event Propagation
 
 <br/>
-Traversing up and down the Document Object Model (DOM) with the event object almost seemed like, 'cheating' when I learned this.  I could manipulate the DOM with javascript before I knew this technique, however, this makes everything so much easier.  I will give an example of how easy this makes DOM manipulation be is that you can even access the **wrong** element but bubble up or down to the correct element and manipulate the DOM from there.  
+Traversing up and down the Document Object Model (DOM) with the event object almost seemed like, 'cheating' when I learned this.  I could manipulate the DOM with javascript before I knew this technique, however, this makes everything so much easier.  In this example of how easy this makes DOM manipulation to be, is that you can even access the **wrong** element but bubble up or down to the correct element and manipulate the DOM from there.  
 
 Which see; 
 
@@ -273,9 +369,9 @@ window.addEventListener("load", start, false);
 <br/>
 
 
-I took about a month or 2 to learn all the git methods and uploading to git via the mac terminal.  The source I use was mostly from the YouTuber Corey Shafer, so "shout out" to him and thank you so much Corey -  [Corey's Git Terminal Tutorials](https://www.youtube.com/results?search_query=cory+shafer+git+terminal "Corey's git terminal training")  
+I also took about a month or two to learn all the git methods and uploading to git via the mac terminal.  The source I use was mostly from the YouTuber Corey Shafer, so "shout out" to him and thank you so much Corey -  [Corey's Git Terminal Tutorials](https://www.youtube.com/results?search_query=cory+shafer+git+terminal "Corey's git terminal training")  
 
-After my graduation I realised I needed to learn this if I had any aspirations working in coding teams in development projects.  Sure, one can use software to do the same thing, but it is better to take the time to learn the actual code from the command line interface (CLI) so that you employment opportunities are wider and not restricted to a type of git software.  Obviously I don't need to say GitHub is the version control I use for obvious reasons, but using git via the terminal made the uploads to GitHub a straightforward process.  This was a great skill to add to be developing tool belt.
+After my graduation I realised I needed to learn this if I had any aspirations working in coding teams in development projects.  Sure, one can use software to do the same thing, but it is better to take the time to learn the actual code from the command line interface (CLI) so that you employment opportunities are wider and not restricted to a type of git software.  Obviously I don't need to say GitHub is the version control I use for obvious reasons, but using git via the terminal made the uploads to GitHub a straightforward process.  This was a great skill to add to my ever expanding developer tool belt.
 
 <br/>
 
@@ -303,7 +399,7 @@ git reset
 
 </br>
 
-I have used the power of AJAX in many other web projects.  In fact, my dissertation was a development project essentially  using AJAX to compare popular JavaScript libraries consuming web services - ([CLIENT SIDE](https://github.com/MichaelCrawley1/MscClientSide     )) ([SERVER SIDE](https://github.com/MichaelCrawley1/MscServerSide1)).  However, here was another, **'aha moment'** and that something I will be sure to utlisee in the future.  
+I have used the power of AJAX in many other web projects.  In fact, my dissertation was a development project essentially  using AJAX to compare popular JavaScript libraries consuming web services, which see - ([CLIENT SIDE](https://github.com/MichaelCrawley1/MscClientSide     )) ([SERVER SIDE](https://github.com/MichaelCrawley1/MscServerSide1)).  However, here was another, ***'aha moment'*** and that something I will be sure to utlisee in the future.  
 
 I used AJAX differently here that what I did with my university project.  In my dissertation I was more concerned bringing the data back from the bespoke built web service and parsing that data and displaying the data in the client UI.  
 
@@ -315,16 +411,28 @@ For this case, that wasn't at the all the concern.  In fact this AJAX solution d
 
 <br/>
 
-I was finding in the admin section of this web project that when the, 'administrator' selects an image to upload but then for whatever reason changes his/her mind on the image uploaded, the aforementioned [W3schools](https://www.w3schools.com/php/php_file_upload.asp) solution meant the image was already stored in the site image directory and couldn't be taken out.  
+I was finding in the admin section of this web project that when the, 'administrator' selects an image to upload but then for whatever reason changes his/her mind on the image uploaded, the aforementioned [W3schools](https://www.w3schools.com/php/php_file_upload.asp) solution meant the image was already stored in the site image directory and couldn't be taken out.
 
-One way to sort this was on the original page where the image uploading was happening was to unlink the image there when the administrator inevitably returns to that page due to the sites architecture.  This solved this  problem however, created other problems like taking out the same image used twice in the UI!
+<br/>
+
+![Change of mind problem](https://i.imgur.com/WvPeiVE.png "Change of mind problem")
+
+<br/>  
+
+One way to sort this was on the original page where the image uploading was happening was to unlink the image there when the administrator inevitably returns to that page due to the sites architecture, as you can see above when clicking the option, 'Ooops go back'.  This solved this  problem however, created other problems like taking out the same image used twice in the UI!
+
+<br/>
 
 
-I arrived at this solution by chance rather than designing the solution in my head first.  I knew what was needed in the first step - when the administrator clicks on the link to go back to image uploading page then the unlinking of said image has to happen.  As mentioned it can't happen on the image uploading page it has to happen before we arrive on the image uploading page but how to do that? 
+#### Arriving At The Solution
 
-Enter AJAX to the rescue via a, 'click' event.  
+<br/>
 
+I arrived at this solution by chance rather than designing the solution in my head first.  I knew what was needed in the first step - when the administrator clicks the option, 'Ooops go back' then the unlinking of said image has to happen on that click event but the unlinking has to happen before going back to the image upload page - how to do that?  
 
+**Enter AJAX to the rescue!**
+
+Write Ajax solution follow up here tomorrow
 
 
 
