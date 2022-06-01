@@ -183,7 +183,7 @@ I am aware building apps with these frameworks should be my next step and I aim 
 
 I have been dabbling with BEM CSS practices prior to undertaking this development project and I can safely say I am now a full supporter of using these methods.
 
-However, this method, like anything doesn't come without its downsides.  The downside is that it is CSS class heavy - very heavy.  You practically name classes for every line of html element code.  That means more time at the html stage.  However, when one becomes comfortable writing in such a away, speed differences is almost non existent to the traditional way of using html and CSS.  However, more importantly, debugging CSS becomes a much more seamless process.  That last point was the game changer for me.
+However, this method, like anything doesn't come without its downsides.  The downside is that it is CSS class heavy - very heavy.  You practically name classes for every line of html element code.  That means more time at the html stage.  However, when one becomes comfortable writing in such a away, developmental speed differences is almost non existent to the traditional way of using html and CSS.  However, more importantly, debugging CSS becomes a much more seamless process.  That last point was the game changer for me.
 
 CSS to most of us that are more logical based, rage at this language.  I am well aware CSS was perhaps never meant to be used the way it has been adopted, nevertheless, the fact that it has and we can't find anything better to do the UI styling (yet), debugging CSS when we indent from the html parent down (cascade) can become a coding nightmare (particular as the application grows), and prove to be the bottleneck for very logical-thinking programmers moving forward with the web technologies.  At least it was for me.  BEM solved that dilemma.
 
@@ -208,7 +208,7 @@ I now code with confidence with CSS and feel I can do most essential needed UI m
 
 This project, while, not for profit and deadline vague was nevertheless the biggest I have so far undertaken.  File navigation and file compartmentalisation became a challenge here and I needed to learn an efficient way to anchor relevant code and access the architecture via the code effectively.
 
-In other words I found that when I did amend the file structure the bottle neck seemed to be accessing the relevant file path.  
+In other words, I found that when I did amend the file structure the bottle neck seemed to be accessing the relevant file path.  
 
 When one is learning web development be it from books or others, the code (quite rightly) is taught from a very segmented task perspective.  Learn one task, complete and move on to next, repeat process.  There is no real learning of the impact of scale here.  That you find out for yourself, once you are faced with building a project to a scale you have never encountered.
 
@@ -369,9 +369,9 @@ window.addEventListener("load", start, false);
 <br/>
 
 
-I also took about a month or two to learn all the git methods and uploading to git via the mac terminal.  The source I use was mostly from the YouTuber Corey Shafer, so "shout out" to him and thank you so much Corey -  [Corey's Git Terminal Tutorials](https://www.youtube.com/results?search_query=cory+shafer+git+terminal "Corey's git terminal training")  
+I also took about a month or two to learn all the git methods and uploading to git via the mac terminal.  The source I use was mostly from the YouTuber Corey Schafer, so "shout out" to him and thank you so much Corey -  [Corey's Git Terminal Tutorials](https://www.youtube.com/results?search_query=cory+shafer+git+terminal "Corey's git terminal training")  
 
-After my graduation I realised I needed to learn this if I had any aspirations working in coding teams in development projects.  Sure, one can use software to do the same thing, but it is better to take the time to learn the actual code from the command line interface (CLI) so that you employment opportunities are wider and not restricted to a type of git software.  Obviously I don't need to say GitHub is the version control I use for obvious reasons, but using git via the terminal made the uploads to GitHub a straightforward process.  This was a great skill to add to my ever expanding developer tool belt.
+After my graduation I realised I needed to learn this if I had any aspirations working in coding teams in development projects.  Sure, one can use software to do the same thing, but it is better to take the time to learn the actual code from the command line interface (CLI) so that your employment opportunities are wider and not restricted to a type of git software.  I don't need to say GitHub is the version control I use for obvious reasons, but using git via the terminal made the uploads to GitHub a straightforward process.  This was a great skill to add to my ever expanding developer tool belt.
 
 <br/>
 
@@ -399,7 +399,7 @@ git reset
 
 </br>
 
-I have used the power of AJAX in many other web projects.  In fact, my dissertation was a development project essentially  using AJAX to compare popular JavaScript libraries consuming web services, which see - ([CLIENT SIDE](https://github.com/MichaelCrawley1/MscClientSide     )) ([SERVER SIDE](https://github.com/MichaelCrawley1/MscServerSide1)).  However, here was another, ***'aha moment'*** and that something I will be sure to utlisee in the future.  
+I have used the power of AJAX in many other web projects.  In fact, my dissertation was a development project essentially  using AJAX to compare popular JavaScript libraries consuming web services, which see - ([CLIENT SIDE](https://github.com/MichaelCrawley1/MscClientSide     )) ([SERVER SIDE](https://github.com/MichaelCrawley1/MscServerSide1)).  However, during this project brought about another, ***'aha moment'*** and that something I will be sure to utlisee in the future.  
 
 I used AJAX differently here that what I did with my university project.  In my dissertation I was more concerned bringing the data back from the bespoke built web service and parsing that data and displaying the data in the client UI.  
 
@@ -411,7 +411,7 @@ For this case, that wasn't at the all the concern.  In fact this AJAX solution d
 
 <br/>
 
-I was finding in the admin section of this web project that when the, 'administrator' selects an image to upload but then for whatever reason changes his/her mind on the image uploaded, the aforementioned [W3schools](https://www.w3schools.com/php/php_file_upload.asp) solution meant the image was already stored in the site image directory and couldn't be taken out.
+I was finding in the admin section of this web project that when the, 'administrator' selects an image to upload but then for whatever reason changes his/her mind on the image uploaded, the aforementioned [W3schools](https://www.w3schools.com/php/php_file_upload.asp) solution meant the image was already stored in the site's image directory and couldn't be taken out.
 
 <br/>
 
@@ -419,7 +419,7 @@ I was finding in the admin section of this web project that when the, 'administr
 
 <br/>  
 
-One way to sort this was on the original page where the image uploading was happening was to unlink the image there when the administrator inevitably returns to that page due to the sites architecture, as you can see above when clicking the option, 'Ooops go back'.  This solved this  problem however, created other problems like taking out the same image used twice in the UI!
+One way to sort this - on the original page where the image uploading was happening was to unlink the image there when the administrator inevitably returns to that page due to the sites architecture, as you can see above when clicking the option, 'Ooops go back'.  This solved this  problem however, consequently, created other problems like taking out the same image used twice in the UI for different news stories for example!
 
 <br/>
 
@@ -428,15 +428,64 @@ One way to sort this was on the original page where the image uploading was happ
 
 <br/>
 
-I arrived at this solution by chance rather than designing the solution in my head first.  I knew what was needed in the first step - when the administrator clicks the option, 'Ooops go back' then the unlinking of said image has to happen on that click event but the unlinking has to happen before going back to the image upload page - how to do that?  
+I arrived at this solution by chance rather than designing the solution in my head first.  I did however know what was needed in the first step.
+
+When the administrator clicks the option, 'Ooops go back' then the unlinking of said image has to happen on that click event.  The challenge to be solved was to unlink the image before the administrator goes back to the original image upload page - how to do that?
+
+<br/>  
 
 **Enter AJAX to the rescue!**
 
-Write Ajax solution follow up here tomorrow
+<br/>
+
+In retrospect my AJAX solution was akin to something like a sandbox or a honeypot solution, although I had no idea I was doing that at the time. 
+
+What transpired with this AJAX solution was that I already had a sort of solution in place with the aforementioned unlinking images from the original image uploading page.  
+
+I remember talking in my head for a moment by saying, "can I copy that first page solution to a separate php file and only call it up when a user clicks back to the original page after uploading an image?" 
+
+That is where AJAX came in.  I quickly copied over the php code to a separate file I have subsequently named, "ajaxUnlink.php" and then immediately drew up a new javascript file with a basic AJAX request.  Which see;
+
+<br/>
+
+**The sandbox type solution below that does the heavy lifting when the administrator changes his/her mind on image uploaded**
+
+<br/>
+
+![ajaxPHPFile](https://i.imgur.com/bB3XCH6.png "ajax php file for image unlinking")
+
+<br/>
 
 
 
-</br>
+**The simple Ajax script that acts when the user clicks to go back on their image they selected:**
+<br/>
+
+![ajax request to the php unlinking page](https://i.imgur.com/ShbqT2s.png "ajax request to the php unlinking page")
+
+<br/>
+
+With the above solution I have now learned and realised that AJAX is not solely about consuming data, 'on the fly' but can be used to work around very compartmentalised and esoteric UI interaction issues.
+
+<br/>
+
+## Final Lesson learned - The Value of commenting the code
+
+In this project I have opted to comment every line possible.  From the HTML code, the JavaScript code to the PHP and MySql code.  This was a deliberate strategy.  Incidentally, I have subsequently found there was more utility in commenting the HTML side of things rather than the CSS side of things - CSS is the properties used, HTML gives you the chance to explain the CSS solution used.  
+
+Anyway, I digress.  I am now making a big push to gain commercial web developer experience.  I am fully aware of the risk to potential employers and clients alike and the questions they need answered when hiring a new developer.  If they are to risk in taking on a junior developer they will want to know does this potential developer know why he/her used the code in the way that they have?  
+
+After a year or two of study most of us students can find a way to, 'hack a development solution'.  However, it takes far greater study and time to understand why the solution you have, 'hacked' works the way it does and therefore to communicate that programming wisdom to help others.  This I feel is an essential skill to cultivate if a developer has aspirations working within development teams and pitching to new clients.      
+
+So what better way to show potential employers and clients that you do know why the solution you chose works the way it does by explicitly showing and telling them how.  Commenting every line of code in this project explicitly shows to potential employers that I do in fact know why I have done what I have done and it has not been, 'hacked' or taken from other sources.
+
+The benefit to heavily commenting code doesn't just stop with explicitly showing potetinali employers and clients.  It also has the pleasent consequnse of encouraging better soltiotons and opportunities for refactoring at a personal level too.  
+
+Heavy comments encorages one to be very anayltical and forensic with their code base.  One is able to see problems very quickly that don't adhere to DRY(Don't repeat yourself) and SR (Single Responsibilty) principles.
+
+Forsenicall lokking at the CSS code base encourage me to gfet rid of repeating propeties and redeandant css classes.     
+
+<br/>
 
 ## Contributors
 
