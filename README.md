@@ -60,7 +60,7 @@ Certain technologies and techniques were utilised to easy the development proces
 
 This was a project I was challenged to do from my time at university in 2018-20.  The challenge was to take a subject you love (music here) and make a CRUD web application out of it using the core internet languages of HTML5 CSS3 Javascript, PHP and MySql.
 
-Now the project was not a challenge on the aesthetic side of the UI.  So to ameliorate that time consuming task the student was allowed to take two designs and looks of an already successful music sites and do a hybrid of the two.  In this example I took the design of the music band ZZtop website (https://www.zztop.com/) and fused the site with content of the Metallica site (https://www.metallica.com/)
+Now the project was not a challenge on the aesthetic side of the UI.  To ameliorate that time consuming task the student was allowed to take two designs and looks of an already successful music sites and do a hybrid of the two.  In this example I took the design of the music band ZZtop website (https://www.zztop.com/) and fused the site with content of the Metallica site (https://www.metallica.com/)
 
 <br/>
 
@@ -157,7 +157,7 @@ Having communicated my psychology behind my journey I will try and illustrate wh
 
 I understand the industry is framework happy and component hungry presently in the world of web development.  As of yet, I have not dove into the murky world of framework dependency.  At university, the students, rightly or wrongly depending on one's view, were encouraged to remain on the core languages until a deep understanding has been achieved before progressing to the abstraction of said core languages that the frameworks provide. 
 
-Thinking about the layers of computing language for a minute, from machine code closet to the processor all the way to high-level languages that are platform independent - it is  frameworks that sit on the highest level furthest away from said processor.  Therefore, the thinking from the university professors were that if one does not have a relatively deep understanding of the core language underneath the framework, when errors happen which they will inevitably will, solving said errors become very difficult indeed.   
+Thinking about the layers of computing language for a minute, from machine code closet to the processor all the way to high-level languages that are platform independent - it is  frameworks that sit on the highest level furthest away from said processor.  Therefore, the thinking from the university professors were that if one does not have a relatively deep understanding of the core language underneath the framework, when errors happen, which they will inevitably will, solving said errors become very difficult indeed.   
 
 Having said that, I fully understand the concept a efficient web developer framework provides. A lot of web development tasks are repetitive so the, 'components' that these frameworks provide can abstract away these repetitive tasks. Furthermore, frameworks  provides a more explicit way to compartmentalise the code base.  MVC principles are heavy utilised with these frameworks.  To show I understand the MVC concept, I know the, 'M' stands for model and that is where the data resides through some sort of database language.  The, 'V' is the view is where the user interface technologies reside (think html CSS, javascript) and 'C' is the control  this is where the language that drives it all by communicating with the model and the view ( this will be a language such as PHP or Node.js depending on what stack one is using).
 
@@ -208,7 +208,7 @@ I now code with confidence with CSS and feel I can do most essential needed UI m
 
 This project, while, not for profit and deadline vague was nevertheless the biggest I have so far undertaken.  File navigation and file compartmentalisation became a challenge here and I needed to learn an efficient way to anchor relevant code and access the architecture via the code effectively.
 
-In other words, I found that when I did amend the file structure the bottle neck seemed to be accessing the relevant file path.  
+In other words, I found that when I did amend the file structure the bottleneck seemed to be accessing the relevant file path.  
 
 When one is learning web development be it from books or others, the code (quite rightly) is taught from a very segmented task perspective.  Learn one task, complete and move on to next, repeat process.  There is no real learning of the impact of scale here.  That you find out for yourself, once you are faced with building a project to a scale you have never encountered.
 
@@ -314,14 +314,14 @@ My technique for the UI structure is I use grid for initial layout of the design
 
 Other developers will come up with their own individual ways in using these powerful techniques.  However, I work like this to keep the HTML semantic. Alternatively, if you do grid at overall site layout stage with rows and columns then you will have to flatten the HTML to get the grid to do what you were aiming for.  'Sub-grid' is currently being developed to solve this issue, but it will take time for all the browsers to implement this.
 
-Until then in my humble opinion it should be one grid in row form for the whole site top to bottom, then within each row another grid this time with columns and rows set up.  Resulting a tight, responsive layout structure while maintaining that important semantic HTML. 
+Until then, in my humble opinion, it should be one grid in row form for the whole site top to bottom, then within each row another grid this time with columns and rows set up.  Resulting a tight, responsive layout structure while maintaining that important semantic HTML. 
 
 <br/>   
 
 #### Event Propagation
 
 <br/>
-Traversing up and down the Document Object Model (DOM) with the event object almost seemed like, 'cheating' when I learned this.  I could manipulate the DOM with javascript before I knew this technique, however, this makes everything so much easier.  In this example of how easy this makes DOM manipulation to be, is that you can even access the **wrong** element but bubble up or down to the correct element and manipulate the DOM from there.  
+Traversing up and down the Document Object Model (DOM) with the event object almost seemed like, 'cheating' when I learned this.  I could manipulate the DOM with javascript before I knew this technique, however, this makes everything so much easier.  In this example of how easy this makes DOM manipulation to be, is that you can even access the, '**wrong**' element but bubble up or down to the correct element and manipulate the DOM from there.  
 
 Which see; 
 
@@ -419,7 +419,7 @@ I was finding in the admin section of this web project that when the, 'administr
 
 <br/>  
 
-One way to sort this - on the original page where the image uploading was happening was to unlink the image there when the administrator inevitably returns to that page due to the sites architecture, as you can see above when clicking the option, 'Ooops go back'.  This solved this  problem however, consequently, created other problems like taking out the same image used twice in the UI for different news stories for example!
+One way to sort this - on the original page where the image uploading was happening was to unlink the image there when the administrator inevitably returns to that page due to the sites architecture, as you can see above when clicking the option, 'Ooops go back'.  This solved this  problem however, consequently, created other problems like taking out the same image used twice in the UI for different news stories!
 
 <br/>
 
@@ -471,19 +471,69 @@ With the above solution I have now learned and realised that AJAX is not solely 
 
 ## Final Lesson learned - The Value of commenting the code
 
-In this project I have opted to comment every line possible.  From the HTML code, the JavaScript code to the PHP and MySql code.  This was a deliberate strategy.  Incidentally, I have subsequently found there was more utility in commenting the HTML side of things rather than the CSS side of things - CSS is the properties used, HTML gives you the chance to explain the CSS solution used.  
+<br/>
+
+In this project I have opted to comment every line possible.  From the HTML code, the JavaScript code to the PHP and MySql code.  This was a deliberate strategy.  Incidentally, I have subsequently found there was more utility in commenting the HTML side of things rather than the CSS side of things - CSS is the properties used, HTML gives you the chance to explain the CSS solution used.
+
+<br/>
+
+#### For Potential Employers To View
+
+<br/>
 
 Anyway, I digress.  I am now making a big push to gain commercial web developer experience.  I am fully aware of the risk to potential employers and clients alike and the questions they need answered when hiring a new developer.  If they are to risk in taking on a junior developer they will want to know does this potential developer know why he/her used the code in the way that they have?  
 
-After a year or two of study most of us students can find a way to, 'hack a development solution'.  However, it takes far greater study and time to understand why the solution you have, 'hacked' works the way it does and therefore to communicate that programming wisdom to help others.  This I feel is an essential skill to cultivate if a developer has aspirations working within development teams and pitching to new clients.      
+After a year or two of study most of us students can find a way to, 'hack a development solution'.  However, it takes far greater study and time to understand why the solution you have, 'hacked' works the way it does and therefore to communicate that programming wisdom gained to others.  This I feel is an essential skill to cultivate if a developer has aspirations working within development teams and pitching to new clients.      
 
-So what better way to show potential employers and clients that you do know why the solution you chose works the way it does by explicitly showing and telling them how.  Commenting every line of code in this project explicitly shows to potential employers that I do in fact know why I have done what I have done and it has not been, 'hacked' or taken from other sources.
+So what better way to show potential employers and clients that you do know the solution you chose works the way it does by explicitly showing and telling them how through code comments?  Commenting every line of code in this project explicitly shows to potential employers that I do in fact know why I have done what I have done and it has not been, 'hacked' or taken from other sources.
 
-The benefit to heavily commenting code doesn't just stop with explicitly showing potetinali employers and clients.  It also has the pleasent consequnse of encouraging better soltiotons and opportunities for refactoring at a personal level too.  
+<br/>
 
-Heavy comments encorages one to be very anayltical and forensic with their code base.  One is able to see problems very quickly that don't adhere to DRY(Don't repeat yourself) and SR (Single Responsibilty) principles.
+#### Other Benefits To Commenting The Code Base
 
-Forsenicall lokking at the CSS code base encourage me to gfet rid of repeating propeties and redeandant css classes.     
+<br/>
+
+
+The benefit to heavily commenting code doesn't just stop with explicitly showing potential employers and clients that you know what you are doing.  It also has the pleasant consequence of encouraging better solutions and opportunities for code refactoring too.  
+
+Heavy comments encourages one to be very analytical and forensic with their code base.  One is able to see problems very quickly that don't adhere to DRY (Don't repeat yourself) and SR (Single Responsibility) principles and amend accordingly.
+
+Furthermore, forensically looking at the CSS code base encouraged me to get rid of repeating properties and redundant CSS classes.
+
+<br/>
+
+**This GitHub commit is an example of this happening in this project, which see;**
+
+<br/>
+
+![Rid of CSS](https://i.imgur.com/oLjy0Pd.png "Getting rid of some redundant css") 
+
+      
+
+<br/>
+
+
+# Conclusion
+
+In conclusion, this has been the biggest, challenging development project I have taken thus far.  In retrospect, the skills and techniques I have now learned via this CRUD app will be invaluable moving forward.  
+
+CRUD app development projects are great learning opportunities for budding web developers, especially if they are built with only core languages with no help from libraries or frameworks.  
+
+This is not to say there is no use to libraries and frameworks.  Of course there are great uses to these excellent code abstraction layers - but not for the beginner.  The best way to learn to understand what the these frameworks are doing is to first, 'code-up' the CRUD solution yourself.
+
+While this makes it a very challenging task to the beginner and may take them a long time to complete, as it did with me,  the time spent working with and working out the true heterogeneous platform that dynamic websites are, is an invaluable skill to cultivate.
+
+The very nature of web development projects enables them to be highly cohesive entities, however, they are also unfortunately unavoidably highly coupled systems too.  A recurring challenge for web developers is dealing with errors and bugs that arise from one of the dependencies that has been invoked from another interdependent component.  Developing CRUD apps is perhaps the best way to, 'see' and understand how this development phenomenon manifests.  
+
+with this project using an Agile SDLC process with Task Driven Development (TDD) techniques (fail, pass, refactor) 
+
+***When a developer has learned to create and code up a CRUD app from the ground up will prove to be the perfect barometer for future employers in taking on a new junior developer.***  
+
+I state this because when one has built up a CRUD type app with all the core client and core back end languages means that this individual will now develop future projects with a view to how all the web technologies interact with each other and design, code and develop accordingly.  Organisations want and need developers to approach web application tasks in this way, ensuring the, 'bigger picture' is always kept at the forefront of the developers mind.  This in turn means these type of future developers can greatly contribute to developer teams as they, 'get' what the potential developed app is suppose to do and consequently and perhaps more importantly know how to take this complicated, interdependent entity to provide the end user with the best user experience (UX) possible.
+
+
+
+
 
 <br/>
 
