@@ -32,7 +32,7 @@
 The motivation for this project was quite simple.  I am a recent software development graduate and I didn't have a CRUD (Create, Read, Update, Delete) type app in my portfolio to show.  Through this development life cycle I now do.  It is all core, no frameworks used.  HTML5, CSS, Javascript with AJAX techniques and PHP and MySql.  
 
 
-Certain technologies and techniques were utilised to easy the development process.  I personally find while CSS is relatively easy to pick up and understand compared to other computer languages, the cascading nature of this language makes debugging a comparative, 'nightmare'.  Therefore I used as many proven CSS tools to my disposal to mitigate this debugging challenge.   Namely; SASS for the the CSS organisation, Block Object Modifier techniques (BEM) to make CSS easy to follow and subsequently fix.  Finally,  Grid and Flexbox CSS techniques were heavily used in this project to keep the project responsive and for the UI to look intuitive.    
+Certain technologies and techniques were utilised to easy the development process.  I personally find while CSS is relatively easy to pick up and understand compared to other computer languages, the cascading nature of this language makes debugging a comparative, 'nightmare'.  Therefore I used as many proven CSS tools to my disposal to mitigate this debugging challenge.   Namely; SASS for the the CSS organisation, Block Element Modifier techniques (BEM) to make CSS easy to follow and subsequently fix.  Finally,  Grid and Flexbox CSS techniques were heavily used in this project to keep the project responsive and for the user interface (UI) to look intuitive.    
 
 </br>
 
@@ -161,9 +161,9 @@ Thinking about the layers of computing language for a minute, from machine code 
 
 Having said that, I fully understand the concept a efficient web developer framework provides. A lot of web development tasks are repetitive so the, 'components' that these frameworks provide can abstract away these repetitive tasks. Furthermore, frameworks  provides a more explicit way to compartmentalise the code base.  MVC principles are heavy utilised with these frameworks.  To show I understand the MVC concept, I know the, 'M' stands for model and that is where the data resides through some sort of database language.  The, 'V' is the view is where the user interface technologies reside (think html CSS, javascript) and 'C' is the control  this is where the language that drives it all by communicating with the model and the view ( this will be a language such as PHP or Node.js depending on what stack one is using).
 
-[Angular](https://angular.io/ "Link To Angular")  from what I understand uses the full MVC architecture with its framework.  As a consequence, it is a more time-consuming framework to learn, understand and progress with.
+[Angular](https://angular.io/ "Link To Angular")  from what I understand uses the full MVC architecture within its framework.  As a consequence, it is a more time-consuming framework to learn, understand and progress with.
 
-[React](https://reactjs.org/ "Link To React") on the other hand is more of a Library ( you can dip in and out depending on the web developer project needs) than a framework focusing mainly on the view side of things in the MVC architecture.  Consequently it is faster to pick up and subsequently the more popular of the two.
+[React](https://reactjs.org/ "Link To React") on the other hand is more of a Library ( you can dip in and out depending on the web developer project needs) than a framework.  Focusing mainly on the view side of things in the MVC architecture.  Consequently it is faster to pick up and subsequently the more popular of the two.
 
 I am aware building apps with these frameworks should be my next step and I aim to do just that.  That is where I am going next.
 
@@ -183,7 +183,7 @@ I am aware building apps with these frameworks should be my next step and I aim 
 
 I have been dabbling with BEM CSS practices prior to undertaking this development project and I can safely say I am now a full supporter of using these methods.
 
-However, this method, like anything doesn't come without its downsides.  The downside is that it is CSS class heavy - very heavy.  You practically name classes for every line of html element code.  That means more time at the html stage.  However, when one becomes comfortable writing in such a away, developmental speed differences is almost non existent to the traditional way of using html and CSS.  However, more importantly, debugging CSS becomes a much more seamless process.  That last point was the game changer for me.
+However, this method, like anything doesn't come without its downsides.  The downside is that it is CSS class heavy - very heavy.  You practically name classes for every line of html element code.  That means more time at the html stage.  However, when one becomes comfortable writing in such a away, developmental speed differences is almost non existent to the traditional way of using html and CSS.  However and more importantly, debugging CSS becomes a much more seamless process.  That last point was the game changer for me.
 
 CSS to most of us that are more logical based, rage at this language.  I am well aware CSS was perhaps never meant to be used the way it has been adopted, nevertheless, the fact that it has and we can't find anything better to do the UI styling (yet), debugging CSS when we indent from the html parent down (cascade) can become a coding nightmare (particular as the application grows), and prove to be the bottleneck for very logical-thinking programmers moving forward with the web technologies.  At least it was for me.  BEM solved that dilemma.
 
@@ -399,7 +399,7 @@ git reset
 
 </br>
 
-I have used the power of AJAX in many other web projects.  In fact, my dissertation was a development project essentially  using AJAX to compare popular JavaScript libraries consuming web services, which see - ([CLIENT SIDE](https://github.com/MichaelCrawley1/MscClientSide     )) ([SERVER SIDE](https://github.com/MichaelCrawley1/MscServerSide1)).  However, during this project brought about another, ***'aha moment'*** and that something I will be sure to utlisee in the future.  
+I have used the power of AJAX in many other web projects.  In fact, my dissertation was a development project essentially  using AJAX to compare popular JavaScript libraries consuming web services, which see - ([CLIENT SIDE](https://github.com/MichaelCrawley1/MscClientSide     )) ([SERVER SIDE](https://github.com/MichaelCrawley1/MscServerSide1)).  However, during this project brought about another, ***'aha moment'*** and that something I will be sure to utilise in the future.  
 
 I used AJAX differently here that what I did with my university project.  In my dissertation I was more concerned bringing the data back from the bespoke built web service and parsing that data and displaying the data in the client UI.  
 
@@ -419,7 +419,7 @@ I was finding in the admin section of this web project that when the, 'administr
 
 <br/>  
 
-One way to sort this - on the original page where the image uploading was happening was to unlink the image there when the administrator inevitably returns to that page due to the sites architecture, as you can see above when clicking the option, 'Ooops go back'.  This solved this  problem however, consequently, created other problems like taking out the same image used twice in the UI for different news stories!
+One way to sort this - on the original page where the image uploading was happening was to unlink the image when the administrator inevitably returns to that page due to the sites architecture, as you can see above when clicking the option, 'Ooops go back'.  While this solved this  problem, consequently created other problems like taking out the same image used twice in the UI for different news stories!
 
 <br/>
 
@@ -444,7 +444,7 @@ What transpired with this AJAX solution was that I already had a sort of solutio
 
 I remember talking in my head for a moment by saying, "can I copy that first page solution to a separate php file and only call it up when a user clicks back to the original page after uploading an image?" 
 
-That is where AJAX came in.  I quickly copied over the php code to a separate file I have subsequently named, "ajaxUnlink.php" and then immediately drew up a new javascript file with a basic AJAX request.  Which see;
+That is where AJAX solution came in.  I quickly copied over the php code to a separate file that I have subsequently named, "ajaxUnlink.php" and then immediately drew up a new javascript file with a basic AJAX request.  Which see;
 
 <br/>
 
@@ -469,11 +469,11 @@ With the above solution I have now learned and realised that AJAX is not solely 
 
 <br/>
 
-## Final Lesson learned - The Value of commenting the code
+## Final Lesson Learned - The Value Of Commenting The Code
 
 <br/>
 
-In this project I have opted to comment every line possible.  From the HTML code, the JavaScript code to the PHP and MySql code.  This was a deliberate strategy.  Incidentally, I have subsequently found there was more utility in commenting the HTML side of things rather than the CSS side of things - CSS is the properties used, HTML gives you the chance to explain the CSS solution used.
+In this project I have opted to comment every line possible.  From the HTML code, the JavaScript code to the PHP and MySql code.  This was a deliberate strategy.  However when I eventually do become employed as a developer my future comments will be less intense as there will be less need to be as explicit with your comments because your code competency will not be question as severely as it is at potential employment stage.  Incidentally, I have subsequently found there was more utility in commenting the HTML side of things rather than the CSS side of things - CSS is the properties used, HTML gives you the chance to explain the CSS solution used.
 
 <br/>
 
@@ -481,11 +481,11 @@ In this project I have opted to comment every line possible.  From the HTML code
 
 <br/>
 
-Anyway, I digress.  I am now making a big push to gain commercial web developer experience.  I am fully aware of the risk to potential employers and clients alike and the questions they need answered when hiring a new developer.  If they are to risk in taking on a junior developer they will want to know does this potential developer know why he/her used the code in the way that they have?  
+  I am now making a big push to gain commercial web developer experience.  I am fully aware of the risk to potential employers and clients alike and the questions they need answered when hiring a new, junior-level developer.  If they are to risk in taking on a junior developer they will want to know does this potential developer know why he/her used the code in the way that they have?  
 
 After a year or two of study most of us students can find a way to, 'hack a development solution'.  However, it takes far greater study and time to understand why the solution you have, 'hacked' works the way it does and therefore to communicate that programming wisdom gained to others.  This I feel is an essential skill to cultivate if a developer has aspirations working within development teams and pitching to new clients.      
 
-So what better way to show potential employers and clients that you do know the solution you chose works the way it does by explicitly showing and telling them how through code comments?  Commenting every line of code in this project explicitly shows to potential employers that I do in fact know why I have done what I have done and it has not been, 'hacked' or taken from other sources.
+So what better way to show potential employers and clients alike that, as an aspiring junior developer, that you do know the solution you chose works the way it does by explicitly showing and telling them how through code comments?  
 
 <br/>
 
@@ -515,6 +515,8 @@ Furthermore, forensically looking at the CSS code base encouraged me to get rid 
 
 # Conclusion
 
+<br/>
+
 In conclusion, this has been the biggest, challenging development project I have taken thus far.  In retrospect, the skills and techniques I have now learned via this CRUD app will be invaluable moving forward.  
 
 CRUD app development projects are great learning opportunities for budding web developers, especially if they are built with only core languages with no help from libraries or frameworks.  
@@ -527,9 +529,17 @@ The very nature of web development projects enables them to be highly cohesive e
 
 with this project using an Agile SDLC process with Task Driven Development (TDD) techniques (fail, pass, refactor) 
 
-***When a developer has learned to create and code up a CRUD app from the ground up will prove to be the perfect barometer for future employers in taking on a new junior developer.***  
+***"When an aspiring developer has learned to create and code up a CRUD app from the ground up proves to be the perfect programming barometer for future employers to make their hiring decisions in taking on a new junior developer."***  
 
 I state this because when one has built up a CRUD type app with all the core client and core back end languages means that this individual will now develop future projects with a view to how all the web technologies interact with each other and design, code and develop accordingly.  Organisations want and need developers to approach web application tasks in this way, ensuring the, 'bigger picture' is always kept at the forefront of the developers mind.  This in turn means these type of future developers can greatly contribute to developer teams as they, 'get' what the potential developed app is suppose to do and consequently and perhaps more importantly know how to take this complicated, interdependent entity to provide the end user with the best user experience (UX) possible.
+
+<br/>
+
+Kind Regards
+
+<br/>
+
+Michael J Crawley - Aspiring Web Developer
 
 
 
@@ -545,7 +555,19 @@ I state this because when one has built up a CRUD type app with all the core cli
  
 ## Licence
 
-© Michael J Crawley, Web developer
+MIT License
+
+© Michael J Crawley, Web developer, 2022
+
+
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
 
 ## Author Info
 
