@@ -1,4 +1,4 @@
-<h1 align="center">The Metallica Project (CRUD APP)</h1>
+<h1 align="center" id="metallica-heading">The Metallica Project (CRUD APP)</h1>
 
 
 
@@ -41,7 +41,7 @@ Certain technologies and techniques were utilised to easy the development proces
 ### Table Of Contents
 
 *	[Description](#description)
-*	[Technologies](#technologies-tools-and-techniques)
+*	[Technologies](#tools-and-techniques)
 *	[Lessons Learned](#lessons-learned)
 *	[Licence](#licence)
 *	[Author Info](#author-info)
@@ -58,7 +58,7 @@ Certain technologies and techniques were utilised to easy the development proces
 
 </br>
 
-This was a project I was challenged to do from my time at university in 2018-20.  The challenge was to take a subject you love (music here) and make a CRUD web application out of it using the core internet languages of HTML5 CSS3 Javascript, PHP and MySql.
+This was a project I was challenged to do from my time at university in 2020.  The challenge was to take a subject you love (music here) and make a CRUD web application out of it using the core internet languages of HTML5 CSS3 Javascript, PHP and MySql.
 
 Now the project was not a challenge on the aesthetic side of the UI.  To ameliorate that time consuming task the student was allowed to take two designs and looks of an already successful music sites and do a hybrid of the two.  In this example I took the design of the music band ZZtop website (https://www.zztop.com/) and fused the site with content of the Metallica site (https://www.metallica.com/)
 
@@ -114,9 +114,9 @@ For example, [W3schools](https://www.w3schools.com/php/php_file_upload.asp) codi
 
 </br>
 
-<h1 >Technologies Tools And Techniques
+# Tools And Techniques
 
-</h1>
+
 
 </br>
 
@@ -151,7 +151,7 @@ Having communicated my psychology behind my journey I will try and illustrate wh
 
 </br>
 
-### Bit Of Background - Why no Framweworks yet?
+### Bit Of Background - Why No Frameworks?
 
 </br>
 
@@ -159,7 +159,7 @@ I understand the industry is framework happy and component hungry presently in t
 
 Thinking about the layers of computing language for a minute, from machine code closet to the processor all the way to high-level languages that are platform independent - it is  frameworks that sit on the highest level furthest away from said processor.  Therefore, the thinking from the university professors were that if one does not have a relatively deep understanding of the core language underneath the framework, when errors happen, which they will inevitably will, solving said errors become very difficult indeed.   
 
-Having said that, I fully understand the concept a efficient web developer framework provides. A lot of web development tasks are repetitive so the, 'components' that these frameworks provide can abstract away these repetitive tasks. Furthermore, frameworks  provides a more explicit way to compartmentalise the code base.  MVC principles are heavy utilised with these frameworks.  To show I understand the MVC concept, I know the, 'M' stands for model and that is where the data resides through some sort of database language.  The, 'V' is the view is where the user interface technologies reside (think html CSS, javascript) and 'C' is the control  this is where the language that drives it all by communicating with the model and the view ( this will be a language such as PHP or Node.js depending on what stack one is using).
+Having said that, I fully understand the concept a efficient web developer framework provides. A lot of web development tasks are repetitive so the, 'components' that these frameworks provide can abstract away these repetitive tasks. Furthermore, frameworks  provides a more explicit way to compartmentalise the code base.  MVC principles are heavy utilised with these frameworks.  To show I understand the MVC concept, I know the, 'M' stands for model and that is where the data resides through some sort of database language.  The, 'V' is the view is where the user interface technologies reside (think HTML CSS, javascript) and 'C' is the control  this is where the language that drives it all by communicating with the model and the view ( this will be a language such as PHP or Node.js depending on what stack one is using).
 
 [Angular](https://angular.io/ "Link To Angular")  from what I understand uses the full MVC architecture within its framework.  As a consequence, it is a more time-consuming framework to learn, understand and progress with.
 
@@ -183,11 +183,11 @@ I am aware building apps with these frameworks should be my next step and I aim 
 
 I have been dabbling with BEM CSS practices prior to undertaking this development project and I can safely say I am now a full supporter of using these methods.
 
-However, this method, like anything doesn't come without its downsides.  The downside is that it is CSS class heavy - very heavy.  You practically name classes for every line of html element code.  That means more time at the html stage.  However, when one becomes comfortable writing in such a away, developmental speed differences is almost non existent to the traditional way of using html and CSS.  However and more importantly, debugging CSS becomes a much more seamless process.  That last point was the game changer for me.
+However, this method, like anything doesn't come without its downsides.  The downside is that it is CSS class heavy - very heavy.  You practically name classes for every line of HTML element code.  That means more time at the HTML stage.  However, when one becomes comfortable writing in such a away, developmental speed differences is almost non existent to the traditional way of using HTML and CSS.  However and more importantly, debugging CSS becomes a much more seamless process.  That last point was the game changer for me.
 
-CSS to most of us that are more logical based, rage at this language.  I am well aware CSS was perhaps never meant to be used the way it has been adopted, nevertheless, the fact that it has and we can't find anything better to do the UI styling (yet), debugging CSS when we indent from the html parent down (cascade) can become a coding nightmare (particular as the application grows), and prove to be the bottleneck for very logical-thinking programmers moving forward with the web technologies.  At least it was for me.  BEM solved that dilemma.
+CSS to most of us that are more logical based, rage at this language.  I am well aware CSS was perhaps never meant to be used the way it has been adopted, nevertheless, the fact that it has and we can't find anything better to do the UI styling (yet), debugging CSS when we indent from the HTML parent down (cascade) can become a coding nightmare (particular as the application grows), and prove to be the bottleneck for very logical-thinking programmers moving forward with the web technologies.  At least it was for me.  BEM solved that dilemma.
 
-I now code with confidence with CSS and feel I can do most essential needed UI manipulation.  Any careless errors become very quick and easy to rectify. One only needs to open up the browser's developer tools, examine the low level class that BEM practices give you, amend said class, resulting in fixing careless mistake in very quick time.
+I now code with confidence with CSS and feel I can do most of the essential UI manipulation with this language.  Any careless errors become very quick and easy to rectify. One only needs to open up the browser's developer tools, examine the low level class that BEM practices give you, amend said class, resulting in fixing careless mistake in very quick time.
 
 </br>
 
@@ -218,15 +218,15 @@ Until now I have always used relative path ways to traverse a web sites architec
 
   
 
-###### Html Relative Root Example
+###### HTML Relative Root Example
 
 <br/>
   
 
-```html
+```HTML
 
 
-<!-- an html image tag example of using the relative root as the file navigation technique -->
+<!-- an HTML image tag example of using the relative root as the file navigation technique -->
 
 
 <img src="/metallicaTourProject/img/promo_tour.png" alt="image for tour dates" class="c-big-screen-tour-dates-img">
@@ -411,7 +411,7 @@ For this case, that wasn't at the all the concern.  In fact this AJAX solution d
 
 <br/>
 
-I was finding in the admin section of this web project that when the, 'administrator' selects an image to upload but then for whatever reason changes his/her mind on the image uploaded, the aforementioned [W3schools](https://www.w3schools.com/php/php_file_upload.asp) solution meant the image was already stored in the site's image directory and couldn't be taken out.
+I was finding in the admin section of this web project that when the, 'administrator' selects an image to upload but then for whatever reason changes his/her mind on the image uploaded, the aforementioned [W3schools](https://www.w3schools.com/php/php_file_upload.asp) code solution meant the image was already stored in the site's image directory and couldn't be taken out.
 
 <br/>
 
@@ -473,7 +473,7 @@ With the above solution I have now learned and realised that AJAX is not solely 
 
 <br/>
 
-In this project I have opted to comment every line possible.  From the HTML code, the JavaScript code to the PHP and MySql code.  This was a deliberate strategy.  However when I eventually do become employed as a developer my future comments will be less intense as there will be less need to be as explicit with your comments because your code competency will not be question as severely as it is at potential employment stage.  Incidentally, I have subsequently found there was more utility in commenting the HTML side of things rather than the CSS side of things - CSS is the properties used, HTML gives you the chance to explain the CSS solution used.
+In this project I have opted to comment every line possible.  From the HTML code, the JavaScript code to the PHP and MySql code.  This was a deliberate strategy.  However when I eventually do become employed as a developer my future comments will be less intense as there will be less need to be as explicit with your comments because your code competency will not be questioned as severely as it will be at potential employment stage.  Incidentally, I have subsequently found there was more utility in commenting the HTML side of things rather than the CSS side of things - CSS is the properties used, HTML gives you the chance to explain the CSS solution used.
 
 <br/>
 
@@ -527,11 +527,11 @@ While this makes it a very challenging task to the beginner and may take them a 
 
 The very nature of web development projects enables them to be highly cohesive entities, however, they are also unfortunately unavoidably highly coupled systems too.  A recurring challenge for web developers is dealing with errors and bugs that arise from one of the dependencies that has been invoked from another interdependent component.  Developing CRUD apps is perhaps the best way to, 'see' and understand how this development phenomenon manifests.  
 
-with this project using an Agile SDLC process with Task Driven Development (TDD) techniques (fail, pass, refactor) 
 
-***"When an aspiring developer has learned to create and code up a CRUD app from the ground up proves to be the perfect programming barometer for future employers to make their hiring decisions in taking on a new junior developer."***  
 
-I state this because when one has built up a CRUD type app with all the core client and core back end languages means that this individual will now develop future projects with a view to how all the web technologies interact with each other and design, code and develop accordingly.  Organisations want and need developers to approach web application tasks in this way, ensuring the, 'bigger picture' is always kept at the forefront of the developers mind.  This in turn means these type of future developers can greatly contribute to developer teams as they, 'get' what the potential developed app is suppose to do and consequently and perhaps more importantly know how to take this complicated, interdependent entity to provide the end user with the best user experience (UX) possible.
+***"When an aspiring developer has learned to create and code up a CRUD app from the ground up will prove to be the perfect programming barometer for future employers to make their hiring decisions in taking on a new junior developer."***  
+
+I state this because when one has built up a CRUD type app with all the core client and core back end languages means that this individual will now develop future projects with a view to how all the web technologies interact with each other and design, code and develop accordingly.  Organisations want and need developers to approach web application tasks in this way, ensuring the, 'bigger picture' is always kept at the forefront of the developers mind.  This in turn means these type of future developers can greatly contribute to developer teams as they, 'get' what the potential developed app is suppose to do and consequently and perhaps more importantly know how to take this complicated, interdependent entity and provide the end user with the best user experience (UX) possible.
 
 <br/>
 
@@ -547,11 +547,15 @@ Michael J Crawley - Aspiring Web Developer
 
 <br/>
 
+
+
 ## Contributors
 
 
 
--	Michael J Crawley <crawley349@btinternet.com> 
+-	Michael J Crawley <crawley349@btinternet.com>
+
+<br/>
  
 ## Licence
 
@@ -567,11 +571,11 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
+<br/>
 
 ## Author Info
 
 * Website - [Michael J Crawley](https://michael-crawley-portfolio.netlify.app/ "My Portfolio Site")
 
-[Back To The Top](#the-metallica-project)
+[Back To The Top](#metallica-heading)
 
